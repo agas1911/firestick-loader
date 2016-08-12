@@ -160,6 +160,7 @@ set launchPopcornTime=%shell% am start -a android.intent.action.MAIN -n dp.ws.po
 set launchMovian=%shell% am start -a android.intent.action.MAIN -n com.lonelycoder.mediaplayer/.GLWActivity
 set launchOperaMini=%shell% am start -a android.intent.action.MAIN -n com.opera.mini.android/.Browser
 set launchRootExplorer=%shell% am start -a android.intent.action.MAIN -n com.speedsoftware.rootexplorer/.RootExplorer
+set launchBusybox=%shell% am start -a android.intent.action.MAIN -n stericson.busybox/.Activity.MainActivity
 
 
 ::set suRequest=%shell% am start -a android.intent.action.MAIN -n com.android.internal.os.RuntimeInit uid 0
@@ -1566,7 +1567,8 @@ echo.
 echo.
 echo.
 echo.
-echo After you have finished these steps, press ENTER to continue....
+if %fullAutoMode%==0 echo After you have finished these steps, press ENTER to continue....
+if %fullAutoMode%==1 echo The script will continue automatically once install is finished....
 echo.
 echo.
 
