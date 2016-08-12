@@ -317,13 +317,23 @@ rm -r /system/app/WhiteListedUrlProvider/
 # Framework Directory
 rm -r /system/framework/android.amazon.perm/
 
-# JAR Files
-rm -r /system/framework/amazon-ads-registration.jar
-rm -r /system/framework/precog-api.jar
-rm -r /system/framework/retaildemoapi.jar
-rm -r /system/framework/android.test.runner.jar
-rm -r /system/framework/com.amazon.kindle.cms.jar
-rm -r /system/framework/com.amazon.sync.api.jar
+# JAR Files (REMOVAL OF SOME OF THESE BREAKS SETTINGS!!)
+#rm -r /system/framework/amazon-ads-registration.jar
+#rm -r /system/framework/precog-api.jar
+#rm -r /system/framework/retaildemoapi.jar
+#rm -r /system/framework/android.test.runner.jar
+#rm -r /system/framework/com.amazon.kindle.cms.jar
+#rm -r /system/framework/com.amazon.sync.api.jar
+
+# FireOS JAR Files (REMOVAL BREAKS SETTINGS!!)
+#rm -r /system/framework/fireosapiext.jar
+#rm -r /system/framework/fireoscapability.jar
+#rm -r /system/framework/fireosext.jar
+#rm -r /system/framework/fireosmgr.jar
+#rm -r /system/framework/fireospolicy.jar
+#rm -r /system/framework/fireossvc.jar
+#rm -r /system/framework/fireosutil.jar
+
 
 # Android Census
 rm -r /system/framework/com.amazon.sics.jar
