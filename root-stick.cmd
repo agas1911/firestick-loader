@@ -1544,7 +1544,7 @@ echo.
 echo.
 echo.
 %_color% 0e
-echo Once BusyBox is open, click BACK on the remote to close info window!
+::echo Once BusyBox is open, click BACK on the remote to close info window!
 echo.
 echo.
 echo.
@@ -1553,11 +1553,20 @@ echo After you have finished these steps, press ENTER to continue....
 echo.
 echo.
 
-pause
+::pause
 
-::%sleep% 2
+:: Get SU Permissions
+%sleep% 2
+%keyArrowRight%
+%keyArrowRight%
+%keyArrowRight%
+%keyArrowRight%
+::%sleep% 1
+%keyEnter%
 
-::%keyBack%
+%sleep% 10
+
+%keyHome%
 %sleep% 2
 %keyArrowDown%
 %sleep% 1
@@ -1574,6 +1583,9 @@ cls
 echo Once BusyBox installation is finished, press ENTER to continue....
 echo.
 echo.
+
+if %fullAutoMode%==1 %sleep% 60
+if %fullAutoModeDG%==1 %sleep% 60
 
 pause>nul
 
