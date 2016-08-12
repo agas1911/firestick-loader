@@ -151,6 +151,17 @@ rm -r /system/app/WhiteListedUrlProvider/
 # Framework Directory
 rm -r /system/framework/android.amazon.perm/
 
+# JAR Files
+rm -r /system/framework/amazon-ads-registration.jar
+rm -r /system/framework/precog-api.jar
+rm -r /system/framework/retaildemoapi.jar
+rm -r /system/framework/android.test.runner.jar
+rm -r /system/framework/com.amazon.kindle.cms.jar
+rm -r /system/framework/com.amazon.sync.api.jar
+
+# Android Census
+rm -r /system/framework/com.amazon.sics.jar
+
 
 
 # Some directories in /data/data/ may not exist. They are attempted to be removed anyways

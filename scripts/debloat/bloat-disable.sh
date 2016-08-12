@@ -140,6 +140,9 @@ pm disable com.amazon.tv.settings/.tv.AlexaSettingsActivity
 pm disable com.amazon.tv.settings/.auth.BuellerSettingsMAPInformationProvider
 pm disable com.amazon.tv.settings/.PCONPermissionsReceiver
 
+# App Blacklisting
+#pm disable com.amazon.tv.settings/com.amazon.tv.settings.tv.AppDisableService
+
 # Disable Sleep Screen (Hold HOME Button)
 #pm disable com.amazon.tv.settings/.hud.HomeLongPressReceiver
 
