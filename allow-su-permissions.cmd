@@ -61,6 +61,10 @@ set keyHome=%shell% input keyevent 4
 
 
 %keyArrowRight%
+%keyArrowRight%
+%keyArrowRight%
+%keyArrowRight%
+::%sleep% 1
 %keyEnter%
 
 
