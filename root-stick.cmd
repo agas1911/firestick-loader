@@ -150,7 +150,17 @@ set deregisterAmazonAccount=%shell% am start -a com.amazon.tv.oobe/.Deregistrati
 :: Launch Different Apps
 set launchSuperSU=%shell% am start -a android.intent.action.MAIN -n com.koushikdutta.superuser/.MainActivity
 set launchAceStream=%shell% am start -a android.intent.action.MAIN -n org.acestream/.player.gui.MainActivity
-set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.acestream/.player.gui.MainActivity
+set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.sopcast.android/.SopCast
+set launchNetflix=%shell% am start -a android.intent.action.MAIN -n com.netflix.mediaclient/.ui.launch.NetflixComLaunchActivity
+set launchHulu=%shell% am start -a android.intent.action.MAIN -n com.hulu.livingroomplus/.MainActivity
+set launchMobdro=%shell% am start -a android.intent.action.MAIN -n com.mobdro.android/.DashBoardActivity
+set launchKodi=%shell% am start -a android.intent.action.MAIN -n org.xbmc.kodi/.Splash
+set launchVLC=%shell% am start -a android.intent.action.MAIN -n org.videolan.vlc/.gui.tv.MainTvActivity
+set launchPopcornTime=%shell% am start -a android.intent.action.MAIN -n dp.ws.popcorntime/se.popcorn_time.mobile.ui.MainActivity
+set launchMovian=%shell% am start -a android.intent.action.MAIN -n com.lonelycoder.mediaplayer/.GLWActivity
+set launchOperaMini=%shell% am start -a android.intent.action.MAIN -n com.opera.mini.android/.Browser
+set launchRootExplorer=%shell% am start -a android.intent.action.MAIN -n com.speedsoftware.rootexplorer/.RootExplorer
+
 
 ::set suRequest=%shell% am start -a android.intent.action.MAIN -n com.android.internal.os.RuntimeInit uid 0
 
