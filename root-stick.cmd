@@ -284,7 +284,7 @@ echo Press S to issue an "su" request to the device
 echo.
 ::echo Press P to replace kingroot with SuperSU (Not Working Correctly!)
 ::echo.
-echo Press D to downgrade to stock 5.0.5 firmware
+echo Press D to downgrade to stock 5.0.5 (restore clean /system/ partition)
 echo.
 echo Press B to install busybox
 echo.
@@ -292,7 +292,7 @@ echo Press A to disable Amazon Bloatware (also use AR to safe remove)
 echo.
 echo Press C to clear all caches on device (also use CF to factory reset)
 echo.
-echo Press U to unroot
+echo Press U to unroot (kingroot binary and apk removal)
 echo.
 echo Press F to run fixes, tweaks, and misc options
 echo.
