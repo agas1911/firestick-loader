@@ -6,9 +6,11 @@ echo ""
 
 mount -o rw,remount /system
 
-mv /system/etc/hosts /system/etc/hosts.orig
+rm /system/etc/hosts /system/etc/hosts
 
 mv /data/local/tmp/hosts /system/etc/hosts
 
+chown 0.0 /system/etc/hosts
 chmod 0666 /system/etc/hosts
+
 
