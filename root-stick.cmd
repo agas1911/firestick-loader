@@ -286,7 +286,7 @@ echo.
 ::echo.
 echo Press D to downgrade to stock 5.0.5 (restore clean /system/ partition)
 echo.
-echo Press B to install busybox
+echo Press B to install busybox (common linux commands in one package)
 echo.
 echo Press A to disable Amazon Bloatware (also use AR to safe remove)
 echo.
