@@ -857,8 +857,8 @@ pause>nul
 ::if %fullAutoMode%==1 goto superSU
 ::if %fullAutoModeDG%==1 goto superSU
 if %fullAutoModeDG%==1 goto downgrade
-if %fullAutoModeDG%==2 goto busybox
-if %fullAutoMode%==1 goto busybox
+if %fullAutoModeDG%==2 goto noOTA
+if %fullAutoMode%==1 goto noOTA
 
 goto menu
 
@@ -1265,6 +1265,10 @@ echo.
 %_color% 0e
 echo The TV screen should be on the Amazon Install screen.
 echo.
+%_color% 0c
+echo *** IF THE TEXT IS MISSING AND ONLY A FIRESTICK ICON IS SHOWING,
+echo THIS MAY HAPPEN AFTER SOME ROOT OPERATIONS AND WILL PERFORM NORMALLY ***
+echo.
 echo.
 %_color% 0b
 echo *** If this is not the case, try restarting the device and script. ***
@@ -1315,6 +1319,10 @@ echo.
 echo When device is back at HOME screen, press ENTER....
 echo.
 echo.
+%_color% 0b
+echo *** YOU MAY SEE THE REMOTE SYNC SCREEN INSTEAD OF HOME SCREEN ***
+echo.
+echo.
 
 pause>nul
 
@@ -1351,11 +1359,15 @@ echo Waiting For Boot Animation....
 echo.
 echo.
 
-if %factoryReset%==0 %sleep% 20
+if %factoryReset%==0 %sleep% 25
 if %factoryReset%==1 %sleep% 45
 
 cls
 echo Waiting For Home Screen To Finish Loading....
+echo.
+echo.
+%_color% 0b
+echo *** YOU MAY SEE THE REMOTE SYNC SCREEN INSTEAD OF HOME SCREEN ***
 echo.
 echo.
 echo.
@@ -1373,6 +1385,10 @@ echo.
 echo.
 %_color% 0c
 echo *** PLEASE WAIT UNTIL HOME SCREEN IS LOADED BEFORE CONTINUING ***
+echo.
+echo.
+%_color% 0b
+echo *** YOU MAY SEE THE REMOTE SYNC SCREEN INSTEAD OF HOME SCREEN ***
 %_color% 0e
 echo.
 echo.
@@ -1451,6 +1467,10 @@ echo.
 %shell% "su -c pm disable com.amazon.settings.systemupdates/.OTAEventReceiver"
 
 %sleep% 5
+
+if %fullAutoModeDG%==1 goto busybox
+if %fullAutoModeDG%==2 goto busybox
+if %fullAutoMode%==1 goto busybox
 
 goto menu
 
