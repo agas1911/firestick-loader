@@ -588,8 +588,8 @@ goto fixesMenu
 :killAds
 
 cls
-%shell% "rm /data/local/tmp/hosts.adfree"
-%push% "%~dp0misc\hosts.adfree" /data/local/tmp/
+%shell% "rm /data/local/tmp/hosts"
+%push% "%~dp0misc\hosts.adfree" /data/local/tmp/hosts
 %push% "%~dp0scripts\disable-ads.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/disable-ads.sh"
 %shell% "su -c sh /data/local/tmp/disable-ads.sh"

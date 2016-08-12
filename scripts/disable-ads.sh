@@ -8,7 +8,7 @@ mount -o rw,remount /system
 
 mv /system/etc/hosts /system/etc/hosts.orig
 
-cp /data/local/tmp/hosts_adfree /system/etc/hosts
+mv /data/local/tmp/hosts /system/etc/hosts
 
 chmod 0666 /system/etc/hosts
 

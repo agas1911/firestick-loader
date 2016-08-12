@@ -16,12 +16,17 @@ cp /data/local/tmp/kingroot.apk /data/local/tmp/kingroot.apk
 # Preserve ADB Settings
 mkdir /data/local/tmp/com.amazon.tv.settings/
 mkdir /data/local/tmp/com.amazon.tv.settings/shared_prefs/
-cp -Rp /data/local/tmp/com.amazon.tv.settings/shared_prefs/ /data/local/tmp/shared_prefs/
+cp -Rp /data/data/com.amazon.tv.settings/shared_prefs/ /data/local/tmp/shared_prefs/
 
 # Preserve KingRoot Settings
 mkdir /data/local/tmp/com.kingroot.kinguser/
 mkdir /data/local/tmp/com.kingroot.kinguser/shared_prefs/
-cp -Rp /data/local/tmp/com.kingroot.kinguser/shared_prefs/ /data/local/tmp/com.kingroot.kinguser/shared_prefs/
+cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /data/local/tmp/com.kingroot.kinguser/shared_prefs/
+
+# Preserve Wifi Settings
+#mkdir /data/local/tmp/backup/
+#mkdir /data/local/tmp/backup/wifi/
+#cp -Rp /system/etc/wifi/wpa_supplicant.conf /data/local/tmp/backup/wifi/wpa_supplicant.conf
 
 
 #<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
@@ -36,9 +41,9 @@ cp -Rp /data/local/tmp/com.kingroot.kinguser/shared_prefs/ /data/local/tmp/com.k
 #</map>
 
 # Removing /data/
-rm -R -- /data/*/
-#rm -rf /data/app/
-#rm -rf /data/data/
+#rm -R -- /data/*/
+rm -rf /data/app/
+rm -rf /data/data/
 #rm -rf /data/
 
 # Rebuilding empty /data/
@@ -56,14 +61,14 @@ rm -R -- /data/*/
 mkdir /data/data/com.amazon.tv.settings
 mkdir /data/data/com.amazon.tv.settings/shared_prefs
 
-cp -Rp /data/local/tmp/shared_prefs/ /data/local/tmp/com.amazon.tv.settings/shared_prefs/
+cp -Rp /data/local/tmp/shared_prefs/ /data/data/com.amazon.tv.settings/shared_prefs/
 
 
 # Restoring KingRoot Settings
 mkdir /data/data/com.kingroot.kinguser/
 mkdir /data/data/com.kingroot.kinguser/shared_prefs/
 
-cp -Rp /data/local/tmp/com.kingroot.kinguser/shared_prefs/ /data/local/tmp/com.kingroot.kinguser/shared_prefs/
+cp -Rp /data/local/tmp/com.kingroot.kinguser/shared_prefs/ /data/data/com.kingroot.kinguser/shared_prefs/
 
 
 
