@@ -2228,10 +2228,16 @@ goto testBootAnim
 
 :bootanimReplace
 
-set newBootAnimation=none
+set newBootAnimation="%~dp0bootanimation\stock-blue\bootanimation.zip"
 
 cls
 echo Enter Path To New Boot Animation (bootanimation.zip):
+echo.
+echo.
+echo.
+%_color% 0b
+echo *** JUST PRESS ENTER TO USE DEFAULT BLUE VERSION ***
+%_color% 0e
 echo.
 echo.
 
@@ -2252,7 +2258,7 @@ goto testBootAnim
 
 cls
 %shell% "rm /data/local/tmp/bootanimation.zip"
-%push% "%~dp0restore\%dgVersion%\system\media\bootanimation.zip" /data/local/tmp/
+%push% "%~dp0bootanimation\stock-original\bootanimation.zip" /data/local/tmp/
 %push% "%~dp0scripts\restore-bootanimation.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/restore-bootanimation.sh"
 %shell% "su -c sh /data/local/tmp/restore-bootanimation.sh"
