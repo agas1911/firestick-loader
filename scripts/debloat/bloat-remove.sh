@@ -170,7 +170,7 @@ rm -r /system/framework/android.amazon.perm/
 
 
 # Android Census
-rm -r /system/framework/com.amazon.sics.jar
+#rm -r /system/framework/com.amazon.sics.jar
 
 
 
