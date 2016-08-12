@@ -1275,15 +1275,18 @@ echo.
 %_color% 0e
 echo The TV screen should be on the Amazon Install screen.
 echo.
-%_color% 0c
-echo *** IF THE TEXT IS MISSING AND ONLY A FIRESTICK ICON IS SHOWING,
-echo THIS MAY HAPPEN AFTER SOME ROOT OPERATIONS AND WILL PERFORM NORMALLY ***
-echo.
 echo.
 %_color% 0b
 echo *** If this is not the case, try restarting the device and script. ***
 echo.
 echo *** If you are at the Android Recovery Screen, unplug and re-plug device ***
+echo.
+echo.
+echo.
+%_color% 0c
+echo *** IF THE TEXT IS MISSING AND ONLY A FIRESTICK ICON IS SHOWING,
+echo THIS MAY HAPPEN AFTER SOME ROOT OPERATIONS AND WILL PERFORM NORMALLY ***
+echo.
 echo.
 echo.
 %_color% 0c
@@ -1342,8 +1345,10 @@ pause>nul
 %keyHome%
 
 cls
+%_color% 0a
 echo The device is now on version %dgVersion% and needs to reboot again to continue!
 echo.
+%_color% 0e
 echo.
 echo.
 echo.
@@ -1355,6 +1360,7 @@ echo.
 
 %adb% reboot
 
+%_color% 0e
 cls
 echo Rebooting....
 echo.
@@ -1382,6 +1388,7 @@ echo.
 echo.
 echo.
 echo.
+%_color% 0e
 echo If the Home Screen is ready now, please wait a few moments!
 echo.
 echo.
