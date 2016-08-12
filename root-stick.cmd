@@ -1587,7 +1587,7 @@ echo.
 if %fullAutoMode%==1 %sleep% 60
 if %fullAutoModeDG%==1 %sleep% 60
 
-pause>nul
+if %fullAutoMode%==0 pause>nul
 
 %keyBack%
 %keyHome%
