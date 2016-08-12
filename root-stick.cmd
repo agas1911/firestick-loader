@@ -549,6 +549,8 @@ echo.
 echo 11) Reboot Stick
 echo 12) Kill ADB Server
 echo.
+echo 13) Disable Ads
+echo.
 echo.
 echo.
 echo Press B to go back to previous page
@@ -573,10 +575,24 @@ if %fchoice%==9 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==10 %tap% 20 1030
 if %fchoice%==11 %adb% reboot
 if %fchoice%==12 %adb% kill-server
+if %fchoice%==13 goto killAds
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
 if %fchoice%==x goto end
+
+goto fixesMenu
+
+
+
+:killAds
+
+cls
+%shell% "rm /data/local/tmp/hosts.adfree"
+%push% "%~dp0misc\hosts.adfree" /data/local/tmp/
+%push% "%~dp0scripts\disable-ads.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/disable-ads.sh"
+%shell% "su -c sh /data/local/tmp/disable-ads.sh"
 
 goto fixesMenu
 
