@@ -161,6 +161,12 @@ set launchScreenSaver=%shell% am start -a android.intent.action.MAIN -n com.amaz
 set removeSuperSU=%uninstall% eu.chainfire.supersu
 
 
+set firestopperUpdater=%shell% am start -a android.intent.action.MAIN -n de.belu.firestopper.tools.FireStarterUpdater
+
+:: com.amazon.bueller.photos/.activity.ElizaVideoPlaybackActivity
+
+:: com.opera.mini.android/.Browser
+
 set test1=%shell% am start -a android.content.ContextWrapper.startService -n com.amazon.tv.launcher.Navigator.gotoMenu
 
 
