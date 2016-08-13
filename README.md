@@ -8,6 +8,7 @@
 <br/>
 
 ![Menu Preview 1](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/options-main.png)
+<br/>
 ![Menu Preview 2](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/options-tweaks.png)
 
 <br/>
