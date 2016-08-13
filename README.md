@@ -52,7 +52,7 @@ Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and Fire
 
 - **Install Busybox** \****ROOT REQUIRED***\*
 
-    - GUI Install (Automatically Does All The Work To Click Everything, Install and Remove APK After)
+    - GUI Install (Automatically Does All The Work To Click Everything, Install, and Remove APK After)
 	- Has a Terminal Version That Uses a Shell Script
 
 - **Disable Amazon Bloat** \****ROOT REQUIRED***\*
