@@ -95,6 +95,7 @@ set factoryReset=0
 
 set msgbox=%~dp0bin\msgbox.exe
 
+set busyboxScriptInstall=0
 
 set mountRW=%shell% "su -c mount -o rw,remount /system"
 set mountRO=%shell% "su -c mount -o ro,remount /system"
@@ -313,7 +314,7 @@ echo.
 %_color% 0e
 echo Press D to downgrade to stock 5.0.5 (restore clean /system/ partition)
 echo.
-echo Press B to install busybox (common linux commands in one package)
+echo Press B to install busybox (also use BA to use auto scripting method)
 echo.
 echo Press A to disable Amazon Bloatware (also use AR to remove or ARA w/adblock)
 echo.
@@ -339,6 +340,10 @@ set /p dgchoice=
 
 if %dgchoice%==B goto busybox
 if %dgchoice%==b goto busybox
+if %dgchoice%==BA set busyboxScriptInstall=1&&goto busybox
+if %dgchoice%==Ba set busyboxScriptInstall=1&&goto busybox
+if %dgchoice%==bA set busyboxScriptInstall=1&&goto busybox
+if %dgchoice%==ba set busyboxScriptInstall=1&&goto busybox
 ::if %dgchoice%==F goto launchFS
 ::if %dgchoice%==f goto launchFS
 if %dgchoice%==F goto fixesMenu
@@ -1680,6 +1685,35 @@ goto menu
 :: Install Busybox
 set apk="rooting\busybox.apk"
 set app=Busybox
+
+if %busyboxScriptInstall%==1 (
+
+	cls
+	echo Installing %app%....
+	echo.
+	echo.
+	%_color% 0b
+	echo *** THIS OPTION IS UNDER TESTING STILL AND MAY NOT WORK PROPERLY ***
+	echo.
+	echo *** IF THIS OPTION DOES NOT WORK FOR YOU, USE THE NORMAL GUI AUTO OPTION ***
+	echo.
+	%_color% 0e
+	echo.
+
+	%sleep% 3
+
+	%push% "%~dp0rooting\king2su\busybox" /data/local/tmp/
+	%push% "%~dp0scripts\install-busybox.sh" /data/local/tmp/
+	%shell% "su -c chmod 755 /data/local/tmp/install-busybox.sh"
+	%shell% "su -c sh /data/local/tmp/install-busybox.sh"
+
+	%sleep% 5
+
+	goto menu
+
+)
+
+
 cls
 echo Installing %app%....
 echo.
