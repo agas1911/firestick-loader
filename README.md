@@ -47,7 +47,7 @@
 
 - **Downgrade Firmware** \****ROOT REQUIRED***\*
 
-    - Currently 5.0.5 Is The Only Downgrade Version Avalable
+    - Currently 5.0.5 Is The Only Downgrade Version Available
 	- Automatically Extracts, Pushes, Moves, Creates Recovery Config File and Reboots To Install
 
 - **Install Busybox** \****ROOT REQUIRED***\*
