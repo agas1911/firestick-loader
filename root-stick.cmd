@@ -977,6 +977,8 @@ if %doAcceptSuAfterRequest%==1 (
 	%keyArrowRight%
 	%keyEnter%
 	
+	set doAcceptSuAfterRequest=0
+	
 	goto menu
 
 )
