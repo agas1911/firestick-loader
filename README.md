@@ -5,6 +5,7 @@ FREE YOUR FIRESTICK!!!
 
 Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
 
+
 Known Issues:
 
 - If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken.)
