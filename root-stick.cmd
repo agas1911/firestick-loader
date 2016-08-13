@@ -539,12 +539,16 @@ echo Fixes, Tweaks, and Misc Menu [FireTV Stick]
 echo.
 echo.
 echo.
+%_color% 0d
 echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
+%_color% 02
 echo 2) Launch FireStarter/FireStopper
 echo.
+%_color% 03
 echo 3) Launch Android Event Keymap (Press Keys and Send Text Over ADB)
 echo.
+%_color% 0b
 echo 4) Remove Boot Animation (Leaves Stock FIRE Text)
 echo 5) Replace Boot Animation (Replaces Stock Boot Animation)
 echo 6) Restore Boot Animation (Restores Stock Boot Animation)
@@ -554,18 +558,23 @@ echo 8) Restore Boot Fallback Images (Restores framework-res.apk)
 echo.
 echo 9) Launch Boot Animation Factory
 echo.
+%_color% 05
 echo 10) Accept Opera Mini License Agreement
 echo.
+%_color% 07
 echo 11) Reboot Stick
 echo 12) Start ADB Server
 echo 13) Kill ADB Server
 echo.
+%_color% 09
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
 echo.
+%_color% 0c
 echo D) Disable Ads
 echo.
 echo.
 echo.
+%_color% 0e
 echo Press B to go back to previous page
 echo.
 echo Press X to exit
