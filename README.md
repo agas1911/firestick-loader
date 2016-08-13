@@ -3,12 +3,12 @@
 ###FREE YOUR FIRESTICK!!!
 
 
-####Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
+####Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick  
 
 
 ***Known Issues:***
 
-- If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken.)
+- If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken.)  
 
 
 	
@@ -28,7 +28,7 @@
 
 - Amazon Settings Menu Available (Parental Controls, Help, and My Account DISABLED)
 
-- Hold HOME Button Function To Sleep Available
+- Hold HOME Button Function To Sleep Available  
 
 
 
@@ -79,7 +79,7 @@
 
 - **Directly Invoke Amazon Settings Menu Items**
 
-    - Open Common Amazon Settings Menus Directly Through ADB Shell
+    - Open Common Amazon Settings Menus Directly Through ADB Shell  
 	
 	
 	
@@ -154,7 +154,7 @@
     - /system/priv-app/WallpaperCropper/
     - /system/priv-app/WhisperCastConnect/
     
-	- /system/framework/android.amazon.perm/
+	- /system/framework/android.amazon.perm/  
 	
 	
 	
@@ -183,7 +183,7 @@
 - Needed For Amazon Settings UI (Removal Will Break Stock Settings)
     - /system/priv-app/DeviceSoftwareOTAContracts/
     - /system/priv-app/RemoteSettingsAndroid/
-    - /system/priv-app/RemoteSettingsInternalSDK/
+    - /system/priv-app/RemoteSettingsInternalSDK/  
 
 
 
