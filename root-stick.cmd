@@ -73,6 +73,7 @@ set keyHome=%shell% input keyevent 4
 
 set bloatAction=disable
 
+set rebootAfterClearCache=0
 
 set sdcard=sdcard
 ::set sdcard=external_sd
@@ -318,7 +319,7 @@ echo Press B to install busybox (also use BA to use auto scripting method)
 echo.
 echo Press A to disable Amazon Bloatware (also use AR to remove or ARA w/adblock)
 echo.
-echo Press C to clear all caches on device
+echo Press C to clear all caches on device (also use CR to reboot after)
 echo.
 echo Press W to factory reset (also use WR for root reset to save config files)
 echo.
@@ -390,10 +391,10 @@ if %dgchoice%==E goto bloatRemover
 if %dgchoice%==e goto bloatRemover
 if %dgchoice%==C goto clearCaches
 if %dgchoice%==c goto clearCaches
-::if %dgchoice%==CF set factoryReset=2&&goto clearCaches
-::if %dgchoice%==Cf set factoryReset=2&&goto clearCaches
-::if %dgchoice%==cf set factoryReset=2&&goto clearCaches
-::if %dgchoice%==cF set factoryReset=2&&goto clearCaches
+if %dgchoice%==CR set rebootAfterClearCache=1&&goto clearCaches
+if %dgchoice%==Cr set rebootAfterClearCache=1&&goto clearCaches
+if %dgchoice%==cr set rebootAfterClearCache=1&&goto clearCaches
+if %dgchoice%==cR set rebootAfterClearCache=1&&goto clearCaches
 if %dgchoice%==P goto superSU
 if %dgchoice%==p goto superSU
 if %dgchoice%==Z goto invoke
@@ -2307,11 +2308,14 @@ echo Clearing Device Caches....
 echo.
 echo.
 echo.
-%_color% 0c
-echo *** THE DEVICE WILL REBOOT WHEN FINISHED TO REBUILD DALVIK CACHES ***
+%_color% 0b
+if %rebootAfterClearCache%==0 echo *** THE DEVICE SHOULD BE REBOOTED WHEN FINISHED TO REBUILD DALVIK CACHES ***
+if %rebootAfterClearCache%==1 echo *** THE DEVICE WILL REBOOT WHEN FINISHED TO REBUILD DALVIK CACHES ***
 %_color% 0e
 echo.
 echo.
+
+%sleep% 5
 
 ::%shell% "su -c mount -o remount,rw /system"
 ::%shell% "su -c rm -rf /data/dalvik-cache/"
@@ -2321,7 +2325,6 @@ echo.
 ::%shell% "su -c rm -f /cache/*.bin"
 ::%shell% "su -c rm -f /cache/signed_com.amazon.kso.blackbird-1550000810.apk"
 
-cls
 %push% "%~dp0scripts\clear-all-caches.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/clear-all-caches.sh"
 %shell% "su -c sh /data/local/tmp/clear-all-caches.sh"
@@ -2346,30 +2349,35 @@ if %factoryReset%==2 (
 
 ::pause
 
-%adb% reboot
+if %rebootAfterClearCache%==1 %adb% reboot
+if %rebootAfterClearCache%==1 %adbWait%
 
-%adbWait%
 
 if %fullAutoMode%==1 (
 
-set pauseForClearCache=0
+	set pauseForClearCache=0
 
-cls
-%_color% 0e
-echo The TV screen should be on the Optimizing System Storage screen.
-echo.
-echo.
-echo.
-echo When back at HOME screen, press ENTER to continue....
-echo.
-echo.
+	%adb% reboot
+	%adbWait%
 
-set /p pauseForClearCache=
+	cls
+	%_color% 0e
+	echo The TV screen should be on the Optimizing System Storage screen.
+	echo.
+	echo.
+	echo.
+	echo When back at HOME screen, press ENTER to continue....
+	echo.
+	echo.
+
+	set /p pauseForClearCache=
 
 )
 
 if %fullAutoMode%==1 goto unrootKing
 if %fullAutoModeDG%==1 goto unrootKing
+
+if %rebootAfterClearCache%==0 %sleep% 5
 
 goto menu
 
