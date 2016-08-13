@@ -4,7 +4,7 @@
 
 title Amazon FireStick/FireTV Automatic Rooting and Downgrade Script  [esc0rtd3w]
 
-mode con lines=40
+mode con lines=42
 
 color 0e
 
@@ -315,7 +315,9 @@ echo Press B to install busybox (common linux commands in one package)
 echo.
 echo Press A to disable Amazon Bloatware (also use AR to remove or ARA w/adblock)
 echo.
-echo Press C to clear all caches on device (also use CF to factory reset)
+echo Press C to clear all caches on device
+echo.
+echo Press W to factory reset (also use WR for root reset to save config files)
 echo.
 echo Press U to unroot (kingroot binary and apk removal)
 echo.
@@ -385,6 +387,12 @@ if %dgchoice%==P goto superSU
 if %dgchoice%==p goto superSU
 if %dgchoice%==Z goto invoke
 if %dgchoice%==z goto invoke
+if %dgchoice%==W set factoryReset=1&&goto fReset
+if %dgchoice%==w set factoryReset=1&&goto fReset
+if %dgchoice%==WR set factoryReset=2&&goto fReset
+if %dgchoice%==Wr set factoryReset=2&&goto fReset
+if %dgchoice%==wr set factoryReset=2&&goto fReset
+if %dgchoice%==wR set factoryReset=2&&goto fReset
 if %dgchoice%==Y goto fullAuto
 if %dgchoice%==y goto fullAuto
 if %dgchoice%==YD set fullAutoModeDG=1&&goto fullAuto
@@ -2269,6 +2277,52 @@ set /p pauseForClearCache=
 
 if %fullAutoMode%==1 goto unrootKing
 if %fullAutoModeDG%==1 goto unrootKing
+
+goto menu
+
+
+:fReset
+
+if %factoryReset%==1 (
+
+	cls
+	%_color% 0e
+	echo You have 10 seconds to change your mind....
+	echo.
+	%_color% 0b
+	echo *** CLOSE THIS WINDOW TO CANCEL THE FACTORY RESET PROCESS ***
+	echo.
+	echo.
+	echo.
+	%sleep% 10
+
+	%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
+	%sleep% 3
+	%keyArrowLeft%
+	%sleep% 1
+	%keyEnter%
+	%sleep% 3
+
+	goto menu
+)
+
+:: This Mode Preserves ADB Debug Settings
+if %factoryReset%==2 (
+
+	cls
+	%_color% 0c
+	echo This is still under development!
+	echo.
+	%_color% 0b
+	echo It only currently removes /data/app/ and /data/data/!
+	echo.
+	echo.
+	%_color% 0e
+	pause
+	%push% "%~dp0scripts\debloat\factory-reset.sh" /data/local/tmp/
+	%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
+	%shell% "su -c sh /data/local/tmp/factory-reset.sh"
+)
 
 goto menu
 
