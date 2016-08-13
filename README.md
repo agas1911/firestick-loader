@@ -45,12 +45,12 @@ Menu Options:
 	- Root Device (Automatically Does All The Steps To Get Full Root)
 	- Issue "su" Request To Device (Useful for triggering Deny/Allow prompt)
 
-- Downgrade Firmware *ROOT REQUIRED*
+- Downgrade Firmware **ROOT REQUIRED**
 
     - Currently 5.0.5 Is The Only Downgrade Version Avalable
 	- Automatically Extracts, Pushes, Moves, Creates Recovery Config File and Reboots To Install
 
-- Install Busybox *ROOT REQUIRED*
+- Install Busybox **ROOT REQUIRED**
 
     - GUI Install (Automatically Does All The Work To Click Everything, Install and Remove APK After)
 	- Has a Terminal Version That Uses a Shell Script
@@ -61,13 +61,13 @@ Menu Options:
     - Disable and Safe Remove Menu Option
     - Disable, Safe Remove, and Ad Block Menu Option
 
-- Clear All Caches *ROOT REQUIRED*
+- Clear All Caches **ROOT REQUIRED**
 
     - /cache/
     - /cache/dalvik-cache/
     - /data/dalvik-cache/
 
-- Unroot *ROOT REQUIRED*
+- Unroot **ROOT REQUIRED**
 
     - Removes KingRoot (Has a Bluetooth Mouse Option and TeamViewer Option)
 	- Bluetooth Mouse Option Lets You Use a Mouse To Navigate
