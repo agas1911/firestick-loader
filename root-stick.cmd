@@ -1125,6 +1125,7 @@ goto %returnTo%
 
 
 
+:: Not Working Properly (Left Code For Reference)
 :OLDsuperSU
 
 :: Install SuperSU
