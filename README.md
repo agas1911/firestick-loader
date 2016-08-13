@@ -67,6 +67,11 @@
     - /cache/dalvik-cache/
     - /data/dalvik-cache/
 
+- **Factory Reset**
+
+    - User Mode Factory Reset (Automatically Loads The Activity and Clicks OK)
+    - Root Mode Factory Reset (Removes Everything In /data/ That Is Safe and Saves Configuration Files)
+
 - **Unroot** \****ROOT REQUIRED***\*
 
     - Removes KingRoot (Has a Bluetooth Mouse Option and TeamViewer Option)
@@ -75,7 +80,7 @@
 
 - **Fixes, Tweaks, and Misc**
 
-    - Contains Boot Animation, Disable Ads, Launch Apps, and Other Misc Fixes and Tweaks
+    - Contains Boot Animation, Disable Ads, Launch Apps, Allow SU Requests, and Other Misc Fixes and Tweaks
 
 - **Directly Invoke Amazon Settings Menu Items**
 
