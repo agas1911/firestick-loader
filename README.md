@@ -6,13 +6,13 @@ FREE YOUR FIRESTICK!!!
 Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
 
 
-Known Issues:
+***Known Issues:***
 
 - If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken.)
 
 
 	
-Current Project Testing Status:
+***Current Project Testing Status:***
 
 - 300MB+ Available Free Memory Running From HOME Screen
 
@@ -32,58 +32,58 @@ Current Project Testing Status:
 
 
 
-Menu Options:
+***Menu Options:***
 
-- Automatic Mode
+- **Automatic Mode**
 
     - Automatically continues to the next step (some intervention required)
 	- Has a Menu Option To Add Downgrade To The Task List
 
-- Rooting Options
+- **Rooting Options**
 
     - Install KingRoot
 	- Root Device (Automatically Does All The Steps To Get Full Root)
 	- Issue "su" Request To Device (Useful for triggering Deny/Allow prompt)
 
-- Downgrade Firmware ***ROOT REQUIRED***
+- **Downgrade Firmware** \****ROOT REQUIRED***\*
 
     - Currently 5.0.5 Is The Only Downgrade Version Avalable
 	- Automatically Extracts, Pushes, Moves, Creates Recovery Config File and Reboots To Install
 
-- Install Busybox ***ROOT REQUIRED***
+- **Install Busybox** \****ROOT REQUIRED***\*
 
     - GUI Install (Automatically Does All The Work To Click Everything, Install and Remove APK After)
 	- Has a Terminal Version That Uses a Shell Script
 
-- Disable Amazon Bloat ***ROOT REQUIRED***
+- **Disable Amazon Bloat** \****ROOT REQUIRED***\*
 
     - Disable Only Menu Option
     - Disable and Safe Remove Menu Option
     - Disable, Safe Remove, and Ad Block Menu Option
 
-- Clear All Caches ***ROOT REQUIRED***
+- **Clear All Caches** \****ROOT REQUIRED***\*
 
     - /cache/
     - /cache/dalvik-cache/
     - /data/dalvik-cache/
 
-- Unroot ***ROOT REQUIRED***
+- **Unroot** \****ROOT REQUIRED***\*
 
     - Removes KingRoot (Has a Bluetooth Mouse Option and TeamViewer Option)
 	- Bluetooth Mouse Option Lets You Use a Mouse To Navigate
 	- TeamViewer Option Launches TeamViewer on PC and Android To Give Mouse Control
 
-- Fixes, Tweaks, and Misc
+- **Fixes, Tweaks, and Misc**
 
     - Contains Boot Animation, Disable Ads, Launch Apps, and Other Misc Fixes and Tweaks
 
-- Directly Invoke Amazon Settings Menu Items
+- **Directly Invoke Amazon Settings Menu Items**
 
     - Open Common Amazon Settings Menus Directly Through ADB Shell
 	
 	
 	
-- List of Amazon Bloat Removed (Tested Safe and With No Errors or Issues Using Scripting)
+- **List of Amazon Bloat Removed (Tested Safe and With No Errors or Issues Using Scripting)**
 	
     - /system/app/DeviceControlService/
     - /system/app/DocumentsUI/
@@ -158,7 +158,7 @@ Menu Options:
 	
 	
 	
-List of Amazon Bloat Left Alone
+**List of Amazon Bloat Left Alone**
 
 - Screensaver Config
     - /system/priv-app/com.amazon.bueller.photos/
@@ -187,7 +187,7 @@ List of Amazon Bloat Left Alone
 
 
 
-TO-DO List
+**TO-DO List**
 
 - Hook a System Shell Script To Run "pm disable" Commands On Boot or First Boot
 
