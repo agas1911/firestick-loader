@@ -6,7 +6,7 @@ color 0e
 
 set wait="%~dp0bin\wait.exe"
 
-set adb="%~dp0bin\adb.exe"
+set adb="..\bin\adb.exe"
 
 set sdcard=sdcard
 ::set sdcard=external_sd

@@ -3,7 +3,7 @@
 color 0e
 
 
-set adb="%~dp0bin\adb.exe"
+set adb="..\bin\adb.exe"
 set adbKill="%~dp0bin\adb.exe" kill-server
 set adbStart="%~dp0bin\adb.exe" start-server
 set adbWait=%adb% wait-for-device

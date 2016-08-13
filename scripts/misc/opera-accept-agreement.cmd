@@ -4,7 +4,7 @@ title Opera Mini Accept Agreement                     esc0rtd3w 2016
 
 
 
-set adb="adb.exe"
+set adb="..\bin\adb.exe"
 set adbWait=%adb% wait-for-device
 
 

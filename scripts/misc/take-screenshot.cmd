@@ -7,7 +7,7 @@
 
 set wait="%~dp0bin\wait.exe"
 
-set adb="%~dp0bin\adb.exe"
+set adb="..\bin\adb.exe"
 
 set capDevice=/sdcard/cap.png
 

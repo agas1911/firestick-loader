@@ -1,6 +1,6 @@
 @echo off
 
-set adb="%~dp0bin\adb.exe"
+set adb="..\bin\adb.exe"
 
 
 :loop

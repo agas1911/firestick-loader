@@ -28,7 +28,7 @@ set kingrootPC="%~dp0rooting\kingroot-pc.exe"
 set sleep="%~dp0bin\wait.exe"
 set rm=rmdir /s /q
 
-set adb="%~dp0bin\adb.exe"
+set adb="..\bin\adb.exe"
 set adbKill="%~dp0bin\adb.exe" kill-server
 set adbStart="%~dp0bin\adb.exe" start-server
 set adbWait=%adb% wait-for-device
