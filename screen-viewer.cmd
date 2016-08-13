@@ -5,7 +5,16 @@
 
 :: esc0rtd3w / 2015
 
-set wait="%~dp0bin\wait.exe"
+color 0b
+
+set runShellNoTerminateAndWait=cmd /k
+set runShellNoTerminate=start cmd /k
+set runShellWaitNoTerminate=start /wait cmd /k
+set runShellTerminateAndWait=cmd /c
+set runShellTerminate=start cmd /c
+set runShellWaitTerminate=start /wait cmd /c
+
+set sleep="%~dp0bin\wait.exe"
 
 set adb="%~dp0bin\adb.exe"
 
@@ -14,10 +23,16 @@ set capDevice=/sdcard/cap.png
 set tempHost=%temp%
 set capHost="%temp%\cap.png"
 
-set waitTime=1
+set waitTime=5
 
 cls
 echo Set wait timer (in seconds) and press ENTER:
+echo.
+echo.
+echo Default is 5
+echo.
+echo.
+echo You can set it to any value, but setting 1 or 2 sometimes causes reboot
 echo.
 echo.
 
@@ -41,9 +56,9 @@ echo.
 
 %adb% pull %capDevice% %tempHost%
 
-start "" %capHost%
+%runShellTerminate% %capHost%
 
-%wait% %waitTime%
+%sleep% %waitTime%
 
 
 goto loop
