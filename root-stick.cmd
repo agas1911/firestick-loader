@@ -42,6 +42,8 @@ set ssViewer=0
 
 set waitTime=5
 
+set doBlockAdsWithMenuOption=0
+
 set appName=0
 set choice=2
 
@@ -303,21 +305,25 @@ echo Press R to root (also use R1 to Skip Wait or R2 to Skip Wait/Swipe)
 echo.
 echo Press S to issue an "su" request to the device
 echo.
+echo.
 ::echo Press P to replace kingroot with SuperSU (Not Working Correctly!)
 ::echo.
+%_color% 0e
 echo Press D to downgrade to stock 5.0.5 (restore clean /system/ partition)
 echo.
 echo Press B to install busybox (common linux commands in one package)
 echo.
-echo Press A to disable Amazon Bloatware (also use AR to safe remove)
+echo Press A to disable Amazon Bloatware (also use AR to remove or ARA w/adblock)
 echo.
 echo Press C to clear all caches on device (also use CF to factory reset)
 echo.
 echo Press U to unroot (kingroot binary and apk removal)
 echo.
+echo.
 echo Press F to run fixes, tweaks, and misc options
 echo.
 echo Press Z to directly invoke Amazon Settings menu items
+echo.
 echo.
 echo Press X to exit (also use XR to reload main menu)
 echo.
@@ -357,6 +363,14 @@ if %dgchoice%==AR goto removeBloat
 if %dgchoice%==Ar goto removeBloat
 if %dgchoice%==ar goto removeBloat
 if %dgchoice%==aR goto removeBloat
+if %dgchoice%==ARA set doBlockAdsWithMenuOption=1&&goto removeBloat
+if %dgchoice%==ara set doBlockAdsWithMenuOption=1&&goto removeBloat
+if %dgchoice%==ARa set doBlockAdsWithMenuOption=1&&goto removeBloat
+if %dgchoice%==arA set doBlockAdsWithMenuOption=1&&goto removeBloat
+if %dgchoice%==Ara set doBlockAdsWithMenuOption=1&&goto removeBloat
+if %dgchoice%==aRA set doBlockAdsWithMenuOption=1&&goto removeBloat
+if %dgchoice%==aRa set doBlockAdsWithMenuOption=1&&goto removeBloat
+if %dgchoice%==ArA set doBlockAdsWithMenuOption=1&&goto removeBloat
 ::if %dgchoice%==E set bloatAction=enable&&goto bloatBuster
 ::if %dgchoice%==e set bloatAction=enable&&goto bloatBuster
 if %dgchoice%==E goto bloatRemover
@@ -542,13 +556,13 @@ echo.
 %_color% 0d
 echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
-%_color% 02
+%_color% 0a
 echo 2) Launch FireStarter/FireStopper
 echo.
 %_color% 03
 echo 3) Launch Android Event Keymap (Press Keys and Send Text Over ADB)
 echo.
-%_color% 0b
+%_color% 09
 echo 4) Remove Boot Animation (Leaves Stock FIRE Text)
 echo 5) Replace Boot Animation (Replaces Stock Boot Animation)
 echo 6) Restore Boot Animation (Restores Stock Boot Animation)
@@ -558,7 +572,7 @@ echo 8) Restore Boot Fallback Images (Restores framework-res.apk)
 echo.
 echo 9) Launch Boot Animation Factory
 echo.
-%_color% 05
+%_color% 06
 echo 10) Accept Opera Mini License Agreement
 echo.
 %_color% 07
@@ -566,7 +580,7 @@ echo 11) Reboot Stick
 echo 12) Start ADB Server
 echo 13) Kill ADB Server
 echo.
-%_color% 09
+%_color% 0b
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
 echo.
 %_color% 0c
@@ -1983,15 +1997,25 @@ echo.
 cls
 
 if %fullAutoMode%==1 (
-%push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
-%shell% "su -c sh /data/local/tmp/bloat-disable.sh"
+	%push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
+	%shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
+	%shell% "su -c sh /data/local/tmp/bloat-disable.sh"
 )
 
 if %fullAutoModeDG%==1 (
-%push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
-%shell% "su -c sh /data/local/tmp/bloat-disable.sh"
+	%push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
+	%shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
+	%shell% "su -c sh /data/local/tmp/bloat-disable.sh"
+)
+
+if %doBlockAdsWithMenuOption%==1 (
+
+	%shell% "rm /data/local/tmp/hosts"
+	%push% "%~dp0misc\hosts.adfree" /data/local/tmp/hosts
+	%push% "%~dp0scripts\disable-ads.sh" /data/local/tmp/
+	%shell% "su -c chmod 755 /data/local/tmp/disable-ads.sh"
+	%shell% "su -c sh /data/local/tmp/disable-ads.sh"
+
 )
 
 if %fullAutoMode%==1 goto clearCaches
