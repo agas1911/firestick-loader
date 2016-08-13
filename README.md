@@ -1,6 +1,6 @@
 #Amazon FireTV Stick Loader
 
-FREE YOUR FIRESTICK!!!
+###FREE YOUR FIRESTICK!!!
 
 
 Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
