@@ -44,6 +44,8 @@ set waitTime=5
 
 set doBlockAdsWithMenuOption=0
 
+set doAcceptSuAfterRequest=0
+
 set appName=0
 set choice=2
 
@@ -303,7 +305,7 @@ echo Press I to install kingroot (also use IR to install and root)
 echo.
 echo Press R to root (also use R1 to Skip Wait or R2 to Skip Wait/Swipe)
 echo.
-echo Press S to issue an "su" request to the device
+echo Press S to issue an "su" request (also use SA to auto accept request)
 echo.
 echo.
 ::echo Press P to replace kingroot with SuperSU (Not Working Correctly!)
@@ -359,6 +361,10 @@ if %dgchoice%==R2 goto root2
 if %dgchoice%==r2 goto root2
 if %dgchoice%==S goto doSU
 if %dgchoice%==s goto doSU
+if %dgchoice%==SA set doAcceptSuAfterRequest=1&&goto doSU
+if %dgchoice%==Sa set doAcceptSuAfterRequest=1&&goto doSU
+if %dgchoice%==sa set doAcceptSuAfterRequest=1&&goto doSU
+if %dgchoice%==sA set doAcceptSuAfterRequest=1&&goto doSU
 if %dgchoice%==A set bloatAction=disable&&goto bloatBuster
 if %dgchoice%==a set bloatAction=disable&&goto bloatBuster
 if %dgchoice%==AR goto removeBloat
@@ -942,6 +948,18 @@ goto menu
 
 ::%shell% "su"
 %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
+
+if %doAcceptSuAfterRequest%==1 (
+	
+	%sleep% 5
+	%keyArrowRight%
+	%keyArrowRight%
+	%keyArrowRight%
+	%keyArrowRight%
+	%keyArrowRight%
+	%keyEnter%
+
+)
 
 cls
 %_color% 0e
