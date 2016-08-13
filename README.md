@@ -11,6 +11,27 @@ Known Issues:
 - If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken.)
 
 
+	
+Current Project Testing Status:
+
+- 300MB+ Available Free Memory Running From HOME Screen
+
+- Blue Stock FireTV Stick Boot Animation
+
+- FireStopper Installed Into "/system/app/FireStopper/" (Factory Reset Leaves Launcher In Tact)
+
+- Amazon HOME Menu Completely Stripped Functionality* (Apps, Search, and Settings Still Show Items)
+
+    * During a Factory Reset, You Will Be Brought To The Amazon HOME Menu Briefly, Then FireStopper Will Load
+
+    * Running The Disable Amazon Bloat Script After Factory Reset Will Also Stop Amazon HOME Menu From Loading Completely
+
+- Amazon Settings Menu Available (Parental Controls, Help, and My Account DISABLED)
+
+- Hold HOME Button Function To Sleep Available
+
+
+
 Menu Options:
 
 - Automatic Mode
@@ -60,24 +81,7 @@ Menu Options:
 
     - Open Common Amazon Settings Menus Directly Through ADB Shell
 	
-
-Current Project Testing Status:
-
-- 300MB+ Available Free Memory Running From HOME Screen
-
-- Blue Stock FireTV Stick Boot Animation
-
-- FireStopper Installed Into "/system/app/FireStopper/" (Factory Reset Leaves Launcher In Tact)
-
-- Amazon HOME Menu Completely Stripped Functionality* (Apps, Search, and Settings Still Show Items)
-
-    * During a Factory Reset, You Will Be Brought To The Amazon HOME Menu Briefly, Then FireStopper Will Load
-
-    * Running The Disable Amazon Bloat Script After Factory Reset Will Also Stop Amazon HOME Menu From Loading Completely
-
-- Amazon Settings Menu Available (Parental Controls, Help, and My Account DISABLED)
-
-- Hold HOME Button Function To Sleep Available
+	
 	
 - List of Amazon Bloat Removed (Tested Safe and With No Errors or Issues Using Scripting)
 	
