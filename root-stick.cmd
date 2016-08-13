@@ -247,7 +247,8 @@ echo.
 %_color% 0b
 echo Visit My GitHub Page To See All of My Other Projects:
 echo.
-echo https://github.com/esc0rtd3w/firestick-loader/
+::echo https://github.com/esc0rtd3w/firestick-loader/
+echo https://github.com/esc0rtd3w/
 echo.
 echo.
 
