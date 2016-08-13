@@ -6,6 +6,9 @@
 ####Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
 <br/><br/>
 
+![Menu Preview 1](https://plus.google.com/u/0/photos/albums/poudofmra60v8s449q5bi1p78p8qn71ng?pid=6318429446644974834&oid=103069976656004836677)
+![Menu Preview 2](https://plus.google.com/u/0/photos/albums/poudofmra60v8s449q5bi1p78p8qn71ng?pid=6318429545069090930&oid=103069976656004836677)
+
 ***Known Issues:***
 
 - If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken.)
