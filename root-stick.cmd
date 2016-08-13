@@ -1699,8 +1699,11 @@ if %busyboxScriptInstall%==1 (
 	echo.
 	%_color% 0e
 	echo.
+	echo Continuing In 10 Seconds....
+	echo.
+	echo.
 
-	%sleep% 3
+	%sleep% 10
 
 	%push% "%~dp0rooting\king2su\busybox" /data/local/tmp/
 	%push% "%~dp0scripts\install-busybox.sh" /data/local/tmp/
