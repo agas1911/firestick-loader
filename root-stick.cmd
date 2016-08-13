@@ -588,6 +588,9 @@ echo 11) Reboot Stick
 echo 12) Start ADB Server
 echo 13) Kill ADB Server
 echo.
+%_color% 05
+echo A) Allow Superuser Permission On Device (Clicks The ALLOW Button)
+echo.
 %_color% 0b
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
 echo.
@@ -632,6 +635,18 @@ if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
 if %fchoice%==x goto end
+
+goto fixesMenu
+
+
+:allowSU
+
+%keyArrowRight%
+%keyArrowRight%
+%keyArrowRight%
+%keyArrowRight%
+%keyArrowRight%
+%keyEnter%
 
 goto fixesMenu
 
@@ -2288,6 +2303,8 @@ if %factoryReset%==1 (
 	cls
 	%_color% 0e
 	echo You have 10 seconds to change your mind....
+	echo.
+	echo.
 	echo.
 	%_color% 0b
 	echo *** CLOSE THIS WINDOW TO CANCEL THE FACTORY RESET PROCESS ***
