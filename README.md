@@ -36,7 +36,7 @@
 
 - **Automatic Mode**
 
-    - Automatically continues to the next step (some intervention required)
+    - Automatically Continues To The Next Step (some intervention required)
 	- Has a Menu Option To Add Downgrade To The Task List
 
 - **Rooting Options**
