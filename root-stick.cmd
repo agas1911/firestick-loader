@@ -4,7 +4,7 @@
 
 title Amazon FireStick/FireTV Automatic Rooting and Downgrade Script  [esc0rtd3w]
 
-mode con lines=37
+mode con lines=40
 
 color 0e
 
@@ -32,6 +32,15 @@ set adb="%~dp0bin\adb.exe"
 set adbKill="%~dp0bin\adb.exe" kill-server
 set adbStart="%~dp0bin\adb.exe" start-server
 set adbWait=%adb% wait-for-device
+
+set capDevice=/sdcard/cap.png
+
+set tempHost=%temp%
+set capHost="%temp%\cap.png"
+
+set ssViewer=0
+
+set waitTime=5
 
 set appName=0
 set choice=2
@@ -533,7 +542,7 @@ echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
 echo 2) Launch FireStarter/FireStopper
 echo.
-echo 3) Launch Android Event Keymap (Press Keys Over ADB)
+echo 3) Launch Android Event Keymap (Press Keys and Send Text Over ADB)
 echo.
 echo 4) Remove Boot Animation (Leaves Stock FIRE Text)
 echo 5) Replace Boot Animation (Replaces Stock Boot Animation)
@@ -547,9 +556,12 @@ echo.
 echo 10) Accept Opera Mini License Agreement
 echo.
 echo 11) Reboot Stick
-echo 12) Kill ADB Server
+echo 12) Start ADB Server
+echo 13) Kill ADB Server
 echo.
-echo 13) Disable Ads
+echo S) Take Screenshot (also use SV to use rapid viewer mode)
+echo.
+echo D) Disable Ads
 echo.
 echo.
 echo.
@@ -575,11 +587,51 @@ if %fchoice%==9 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==10 %tap% 20 1030
 if %fchoice%==11 %adb% reboot
 if %fchoice%==12 %adb% kill-server
-if %fchoice%==13 goto killAds
+if %fchoice%==13 %adb% start-server
+if %fchoice%==S goto takeSS
+if %fchoice%==s goto takeSS
+if %fchoice%==SV set ssViewer=1&&goto takeSS
+if %fchoice%==Sv set ssViewer=1&&goto takeSS
+if %fchoice%==sV set ssViewer=1&&goto takeSS
+if %fchoice%==sv set ssViewer=1&&goto takeSS
+if %fchoice%==D goto killAds
+if %fchoice%==d goto killAds
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
 if %fchoice%==x goto end
+
+goto fixesMenu
+
+
+
+:takeSS
+
+
+if %ssViewer%==0 ( 
+	cls
+	echo Capturing Device Screen....
+	echo.
+	echo.
+
+
+	%adb% shell screencap %capDevice%
+
+	%sleep% 1
+
+	%adb% pull %capDevice% %tempHost%
+
+	%capHost%
+	
+	goto fixesMenu
+)
+
+if %ssViewer%==1 ( 
+	
+	%runShellTerminate% "%~dp0screen-viewer.cmd"
+	set ssViewer=0
+	
+)
 
 goto fixesMenu
 
