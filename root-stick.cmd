@@ -951,6 +951,24 @@ goto menu
 
 if %doAcceptSuAfterRequest%==1 (
 	
+	cls
+	%_color% 0e
+	echo Find the new open window!
+	echo.
+	echo.
+	echo.
+	echo The request should be accepted automatically.
+	echo.
+	echo.
+	%_color% 0b
+	echo *** IF REQUEST IS NOT AUTO ACCEPTED YOU CAN CLICK ALLOW MANUALLY ***
+	echo.
+	echo.
+	echo.
+	%_color% 0e
+	echo You can the new window after you see a hash [#] symbol
+	echo.
+	echo.
 	%sleep% 5
 	%keyArrowRight%
 	%keyArrowRight%
@@ -958,6 +976,8 @@ if %doAcceptSuAfterRequest%==1 (
 	%keyArrowRight%
 	%keyArrowRight%
 	%keyEnter%
+	
+	goto menu
 
 )
 
