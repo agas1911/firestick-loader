@@ -29,6 +29,13 @@ Current Project Testing Status:
 
 - Hold HOME Button Function To Sleep Available
 
+- Disable Amazon Bloat
+
+    - Disable Only Menu Option
+    - Disable and Safe Remove Menu Option
+    - Disable, Safe Remove, and Ad Block Menu Option
+	
+
 - List of Amazon Bloat Removed (Tested Safe and With No Errors or Issues Using Scripting)
 	
     - /system/app/DeviceControlService/
