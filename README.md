@@ -3,13 +3,13 @@
 ###FREE YOUR FIRESTICK!!!
 
 
-####Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick<br/><br/>
-
+####Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
+<br/><br/>
 
 ***Known Issues:***
 
 - If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken.)
-
+<br/><br/>
 
 	
 ***Current Project Testing Status:***
@@ -29,7 +29,7 @@
 - Amazon Settings Menu Available (Parental Controls, Help, and My Account DISABLED)
 
 - Hold HOME Button Function To Sleep Available
-
+<br/><br/>
 
 
 ***Menu Options:***
@@ -81,6 +81,7 @@
 
     - Open Common Amazon Settings Menus Directly Through ADB Shell
 	
+<br/><br/>
 	
 	
 - **List of Amazon Bloat Removed (Tested Safe and With No Errors or Issues Using Scripting)**
@@ -156,7 +157,7 @@
     
 	- /system/framework/android.amazon.perm/
 	
-	
+<br/><br/>	
 	
 **List of Amazon Bloat Left Alone**
 
@@ -185,7 +186,7 @@
     - /system/priv-app/RemoteSettingsAndroid/
     - /system/priv-app/RemoteSettingsInternalSDK/
 
-
+<br/><br/>
 
 **TO-DO List**
 
