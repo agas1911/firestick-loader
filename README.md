@@ -4,10 +4,13 @@
 
 
 ####Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
-<br/><br/>
+
+<br/>
 
 ![Menu Preview 1](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/options-main.png)
 ![Menu Preview 2](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/options-tweaks.png)
+
+<br/>
 
 ***Known Issues:***
 
