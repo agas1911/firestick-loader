@@ -611,11 +611,12 @@ echo.
 echo 10) Accept Opera Mini License Agreement
 echo.
 %_color% 08
-echo 11) Reboot Stick
+echo 11) Reboot Normally
+echo 12) Reboot To Recovery Mode
 echo.
 %_color% 07
-echo 12) Start ADB Server
-echo 13) Kill ADB Server
+echo 13) Start ADB Server
+echo 14) Kill ADB Server
 echo.
 %_color% 05
 echo A) Allow Superuser Permission On Device (Clicks The ALLOW Button)
@@ -650,8 +651,11 @@ if %fchoice%==8 goto bootanimRestoreFBI
 if %fchoice%==9 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==10 %tap% 20 1030
 if %fchoice%==11 %adb% reboot
-if %fchoice%==12 %adb% kill-server
-if %fchoice%==13 %adb% start-server
+::if %fchoice%==11 %adb% shell setprop sys.powerctl reboot
+if %fchoice%==12 %adb% reboot recovery
+::if %fchoice%==12 %adb% shell setprop sys.powerctl reboot,recovery
+if %fchoice%==13 %adb% kill-server
+if %fchoice%==14 %adb% start-server
 if %fchoice%==S goto takeSS
 if %fchoice%==s goto takeSS
 if %fchoice%==SV set ssViewer=1&&goto takeSS
