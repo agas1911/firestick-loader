@@ -38,7 +38,7 @@ echo.
 
 md "%cd%\emulators\roms\nes"
 
-"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\nes.zip" -d "%cd%\emulators\roms\nes"
+"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\nes.zip" -d "%temp%\firestick-loader\emulators\roms\nes"
 
 %adb% push "emulators\roms\nes" "/sdcard/roms/nes"
 
@@ -77,7 +77,7 @@ echo.
 
 md "%cd%\emulators\roms\snes"
 
-"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\snes.zip" -d "%cd%\emulators\roms\snes"
+"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\snes.zip" -d "%temp%\firestick-loader\emulators\roms\snes"
 
 %adb% push "emulators\roms\snes" "/sdcard/roms/snes"
 
@@ -116,7 +116,7 @@ echo.
 
 md "%cd%\emulators\roms\gba"
 
-"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\gba.zip" -d "%cd%\emulators\roms\gba"
+"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\gba.zip" -d "%temp%\firestick-loader\emulators\roms\gba"
 
 %adb% push "emulators\roms\gba" "/sdcard/roms/gba"
 
@@ -155,7 +155,7 @@ echo.
 
 md "%cd%\emulators\roms\genesis"
 
-"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\genesis.zip" -d "%cd%\emulators\roms\genesis"
+"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\genesis.zip" -d "%temp%\firestick-loader\emulators\roms\genesis"
 
 %adb% push "emulators\roms\genesis" "/sdcard/roms/genesis"
 
@@ -195,7 +195,7 @@ echo.
 
 md "%cd%\emulators\roms\intv"
 
-"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\intv.zip" -d "%cd%\emulators\roms\intv"
+"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\intv.zip" -d "%temp%\firestick-loader\emulators\roms\intv"
 
 %adb% push "emulators\roms\intv" "/sdcard/roms/intv"
 
@@ -235,7 +235,7 @@ echo.
 
 md "%cd%\emulators\roms\colecovision"
 
-"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\colecovision.zip" -d "%cd%\emulators\roms\colecovision"
+"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\colecovision.zip" -d "%temp%\firestick-loader\emulators\roms\colecovision"
 
 %adb% push "emulators\roms\colecovision" "/sdcard/roms/colecovision"
 
@@ -274,7 +274,7 @@ echo.
 
 md "%cd%\emulators\roms\2600"
 
-"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\2600.zip" -d "%cd%\emulators\roms\2600"
+"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\2600.zip" -d "%temp%\firestick-loader\emulators\roms\2600"
 
 %adb% push "emulators\roms\2600" "/sdcard/roms/2600"
 
