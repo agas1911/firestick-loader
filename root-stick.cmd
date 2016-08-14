@@ -333,7 +333,7 @@ echo Press C to clear all caches on device (also use CR to reboot after)
 echo.
 echo Press K to clean kodi data (also use KS to clean entire sd card)
 echo.
-echo Press F to factory reset (also use WR for root reset to save config files)
+echo Press F to factory reset (also use FR for root reset to save config files)
 echo.
 echo.
 echo Press W to run fixes, tweaks, and misc options
