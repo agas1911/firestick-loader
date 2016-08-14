@@ -744,7 +744,7 @@ if %cleanEntireSdCard%==0 (
 	echo.
 	echo.
 
-	%wait% 2
+	%sleep% 2
 
 	%adb% shell rm -rf /%sdcard%/Android/data/org.xbmc.kodi/*
 	
@@ -761,7 +761,7 @@ if %cleanEntireSdCard%==1 (
 	echo.
 	echo.
 
-	%wait% 2
+	%sleep% 2
 
 	%adb% shell rm -rf /%sdcard%/*
 	
