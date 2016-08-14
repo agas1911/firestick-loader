@@ -321,13 +321,12 @@ echo Press A to disable Amazon Bloatware (also use AR to remove or ARA w/adblock
 echo.
 echo Press C to clear all caches on device (also use CR to reboot after)
 echo.
-echo Press W to factory reset (also use WR for root reset to save config files)
+echo Press F to factory reset (also use WR for root reset to save config files)
 echo.
 echo Press U to unroot (kingroot binary and apk removal)
 echo.
 echo.
-echo Press F to run fixes, tweaks, and misc options
-echo.
+echo Press W to run fixes, tweaks, and misc options
 echo Press Z to directly invoke Amazon Settings menu items
 echo.
 echo.
@@ -347,8 +346,8 @@ if %dgchoice%==bA set busyboxScriptInstall=1&&goto busybox
 if %dgchoice%==ba set busyboxScriptInstall=1&&goto busybox
 ::if %dgchoice%==F goto launchFS
 ::if %dgchoice%==f goto launchFS
-if %dgchoice%==F goto fixesMenu
-if %dgchoice%==f goto fixesMenu
+if %dgchoice%==W goto fixesMenu
+if %dgchoice%==w goto fixesMenu
 if %dgchoice%==U goto unrootKing
 if %dgchoice%==u goto unrootKing
 if %dgchoice%==I goto installRoot
@@ -401,10 +400,10 @@ if %dgchoice%==Z goto invoke
 if %dgchoice%==z goto invoke
 if %dgchoice%==W set factoryReset=1&&goto fReset
 if %dgchoice%==w set factoryReset=1&&goto fReset
-if %dgchoice%==WR set factoryReset=2&&goto fReset
-if %dgchoice%==Wr set factoryReset=2&&goto fReset
-if %dgchoice%==wr set factoryReset=2&&goto fReset
-if %dgchoice%==wR set factoryReset=2&&goto fReset
+if %dgchoice%==FR set factoryReset=2&&goto fReset
+if %dgchoice%==Fr set factoryReset=2&&goto fReset
+if %dgchoice%==fr set factoryReset=2&&goto fReset
+if %dgchoice%==fR set factoryReset=2&&goto fReset
 if %dgchoice%==Y goto fullAuto
 if %dgchoice%==y goto fullAuto
 if %dgchoice%==YD set fullAutoModeDG=1&&goto fullAuto
