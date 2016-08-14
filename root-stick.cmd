@@ -2087,6 +2087,8 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
 echo.
 echo.
 
+%uninstall% de.belu.firestopper
+
 %push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
 ::%shell% "su -c mkdir /system/app/FireStopper/"
 ::%shell% "su -c chmod 0755 /system/app/FireStopper/"
