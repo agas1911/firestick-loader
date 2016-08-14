@@ -689,7 +689,7 @@ if %ssViewer%==0 (
 
 if %ssViewer%==1 ( 
 	
-	%runShellTerminate% "%~dp0screen-viewer.cmd"
+	%runShellTerminate% "%~dp0scripts\misc\screen-viewer.cmd"
 	set ssViewer=0
 	
 )
