@@ -134,7 +134,7 @@ set returnTo=menu
 
 
 cls
-echo Please use "root-stick.cmd" for now!
+echo Please use "root-stick.cmd" and app install scripts for now!
 echo.
 echo.
 pause>nul
