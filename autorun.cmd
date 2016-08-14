@@ -132,6 +132,16 @@ set cleanPackages=%shell% "su -c dumpsys package"
 set returnTo=menu
 
 
+
+cls
+echo Please use "root-stick.cmd" for now!
+echo.
+echo.
+pause>nul
+
+goto end
+
+
 :menu
 
 ::%adbKill%
