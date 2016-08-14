@@ -653,11 +653,13 @@ goto fixesMenu
 
 :allowSU
 
+%sleep% 1
 %keyArrowRight%
 %keyArrowRight%
 %keyArrowRight%
 %keyArrowRight%
 %keyArrowRight%
+%sleep% 1
 %keyEnter%
 
 goto fixesMenu
