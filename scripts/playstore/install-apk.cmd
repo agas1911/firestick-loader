@@ -4,8 +4,7 @@ set apk=%1
 
 color 0e
 
-
-set adb="%~dp0bin\adb.exe"
+set adb="..\..\bin\adb.exe"
 
 
 set install=%adb% install

@@ -1,3 +1,5 @@
 @echo off
 
-adb shell input keyevent 19
+set adb="..\..\bin\adb.exe"
+
+%adb% shell input keyevent 19

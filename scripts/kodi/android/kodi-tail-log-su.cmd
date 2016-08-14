@@ -18,8 +18,8 @@ set sdcard=sdcard
 
 title Kodi Log Viewer for Android                                          esc0rtd3w 2016
 
-%shell% "su -c rm -f /%sdcard%/Android/data/org.xbmc.kodi/files/.kodi/temp/kodi.log"
+%shell% "su -c tail -f /%sdcard%/Android/data/org.xbmc.kodi/files/.kodi/temp/kodi.log"
 
-
+goto reset
 
 :end

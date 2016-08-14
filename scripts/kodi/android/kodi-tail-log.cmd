@@ -2,7 +2,7 @@
 
 :reset
 
-set adb="%~dp0bin\adb.exe"
+set adb="..\..\bin\adb.exe"
 set adbWait=%adb% wait-for-device
 
 set install=%adb% install
@@ -18,7 +18,7 @@ set sdcard=sdcard
 
 title Kodi Log Viewer for Android                                          esc0rtd3w 2016
 
-%shell% "su -c tail -f /%sdcard%/Android/data/org.xbmc.kodi/files/.kodi/temp/kodi.log"
+%shell% "tail -f /%sdcard%/Android/data/org.xbmc.kodi/files/.kodi/temp/kodi.log"
 
 goto reset
 
