@@ -591,7 +591,7 @@ echo.
 %_color% 0d
 echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
-%_color% 0a
+%_color% 05
 echo 2) Launch FireStarter/FireStopper
 echo.
 %_color% 03
@@ -618,7 +618,7 @@ echo.
 echo 13) Start ADB Server
 echo 14) Kill ADB Server
 echo.
-%_color% 05
+%_color% 0a
 echo A) Allow Superuser Permission On Device (Clicks The ALLOW Button)
 echo.
 %_color% 0b
