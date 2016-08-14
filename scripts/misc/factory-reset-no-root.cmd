@@ -17,10 +17,10 @@ set extractZIP="%~dp0bin\unzip.exe" -o
 
 set teamviewer="%~dp0bin\teamviewer.exe"
 
-set sleep="%~dp0bin\wait.exe"
+set sleep="..\..\bin\wait.exe"
 set rm=rmdir /s /q
 
-set adb="%~dp0bin\adb.exe"
+set adb="..\..\bin\adb.exe"
 set adbKill="%~dp0bin\adb.exe" kill-server
 set adbStart="%~dp0bin\adb.exe" start-server
 set adbWait=%adb% wait-for-device
@@ -64,26 +64,19 @@ echo.
 pause
 
 
+%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
 
-%shell% mkdir /data/local/tmp/com.kingroot.kinguser/
-%shell% mkdir /data/local/tmp/com.kingroot.kinguser/shared_prefs/
-%shell% mkdir /data/local/tmp/com.amazon.tv.settings/
-%shell% mkdir /data/local/tmp/com.amazon.tv.settings/shared_prefs/
+%sleep% 3
 
-%push% "%~dp0rooting\kingroot.apk" /data/local/tmp/
-%push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
+%keyArrowLeft%
 
-%push% "%~dp0config\data\com.kingroot.kinguser\shared_prefs\" /data/local/tmp/com.kingroot.kinguser/shared_prefs/
-%push% "%~dp0config\data\com.amazon.tv.settings\shared_prefs\" /data/local/tmp/com.amazon.tv.settings/shared_prefs/
+%sleep% 1
 
-::%shell% "su -c mount -o remount,rw /system"
-::%shell% "su -c mkdir /system/backup/"
-::%shell% "su -c cp /data/local/tmp/factory-reset.sh /system/backup/factory-reset.sh"
-%shell% "su -c chmod 755 /system/backup/factory-reset.sh"
-%shell% "su -c sh /system/backup/factory-reset.sh"
+%keyEnter%
+
+goto end
 
 
-pause
 
 
 :end
