@@ -398,8 +398,8 @@ if %dgchoice%==P goto superSU
 if %dgchoice%==p goto superSU
 if %dgchoice%==Z goto invoke
 if %dgchoice%==z goto invoke
-if %dgchoice%==W set factoryReset=1&&goto fReset
-if %dgchoice%==w set factoryReset=1&&goto fReset
+if %dgchoice%==F set factoryReset=1&&goto fReset
+if %dgchoice%==f set factoryReset=1&&goto fReset
 if %dgchoice%==FR set factoryReset=2&&goto fReset
 if %dgchoice%==Fr set factoryReset=2&&goto fReset
 if %dgchoice%==fr set factoryReset=2&&goto fReset
