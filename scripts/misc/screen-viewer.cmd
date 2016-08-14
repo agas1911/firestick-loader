@@ -16,7 +16,8 @@ set runShellWaitTerminate=start /wait cmd /c
 
 set sleep="%~dp0bin\wait.exe"
 
-set adb="%~dp0bin\adb.exe"
+:: Using different variable to not accidentally overwrite default used by root-stick (safety first!)
+set adbTemp="..\..\bin\adb.exe"
 
 set capDevice=/sdcard/cap.png
 
@@ -52,9 +53,9 @@ echo *** USE CTRL+C AND SELECT N TO BREAK CURRENT OPERATION ***
 echo.
 echo.
 
-%adb% shell screencap %capDevice%
+%adbTemp% shell screencap %capDevice%
 
-%adb% pull %capDevice% %tempHost%
+%adbTemp% pull %capDevice% %tempHost%
 
 %runShellTerminate% %capHost%
 

@@ -2,7 +2,7 @@
 
 set _color="%cd%\bin\cocolor.exe"
 
-set adb="..\bin\adb.exe"
+set adb="..\..\bin\adb.exe"
 
 set appName=0
 set choice=2

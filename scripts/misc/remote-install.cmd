@@ -3,7 +3,7 @@
 title Remote XBMC Script for Amazon Firestick v1.0
 
 
-set adb="..\bin\adb.exe"
+set adb="..\..\bin\adb.exe"
 
 set server=http://ps3dg.com/firestick
 

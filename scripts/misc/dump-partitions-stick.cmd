@@ -10,7 +10,7 @@ set extractZIP="%~dp0bin\unzip.exe" -o
 set sleep="%~dp0bin\wait.exe"
 set rm=rmdir /s /q
 
-set adb="..\bin\adb.exe"
+set adb="..\..\bin\adb.exe"
 
 set appName=0
 set choice=2

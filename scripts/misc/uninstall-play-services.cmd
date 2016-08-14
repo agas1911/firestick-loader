@@ -4,7 +4,7 @@
 color 0e
 
 
-set adb="..\bin\adb.exe"
+set adb="..\..\bin\adb.exe"
 
 
 set uninstall=%adb% uninstall

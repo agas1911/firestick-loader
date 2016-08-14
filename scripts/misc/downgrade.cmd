@@ -1,6 +1,6 @@
 @echo off
 
-set adb="..\bin\adb.exe"
+set adb="..\..\bin\adb.exe"
 
 %adb% push update-kindle-montoya-54.5.3.7_user_537174420.bin /sdcard/update.bin
 
