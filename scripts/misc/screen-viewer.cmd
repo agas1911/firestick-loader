@@ -14,7 +14,7 @@ set runShellTerminateAndWait=cmd /c
 set runShellTerminate=start cmd /c
 set runShellWaitTerminate=start /wait cmd /c
 
-set sleep="%~dp0bin\wait.exe"
+set sleep="..\..\bin\wait.exe"
 
 :: Using different variable to not accidentally overwrite default used by root-stick (safety first!)
 set adbTemp="..\..\bin\adb.exe"
