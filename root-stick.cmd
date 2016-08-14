@@ -2146,6 +2146,8 @@ echo.
 
 set /p rebootAfterBloatRemoval=
 
+if %rebootAfterBloatRemoval%==Y set rebootAfterBloatRemoval=1
+if %rebootAfterBloatRemoval%==y set rebootAfterBloatRemoval=1
 if %rebootAfterBloatRemoval%==Y goto clearCaches
 if %rebootAfterBloatRemoval%==y goto clearCaches
 
@@ -2390,6 +2392,9 @@ if %fullAutoMode%==1 goto unrootKing
 if %fullAutoModeDG%==1 goto unrootKing
 
 if %rebootAfterClearCache%==0 %sleep% 5
+
+set rebootAfterBloatRemoval=0
+set rebootAfterClearCache=0
 
 goto menu
 
