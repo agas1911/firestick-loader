@@ -4,7 +4,7 @@
 
 title Amazon FireStick/FireTV Automatic Rooting and Downgrade Script  [esc0rtd3w]
 
-mode con lines=42
+mode con lines=44
 
 color 0e
 
@@ -331,6 +331,7 @@ echo Press U to unroot (kingroot binary and apk removal)
 echo.
 echo.
 echo Press W to run fixes, tweaks, and misc options
+echo.
 echo Press Z to directly invoke Amazon Settings menu items
 echo.
 echo.
@@ -598,8 +599,10 @@ echo.
 %_color% 06
 echo 10) Accept Opera Mini License Agreement
 echo.
-%_color% 07
+%_color% 08
 echo 11) Reboot Stick
+echo.
+%_color% 07
 echo 12) Start ADB Server
 echo 13) Kill ADB Server
 echo.
