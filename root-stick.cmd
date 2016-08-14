@@ -4,7 +4,7 @@
 
 title Amazon FireStick/FireTV Automatic Rooting and Downgrade Script  [esc0rtd3w]
 
-mode con lines=44
+mode con lines=45
 
 color 0e
 
@@ -326,13 +326,14 @@ echo Press B to install busybox (also use BA to use auto scripting method)
 echo.
 echo Press A to disable Amazon Bloatware (also use AR to remove or ARA w/adblock)
 echo.
+echo Press U to unroot (kingroot binary and apk removal)
+echo.
+echo.
 echo Press C to clear all caches on device (also use CR to reboot after)
 echo.
 echo Press K to clean kodi data (also use KS to clean entire sd card)
 echo.
 echo Press F to factory reset (also use WR for root reset to save config files)
-echo.
-echo Press U to unroot (kingroot binary and apk removal)
 echo.
 echo.
 echo Press W to run fixes, tweaks, and misc options
