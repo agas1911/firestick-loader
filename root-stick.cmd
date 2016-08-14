@@ -278,6 +278,10 @@ for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageData.txt"') do set r
 %pullFreeStorageSystemFireStick%>nul
 for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageSystem.txt"') do set readStorageSystemFireStick=%%f
 
+%adb% shell "rm /sdcard/freeMemory.txt"
+%adb% shell "rm /sdcard/freeStorageData.txt"
+%adb% shell "rm /sdcard/freeStorageSystem.txt"
+
 
 set dgchoice=m
 
