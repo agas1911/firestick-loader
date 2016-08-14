@@ -1998,6 +1998,8 @@ taskkill /f /im TeamViewer_Desktop.exe
 taskkill /f /im tv_w32.exe
 taskkill /f /im tv_x64.exe
 
+%adb% reboot
+
 goto menu
 
 
