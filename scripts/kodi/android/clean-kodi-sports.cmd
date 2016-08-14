@@ -1,7 +1,7 @@
 @echo off
 
 
-set adb="..\..\bin\adb.exe"
+set adb="..\..\..\bin\adb.exe"
 set adbWait=%adb% wait-for-device
 
 set install=%adb% install
