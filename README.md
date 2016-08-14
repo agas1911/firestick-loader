@@ -74,7 +74,7 @@
     - /cache/dalvik-cache/
     - /data/dalvik-cache/
 
-- **Clear SD Card and Kodi Data**
+- **Clean SD Card and Kodi Data**
 
     - Option To Erase All Kodi Data From /sdcard/
     - Option To Erase The Entire /sdcard/ Partition
