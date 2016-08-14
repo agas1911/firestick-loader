@@ -110,6 +110,9 @@ set killSuper=%shell% "su -c am kill
 set rmSuper=%shell% "su -c rm
 
 
+set cleanEntireSdCard=0
+
+
 :: Direct Invoking
 
 :: Settings -> Main
@@ -325,6 +328,8 @@ echo Press A to disable Amazon Bloatware (also use AR to remove or ARA w/adblock
 echo.
 echo Press C to clear all caches on device (also use CR to reboot after)
 echo.
+echo Press K to clean kodi data (also use KS to clean entire sd card)
+echo.
 echo Press F to factory reset (also use WR for root reset to save config files)
 echo.
 echo Press U to unroot (kingroot binary and apk removal)
@@ -395,6 +400,12 @@ if %dgchoice%==E goto bloatRemover
 if %dgchoice%==e goto bloatRemover
 if %dgchoice%==C goto clearCaches
 if %dgchoice%==c goto clearCaches
+if %dgchoice%==K goto cleanSD
+if %dgchoice%==k goto cleanSD
+if %dgchoice%==KS set cleanEntireSdCard=1&&goto cleanSD
+if %dgchoice%==Ks set cleanEntireSdCard=1&&goto cleanSD
+if %dgchoice%==kS set cleanEntireSdCard=1&&goto cleanSD
+if %dgchoice%==ks set cleanEntireSdCard=1&&goto cleanSD
 if %dgchoice%==CR set rebootAfterClearCache=1&&goto clearCaches
 if %dgchoice%==Cr set rebootAfterClearCache=1&&goto clearCaches
 if %dgchoice%==cr set rebootAfterClearCache=1&&goto clearCaches
@@ -722,6 +733,45 @@ goto fixesMenu
 %runShellTerminate% "%~dp0eventmap.cmd"
 
 goto fixesMenu
+
+
+:cleanSD
+
+if %cleanEntireSdCard%==0 (
+
+	cls
+	echo Cleaning /%sdcard%/Android/data/org.xbmc.kodi/ Directory....
+	echo.
+	echo.
+
+	%wait% 2
+
+	%adb% shell rm -rf /%sdcard%/Android/data/org.xbmc.kodi/*
+	
+	set cleanEntireSdCard=0
+	
+	goto menu
+
+)
+
+if %cleanEntireSdCard%==1 (
+
+	cls
+	echo Cleaning /%sdcard%/ Partition....
+	echo.
+	echo.
+
+	%wait% 2
+
+	%adb% shell rm -rf /%sdcard%/*
+	
+	set cleanEntireSdCard=0
+	
+	goto menu
+
+)
+
+goto menu
 
 
 :checkCanRoot
