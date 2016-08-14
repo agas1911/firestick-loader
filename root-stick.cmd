@@ -1809,6 +1809,12 @@ if %fullAutoMode%==0 pause>nul
 %sleep% 1
 %uninstall% stericson.busybox
 
+%adb% reboot
+
+%sleep% 20
+
+%adbWait%
+
 if %fullAutoMode%==1 goto removeBloat
 if %fullAutoModeDG%==1 goto removeBloat
 
@@ -2313,6 +2319,7 @@ echo.
 %_color% 0b
 if %rebootAfterClearCache%==0 echo *** THE DEVICE SHOULD BE REBOOTED WHEN FINISHED TO REBUILD DALVIK CACHES ***
 if %rebootAfterClearCache%==1 echo *** THE DEVICE WILL REBOOT WHEN FINISHED TO REBUILD DALVIK CACHES ***
+if %rebootAfterBloatRemoval%==1 echo *** THE DEVICE WILL REBOOT WHEN FINISHED TO REBUILD DALVIK CACHES ***
 %_color% 0e
 echo.
 echo.
@@ -2353,6 +2360,9 @@ if %factoryReset%==2 (
 
 if %rebootAfterClearCache%==1 %adb% reboot
 if %rebootAfterClearCache%==1 %adbWait%
+
+if %rebootAfterBloatRemoval%==1 %adb% reboot
+if %rebootAfterBloatRemoval%==1 %adbWait%
 
 
 if %fullAutoMode%==1 (
