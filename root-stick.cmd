@@ -1776,7 +1776,7 @@ echo.
 %keyArrowRight%
 %keyArrowRight%
 %keyArrowRight%
-::%sleep% 1
+%sleep% 1
 %keyEnter%
 
 %sleep% 10
