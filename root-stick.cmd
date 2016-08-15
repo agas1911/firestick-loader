@@ -593,7 +593,7 @@ echo.
 echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
 %_color% 05
-echo 2) Launch FireStarter/FireStopper
+echo 2) Launch FireStopper
 echo.
 %_color% 03
 echo 3) Launch Android Event Keymap (Press Keys and Send Text Over ADB)
