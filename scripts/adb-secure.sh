@@ -22,7 +22,7 @@ mount -o rw,remount / /
 rm /sbin/adbd
 cat /sbin/adbd.original > /sbin/adbd
 chown 0.0 /sbin/adbd
-chmod 644 /sbin/adbd
+chmod 0750 /sbin/adbd
 
 mount -o ro,remount / /
 
