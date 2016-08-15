@@ -1,5 +1,13 @@
 #!/system/bin/sh
 
+
+echo "Installing ADB Insecure Binaries...."
+echo ""
+echo ""
+echo ""
+echo ""
+
+
 #getprop ro.build.selinux
 
 #ls /sbin/adbd*
