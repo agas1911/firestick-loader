@@ -25,7 +25,7 @@ chown 0.0 /sbin/adbd.original
 chmod 644 /sbin/adbd.original
 
 rm /sbin/adbd
-cat "/data/local/tmp/adbd" > /sbin/adbd
+cat /data/local/tmp/adbd > /sbin/adbd
 chown 0.0 /sbin/adbd
 chmod 0750 /sbin/adbd
 
