@@ -584,6 +584,30 @@ echo.
 
 cls
 %_color% 0e
+set appName=ADBD Insecure
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: *ROOT*
+echo.
+echo Info: ADB Daemon Root Shell As Default
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\adbd-insecure.apk"
+)
+
+
+cls
+%_color% 0e
 set appName=Teamviewer
 set apk=
 echo Install %appName%?
