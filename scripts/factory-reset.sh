@@ -44,7 +44,7 @@ cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /system/esc0rtd3w/data/dat
 #mkdir /system/esc0rtd3w/data/misc/wifi/
 cp -Rp /data/misc/wifi/wpa_supplicant.conf /system/esc0rtd3w/data/misc/wifi/wpa_supplicant.conf
 
-read
+#read
 
 
 #<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
