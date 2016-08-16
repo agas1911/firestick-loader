@@ -2498,7 +2498,7 @@ if %factoryReset%==2 (
 
 	cls
 	%_color% 0e
-	echo This is still under development!
+	echo The Device Will Reboot After Script Is Finished!
 	echo.
 	echo.
 	%_color% 0c
@@ -2528,6 +2528,8 @@ if %factoryReset%==2 (
 	%push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
 	%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
 	%shell% "su -c sh /data/local/tmp/factory-reset.sh"
+	
+	%adb% reboot 
 )
 
 goto menu
