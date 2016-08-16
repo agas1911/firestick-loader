@@ -84,6 +84,11 @@ rm /system/bin/install-recovery.sh
 busybox chattr -ia /system/bin/install-recovery.sh-ku.bak
 rm /system/bin/install-recovery.sh-ku.bak
 
+rm /system/bin/.ext/.su
+rm /system/bin/install-recovery.sh
+
+rm /system/xbin/start_kusud.sh
+
 sleep 1
 
 busybox chattr -ia /system/usr/iku/isu
@@ -102,8 +107,7 @@ rm /sdcard/kr-stock-conf >/dev/null 2>&1
 pm uninstall com.kingroot.kinguser
 pm uninstall com.kingstudio.purify
 
-rm /system/bin/.ext/.su
-rm /system/bin/install-recovery.sh
+
 
 busybox chattr -i /system/xbin/.su
 #busybox chattr.pie -i /system/xbin/.su

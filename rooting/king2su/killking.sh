@@ -84,6 +84,11 @@ rm /system/bin/install-recovery.sh
 busybox chattr -ia /system/bin/install-recovery.sh-ku.bak
 rm /system/bin/install-recovery.sh-ku.bak
 
+rm /system/bin/.ext/.su
+rm /system/bin/install-recovery.sh
+
+rm /system/xbin/start_kusud.sh
+
 sleep 1
 
 busybox chattr -ia /system/usr/iku/isu
