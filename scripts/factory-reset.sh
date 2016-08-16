@@ -11,38 +11,38 @@ su -c mount -o rw,remount /data
 su -c mount -o rw,remount /system
 
 
-rm -rf /system/esc0rtd3w/
+#rm -rf /system/firepwn/
 
-mkdir /system/esc0rtd3w/
-chown 0.0 /system/esc0rtd3w/
-chmod 0755 /system/esc0rtd3w/
+mkdir /system/firepwn/
+chown 0.0 /system/firepwn/
+chmod 0755 /system/firepwn/
 
-mkdir /system/esc0rtd3w/data/
-mkdir /system/esc0rtd3w/data/app/
-mkdir /system/esc0rtd3w/data/data/
-mkdir /system/esc0rtd3w/data/misc/
-mkdir /system/esc0rtd3w/data/misc/wifi/
-mkdir /system/esc0rtd3w/system/
-mkdir /system/esc0rtd3w/system/app/
-mkdir /system/esc0rtd3w/system/priv-app/
+mkdir /system/firepwn/data/
+mkdir /system/firepwn/data/app/
+mkdir /system/firepwn/data/data/
+mkdir /system/firepwn/data/misc/
+mkdir /system/firepwn/data/misc/wifi/
+mkdir /system/firepwn/system/
+mkdir /system/firepwn/system/app/
+mkdir /system/firepwn/system/priv-app/
 
 
 # Preserve ADB Settings
-mkdir /system/esc0rtd3w/data/data/com.amazon.tv.settings/
-mkdir /system/esc0rtd3w/data/data/com.amazon.tv.settings/shared_prefs/
-cp -Rp /data/data/com.amazon.tv.settings/shared_prefs/ /system/esc0rtd3w/data/data/com.amazon.tv.settings/
+#mkdir /system/firepwn/data/data/com.amazon.tv.settings/
+#mkdir /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/
+cp -Rp /data/data/com.amazon.tv.settings/shared_prefs/ /system/firepwn/data/data/com.amazon.tv.settings/
 
 # Preserve KingRoot APK
-cp /data/local/tmp/kingroot.apk /system/esc0rtd3w/kingroot.apk
+cp /data/local/tmp/kingroot.apk /system/firepwn/kingroot.apk
 
 # Preserve KingRoot Settings
-mkdir /system/esc0rtd3w/data/data/com.kingroot.kinguser/
-mkdir /system/esc0rtd3w/data/data/com.kingroot.kinguser/shared_prefs/
-cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /system/esc0rtd3w/data/data/com.kingroot.kinguser/
+#mkdir /system/firepwn/data/data/com.kingroot.kinguser/
+#mkdir /system/firepwn/data/data/com.kingroot.kinguser/shared_prefs/
+cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /system/firepwn/data/data/com.kingroot.kinguser/
 
 # Preserve Wifi Settings
-#mkdir /system/esc0rtd3w/data/misc/wifi/
-cp -Rp /data/misc/wifi/wpa_supplicant.conf /system/esc0rtd3w/data/misc/wifi/wpa_supplicant.conf
+#mkdir /system/firepwn/data/misc/wifi/
+cp -Rp /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_supplicant.conf
 
 #read
 
@@ -101,38 +101,38 @@ rm -rf /data/webcrypto/
 #mkdir /data/app/
 #mkdir /data/app/mcRegistry
 #mkdir /data/app/mcRegistry/TbStorage
-mkdir /data/data/
+#mkdir /data/data/
 #mkdir /data/local/
 #mkdir /data/local/tmp/
 
-chown system:system /data/data/
-chmod 771 /data/
+#chown system:system /data/data/
+#chmod 771 /data/
 
 # Restoring ADB Settings
-mkdir /data/data/com.amazon.tv.settings
-mkdir /data/data/com.amazon.tv.settings/shared_prefs
-cp -Rp /system/esc0rtd3w/data/data/com.amazon.tv.settings/ /data/data/com.amazon.tv.settings/
+#mkdir /data/data/com.amazon.tv.settings
+#mkdir /data/data/com.amazon.tv.settings/shared_prefs
+cp -Rp /system/firepwn/data/data/com.amazon.tv.settings/ /data/data/com.amazon.tv.settings/
 
 
 # Restoring KingRoot Settings
-mkdir /data/data/com.kingroot.kinguser/
-mkdir /data/data/com.kingroot.kinguser/shared_prefs/
-cp -Rp /system/esc0rtd3w/data/data/com.kingroot.kinguser/ /data/data/com.kingroot.kinguser/
+#mkdir /data/data/com.kingroot.kinguser/
+#mkdir /data/data/com.kingroot.kinguser/shared_prefs/
+cp -Rp /system/firepwn/data/data/com.kingroot.kinguser/ /data/data/com.kingroot.kinguser/
 
 
 # Restoring WiFi Settings
-mkdir /data/misc/
-mkdir /data/misc/wifi/
+#mkdir /data/misc/
+#mkdir /data/misc/wifi/
 
-chown system:misc /data/misc/
-chmod 771 /data/misc/
+#chown system:misc /data/misc/
+#chmod 771 /data/misc/
 
-chown wifi:wifi /data/misc/wifi/
-chmod 770 /data/misc/wifi/
+#chown wifi:wifi /data/misc/wifi/
+#chmod 770 /data/misc/wifi/
 
-cp -p /system/esc0rtd3w/data/misc/wifi/wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf
-chown wifi:wifi /data/misc/wifi/wpa_supplicant.conf
-chmod 660 /data/misc/wifi/wpa_supplicant.conf
+cp -p /system/firepwn/data/misc/wifi/wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf
+#chown wifi:wifi /data/misc/wifi/wpa_supplicant.conf
+#chmod 660 /data/misc/wifi/wpa_supplicant.conf
 
 
 
