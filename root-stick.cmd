@@ -2497,15 +2497,34 @@ if %factoryReset%==1 (
 if %factoryReset%==2 (
 
 	cls
-	%_color% 0c
+	%_color% 0e
 	echo This is still under development!
 	echo.
+	echo.
+	%_color% 0c
+	echo *** ALL USER DATA WILL BE ERASED ***
+	echo.
+	echo *** CLOSE THIS WINDOW TO CANCEL ***
+	echo.
+	echo.
+	echo.
 	%_color% 0b
-	echo It only currently removes /data/app/ and /data/data/!
+	echo It only currently preserves
+	echo.
+	echo - Saved WiFi Passwords
+	echo.
+	echo - USB Debugging Setting
+	echo.
+	echo - Unknown Sources Setting
+	echo.
+	echo - KingRoot Config
 	echo.
 	echo.
 	%_color% 0e
 	pause
+	echo.
+	echo.
+	%push% "%~dp0rooting\kingroot.apk" /data/local/tmp/
 	%push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
 	%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
 	%shell% "su -c sh /data/local/tmp/factory-reset.sh"

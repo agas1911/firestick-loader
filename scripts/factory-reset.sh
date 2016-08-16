@@ -6,27 +6,45 @@ echo ""
 echo ""
 
 
-mount -o rw,remount /cache
-mount -o rw,remount /data
-mount -o rw,remount /system
+su -c mount -o rw,remount /cache
+su -c mount -o rw,remount /data
+su -c mount -o rw,remount /system
 
 
-cp /data/local/tmp/kingroot.apk /data/local/tmp/kingroot.apk
+rm -rf /system/esc0rtd3w/
+
+mkdir /system/esc0rtd3w/
+chown 0.0 /system/esc0rtd3w/
+chmod 0755 /system/esc0rtd3w/
+
+mkdir /system/esc0rtd3w/data/
+mkdir /system/esc0rtd3w/data/app/
+mkdir /system/esc0rtd3w/data/data/
+mkdir /system/esc0rtd3w/data/misc/
+mkdir /system/esc0rtd3w/data/misc/wifi/
+mkdir /system/esc0rtd3w/system/
+mkdir /system/esc0rtd3w/system/app/
+mkdir /system/esc0rtd3w/system/priv-app/
+
 
 # Preserve ADB Settings
-mkdir /data/local/tmp/com.amazon.tv.settings/
-mkdir /data/local/tmp/com.amazon.tv.settings/shared_prefs/
-cp -Rp /data/data/com.amazon.tv.settings/shared_prefs/ /data/local/tmp/shared_prefs/
+mkdir /system/esc0rtd3w/data/data/com.amazon.tv.settings/
+mkdir /system/esc0rtd3w/data/data/com.amazon.tv.settings/shared_prefs/
+cp -Rp /data/data/com.amazon.tv.settings/shared_prefs/ /system/esc0rtd3w/data/data/com.amazon.tv.settings/
+
+# Preserve KingRoot APK
+cp /data/local/tmp/kingroot.apk /system/esc0rtd3w/kingroot.apk
 
 # Preserve KingRoot Settings
-mkdir /data/local/tmp/com.kingroot.kinguser/
-mkdir /data/local/tmp/com.kingroot.kinguser/shared_prefs/
-cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /data/local/tmp/com.kingroot.kinguser/shared_prefs/
+mkdir /system/esc0rtd3w/data/data/com.kingroot.kinguser/
+mkdir /system/esc0rtd3w/data/data/com.kingroot.kinguser/shared_prefs/
+cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /system/esc0rtd3w/data/data/com.kingroot.kinguser/
 
 # Preserve Wifi Settings
-#mkdir /data/local/tmp/backup/
-#mkdir /data/local/tmp/backup/wifi/
-#cp -Rp /system/etc/wifi/wpa_supplicant.conf /data/local/tmp/backup/wifi/wpa_supplicant.conf
+#mkdir /system/esc0rtd3w/data/misc/wifi/
+cp -Rp /data/misc/wifi/wpa_supplicant.conf /system/esc0rtd3w/data/misc/wifi/wpa_supplicant.conf
+
+read
 
 
 #<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
@@ -42,8 +60,40 @@ cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /data/local/tmp/com.kingro
 
 # Removing /data/
 #rm -R -- /data/*/
+
+rm -f /data/.layout_version
+rm -rf /data/adb/
+rm -rf /data/anr/
 rm -rf /data/app/
+rm -rf /data/app-asec/
+rm -rf /data/app-lib/
+rm -rf /data/app-private/
+rm -f /data/bugreports
+rm -rf /data/dalvik-cache/
 rm -rf /data/data/
+rm -rf /data/data-lib/
+rm -rf /data/debug_service/
+rm -rf /data/diag/
+rm -rf /data/dontpanic/
+rm -rf /data/drm/
+rm -rf /data/DxDrm/
+rm -rf /data/hwval/
+rm -rf /data/key_provisioning/
+rm -rf /data/mediadrm/
+rm -rf /data/misc/
+rm -rf /data/playready/
+rm -rf /data/proffline/
+rm -rf /data/property/
+rm -rf /data/radio/
+rm -rf /data/resource-cache/
+rm -rf /data/securedStorageLocation/
+rm -rf /data/securestop/
+rm -rf /data/security/
+rm -rf /data/sfs/
+rm -rf /data/system/
+rm -rf /data/user/
+rm -rf /data/vitals/
+rm -rf /data/webcrypto/
 #rm -rf /data/
 
 # Rebuilding empty /data/
@@ -51,24 +101,39 @@ rm -rf /data/data/
 #mkdir /data/app/
 #mkdir /data/app/mcRegistry
 #mkdir /data/app/mcRegistry/TbStorage
-#mkdir /data/data/
+mkdir /data/data/
 #mkdir /data/local/
 #mkdir /data/local/tmp/
 
-#chmod 0755 /data/
+chown system:system /data/data/
+chmod 771 /data/
 
 # Restoring ADB Settings
 mkdir /data/data/com.amazon.tv.settings
 mkdir /data/data/com.amazon.tv.settings/shared_prefs
-
-cp -Rp /data/local/tmp/shared_prefs/ /data/data/com.amazon.tv.settings/shared_prefs/
+cp -Rp /system/esc0rtd3w/data/data/com.amazon.tv.settings/ /data/data/com.amazon.tv.settings/
 
 
 # Restoring KingRoot Settings
 mkdir /data/data/com.kingroot.kinguser/
 mkdir /data/data/com.kingroot.kinguser/shared_prefs/
+cp -Rp /system/esc0rtd3w/data/data/com.kingroot.kinguser/ /data/data/com.kingroot.kinguser/
 
-cp -Rp /data/local/tmp/com.kingroot.kinguser/shared_prefs/ /data/data/com.kingroot.kinguser/shared_prefs/
+
+# Restoring WiFi Settings
+mkdir /data/misc/
+mkdir /data/misc/wifi/
+
+chown system:misc /data/misc/
+chmod 771 /data/misc/
+
+chown wifi:wifi /data/misc/wifi/
+chmod 770 /data/misc/wifi/
+
+cp -p /system/esc0rtd3w/data/misc/wifi/wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf
+chown wifi:wifi /data/misc/wifi/wpa_supplicant.conf
+chmod 660 /data/misc/wifi/wpa_supplicant.conf
+
 
 
 
@@ -77,9 +142,11 @@ cp -Rp /data/local/tmp/com.kingroot.kinguser/shared_prefs/ /data/data/com.kingro
 #rm -rf /cache/dalvik-cache
 
 # Clearing Cache
-rm -R -- /cache/*/
+#rm -R -- /cache/*/
 #rm -rf /cache/
 #mkdir /cache/
+rm -f /cache/*.*
+rm -rf /cache/dalvik-cache
 
 # Reinstall KingRoot APK
 pm install /data/local/tmp/kingroot.apk
