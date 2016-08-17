@@ -91,7 +91,7 @@ rm -rf /data/securestop/
 rm -rf /data/security/
 rm -rf /data/sfs/
 rm -rf /data/system/
-rm -rf /data/user/
+#rm -rf /data/user/
 rm -rf /data/vitals/
 rm -rf /data/webcrypto/
 #rm -rf /data/
