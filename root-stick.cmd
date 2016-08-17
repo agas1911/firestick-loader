@@ -2214,12 +2214,12 @@ echo Make a choice and press ENTER:
 echo.
 echo.
 
-set /p rebootAfterBloatRemoval=
+set /p rebootAfterBloatRemovalChoice=
 
-if %rebootAfterBloatRemoval%==Y set rebootAfterBloatRemoval=1
-if %rebootAfterBloatRemoval%==y set rebootAfterBloatRemoval=1
-if %rebootAfterBloatRemoval%==Y goto clearCaches
-if %rebootAfterBloatRemoval%==y goto clearCaches
+if %rebootAfterBloatRemovalChoice%==Y set rebootAfterBloatRemoval=1
+if %rebootAfterBloatRemovalChoice%==y set rebootAfterBloatRemoval=1
+if %rebootAfterBloatRemovalChoice%==Y goto clearCaches
+if %rebootAfterBloatRemovalChoice%==y goto clearCaches
 
 goto menu
 
