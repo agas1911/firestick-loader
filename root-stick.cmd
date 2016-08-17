@@ -2153,6 +2153,9 @@ echo.
 
 %uninstall% de.belu.firestopper
 
+:: FireStopper Config
+%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+
 %push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
 ::%shell% "su -c mkdir /system/app/FireStopper/"
 ::%shell% "su -c chmod 0755 /system/app/FireStopper/"
@@ -2162,6 +2165,7 @@ echo.
 %push% "%~dp0scripts\firestopper-as-system.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/firestopper-as-system.sh"
 %shell% "su -c sh /data/local/tmp/firestopper-as-system.sh"
+
 
 
 ::%install% "%~dp0apps\system\firestopper.apk"
