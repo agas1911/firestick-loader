@@ -74,6 +74,7 @@ set keyHome=%shell% input keyevent 4
 set bloatAction=disable
 
 set rebootAfterClearCache=0
+set rebootAfterBloatRemovalChoice=0
 
 set sdcard=sdcard
 ::set sdcard=external_sd
@@ -2126,10 +2127,12 @@ echo Make a choice and press ENTER:
 echo.
 echo.
 
-set /p rebootAfterBloatRemoval=
+set /p rebootAfterBloatRemovalChoice=
 
-if %rebootAfterBloatRemoval%==Y goto clearCaches
-if %rebootAfterBloatRemoval%==y goto clearCaches
+if %rebootAfterBloatRemovalChoice%==Y set rebootAfterBloatRemoval=1
+if %rebootAfterBloatRemovalChoice%==y set rebootAfterBloatRemoval=1
+if %rebootAfterBloatRemovalChoice%==Y goto clearCaches
+if %rebootAfterBloatRemovalChoice%==y goto clearCaches
 
 goto menu
 
