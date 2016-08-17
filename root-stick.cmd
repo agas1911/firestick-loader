@@ -382,8 +382,8 @@ if %dgchoice%==SA set doAcceptSuAfterRequest=1&&goto doSU
 if %dgchoice%==Sa set doAcceptSuAfterRequest=1&&goto doSU
 if %dgchoice%==sa set doAcceptSuAfterRequest=1&&goto doSU
 if %dgchoice%==sA set doAcceptSuAfterRequest=1&&goto doSU
-if %dgchoice%==A set bloatAction=disable&&goto bloatBuster
-if %dgchoice%==a set bloatAction=disable&&goto bloatBuster
+if %dgchoice%==A set bloatAction=disable&&goto bloatDisable
+if %dgchoice%==a set bloatAction=disable&&goto bloatDisable
 if %dgchoice%==AR goto removeBloat
 if %dgchoice%==Ar goto removeBloat
 if %dgchoice%==ar goto removeBloat
@@ -396,10 +396,10 @@ if %dgchoice%==Ara set doBlockAdsWithMenuOption=1&&goto removeBloat
 if %dgchoice%==aRA set doBlockAdsWithMenuOption=1&&goto removeBloat
 if %dgchoice%==aRa set doBlockAdsWithMenuOption=1&&goto removeBloat
 if %dgchoice%==ArA set doBlockAdsWithMenuOption=1&&goto removeBloat
-::if %dgchoice%==E set bloatAction=enable&&goto bloatBuster
-::if %dgchoice%==e set bloatAction=enable&&goto bloatBuster
-if %dgchoice%==E goto bloatRemover
-if %dgchoice%==e goto bloatRemover
+::if %dgchoice%==E set bloatAction=enable&&goto bloatEnable
+::if %dgchoice%==e set bloatAction=enable&&goto bloatEnable
+::if %dgchoice%==E goto bloatRemover
+::if %dgchoice%==e goto bloatRemover
 if %dgchoice%==C goto clearCaches
 if %dgchoice%==c goto clearCaches
 if %dgchoice%==K goto cleanSD
@@ -2067,7 +2067,7 @@ taskkill /f /im tv_x64.exe
 goto menu
 
 
-:bloatBuster
+:bloatDisable
 
 cls
 echo Making sure FireStarter is installed as a HOME Menu....
@@ -2106,26 +2106,10 @@ cls
 %shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
 %shell% "su -c sh /data/local/tmp/bloat-disable.sh"
 
-cls
-echo Clear Caches and Reboot (Recommended) [Y/N]?
-echo.
-echo.
-echo.
-echo Make a choice and press ENTER:
-echo.
-echo.
-
-set /p rebootAfterBloatRemovalChoice=
-
-if %rebootAfterBloatRemovalChoice%==Y set rebootAfterBloatRemoval=1
-if %rebootAfterBloatRemovalChoice%==y set rebootAfterBloatRemoval=1
-if %rebootAfterBloatRemovalChoice%==Y goto clearCaches
-if %rebootAfterBloatRemovalChoice%==y goto clearCaches
-
 goto menu
 
 
-:bloatRemover
+:bloatRemoverOld
 
 cls
 echo Making sure FireStarter is installed as a HOME Menu....
