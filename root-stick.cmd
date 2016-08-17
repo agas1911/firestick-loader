@@ -2081,7 +2081,22 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
 echo.
 echo.
 
-%install% "%~dp0apps\system\firestopper.apk"
+::%install% "%~dp0apps\system\firestopper.apk"
+
+%uninstall% de.belu.firestopper
+
+:: FireStopper Config
+%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+
+%push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
+::%shell% "su -c mkdir /system/app/FireStopper/"
+::%shell% "su -c chmod 0755 /system/app/FireStopper/"
+::%shell% "su -c cp /data/local/tmp/firestopper.apk" /system/app/FireStopper/FireStopper.apk"
+::%shell% "su -c chmoc 0644 /system/app/FireStopper/FireStopper.apk"
+
+%push% "%~dp0scripts\firestopper-as-system.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/firestopper-as-system.sh"
+%shell% "su -c sh /data/local/tmp/firestopper-as-system.sh"
 
 
 %shell% "su -c rm /data/local/tmp/bloat-disable.sh"
@@ -2090,6 +2105,22 @@ cls
 %push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
 %shell% "su -c sh /data/local/tmp/bloat-disable.sh"
+
+cls
+echo Clear Caches and Reboot (Recommended) [Y/N]?
+echo.
+echo.
+echo.
+echo Make a choice and press ENTER:
+echo.
+echo.
+
+set /p rebootAfterBloatRemovalChoice=
+
+if %rebootAfterBloatRemovalChoice%==Y set rebootAfterBloatRemoval=1
+if %rebootAfterBloatRemovalChoice%==y set rebootAfterBloatRemoval=1
+if %rebootAfterBloatRemovalChoice%==Y goto clearCaches
+if %rebootAfterBloatRemovalChoice%==y goto clearCaches
 
 goto menu
 
@@ -2108,7 +2139,22 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
 echo.
 echo.
 
-%install% "%~dp0apps\system\firestopper.apk"
+::%install% "%~dp0apps\system\firestopper.apk"
+
+%uninstall% de.belu.firestopper
+
+:: FireStopper Config
+%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+
+%push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
+::%shell% "su -c mkdir /system/app/FireStopper/"
+::%shell% "su -c chmod 0755 /system/app/FireStopper/"
+::%shell% "su -c cp /data/local/tmp/firestopper.apk" /system/app/FireStopper/FireStopper.apk"
+::%shell% "su -c chmoc 0644 /system/app/FireStopper/FireStopper.apk"
+
+%push% "%~dp0scripts\firestopper-as-system.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/firestopper-as-system.sh"
+%shell% "su -c sh /data/local/tmp/firestopper-as-system.sh"
 
 
 %shell% "su -c rm /data/local/tmp/full-debloat.sh"
