@@ -159,4 +159,7 @@ pm enable com.android.documentsui
 # Device Provisioner
 pm enable com.android.managedprovisioning
 
+# Alexa Related???
+pm enable com.amazon.tv.settings/.tv.ThingsToTrySettingsActivity
+
 

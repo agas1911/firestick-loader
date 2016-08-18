@@ -163,4 +163,7 @@ pm disable com.android.documentsui
 # Device Provisioner
 pm disable com.android.managedprovisioning
 
+# Alexa Related???
+#pm disable com.amazon.tv.settings/.tv.ThingsToTrySettingsActivity
+
 
