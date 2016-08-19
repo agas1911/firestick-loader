@@ -28,12 +28,22 @@ HKR,,Icon,,-1
 %SingleAdbInterface%        = USB_Install, USB\VID_1949&PID_0022
 %CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0022&MI_01
 
+;Amazon Fire Stick FASTBOOT
+%SingleBootLoaderInterface% = USB_Install, USB\VID_1949&PID_0020
+%SingleAdbInterface%        = USB_Install, USB\VID_1949&PID_0020
+%CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0020&REV_0100
+
 
 [Google.NTamd64]
 
 ;Amazon Fire Stick
 %SingleAdbInterface%        = USB_Install, USB\VID_1949&PID_0022
 %CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0022&MI_01
+
+;Amazon Fire Stick FASTBOOT
+%SingleBootLoaderInterface% = USB_Install, USB\VID_1949&PID_0020
+%SingleAdbInterface%        = USB_Install, USB\VID_1949&PID_0020
+%CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0020&REV_0100
 
 
 [USB_Install]
