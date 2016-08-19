@@ -234,3 +234,68 @@
     * Stock Lollipop or Equivalent Settings APK Required To Remove "com.amazon.tv.*" Packages
 	
 - Disable Opera Mini Update (Newer Versions Do Not Support FireStick Remote For Mouse Anymore)
+
+<br/><br/>
+
+***Preview of Default Kodi Build***
+######\*\* Heavily Modified, Originally Based Off Titanium Build \*\*######
+
+![Kodi Preview 1](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/main-menu.jpg)
+<br/><br/>
+
+![Kodi Preview 2](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/movies.jpg)
+<br/><br/>
+
+![Kodi Preview 3](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/tv-shows.jpg)
+<br/><br/>
+
+![Kodi Preview 4](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/live-tv.jpg)
+<br/><br/>
+
+![Kodi Preview 5](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/sports.jpg)
+<br/><br/>
+
+![Kodi Preview 6](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/sports-live.jpg)
+<br/><br/>
+
+![Kodi Preview 7](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/education.jpg)
+<br/><br/>
+
+![Kodi Preview 8](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/gaming.jpg)
+<br/><br/>
+
+![Kodi Preview 9](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/education.jpg)
+<br/><br/>
+
+![Kodi Preview 10](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/documentaries.jpg)
+<br/><br/>
+
+![Kodi Preview 11](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/mixed-media.jpg)
+<br/><br/>
+
+![Kodi Preview 12](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/podcasts.jpg)
+<br/><br/>
+
+![Kodi Preview 13](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/retro.jpg)
+<br/><br/>
+
+![Kodi Preview 14](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/news.jpg)
+<br/><br/>
+
+<br/><br/>
+
+***Preview of Default Kodi Build (Login Screen)***
+![Kodi Preview 15](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/login-screen.jpg)
+<br/><br/>
+
+<br/><br/>
+
+***Preview of Default Kodi Build (Adult Section)***
+![Kodi Preview 16](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/adult.jpg)
+<br/><br/>
+
+<br/><br/>
+
+***Preview of Default Kodi Build (Maintenance Section)***
+![Kodi Preview 17](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/maintenance.jpg)
+<br/><br/>
