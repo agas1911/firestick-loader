@@ -4,6 +4,7 @@
 
 ####firepwn.com
 
+<br/>
 
 ####Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
 
@@ -45,7 +46,8 @@
 <br/><br/>
 
 
-***Preview Finished Setup Using "root-stick.cmd"***
+***Preview Finished Setup Using "root-stick.cmd" Automatic Option***
+######\*\* Can also manually use Install, Root, Downgrade (if higher than 5.0.5), Busybox, and Debloat/Remove/Adblock Options \*\*
 
 ![Finished Preview Clean](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/home-firestopper-system-clean.jpg)
 <br/><br/>
