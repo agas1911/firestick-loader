@@ -41,6 +41,18 @@
 <br/><br/>
 
 
+***Preview Finished Setup Using "root-stick.cmd"***
+
+![Finished Preview Clean](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/home-firestopper-system-clean.jpg)
+<br/><br/>
+
+
+***Preview Finished Setup Using "root-stick.cmd" and "install-apps-lite-auto.cmd"***
+
+![Finished Preview Loaded](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/home-loaded-standard.jpg)
+<br/><br/>
+
+
 ***Menu Options:***
 
 - **Automatic Mode**
