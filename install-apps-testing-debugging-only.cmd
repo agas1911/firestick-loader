@@ -83,6 +83,72 @@ echo.
 %install% "apps\web\teamviewer.apk"
 
 
+cls
+%_color% 0e
+set appName=Disk Usage
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\diskusage.apk"
+
+
+cls
+%_color% 0e
+set appName=Titanium Backup
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\titanium-backup.apk"
+
+
+cls
+%_color% 0e
+set appName=System App Remover
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\system-app-remover.apk"
+
+
+cls
+%_color% 0e
+set appName=Show Touches
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\show-touches.apk"
+
+
+cls
+%_color% 0e
+set appName=Android System Info
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\android-system-info.apk"
+
+
+cls
+%_color% 0e
+set appName=ADB Insecure
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\adbd-insecure.apk"
+
+
 
 goto end
 
