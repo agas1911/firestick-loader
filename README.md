@@ -2,6 +2,8 @@
 
 ###FREE YOUR FIRESTICK!!!
 
+####firepwn.com
+
 
 ####Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
 
