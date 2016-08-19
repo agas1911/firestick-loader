@@ -264,38 +264,35 @@
 ![Kodi Preview 8](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/gaming.jpg)
 <br/><br/>
 
-![Kodi Preview 9](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/education.jpg)
+![Kodi Preview 9](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/documentaries.jpg)
 <br/><br/>
 
-![Kodi Preview 10](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/documentaries.jpg)
+![Kodi Preview 10](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/mixed-media.jpg)
 <br/><br/>
 
-![Kodi Preview 11](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/mixed-media.jpg)
+![Kodi Preview 11](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/podcasts.jpg)
 <br/><br/>
 
-![Kodi Preview 12](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/podcasts.jpg)
+![Kodi Preview 12](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/retro.jpg)
 <br/><br/>
 
-![Kodi Preview 13](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/retro.jpg)
-<br/><br/>
-
-![Kodi Preview 14](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/news.jpg)
+![Kodi Preview 13](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/news.jpg)
 <br/><br/>
 
 <br/><br/>
 
 ***Preview of Default Kodi Build (Login Screen)***
-![Kodi Preview 15](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/login-screen.jpg)
+![Kodi Preview 14](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/login-screen.jpg)
 <br/><br/>
 
 <br/><br/>
 
 ***Preview of Default Kodi Build (Adult Section)***
-![Kodi Preview 16](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/adult.jpg)
+![Kodi Preview 15](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/adult.jpg)
 <br/><br/>
 
 <br/><br/>
 
 ***Preview of Default Kodi Build (Maintenance Section)***
-![Kodi Preview 17](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/maintenance.jpg)
+![Kodi Preview 16](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/maintenance.jpg)
 <br/><br/>
