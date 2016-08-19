@@ -302,3 +302,7 @@
 ***Preview of Default Kodi Build (Maintenance Section)***
 ![Kodi Preview 16](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/kodi/maintenance.jpg)
 <br/><br/>
+
+<br/><br/><br/><br/>
+
+***esc0rtd3w 2016 / firepwn.com
