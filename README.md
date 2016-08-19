@@ -37,6 +37,10 @@
 
 - Amazon Settings Menu Available (Parental Controls, Help, and My Account DISABLED)
 
+- Amazon FireTV Remote App Still Supported
+
+- Amazon Voice Remote Still Supported
+
 - Hold HOME Button Function To Sleep Available
 <br/><br/>
 
