@@ -60,7 +60,7 @@
 
 
 ***Preview Custom FireStarter Build"***
-######\*\* Based off origial FireStopper Port \*\*
+######\*\* Based off original FireStopper Port \*\*
 
 ![Finished Preview Loaded](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/home-firestarter-mod-system.jpg)
 <br/><br/>
