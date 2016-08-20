@@ -61,7 +61,7 @@
 
 ***Preview Custom FireStarter Build***
 ######\*\* Based off original FireStopper Port (https://github.com/jkchr1s/FireStarter) \*\*
-######\*\* Which Is Based off original FireStarter [Now AppStarter] (https://github.com/sphinx02/AppStarter) \*\*
+######\*\* Which Is Based off original FireStarter \[Now AppStarter\] (https://github.com/sphinx02/AppStarter) \*\*
 
 ![Finished Preview Loaded](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/home-firestarter-mod-system.jpg)
 <br/><br/>
