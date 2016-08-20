@@ -43,7 +43,6 @@ pm disable com.amazon.devicecontrol
 pm disable com.amazon.dp.logger
 #pm disable com.amazon.fireinputdevices
 pm disable com.amazon.identity.auth.device.authorization
-#pm disable com.amazon.imp
 pm disable com.amazon.kindle.cms
 pm disable com.amazon.kindle.devicecontrols
 #pm disable com.amazon.kindleautomatictimezone
@@ -87,6 +86,7 @@ pm disable com.amazon.visualonawv
 
 # Amazon Screensaver
 #pm disable com.amazon.bueller.photos
+#pm disable com.amazon.imp
 
 # Possibe Remote Update??
 pm disable com.amazon.device.bluetoothdfu

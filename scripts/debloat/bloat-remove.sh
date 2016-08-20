@@ -145,7 +145,6 @@ rm -r /system/app/WhiteListedUrlProvider/
 
 
 
-
 # Other System Apps
 
 # Framework Directory
