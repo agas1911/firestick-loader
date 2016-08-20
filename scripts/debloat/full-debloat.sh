@@ -43,7 +43,7 @@ pm disable com.amazon.devicecontrol
 pm disable com.amazon.dp.logger
 #pm disable com.amazon.fireinputdevices
 pm disable com.amazon.identity.auth.device.authorization
-pm disable com.amazon.imp
+#pm disable com.amazon.imp
 pm disable com.amazon.kindle.cms
 pm disable com.amazon.kindle.devicecontrols
 #pm disable com.amazon.kindleautomatictimezone
@@ -189,7 +189,6 @@ rm -r /system/priv-app/com.amazon.communication.discovery/
 rm -r /system/priv-app/com.amazon.device.sync/
 rm -r /system/priv-app/com.amazon.device.sync.sdk.internal/
 rm -r /system/priv-app/com.amazon.identity.auth.device.authorization/
-rm -r /system/priv-app/com.amazon.imp/
 rm -r /system/priv-app/com.amazon.kindle.cms-service/
 rm -r /system/priv-app/com.amazon.kindle.devicecontrols/
 rm -r /system/priv-app/com.amazon.kso.blackbird/
@@ -274,6 +273,7 @@ rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 
 # Amazon Screensaver
 #rm -r /system/priv-app/com.amazon.bueller.photos/
+#rm -r /system/priv-app/com.amazon.imp/
 
 
 # Amazon Remote Android App
