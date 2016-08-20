@@ -71,6 +71,8 @@ set keyArrowRight=%shell% input keyevent 22
 set keyBack=%shell% input keyevent 3
 set keyHome=%shell% input keyevent 4
 
+set amStart=%shell% am start -a android.intent.action.MAIN -n
+
 set bloatAction=disable
 
 set rebootAfterClearCache=0
@@ -117,16 +119,16 @@ set cleanEntireSdCard=0
 :: Direct Invoking
 
 :: Settings -> Main
-set showSettingsMain=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.launcher/.ui.SettingsActivity
+set showSettingsMain=%amStart% com.amazon.tv.launcher/.ui.SettingsActivity
 
 :: Settings -> Display & Sounds
-set showSettingsDisplay=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.BuellerDisplayAndSoundsSettingsActivity
+set showSettingsDisplay=%amStart% com.amazon.tv.settings/.tv.BuellerDisplayAndSoundsSettingsActivity
 
 :: Settings -> Parental Controls
-set showSettingsParental=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.parentalcontrols/.PCONSettingsActivity
+set showSettingsParental=%amStart% com.amazon.tv.parentalcontrols/.PCONSettingsActivity
 
 :: Settings -> Controllers and Bluetooth Devices
-set showSettingsControllers=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.BuellerControllersSettingsActivity
+set showSettingsControllers=%amStart% com.amazon.tv.settings/.tv.BuellerControllersSettingsActivity
 
 :: Find Amazon Remote
 set showControllersAmazonRemote=%shell% "su -c am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.devices.BuellerRemoteDiscoveryActivity"
@@ -138,21 +140,21 @@ set showControllersFindGamepad=%shell% "su -c am start -a android.intent.action.
 set showControllersFindBluetooth=%shell% "su -c am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.devices.BuellerInputDeviceDiscoveryActivity"
 
 :: Settings -> Applications
-set showSettingsApplications=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.BuellerApplicationsSettingsActivity
-set showSettingsApplicationsManage=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.AllApplicationsSettingsActivity
+set showSettingsApplications=%amStart% com.amazon.tv.settings/.tv.BuellerApplicationsSettingsActivity
+set showSettingsApplicationsManage=%amStart% com.amazon.tv.settings/.tv.AllApplicationsSettingsActivity
 
 :: Settings -> System
-set showSettingsSystemMain=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.BuellerSystemSettingsActivity
-set showSettingsSystemDeveloper=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.BuellerDevelopmentSettingsActivity
-set showSettingsSystemFactoryReset=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
-set showSettingsSystemFactoryReset=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings.tv.FactoryResetService.masterClear
-::set showSettingsSystemFactoryResetNow=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
+set showSettingsSystemMain=%amStart% com.amazon.tv.settings/.tv.BuellerSystemSettingsActivity
+set showSettingsSystemDeveloper=%amStart% com.amazon.tv.settings/.tv.BuellerDevelopmentSettingsActivity
+set showSettingsSystemFactoryReset=%amStart% com.amazon.tv.settings/.tv.FactoryResetActivity
+set showSettingsSystemFactoryReset=%amStart% com.amazon.tv.settings.tv.FactoryResetService.masterClear
+::set showSettingsSystemFactoryResetNow=%amStart% com.amazon.tv.settings/.tv.FactoryResetActivity
 
 :: Settings -> My Account
-set showSettingsMyAccount=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.BuellerAccountSettingsActivity
+set showSettingsMyAccount=%amStart% com.amazon.tv.settings/.tv.BuellerAccountSettingsActivity
 
 :: Misc Invokes
-set showDeviceNotifications=%shell% am start -a android.intent.action.MAIN -n com.amazon.bueller.notification/com.amazon.bueller.notification.BuellerDeviceService
+set showDeviceNotifications=%amStart% com.amazon.bueller.notification/com.amazon.bueller.notification.BuellerDeviceService
 
 set deregisterAmazonAccount=%shell% am start -a com.amazon.tv.oobe/.DeregistrationActivity -n com.amazon.tv.oobe/.DeregistrationActivity
 
@@ -167,31 +169,33 @@ set deregisterAmazonAccount=%shell% am start -a com.amazon.tv.oobe/.Deregistrati
 
 
 :: Launch Different Apps
-set launchSuperSU=%shell% am start -a android.intent.action.MAIN -n com.koushikdutta.superuser/.MainActivity
-set launchAceStream=%shell% am start -a android.intent.action.MAIN -n org.acestream/.player.gui.MainActivity
-set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.sopcast.android/.SopCast
-set launchNetflix=%shell% am start -a android.intent.action.MAIN -n com.netflix.mediaclient/.ui.launch.NetflixComLaunchActivity
-set launchHulu=%shell% am start -a android.intent.action.MAIN -n com.hulu.livingroomplus/.MainActivity
-set launchMobdro=%shell% am start -a android.intent.action.MAIN -n com.mobdro.android/.DashBoardActivity
-set launchKodi=%shell% am start -a android.intent.action.MAIN -n org.xbmc.kodi/.Splash
-set launchVLC=%shell% am start -a android.intent.action.MAIN -n org.videolan.vlc/.gui.tv.MainTvActivity
-set launchPopcornTime=%shell% am start -a android.intent.action.MAIN -n dp.ws.popcorntime/se.popcorn_time.mobile.ui.MainActivity
-set launchMovian=%shell% am start -a android.intent.action.MAIN -n com.lonelycoder.mediaplayer/.GLWActivity
-set launchOperaMini=%shell% am start -a android.intent.action.MAIN -n com.opera.mini.android/.Browser
-set launchRootExplorer=%shell% am start -a android.intent.action.MAIN -n com.speedsoftware.rootexplorer/.RootExplorer
-set launchBusybox=%shell% am start -a android.intent.action.MAIN -n stericson.busybox/.Activity.MainActivity
+set launchSuperSU=%amStart% com.koushikdutta.superuser/.MainActivity
+set launchAceStream=%amStart% org.acestream/.player.gui.MainActivity
+set launchSopCast=%amStart% org.sopcast.android/.SopCast
+set launchNetflix=%amStart% com.netflix.mediaclient/.ui.launch.NetflixComLaunchActivity
+set launchHulu=%amStart% com.hulu.livingroomplus/.MainActivity
+set launchMobdro=%amStart% com.mobdro.android/.DashBoardActivity
+set launchKodi=%amStart% org.xbmc.kodi/.Splash
+set launchVLC=%amStart% org.videolan.vlc/.gui.tv.MainTvActivity
+set launchPopcornTime=%amStart% dp.ws.popcorntime/se.popcorn_time.mobile.ui.MainActivity
+set launchMovian=%amStart% com.lonelycoder.mediaplayer/.GLWActivity
+set launchOperaMini=%amStart% com.opera.mini.android/.Browser
+set launchRootExplorer=%amStart% com.speedsoftware.rootexplorer/.RootExplorer
+set launchBusybox=%amStart% stericson.busybox/.Activity.MainActivity
 
 
-::set suRequest=%shell% am start -a android.intent.action.MAIN -n com.android.internal.os.RuntimeInit uid 0
+::set suRequest=%amStart% com.android.internal.os.RuntimeInit uid 0
 
 ::set usbPowerWarning=Window{24f60778 u0 com.amazon.tv.settings/com.amazon.tv.settings.tv.BuellerAboutSettingsActivity
 
-set launchScreenSaver=%shell% am start -a android.intent.action.MAIN -n com.amazon.bueller.photos/com.amazon.bueller.photos.daydream.ScreenSaverService
+set launchScreenSaver=%amStart% com.amazon.bueller.photos/com.amazon.bueller.photos.daydream.ScreenSaverService
+
+
 
 set removeSuperSU=%uninstall% eu.chainfire.supersu
 
 
-set firestopperUpdater=%shell% am start -a android.intent.action.MAIN -n de.belu.firestopper.tools.FireStarterUpdater
+set firestopperUpdater=%amStart% de.belu.firestopper.tools.FireStarterUpdater
 
 :: com.amazon.bueller.photos/.activity.ElizaVideoPlaybackActivity
 
@@ -836,7 +840,7 @@ echo.
 echo.
 %_color% 0e
 
-%shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
+%amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
 
 if %firstTimeRootAttempt%==1 (
 
@@ -965,12 +969,12 @@ if %check%==s %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
 if %check%==S goto rootActive
 if %check%==s goto rootActive
 
-if %check%==R %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
-if %check%==r %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
+if %check%==R %amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
+if %check%==r %amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
 if %check%==R %sleep% 5
 if %check%==r %sleep% 5
-if %check%==R %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
-if %check%==r %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
+if %check%==R %amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
+if %check%==r %amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
 if %check%==R goto root2
 if %check%==r goto root2
 
@@ -1012,7 +1016,7 @@ goto menu
 
 :doSU
 
-%shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
+%amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
 
 %sleep% 5
 
@@ -1164,9 +1168,9 @@ if %superSuSuccess%==n set superSuReinstall=1&&goto superSU
 
 ::%adb% reboot
 
-::%shell% am start -a android.intent.action.MAIN -n darkslide.com.supersumepro/.MainActivity
+::%amStart% darkslide.com.supersumepro/.MainActivity
 
-::%shell% am start -a android.intent.action.MAIN -n eu.chainfire.supersu/eu.chainfire.supersu.MainActivity
+::%amStart% eu.chainfire.supersu/eu.chainfire.supersu.MainActivity
 
 ::%sleep% 10
 
@@ -1326,7 +1330,7 @@ echo.
 %sleep% 2
 
 :: Launch SuperSU
-%shell% am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity
+%amStart% eu.chainfire.supersu/.MainActivity
 
 
 goto menu
@@ -1802,7 +1806,7 @@ echo.
 
 %sleep% 2
 
-%shell% am start -a android.intent.action.MAIN -n stericson.busybox/.Activity.MainActivity
+%amStart% stericson.busybox/.Activity.MainActivity
 
 cls
 %_color% 0e
@@ -1951,7 +1955,7 @@ if %removeTeamViewer%==1 taskkill /f /im tv_x64.exe
 set removeTeamViewer=0
 set teamViewerSuRequest=0
 
-%shell% am start -a android.intent.action.MAIN -n com.teamviewer.quicksupport.market/com.teamviewer.quicksupport.ui.QSActivity
+%amStart% com.teamviewer.quicksupport.market/com.teamviewer.quicksupport.ui.QSActivity
 
 %sleep% 3
 
@@ -1998,7 +2002,7 @@ cls
 echo Loading KingRoot....
 echo.
 
-%shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
+%amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
 
 ::%sleep% 3
 ::%swipeUp%
@@ -2447,7 +2451,7 @@ echo.
 %sleep% 5
 
 if %factoryReset%==1 (
-%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
+%amStart% com.amazon.tv.settings/.tv.FactoryResetActivity
 %sleep% 3
 %keyArrowLeft%
 %sleep% 1
@@ -2520,7 +2524,7 @@ if %factoryReset%==1 (
 	echo.
 	%sleep% 10
 
-	%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
+	%amStart% com.amazon.tv.settings/.tv.FactoryResetActivity
 	%sleep% 3
 	%keyArrowLeft%
 	%sleep% 1
