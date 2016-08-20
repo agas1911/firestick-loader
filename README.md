@@ -143,6 +143,7 @@
     - /system/priv-app/com.amazon.device.sync/
     - /system/priv-app/com.amazon.device.sync.sdk.internal/
     - /system/priv-app/com.amazon.identity.auth.device.authorization/
+    - /system/priv-app/com.amazon.imp/
     - /system/priv-app/com.amazon.kindle.cms-service/
     - /system/priv-app/com.amazon.kindle.devicecontrols/
     - /system/priv-app/com.amazon.kso.blackbird/
@@ -199,7 +200,6 @@
 
 - Screensaver Config
     - /system/priv-app/com.amazon.bueller.photos/
-    - /system/priv-app/com.amazon.imp/
 
 - Amazon Remote Android App
     - /system/priv-app/com.amazon.storm.lightning.services/
