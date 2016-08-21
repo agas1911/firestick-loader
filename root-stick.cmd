@@ -236,6 +236,10 @@ set rootAfterInstall=0
 
 set superSuReinstall=0
 
+
+set installFireStopperAsSystem=0
+
+
 set rebootAfterBloatRemoval=0
 
 set returnTo=menu
@@ -598,31 +602,27 @@ echo.
 echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
 %_color% 05
-echo 2) Launch FireStopper
-echo.
-%_color% 03
-echo 3) Launch Android Event Keymap (Press Keys and Send Text Over ADB)
+echo 2) Launch Android Event Keymap (Press Keys and Send Text Over ADB)
 echo.
 %_color% 09
-echo 4) Remove Boot Animation (Leaves Stock FIRE Text)
-echo 5) Replace Boot Animation (Replaces Stock Boot Animation)
-echo 6) Restore Boot Animation (Restores Stock Boot Animation)
+echo 3) Remove Boot Animation (Leaves Stock FIRE Text)
+echo 4) Replace Boot Animation (Replaces Stock Boot Animation)
+echo 5) Restore Boot Animation (Restores Stock Boot Animation)
 echo.
-echo 7) Replace Boot Fallback Images (Replaces Stock FIRE Text)
-echo 8) Restore Boot Fallback Images (Restores framework-res.apk)
+echo 6) Replace Boot Fallback Images (Replaces Stock FIRE Text)
+echo 7) Restore Boot Fallback Images (Restores framework-res.apk)
 echo.
-echo 9) Launch Boot Animation Factory
+echo 8) Launch Boot Animation Factory
 echo.
 %_color% 06
-echo 10) Accept Opera Mini License Agreement
-echo.
-%_color% 08
-echo 11) Reboot Normally
-echo 12) Reboot To Recovery Mode
+echo 9) Accept Opera Mini License Agreement
 echo.
 %_color% 07
-echo 13) Start ADB Server
-echo 14) Kill ADB Server
+echo 10) Start ADB Server
+echo 11) Kill ADB Server
+echo.
+%_color% 08
+echo R) Reboot Device (also use RR to reboot to recovery)
 echo.
 %_color% 0a
 echo A) Allow Superuser Permission On Device (Clicks The ALLOW Button)
@@ -631,7 +631,10 @@ echo.
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
 echo.
 %_color% 0c
-echo D) Disable Ads
+echo D) Block Ads (uses modified /system/etc/HOSTS)
+echo.
+%_color% 03
+echo F) FireStopper Launch (also use FI to install, FIS to install as /system/)
 echo.
 echo.
 echo.
@@ -647,21 +650,26 @@ echo.
 set /p fchoice=
 
 if %fchoice%==1 goto fixRemote
-if %fchoice%==2 goto launchFS
-if %fchoice%==3 goto eventmap
-if %fchoice%==4 goto bootanimRemove
-if %fchoice%==5 goto bootanimReplace
-if %fchoice%==6 goto bootanimRestore
-if %fchoice%==7 goto bootanimReplaceFBI
-if %fchoice%==8 goto bootanimRestoreFBI
-if %fchoice%==9 "%~dp0bin\boot-animation-factory.exe"
-if %fchoice%==10 %tap% 20 1030
-if %fchoice%==11 %adb% reboot
+if %fchoice%==2 goto eventmap
+if %fchoice%==3 goto bootanimRemove
+if %fchoice%==4 goto bootanimReplace
+if %fchoice%==5 goto bootanimRestore
+if %fchoice%==6 goto bootanimReplaceFBI
+if %fchoice%==7 goto bootanimRestoreFBI
+if %fchoice%==8 "%~dp0bin\boot-animation-factory.exe"
+if %fchoice%==9 %tap% 20 1030
+if %fchoice%==10 %adb% kill-server
+if %fchoice%==11 %adb% start-server
+if %fchoice%==R %adb% reboot
+if %fchoice%==r %adb% reboot
 ::if %fchoice%==11 %adb% shell setprop sys.powerctl reboot
-if %fchoice%==12 %adb% reboot recovery
+if %fchoice%==R %adb% reboot recovery
+if %fchoice%==Rr %adb% reboot recovery
+if %fchoice%==RR %adb% reboot recovery
+if %fchoice%==rR %adb% reboot recovery
+if %fchoice%==r %adb% reboot recovery
+if %fchoice%==rr %adb% reboot recovery
 ::if %fchoice%==12 %adb% shell setprop sys.powerctl reboot,recovery
-if %fchoice%==13 %adb% kill-server
-if %fchoice%==14 %adb% start-server
 if %fchoice%==S goto takeSS
 if %fchoice%==s goto takeSS
 if %fchoice%==SV set ssViewer=1&&goto takeSS
@@ -670,12 +678,57 @@ if %fchoice%==sV set ssViewer=1&&goto takeSS
 if %fchoice%==sv set ssViewer=1&&goto takeSS
 if %fchoice%==D goto killAds
 if %fchoice%==d goto killAds
+if %fchoice%==F goto launchFS
+if %fchoice%==f goto launchFS
+if %fchoice%==FI goto fsInstall
+if %fchoice%==Fi goto fsInstall
+if %fchoice%==fI goto fsInstall
+if %fchoice%==fi goto fsInstall
+if %fchoice%==FIS set installFireStopperAsSystem=1&&goto fsInstall
+if %fchoice%==FIs set installFireStopperAsSystem=1&&goto fsInstall
+if %fchoice%==Fis set installFireStopperAsSystem=1&&goto fsInstall
+if %fchoice%==fIs set installFireStopperAsSystem=1&&goto fsInstall
+if %fchoice%==fiS set installFireStopperAsSystem=1&&goto fsInstall
+if %fchoice%==fis set installFireStopperAsSystem=1&&goto fsInstall
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
 if %fchoice%==x goto end
 
 goto fixesMenu
+
+
+
+:fsInstall
+
+if %installFireStopperAsSystem%==1 (
+
+	%uninstall% de.belu.firestopper
+	
+	%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+	
+	%install% "%~dp0apps\system\firestopper.apk"
+
+)
+
+if %installFireStopperAsSystem%==1 (
+
+	%uninstall% de.belu.firestopper
+	
+	%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+
+	%push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
+
+	%push% "%~dp0scripts\firestopper-as-system.sh" /data/local/tmp/
+	%shell% "su -c chmod 755 /data/local/tmp/firestopper-as-system.sh"
+	%shell% "su -c sh /data/local/tmp/firestopper-as-system.sh"
+	
+	set installFireStopperAsSystem=0
+
+)
+
+goto fixesMenu
+
 
 
 :allowSU
