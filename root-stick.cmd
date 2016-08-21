@@ -701,7 +701,7 @@ goto fixesMenu
 
 :fsInstall
 
-if %installFireStopperAsSystem%==1 (
+if %installFireStopperAsSystem%==0 (
 
 	%uninstall% de.belu.firestopper
 	
