@@ -1813,8 +1813,10 @@ if %fullAutoMode%==1 goto root2
 
 if %rootFromDG%==S goto menu
 if %rootFromDG%==s goto menu
+
 :: Going to last part of KingRoot since the swiping shouldn't be needed again
-if %rootFromDG%==1 goto root2
+:: 20160821 Swipe Needed Sometimes!
+if %rootFromDG%==1 goto root
 
 
 :noOTA
