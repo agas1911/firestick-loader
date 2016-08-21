@@ -679,8 +679,8 @@ if %fchoice%==sV set ssViewer=1&&goto takeSS
 if %fchoice%==sv set ssViewer=1&&goto takeSS
 if %fchoice%==D goto killAds
 if %fchoice%==d goto killAds
-if %fchoice%==F goto launchFS
-if %fchoice%==f goto launchFS
+if %fchoice%==F goto fsInstall
+if %fchoice%==f goto fsInstall
 if %fchoice%==FI set installFireStopperSetting=1&&goto fsInstall
 if %fchoice%==Fi set installFireStopperSetting=1&&goto fsInstall
 if %fchoice%==fI set installFireStopperSetting=1&&goto fsInstall
