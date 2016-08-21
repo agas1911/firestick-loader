@@ -240,7 +240,7 @@ set superSuReinstall=0
 
 
 set installFireStopperSetting=0
-
+set installTerminalSetting=0
 
 set rebootAfterBloatRemoval=0
 
@@ -638,6 +638,8 @@ echo.
 %_color% 03
 echo F) FireStopper Launch (also use FI to install or FIS to install as /system/)
 echo.
+%_color% 03
+echo T) Terminal Launch (also use TI to install or TIS to install as /system/)
 echo.
 echo.
 echo.
@@ -693,6 +695,16 @@ if %fchoice%==Fis set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==fIs set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==fiS set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==fis set installFireStopperSetting=2&&goto fsInstall
+if %fchoice%==TI set installTerminalSetting=1&&goto termInstall
+if %fchoice%==Ti set installTerminalSetting=1&&goto termInstall
+if %fchoice%==tI set installTerminalSetting=1&&goto termInstall
+if %fchoice%==ti set installTerminalSetting=1&&goto termInstall
+if %fchoice%==TIS set installTerminalSetting=2&&goto termInstall
+if %fchoice%==TIs set installTerminalSetting=2&&goto termInstall
+if %fchoice%==Tis set installTerminalSetting=2&&goto termInstall
+if %fchoice%==tIs set installTerminalSetting=2&&goto termInstall
+if %fchoice%==tiS set installTerminalSetting=2&&goto termInstall
+if %fchoice%==tis set installTerminalSetting=2&&goto termInstall
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
@@ -733,6 +745,37 @@ if %installFireStopperSetting%==2 (
 )
 
 %launchFireStarter%
+
+goto fixesMenu
+
+
+:termInstall
+
+if %installTerminalSetting%==1 (
+
+	%uninstall% jackpal.androidterm
+	
+	%install% "%~dp0apps\system\terminal.apk"
+	
+	set installTerminalSetting=0
+
+)
+
+if %installTerminalSetting%==2 (
+
+	%uninstall% jackpal.androidterm
+
+	%push% "%~dp0apps\system\terminal.apk" /data/local/tmp/
+
+	%push% "%~dp0scripts\terminal-as-system.sh" /data/local/tmp/
+	%shell% "su -c chmod 755 /data/local/tmp/terminal-as-system.sh"
+	%shell% "su -c sh /data/local/tmp/terminal-as-system.sh"
+	
+	set installTerminalSetting=0
+
+)
+
+%launchTerminal%
 
 goto fixesMenu
 
