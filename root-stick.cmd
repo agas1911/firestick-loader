@@ -183,6 +183,7 @@ set launchMovian=%amStart% com.lonelycoder.mediaplayer/.GLWActivity
 set launchOperaMini=%amStart% com.opera.mini.android/.Browser
 set launchRootExplorer=%amStart% com.speedsoftware.rootexplorer/.RootExplorer
 set launchBusybox=%amStart% stericson.busybox/.Activity.MainActivity
+set launchTerminal=%amStart% jackpal.androidterm/.Term
 
 
 ::set suRequest=%amStart% com.android.internal.os.RuntimeInit uid 0
