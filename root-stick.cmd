@@ -1495,8 +1495,34 @@ cls
 echo Taking The FireStick On A Pwny Ride....
 echo.
 echo.
+echo.
+echo.
+echo.
+%_color% 03
+echo             ,;~;,
+%_color% 0b
+echo                /\_
+echo               (  /
+%_color% 03
+echo               ((),     ;,;
+%_color% 0b
+echo               ^|  \\  ,;;'(                     
+%_color% 06
+echo           __ _(  )'~;;'   \                     ^|--------------^| 
+echo         /'  '\'()/~' \ /'\.)                    ^| Amazon PWND! ^|
+echo      ,;(      )^|^|     ^|                         ^|              ^|
+echo     ,;' \    /-(.;,   )                         ^| This Way --^> ^|     
+echo          ) /       ) /                          ^|______________^|
+echo         //         ^|^|                                  ^|
+echo        (_\         (_\                                 ^|
+%_color% 0a
+echo --------------------------------------------------------------------------------
+%_color% 0e
+echo.
+echo.
 
-%sleep% 6
+
+%sleep% 10
 
 
 cls
