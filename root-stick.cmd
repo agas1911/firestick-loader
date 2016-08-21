@@ -635,7 +635,7 @@ echo.
 echo D) Block Ads (uses modified /system/etc/HOSTS)
 echo.
 %_color% 03
-echo F) FireStopper Launch (also use FI to install, FIS to install as /system/)
+echo F) FireStopper Launch (also use FI to install or FIS to install as /system/)
 echo.
 echo.
 echo.
