@@ -709,6 +709,8 @@ if %installFireStopperSetting%==1 (
 	%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
 	
 	%install% "%~dp0apps\system\firestopper.apk"
+	
+	set installFireStopperSetting=0
 
 )
 
