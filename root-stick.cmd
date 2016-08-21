@@ -1809,7 +1809,8 @@ set /p rootFromDG=
 ::goto root
 
 if %fullAutoModeDG%==1 set fullAutoModeDG=2
-if %fullAutoMode%==1 goto root2
+::if %fullAutoMode%==1 goto root2
+if %fullAutoMode%==1 goto root
 
 if %rootFromDG%==S goto menu
 if %rootFromDG%==s goto menu
@@ -1817,6 +1818,8 @@ if %rootFromDG%==s goto menu
 :: Going to last part of KingRoot since the swiping shouldn't be needed again
 :: 20160821 Swipe Needed Sometimes!
 if %rootFromDG%==1 goto root
+
+goto menu
 
 
 :noOTA
