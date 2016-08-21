@@ -169,6 +169,7 @@ set deregisterAmazonAccount=%shell% am start -a com.amazon.tv.oobe/.Deregistrati
 
 
 :: Launch Different Apps
+set launchFireStarter=%amStart% de.belu.firestopper/.gui.MainActivity
 set launchSuperSU=%amStart% com.koushikdutta.superuser/.MainActivity
 set launchAceStream=%amStart% org.acestream/.player.gui.MainActivity
 set launchSopCast=%amStart% org.sopcast.android/.SopCast
@@ -237,7 +238,7 @@ set rootAfterInstall=0
 set superSuReinstall=0
 
 
-set installFireStopperAsSystem=0
+set installFireStopperSetting=0
 
 
 set rebootAfterBloatRemoval=0
@@ -680,16 +681,16 @@ if %fchoice%==D goto killAds
 if %fchoice%==d goto killAds
 if %fchoice%==F goto launchFS
 if %fchoice%==f goto launchFS
-if %fchoice%==FI goto fsInstall
-if %fchoice%==Fi goto fsInstall
-if %fchoice%==fI goto fsInstall
-if %fchoice%==fi goto fsInstall
-if %fchoice%==FIS set installFireStopperAsSystem=1&&goto fsInstall
-if %fchoice%==FIs set installFireStopperAsSystem=1&&goto fsInstall
-if %fchoice%==Fis set installFireStopperAsSystem=1&&goto fsInstall
-if %fchoice%==fIs set installFireStopperAsSystem=1&&goto fsInstall
-if %fchoice%==fiS set installFireStopperAsSystem=1&&goto fsInstall
-if %fchoice%==fis set installFireStopperAsSystem=1&&goto fsInstall
+if %fchoice%==FI set installFireStopperSetting=1&&goto fsInstall
+if %fchoice%==Fi set installFireStopperSetting=1&&goto fsInstall
+if %fchoice%==fI set installFireStopperSetting=1&&goto fsInstall
+if %fchoice%==fi set installFireStopperSetting=1&&goto fsInstall
+if %fchoice%==FIS set installFireStopperSetting=2&&goto fsInstall
+if %fchoice%==FIs set installFireStopperSetting=2&&goto fsInstall
+if %fchoice%==Fis set installFireStopperSetting=2&&goto fsInstall
+if %fchoice%==fIs set installFireStopperSetting=2&&goto fsInstall
+if %fchoice%==fiS set installFireStopperSetting=2&&goto fsInstall
+if %fchoice%==fis set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
@@ -701,7 +702,7 @@ goto fixesMenu
 
 :fsInstall
 
-if %installFireStopperAsSystem%==0 (
+if %installFireStopperSetting%==1 (
 
 	%uninstall% de.belu.firestopper
 	
@@ -711,7 +712,7 @@ if %installFireStopperAsSystem%==0 (
 
 )
 
-if %installFireStopperAsSystem%==1 (
+if %installFireStopperSetting%==2 (
 
 	%uninstall% de.belu.firestopper
 	
@@ -723,9 +724,11 @@ if %installFireStopperAsSystem%==1 (
 	%shell% "su -c chmod 755 /data/local/tmp/firestopper-as-system.sh"
 	%shell% "su -c sh /data/local/tmp/firestopper-as-system.sh"
 	
-	set installFireStopperAsSystem=0
+	set installFireStopperSetting=0
 
 )
+
+%launchFireStarter%
 
 goto fixesMenu
 
