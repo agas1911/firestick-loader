@@ -244,6 +244,8 @@ set installTerminalSetting=0
 
 set rebootAfterBloatRemoval=0
 
+set restoreAmazonFiles=0
+
 set adbServerAction=0
 
 set returnTo=menu
@@ -620,7 +622,7 @@ echo 8) Launch Boot Animation Factory
 echo.
 echo.
 %_color% 0a
-echo P) Patch Amazon APKs
+echo P) Patch Amazon APKs (also use PR to restore original amazon files)
 echo.
 %_color% 07
 echo Z) Reset ADB Server (also use ZS to start or ZK to kill server)
@@ -669,8 +671,12 @@ if %fchoice%==7 goto bootanimRestoreFBI
 if %fchoice%==8 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==L %tap% 20 1030
 if %fchoice%==l %tap% 20 1030
-if %fchoice%==P goto patchAmz
-if %fchoice%==p goto patchAmz
+if %fchoice%==P set restoreAmazonFiles=0&&goto patchAmz
+if %fchoice%==p set restoreAmazonFiles=0&&goto patchAmz
+if %fchoice%==PR set restoreAmazonFiles=1&&goto patchAmz
+if %fchoice%==Pr set restoreAmazonFiles=1&&goto patchAmz
+if %fchoice%==pR set restoreAmazonFiles=1&&goto patchAmz
+if %fchoice%==pr set restoreAmazonFiles=1&&goto patchAmz
 if %fchoice%==Z goto resetADB
 if %fchoice%==z goto resetADB
 if %fchoice%==ZS set adbServerAction=1&&goto resetADB
@@ -734,9 +740,23 @@ goto fixesMenu
 
 :patchAmz
 
+if %restoreAmazonFiles%==0 (
+
+	%push% "%~dp0config\system\priv-app\com.amazon.tv.settings\com.amazon.tv.settings.apk" /data/local/tmp/
+
+)
+
+if %restoreAmazonFiles%==1 (
+
+	%push% "%~dp0config\system\priv-app\com.amazon.tv.settings\orig\com.amazon.tv.settings.apk" /data/local/tmp/
+
+)
+
 %push% "%~dp0scripts\patch-amazon-settings-apk.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/patch-amazon-settings-apk.sh"
 %shell% "su -c sh /data/local/tmp/patch-amazon-settings-apk.sh"
+
+set restoreAmazonFiles=0
 
 goto fixesMenu
 
