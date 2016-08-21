@@ -244,6 +244,8 @@ set installTerminalSetting=0
 
 set rebootAfterBloatRemoval=0
 
+set adbServerAction=0
+
 set returnTo=menu
 
 
@@ -620,8 +622,7 @@ echo.
 echo 9) Accept Opera Mini License Agreement
 echo.
 %_color% 07
-echo 10) Start ADB Server
-echo 11) Kill ADB Server
+echo Z) Reset ADB Server (also use ZS to start or ZK to kill server)
 echo.
 %_color% 08
 echo R) Reboot Device (also use RR to reboot to recovery)
@@ -663,8 +664,16 @@ if %fchoice%==6 goto bootanimReplaceFBI
 if %fchoice%==7 goto bootanimRestoreFBI
 if %fchoice%==8 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==9 %tap% 20 1030
-if %fchoice%==10 %adb% kill-server
-if %fchoice%==11 %adb% start-server
+if %fchoice%==Z goto resetADB
+if %fchoice%==z goto resetADB
+if %fchoice%==ZS set adbServerAction=1&&goto resetADB
+if %fchoice%==Zs set adbServerAction=1&&goto resetADB
+if %fchoice%==zS set adbServerAction=1&&goto resetADB
+if %fchoice%==zs set adbServerAction=1&&goto resetADB
+if %fchoice%==ZK set adbServerAction=2&&goto resetADB
+if %fchoice%==Zk set adbServerAction=2&&goto resetADB
+if %fchoice%==zK set adbServerAction=2&&goto resetADB
+if %fchoice%==zk set adbServerAction=2&&goto resetADB
 if %fchoice%==R %adb% reboot
 if %fchoice%==r %adb% reboot
 ::if %fchoice%==11 %adb% shell setprop sys.powerctl reboot
@@ -711,6 +720,36 @@ if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
 if %fchoice%==x goto end
+
+goto fixesMenu
+
+
+:resetADB
+
+if %adbServerAction%==0 (
+
+	%adb% kill-server
+
+	%sleep% 3
+
+	%adb% start-server
+
+)
+
+if %adbServerAction%==1 (
+
+	%adb% start-server
+
+)
+
+if %adbServerAction%==2 (
+
+	%adb% kill-server
+
+)
+
+set adbServerAction=0
+
 
 goto fixesMenu
 
