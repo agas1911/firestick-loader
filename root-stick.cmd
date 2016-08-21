@@ -618,8 +618,9 @@ echo 7) Restore Boot Fallback Images (Restores framework-res.apk)
 echo.
 echo 8) Launch Boot Animation Factory
 echo.
-%_color% 06
-echo 9) Accept Opera Mini License Agreement
+echo.
+%_color% 0a
+echo P) Patch Amazon APKs
 echo.
 %_color% 07
 echo Z) Reset ADB Server (also use ZS to start or ZK to kill server)
@@ -627,14 +628,17 @@ echo.
 %_color% 08
 echo R) Reboot Device (also use RR to reboot to recovery)
 echo.
-%_color% 0a
-echo A) Allow Superuser Permission On Device (Clicks The ALLOW Button)
-echo.
 %_color% 0b
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
 echo.
+%_color% 01
+echo A) Allow Superuser Permission On Device (Clicks The ALLOW Button)
+echo.
 %_color% 0c
 echo D) Disable/Block Ads (uses modified /system/etc/HOSTS)
+echo.
+%_color% 06
+echo L) Accept Opera Mini License Agreement
 echo.
 %_color% 03
 echo F) FireStopper Launch (also use FI to install or FIS to install as /system/)
@@ -646,8 +650,8 @@ echo.
 echo.
 %_color% 0e
 echo Press B to go back to previous page
-echo.
-echo Press X to exit
+::echo.
+::echo Press X to exit
 echo.
 echo.
 echo Make a choice and press ENTER....
@@ -663,7 +667,10 @@ if %fchoice%==5 goto bootanimRestore
 if %fchoice%==6 goto bootanimReplaceFBI
 if %fchoice%==7 goto bootanimRestoreFBI
 if %fchoice%==8 "%~dp0bin\boot-animation-factory.exe"
-if %fchoice%==9 %tap% 20 1030
+if %fchoice%==L %tap% 20 1030
+if %fchoice%==l %tap% 20 1030
+if %fchoice%==P goto patchAmz
+if %fchoice%==p goto patchAmz
 if %fchoice%==Z goto resetADB
 if %fchoice%==z goto resetADB
 if %fchoice%==ZS set adbServerAction=1&&goto resetADB
@@ -722,6 +729,17 @@ if %fchoice%==X goto end
 if %fchoice%==x goto end
 
 goto fixesMenu
+
+
+
+:patchAmz
+
+%push% "%~dp0scripts\patch-amazon-settings-apk.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/patch-amazon-settings-apk.sh"
+%shell% "su -c sh /data/local/tmp/patch-amazon-settings-apk.sh"
+
+goto fixesMenu
+
 
 
 :resetADB
