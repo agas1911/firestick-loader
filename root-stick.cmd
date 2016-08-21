@@ -624,12 +624,6 @@ echo.
 %_color% 0a
 echo P) Patch Amazon APKs (also use PR to restore original amazon files)
 echo.
-%_color% 07
-echo Z) Reset ADB Server (also use ZS to start or ZK to kill server)
-echo.
-%_color% 08
-echo R) Reboot Device (also use RR to reboot to recovery)
-echo.
 %_color% 0b
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
 echo.
@@ -647,6 +641,12 @@ echo F) FireStopper Launch (also use FI to install or FIS to install as /system/
 echo.
 %_color% 02
 echo T) Terminal Launch (also use TI to install or TIS to install as /system/)
+echo.
+%_color% 07
+echo Z) Reset ADB Server (also use ZS to start or ZK to kill server)
+echo.
+%_color% 08
+echo R) Reboot Device (also use RR to reboot to recovery)
 echo.
 echo.
 echo.
