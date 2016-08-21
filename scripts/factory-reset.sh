@@ -38,7 +38,7 @@ cp /data/local/tmp/kingroot.apk /system/firepwn/kingroot.apk
 # Preserve KingRoot Settings
 #mkdir /system/firepwn/data/data/com.kingroot.kinguser/
 #mkdir /system/firepwn/data/data/com.kingroot.kinguser/shared_prefs/
-cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /system/firepwn/data/data/com.kingroot.kinguser/
+#cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /system/firepwn/data/data/com.kingroot.kinguser/
 
 # Preserve Wifi Settings
 #mkdir /system/firepwn/data/misc/wifi/
@@ -117,7 +117,7 @@ cp -Rp /system/firepwn/data/data/com.amazon.tv.settings/ /data/data/com.amazon.t
 # Restoring KingRoot Settings
 #mkdir /data/data/com.kingroot.kinguser/
 #mkdir /data/data/com.kingroot.kinguser/shared_prefs/
-cp -Rp /system/firepwn/data/data/com.kingroot.kinguser/ /data/data/com.kingroot.kinguser/
+#cp -Rp /system/firepwn/data/data/com.kingroot.kinguser/ /data/data/com.kingroot.kinguser/
 
 
 # Restoring WiFi Settings
