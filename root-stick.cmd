@@ -639,6 +639,7 @@ echo F) FireStopper Launch (also use FI to install or FIS to install as /system/
 echo.
 echo.
 echo.
+echo.
 %_color% 0e
 echo Press B to go back to previous page
 echo.
