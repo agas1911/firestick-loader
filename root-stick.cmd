@@ -632,7 +632,7 @@ echo.
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
 echo.
 %_color% 0c
-echo D) Block Ads (uses modified /system/etc/HOSTS)
+echo D) Disable/Block Ads (uses modified /system/etc/HOSTS)
 echo.
 %_color% 03
 echo F) FireStopper Launch (also use FI to install or FIS to install as /system/)
