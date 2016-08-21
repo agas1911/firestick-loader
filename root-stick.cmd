@@ -638,7 +638,7 @@ echo.
 %_color% 03
 echo F) FireStopper Launch (also use FI to install or FIS to install as /system/)
 echo.
-%_color% 03
+%_color% 02
 echo T) Terminal Launch (also use TI to install or TIS to install as /system/)
 echo.
 echo.
@@ -695,6 +695,8 @@ if %fchoice%==Fis set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==fIs set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==fiS set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==fis set installFireStopperSetting=2&&goto fsInstall
+if %fchoice%==T goto termInstall
+if %fchoice%==t goto termInstall
 if %fchoice%==TI set installTerminalSetting=1&&goto termInstall
 if %fchoice%==Ti set installTerminalSetting=1&&goto termInstall
 if %fchoice%==tI set installTerminalSetting=1&&goto termInstall
