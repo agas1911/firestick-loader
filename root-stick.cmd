@@ -2015,6 +2015,8 @@ echo.
 echo.
 %_color% 0e
 
+%uninstall% stericson.busybox
+
 %install% %apk%
 
 %sleep% 2
@@ -2058,7 +2060,7 @@ echo.
 %sleep% 1
 %keyEnter%
 
-%sleep% 10
+%sleep% 20
 
 %keyHome%
 %sleep% 2
