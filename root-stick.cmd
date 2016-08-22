@@ -474,7 +474,7 @@ echo Device is currently %rootableText%
 %_color% 0e
 echo.
 echo.
-echo Press S to Show Settings -- Main Window
+echo Press Y to Show Settings -- Main Window
 echo.
 echo Press D to Show Settings -- Display Window
 echo.
@@ -501,8 +501,8 @@ echo.
 
 set /p ichoice=
 
-if %ichoice%==S %showSettingsMain%
-if %ichoice%==s %showSettingsMain%
+if %ichoice%==Y %showSettingsMain%
+if %ichoice%==y %showSettingsMain%
 if %ichoice%==D %showSettingsDisplay%
 if %ichoice%==d %showSettingsDisplay%
 if %ichoice%==P %showSettingsParental%
@@ -2664,19 +2664,26 @@ echo.
 %sleep% 5
 
 if %factoryReset%==1 (
-%amStart% com.amazon.tv.settings/.tv.FactoryResetActivity
-%sleep% 3
-%keyArrowLeft%
-%sleep% 1
-%keyEnter%
-%sleep% 3
+
+	%amStart% com.amazon.tv.settings/.tv.FactoryResetActivity
+	%sleep% 3
+	%keyArrowLeft%
+	%sleep% 1
+	%keyEnter%
+	%sleep% 3
 )
 
-:: This Mode Preserves ADB Debug Settings
+:: This Mode Preserves ADB Debug and WiFi Settings
 if %factoryReset%==2 (
-%push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
-%shell% "su -c sh /data/local/tmp/factory-reset.sh"
+
+	%shell% "rm /data/local/tmp/com.amazon.tv.settings_preferences.xml"
+	%shell% "rm /data/local/tmp/kingroot.apk"
+	%shell% "rm /data/local/tmp/factory-reset.sh"
+	%push% "%~dp0rooting\kingroot.apk" /data/local/tmp/
+	%push% "%~dp0config\data\com.amazon.tv.settings\shared_prefs\com.amazon.tv.settings_preferences.xml" /data/local/tmp/
+	%push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
+	%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
+	%shell% "su -c sh /data/local/tmp/factory-reset.sh"
 )
 
 ::pause
@@ -2778,7 +2785,11 @@ if %factoryReset%==2 (
 	pause
 	echo.
 	echo.
+	%shell% "rm /data/local/tmp/com.amazon.tv.settings_preferences.xml"
+	%shell% "rm /data/local/tmp/kingroot.apk"
+	%shell% "rm /data/local/tmp/factory-reset.sh"
 	%push% "%~dp0rooting\kingroot.apk" /data/local/tmp/
+	%push% "%~dp0config\data\com.amazon.tv.settings\shared_prefs\com.amazon.tv.settings_preferences.xml" /data/local/tmp/
 	%push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
 	%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
 	%shell% "su -c sh /data/local/tmp/factory-reset.sh"
