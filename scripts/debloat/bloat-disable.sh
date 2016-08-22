@@ -22,7 +22,6 @@ pm disable com.amazon.client.metrics
 pm disable com.amazon.client.metrics.api
 pm disable com.amazon.communication.discovery
 pm disable com.amazon.connectivitydiag
-
 pm disable com.amazon.dcp
 pm disable com.amazon.dcp.contracts.framework.library
 pm disable com.amazon.dcp.contracts.library
@@ -105,7 +104,11 @@ pm disable com.amazon.device.bluetoothdfu
 #pm disable com.amazon.whisperplay.contracts
 #pm disable com.amazon.whisperplay.service.install
 
-pm disable com.amazon.wcast.sink
+
+# Screen Mirroring???
+#pm disable com.amazon.wcast.sink
+
+
 pm disable com.amazon.webview
 pm disable com.svox.pico
 

@@ -22,7 +22,6 @@ pm disable com.amazon.client.metrics
 pm disable com.amazon.client.metrics.api
 pm disable com.amazon.communication.discovery
 pm disable com.amazon.connectivitydiag
-
 pm disable com.amazon.dcp
 pm disable com.amazon.dcp.contracts.framework.library
 pm disable com.amazon.dcp.contracts.library
@@ -105,7 +104,11 @@ pm disable com.amazon.device.bluetoothdfu
 #pm disable com.amazon.whisperplay.contracts
 #pm disable com.amazon.whisperplay.service.install
 
-pm disable com.amazon.wcast.sink
+
+# Screen Mirroring???
+#pm disable com.amazon.wcast.sink
+
+
 pm disable com.amazon.webview
 pm disable com.svox.pico
 
@@ -236,7 +239,6 @@ rm -r /system/priv-app/SystemStatusMonitor/
 rm -r /system/priv-app/SystemUpdatesUI/
 rm -r /system/priv-app/UnifiedShareActivityChooser/
 rm -r /system/priv-app/WallpaperCropper/
-rm -r /system/priv-app/WhisperCastConnect/
 
 
 # Tested Removal OK (Part 2)
@@ -275,7 +277,6 @@ rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 # Amazon Screensaver
 #rm -r /system/priv-app/com.amazon.bueller.photos/
 
-
 # Amazon Remote Android App
 #rm -r /system/priv-app/com.amazon.storm.lightning.services/
 #rm -r /system/priv-app/com.amazon.storm.lightning.tutorial/
@@ -283,15 +284,15 @@ rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 #rm -r /system/priv-app/WhisperplayCore/
 #rm -r /system/priv-app/WhisperplayInstall/
 
-
 # Captive Portal Launcher
 #rm -r /system/priv-app/CaptivePortalLauncher/
 #rm -r /system/app/CaptivePortalLogin/
 
-
 # Amazon Voice Support
 #rm -r /system/priv-app/com.amazon.vizzini/
 
+# Screen Mirroring???
+#rm -r /system/priv-app/WhisperCastConnect/
 
 # Needed For Amazon Settings UI (Removal Will Break Stock Settings)
 #rm -r /system/priv-app/DeviceSoftwareOTAContracts/
@@ -311,7 +312,6 @@ rm -r /system/app/PicoTts/
 rm -r /system/app/UnifiedSettingsProvider/
 rm -r /system/app/WebCryptoTZService/
 rm -r /system/app/WhiteListedUrlProvider/
-
 
 
 
@@ -433,10 +433,8 @@ rm -r /data/data/SystemUpdatesUI/
 rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/VpnDialogs/
 rm -r /data/data/WallpaperCropper/
-rm -r /data/data/WhisperCastConnect/
 
 #rm -r /data/data/android.amazon.perm
-
 
 # Amazon Remote Android App
 #rm -r /data/data/com.amazon.storm.lightning.services/
@@ -445,14 +443,14 @@ rm -r /data/data/WhisperCastConnect/
 #rm -r /data/data/WhisperplayCore/
 #rm -r /data/data/WhisperplayInstall
 
-
 # Captive Portal Launcher
 #rm -r /data/data/CaptivePortalLauncher/
-
 
 # Amazon Voice Support
 #rm -r /data/data/com.amazon.vizzini/
 
+# Screen Mirroring???
+#rm -r /data/data/WhisperCastConnect/
 
 # Needed For Amazon Settings UI (ONLY FOR /system NOT /data/)
 #rm -r /data/data/DeviceSoftwareOTAContracts/
@@ -475,10 +473,6 @@ rm -r /data/data/android.amazon.perm/
 
 
 
-# Restoring ADB Settings
-mkdir /data/data/com.amazon.tv.settings
-mkdir /data/data/com.amazon.tv.settings/shared_prefs
-cp /sdcard/com.amazon.tv.settings_preferences.xml /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 
 
 
