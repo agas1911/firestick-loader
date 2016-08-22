@@ -2088,7 +2088,26 @@ if %fullAutoMode%==0 pause>nul
 %keyBack%
 %keyHome%
 %sleep% 1
+
+
+cls
+echo Removing Busybox APK....
+echo.
+echo.
+echo.
+%_color% 0b
+echo *** BUSYBOX IS INSTALLED TO THE /system/ DIRECTORY, THE APK IS NO LONGER NEEDED ***
+%_color% 0e
+echo.
+echo.
+
 %uninstall% stericson.busybox
+
+
+cls
+echo Rebooting....
+echo.
+echo.
 
 %adb% reboot
 
