@@ -66,7 +66,7 @@ cp /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_suppli
 #rm -R -- /data/*/
 
 rm -f /data/.layout_version
-#rm -rf /data/adb/
+rm -rf /data/adb/
 rm -rf /data/anr/
 rm -rf /data/app/
 rm -rf /data/app-asec/
@@ -95,7 +95,7 @@ rm -rf /data/securestop/
 rm -rf /data/security/
 rm -rf /data/sfs/
 rm -rf /data/system/
-rm -rf /data/user/
+#rm -rf /data/user/
 rm -rf /data/vitals/
 rm -rf /data/webcrypto/
 #rm -rf /data/
@@ -105,12 +105,12 @@ rm -rf /data/webcrypto/
 #mkdir /data/app/
 #mkdir /data/app/mcRegistry
 #mkdir /data/app/mcRegistry/TbStorage
-#mkdir /data/data/
+mkdir /data/data/
 #mkdir /data/local/
 #mkdir /data/local/tmp/
 
-#chown system:system /data/data/
-#chmod 771 /data/
+chown system:system /data/data/
+chmod 771 /data/
 
 # Restoring ADB Settings
 mkdir /data/data/com.amazon.tv.settings
