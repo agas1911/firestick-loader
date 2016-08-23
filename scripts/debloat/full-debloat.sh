@@ -291,7 +291,7 @@ rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 # Amazon Voice Support
 #rm -r /system/priv-app/com.amazon.vizzini/
 
-# Screen Mirroring???
+# Screen Mirroring Function
 #rm -r /system/priv-app/WhisperCastConnect/
 
 # Needed For Amazon Settings UI (Removal Will Break Stock Settings)

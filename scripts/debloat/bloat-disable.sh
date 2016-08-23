@@ -103,7 +103,7 @@ pm disable com.amazon.device.bluetoothdfu
 #pm disable com.amazon.whisperplay.contracts
 #pm disable com.amazon.whisperplay.service.install
 
-# Screen Mirroring???
+# Screen Mirroring Function
 #pm disable com.amazon.wcast.sink
 
 # Check Network Status Under Amazon Settings
