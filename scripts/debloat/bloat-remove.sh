@@ -127,7 +127,7 @@ rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 #rm -r /system/priv-app/RemoteSettingsInternalSDK/
 
 # Check Network Status Under Amazon Settings
-#rm -r /system/priv-app/SystemStatusMonitor/
+rm -r /system/priv-app/SystemStatusMonitor/
 
 
 # From /system/app/

@@ -104,7 +104,7 @@ pm disable com.amazon.device.bluetoothdfu
 #pm disable com.amazon.wcast.sink
 
 # Check Network Status Under Amazon Settings
-#pm disable com.amazon.ssm
+pm disable com.amazon.ssm
 
 # Only Disable If Amazon Video and Store Will Not Be Needed as User Installed APKs
 #pm disable com.amazon.avod
@@ -301,7 +301,7 @@ rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 #rm -r /system/priv-app/RemoteSettingsInternalSDK/
 
 # Check Network Status Under Amazon Settings
-#rm -r /system/priv-app/SystemStatusMonitor/
+rm -r /system/priv-app/SystemStatusMonitor/
 
 
 
