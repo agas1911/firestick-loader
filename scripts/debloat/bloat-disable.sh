@@ -14,7 +14,6 @@ pm disable com.amazon.android.marketplace
 pm disable com.amazon.android.service.networkmonitor
 pm disable com.amazon.application.compatibility.enforcer
 pm disable com.amazon.application.compatibility.enforcer.sdk.library
-pm disable com.amazon.avod
 pm disable com.amazon.awvflingreceiver
 pm disable com.amazon.bueller.music
 pm disable com.amazon.bueller.notification
@@ -58,7 +57,6 @@ pm disable com.amazon.recess
 pm disable com.amazon.securitysyncclient
 pm disable com.amazon.settings.systemupdates
 pm disable com.amazon.sharingservice.android.client.proxy
-pm disable com.amazon.shoptv.client
 pm disable com.amazon.shpm
 pm disable com.amazon.sync.provider.ipc
 pm disable com.amazon.sync.service
@@ -81,7 +79,6 @@ pm disable com.amazon.tz.webcryptotzservice
 pm disable com.amazon.venezia
 pm disable com.amazon.videoads.app
 pm disable com.amazon.visualonawv
-
 
 # Amazon Screensaver
 #pm disable com.amazon.bueller.photos
@@ -108,6 +105,10 @@ pm disable com.amazon.device.bluetoothdfu
 
 # Check Network Status Under Amazon Settings
 #pm disable com.amazon.ssm
+
+# Only Disable If Amazon Video and Store Will Not Be Needed as User Installed APKs
+#pm disable com.amazon.avod
+#pm disable com.amazon.shoptv.client
 
 
 pm disable com.amazon.webview
