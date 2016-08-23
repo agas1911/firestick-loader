@@ -60,7 +60,6 @@ pm disable com.amazon.settings.systemupdates
 pm disable com.amazon.sharingservice.android.client.proxy
 pm disable com.amazon.shoptv.client
 pm disable com.amazon.shpm
-pm disable com.amazon.ssm
 pm disable com.amazon.sync.provider.ipc
 pm disable com.amazon.sync.service
 pm disable com.amazon.tcomm
@@ -104,9 +103,11 @@ pm disable com.amazon.device.bluetoothdfu
 #pm disable com.amazon.whisperplay.contracts
 #pm disable com.amazon.whisperplay.service.install
 
-
 # Screen Mirroring???
 #pm disable com.amazon.wcast.sink
+
+# Check Network Status Under Amazon Settings
+#pm disable com.amazon.ssm
 
 
 pm disable com.amazon.webview
