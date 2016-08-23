@@ -197,7 +197,6 @@
     - /system/priv-app/shipmode/
     - /system/priv-app/sync-provider_ipc-release/
     - /system/priv-app/sync-service-fireos-release/
-    - /system/priv-app/SystemStatusMonitor/
     - /system/priv-app/SystemUpdatesUI/
     - /system/priv-app/UnifiedShareActivityChooser/
     - /system/priv-app/WallpaperCropper/
@@ -233,6 +232,9 @@
     - /system/priv-app/DeviceSoftwareOTAContracts/
     - /system/priv-app/RemoteSettingsAndroid/
     - /system/priv-app/RemoteSettingsInternalSDK/
+	
+- Checks Network Status Under Amazon Settings
+    - /system/priv-app/SystemStatusMonitor/
 
 <br/><br/>
 
