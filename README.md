@@ -236,7 +236,7 @@
     - /system/priv-app/RemoteSettingsAndroid/
     - /system/priv-app/RemoteSettingsInternalSDK/
 	
-- Checks Network Status Under Amazon Settings
+- Checks Network Status Under Amazon Settings (has 20+MB RAM footprint)
     - /system/priv-app/SystemStatusMonitor/
 
 <br/><br/>
