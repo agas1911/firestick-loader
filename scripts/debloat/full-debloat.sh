@@ -236,7 +236,6 @@ rm -r /system/priv-app/marketplace_service_receiver/
 rm -r /system/priv-app/shipmode/
 rm -r /system/priv-app/sync-provider_ipc-release/
 rm -r /system/priv-app/sync-service-fireos-release/
-rm -r /system/priv-app/SystemStatusMonitor/
 rm -r /system/priv-app/SystemUpdatesUI/
 rm -r /system/priv-app/UnifiedShareActivityChooser/
 rm -r /system/priv-app/WallpaperCropper/
@@ -299,6 +298,9 @@ rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 #rm -r /system/priv-app/DeviceSoftwareOTAContracts/
 #rm -r /system/priv-app/RemoteSettingsAndroid/
 #rm -r /system/priv-app/RemoteSettingsInternalSDK/
+
+# Check Network Status Under Amazon Settings
+#rm -r /system/priv-app/SystemStatusMonitor/
 
 
 
