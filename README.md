@@ -200,7 +200,6 @@
     - /system/priv-app/SystemUpdatesUI/
     - /system/priv-app/UnifiedShareActivityChooser/
     - /system/priv-app/WallpaperCropper/
-    - /system/priv-app/WhisperCastConnect/
     
 	- /system/framework/android.amazon.perm/
 	
@@ -226,6 +225,10 @@
 
 - Amazon Voice Support
     - /system/priv-app/com.amazon.vizzini/
+	
+
+- Screen Mirroring Function
+    - /system/priv-app/WhisperCastConnect/
 
 
 - Needed For Amazon Settings UI (Removal Will Break Stock Settings)
