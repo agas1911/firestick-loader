@@ -24,7 +24,7 @@
 	
 ***Current Project Testing Status:***
 
-- 300MB+ Available Free Memory Running From HOME Screen
+- 275MB+ Available Free Memory Running From HOME Screen
 
 - Blue Stock FireTV Stick Boot Animation
 
@@ -37,6 +37,8 @@
     * Running The Disable Amazon Bloat Script After Factory Reset Will Also Stop Amazon HOME Menu From Loading Completely
 
 - Amazon Settings Menu Available (Parental Controls, Help, and My Account DISABLED)
+
+- Amazon Shopping, Amazon Underground, and Amazon Video Are Working Installed As Uninstallable User Apps
 
 - Amazon FireTV Remote App Still Supported
 
