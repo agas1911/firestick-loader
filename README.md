@@ -39,6 +39,7 @@
 - Amazon Settings Menu Available (Parental Controls, Help, and My Account DISABLED)
 
 - Amazon Shopping, Amazon Underground, and Amazon Video Are Working Installed As Uninstallable User Apps
+######\*\* Amazon Prime Features Are Currently Working Using Amazon Video and Shopping Apps \*\*
 
 - Amazon FireTV Remote App Still Supported
 
