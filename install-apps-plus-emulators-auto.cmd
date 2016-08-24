@@ -182,15 +182,15 @@ echo.
 %install% "apps\media\amazon-video.apk"
 
 
-cls
-%_color% 0e
-set appName=Movian
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\movian.apk"
+::cls
+::%_color% 0e
+::set appName=Movian
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\media\movian.apk"
 
 
 cls
@@ -235,7 +235,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\web\youtube.apk"
+%install% "apps\media\youtube.apk"
 
 
 cls
