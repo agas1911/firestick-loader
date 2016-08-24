@@ -76,7 +76,6 @@ pm disable com.amazon.tv.parentalcontrols
 pm disable com.amazon.tv.support
 pm disable com.amazon.tz.webcryptotzservice
 #pm disable com.amazon.unifiedshare.actionchooser
-pm disable com.amazon.venezia
 pm disable com.amazon.videoads.app
 pm disable com.amazon.visualonawv
 
@@ -109,6 +108,7 @@ pm disable com.amazon.ssm
 # Only Disable If Amazon Video and Store Will Not Be Needed as User Installed APKs
 #pm disable com.amazon.avod
 #pm disable com.amazon.shoptv.client
+#pm disable com.amazon.venezia
 
 
 pm disable com.amazon.webview
