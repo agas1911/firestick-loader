@@ -149,15 +149,26 @@ echo.
 %install% "apps\media\hulu.apk"
 
 
+::cls
+::%_color% 0e
+::set appName=Amazon Underground
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\media\amazon-underground.apk"
+
+
 cls
 %_color% 0e
-set appName=Amazon Underground
+set appName=Amazon Shopping
 set apk=
 echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\media\amazon-underground.apk"
+%install% "apps\media\amazon-shopping.apk"
 
 
 cls
