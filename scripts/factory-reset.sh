@@ -15,7 +15,7 @@ su -c mount -o rw,remount /system
 
 mkdir /system/firepwn/
 chown 0.0 /system/firepwn/
-chmod 755 /system/firepwn/
+chmod 777 /system/firepwn/
 
 mkdir /system/firepwn/data/
 mkdir /system/firepwn/data/app/
