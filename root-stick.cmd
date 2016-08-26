@@ -987,6 +987,10 @@ if %fireOsVersion%==0.0.0.0 set rootable=0
 if %fireOsVersion%==0.0.0.0 set rootableColor=0c
 if %fireOsVersion%==0.0.0.0 set rootableText=INVALID
 
+if %fireOsVersion%==5.0.0 set rootable=1
+if %fireOsVersion%==5.0.0 set rootableColor=0a
+if %fireOsVersion%==5.0.0 set rootableText=EXPLOITABLE
+
 if %fireOsVersion%==5.0.5 set rootable=1
 if %fireOsVersion%==5.0.5 set rootableColor=0a
 if %fireOsVersion%==5.0.5 set rootableText=EXPLOITABLE
