@@ -1,6 +1,5 @@
 #!/system/bin/sh
 
-clear
 echo "Hiding Amazon Bloat...."
 echo ""
 echo ""
