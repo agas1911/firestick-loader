@@ -2,9 +2,9 @@
 
 :reset
 
-title Amazon FireStick/FireTV Automatic Rooting and Downgrade Script  [esc0rtd3w]
+title Amazon FireStick Multi Rooting Downgrade and Hacking Script  [esc0rtd3w]
 
-mode con lines=45
+mode con lines=46
 
 color 0e
 
@@ -275,6 +275,9 @@ echo.
 echo https://github.com/esc0rtd3w/
 echo.
 echo.
+%_color% 0e
+echo.
+echo.
 
 del /f /s /q "%temp%\freeMemory.txt">nul
 del /f /s /q "%temp%\freeStorageData.txt">nul
@@ -303,13 +306,16 @@ for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageSystem.txt"') do set
 
 set dgchoice=m
 
-::if %firstCheck%==0 goto checkCanRoot
+if %firstCheck%==0 goto checkCanRoot
 
 %adbKill%
 
 cls
 %_color% 0e
-echo FireTV Stick Multi Menu (Rooting, Downgrade, Bloat Remove, and More)
+if %rootable%==0 %_color% %rootableColor%
+if %rootable%==1 %_color% %rootableColor%
+echo *** Device is currently on version %fireOsVersion% and is %rootableText% ***
+::echo FireTV Stick Multi Menu (Rooting, Downgrade, Bloat Remove, and More)
 echo.
 echo.
 %_color% 0b
@@ -317,11 +323,8 @@ echo [Free Memory: %readFreeMemFireStick%KB]   [Free Space (/data/): %readStorag
 echo.
 echo.
 echo.
-%_color% 0a
+%_color% 05
 echo Press Y To Use Full Automatic Mode (also use YD to include downgrade)
-::if %rootable%==0 %_color% 0c
-::if %rootable%==1 %_color% 0a
-::echo Device is currently %rootableText%
 %_color% 0e
 echo.
 echo.
@@ -970,15 +973,37 @@ goto menu
 
 set firstCheck=1
 
-%pull% %buildDotProp% "%temp%"
+::%pull% %buildDotProp% "%temp%"
 
-findstr 5.0.5.1 "%temp%\build.prop"
-if errorlevel 0 set rootable=1
-if errorlevel 0 set rootableText=EXPLOITABLE (May Require Several Attempts)
+%shell% "cat /system/build.prop | grep ro.build.version.name>/sdcard/fireos-version.txt"
 
-findstr 5.2.1.0 "%temp%\build.prop"
-if errorlevel 0 set rootable=1
-if errorlevel 0 set rootableText=EXPLOITABLE
+%pull% /sdcard/fireos-version.txt "%temp%"
+
+::findstr 5.2.1.1 "%temp%\fireos-version.txt"
+
+for /f "tokens=3 delims= " %%f in ('type "%temp%\fireos-version.txt"') do set fireOsVersion=%%f
+
+if %fireOsVersion%==0.0.0.0 set rootable=0
+if %fireOsVersion%==0.0.0.0 set rootableColor=0c
+if %fireOsVersion%==0.0.0.0 set rootableText=INVALID
+
+if %fireOsVersion%==5.0.5 set rootable=1
+if %fireOsVersion%==5.0.5 set rootableColor=0a
+if %fireOsVersion%==5.0.5 set rootableText=EXPLOITABLE
+
+if %fireOsVersion%==5.0.5.1 set rootable=1
+if %fireOsVersion%==5.0.5.1 set rootableColor=0a
+if %fireOsVersion%==5.0.5.1 set rootableText=EXPLOITABLE
+
+if %fireOsVersion%==5.2.1.0 set rootable=1
+if %fireOsVersion%==5.2.1.0 set rootableColor=0a
+if %fireOsVersion%==5.2.1.0 set rootableText=EXPLOITABLE
+
+if %fireOsVersion%==5.2.1.1 set rootable=0
+if %fireOsVersion%==5.2.1.1 set rootableColor=0c
+if %fireOsVersion%==5.2.1.1 set rootableText=NOT EXPLOITABLE
+
+del /f /s /q "%temp%\fireos-version.txt"
 
 goto menu
 
