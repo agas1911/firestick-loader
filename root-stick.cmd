@@ -676,8 +676,10 @@ echo.
 echo 8) Launch Boot Animation Factory
 echo.
 echo.
+::%_color% 0a
+::echo P) Patch Amazon APKs (also use PR to restore original amazon files)
 %_color% 0a
-echo P) Patch Amazon APKs (also use PR to restore original amazon files)
+echo H) Hide Amazon OTA Updates (*NO ROOT* also use HU to unhide updates again)
 echo.
 %_color% 0b
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
@@ -726,6 +728,12 @@ if %fchoice%==7 goto bootanimRestoreFBI
 if %fchoice%==8 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==L %tap% 20 1030
 if %fchoice%==l %tap% 20 1030
+if %fchoice%==H goto hideOTA
+if %fchoice%==h goto hideOTA
+if %fchoice%==HU goto unhideOTA
+if %fchoice%==Hu goto unhideOTA
+if %fchoice%==hU goto unhideOTA
+if %fchoice%==hu goto unhideOTA
 if %fchoice%==P set restoreAmazonFiles=0&&goto patchAmz
 if %fchoice%==p set restoreAmazonFiles=0&&goto patchAmz
 if %fchoice%==PR set restoreAmazonFiles=1&&goto patchAmz
@@ -2891,6 +2899,25 @@ set /p testNow=
 
 if %testNow%==Y %adb% reboot
 if %testNow%==y %adb% reboot
+
+goto fixesMenu
+
+
+
+:hideOTA
+
+%push% "%~dp0scripts\hide-ota-no-root.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/hide-ota-no-root.sh"
+%shell% "su -c sh /data/local/tmp/hide-ota-no-root.sh"
+
+goto fixesMenu
+
+
+:unhideOTA
+
+%push% "%~dp0scripts\unhide-ota-no-root.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/unhide-ota-no-root.sh"
+%shell% "su -c sh /data/local/tmp/unhide-ota-no-root.sh"
 
 goto fixesMenu
 
