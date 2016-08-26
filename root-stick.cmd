@@ -33,6 +33,8 @@ set adbKill="%~dp0bin\adb.exe" kill-server
 set adbStart="%~dp0bin\adb.exe" start-server
 set adbWait=%adb% wait-for-device
 
+set msgbox="%~dp0bin\msgbox.exe"
+
 set capDevice=/sdcard/cap.png
 
 set tempHost=%temp%
@@ -114,6 +116,22 @@ set rmSuper=%shell% "su -c rm
 
 
 set cleanEntireSdCard=0
+
+
+:: File Commands (Unix-Like)
+set cp=xcopy /e /y
+set cp2=xcopy /y
+set cp3=xcopy /e /y /h /d /c /r /i
+set cp4=xcopy /e /y /h /d /c /r /i /s
+set copy=copy /y
+set copyNoClobber=copy
+set del=del /f /q
+set rm=del /f /q
+set rmsubNoForce=del /s /q
+set rmsub=del /f /s /q
+set rmdir=rd /s /q
+set mkdir=md
+set kill=taskkill /f /im
 
 
 :: Direct Invoking
@@ -2521,163 +2539,6 @@ if %rebootAfterBloatRemovalChoice%==Y set rebootAfterBloatRemoval=1
 if %rebootAfterBloatRemovalChoice%==y set rebootAfterBloatRemoval=1
 if %rebootAfterBloatRemovalChoice%==Y goto clearCaches
 if %rebootAfterBloatRemovalChoice%==y goto clearCaches
-
-goto menu
-
-
-:bloatBusterOld
-
-cls
-if %bloatAction%==disable echo Disabling Amazon Bloatware....
-if %bloatAction%==enable echo Enabling Amazon Bloatware....
-echo.
-echo.
-
-%shell% "su -c pm %bloatAction% amazon.jackson19"
-%shell% "su -c pm %bloatAction% android.amazon.perm"
-%shell% "su -c pm %bloatAction% com.amazon.acos.providers.UnifiedSettingsProvider"
-%shell% "su -c pm %bloatAction% com.amazon.ags.app"
-%shell% "su -c pm %bloatAction% com.amazon.android.marketplace"
-%shell% "su -c pm %bloatAction% com.amazon.android.service.networkmonitor"
-%shell% "su -c pm %bloatAction% com.amazon.application.compatibility.enforcer"
-%shell% "su -c pm %bloatAction% com.amazon.application.compatibility.enforcer.sdk.library"
-%shell% "su -c pm %bloatAction% com.amazon.avod"
-%shell% "su -c pm %bloatAction% com.amazon.awvflingreceiver"
-%shell% "su -c pm %bloatAction% com.amazon.bueller.music"
-%shell% "su -c pm %bloatAction% com.amazon.bueller.notification"
-%shell% "su -c pm %bloatAction% com.amazon.bueller.photos"
-%shell% "su -c pm %bloatAction% com.amazon.client.metrics"
-%shell% "su -c pm %bloatAction% com.amazon.client.metrics.api"
-%shell% "su -c pm %bloatAction% com.amazon.communication.discovery"
-%shell% "su -c pm %bloatAction% com.amazon.connectivitydiag"
-%shell% "su -c pm %bloatAction% com.amazon.cpl"
-%shell% "su -c pm %bloatAction% com.amazon.dcp"
-%shell% "su -c pm %bloatAction% com.amazon.dcp.contracts.framework.library"
-%shell% "su -c pm %bloatAction% com.amazon.dcp.contracts.library"
-::%shell% "su -c pm %bloatAction% com.amazon.device.bluetoothdfu"
-::%shell% "su -c pm %bloatAction% com.amazon.device.controllermanager"
-%shell% "su -c pm %bloatAction% com.amazon.device.crashmanager"
-%shell% "su -c pm %bloatAction% com.amazon.device.logmanager"
-::%shell% "su -c pm %bloatAction% com.amazon.device.lowstoragemanager"
-%shell% "su -c pm %bloatAction% com.amazon.device.messaging"
-%shell% "su -c pm %bloatAction% com.amazon.device.messaging.sdk.internal.library"
-%shell% "su -c pm %bloatAction% com.amazon.device.messaging.sdk.library"
-%shell% "su -c pm %bloatAction% com.amazon.device.settings"
-%shell% "su -c pm %bloatAction% com.amazon.device.settings.sdk.internal.library"
-%shell% "su -c pm %bloatAction% com.amazon.device.software.ota"
-%shell% "su -c pm %bloatAction% com.amazon.device.software.ota.override"
-%shell% "su -c pm %bloatAction% com.amazon.device.sync"
-%shell% "su -c pm %bloatAction% com.amazon.device.sync.sdk.internal"
-%shell% "su -c pm %bloatAction% com.amazon.devicecontrol"
-%shell% "su -c pm %bloatAction% com.amazon.dp.logger"
-::%shell% "su -c pm %bloatAction% com.amazon.fireinputdevices"
-%shell% "su -c pm %bloatAction% com.amazon.identity.auth.device.authorization"
-%shell% "su -c pm %bloatAction% com.amazon.imp"
-%shell% "su -c pm %bloatAction% com.amazon.kindle.cms"
-%shell% "su -c pm %bloatAction% com.amazon.kindle.devicecontrols"
-::%shell% "su -c pm %bloatAction% com.amazon.kindleautomatictimezone"
-%shell% "su -c pm %bloatAction% com.amazon.kso.blackbird"
-%shell% "su -c pm %bloatAction% com.amazon.metrics.api"
-%shell% "su -c pm %bloatAction% com.amazon.ods.kindleconnect"
-%shell% "su -c pm %bloatAction% com.amazon.parentalcontrols"
-%shell% "su -c pm %bloatAction% com.amazon.platform.fdrw"
-%shell% "su -c pm %bloatAction% com.amazon.precog"
-%shell% "su -c pm %bloatAction% com.amazon.providers"
-%shell% "su -c pm %bloatAction% com.amazon.providers.contentsupport"
-%shell% "su -c pm %bloatAction% com.amazon.recess"
-%shell% "su -c pm %bloatAction% com.amazon.securitysyncclient"
-%shell% "su -c pm %bloatAction% com.amazon.settings.systemupdates"
-%shell% "su -c pm %bloatAction% com.amazon.sharingservice.android.client.proxy"
-%shell% "su -c pm %bloatAction% com.amazon.shoptv.client"
-%shell% "su -c pm %bloatAction% com.amazon.shpm"
-%shell% "su -c pm %bloatAction% com.amazon.ssm"
-%shell% "su -c pm %bloatAction% com.amazon.storm.lightning.services"
-%shell% "su -c pm %bloatAction% com.amazon.storm.lightning.tutorial"
-%shell% "su -c pm %bloatAction% com.amazon.sync.provider.ipc"
-%shell% "su -c pm %bloatAction% com.amazon.sync.service"
-%shell% "su -c pm %bloatAction% com.amazon.tcomm"
-%shell% "su -c pm %bloatAction% com.amazon.tcomm.client"
-%shell% "su -c pm %bloatAction% com.amazon.tmm.tutorial"
-%shell% "su -c pm %bloatAction% com.amazon.tv.csapp"
-%shell% "su -c pm %bloatAction% com.amazon.tv.fw.metrics"
-::%shell% "su -c pm %bloatAction% com.amazon.tv.ime"
-::%shell% "su -c pm %bloatAction% com.amazon.tv.intentsupport"
-::%shell% "su -c pm %bloatAction% com.amazon.tv.launcher"
-%shell% "su -c pm %bloatAction% com.amazon.tv.legal.notices"
-%shell% "su -c pm %bloatAction% com.amazon.tv.oobe"
-//%shell% "su -c pm %bloatAction% com.amazon.tv.parentalcontrols"
-::%shell% "su -c pm %bloatAction% com.amazon.tv.resolutioncycler"
-::%shell% "su -c pm %bloatAction% com.amazon.tv.settings"
-::%shell% "su -c pm %bloatAction% com.amazon.tv.support"
-%shell% "su -c pm %bloatAction% com.amazon.tz.webcryptotzservice"
-::%shell% "su -c pm %bloatAction% com.amazon.unifiedshare.actionchooser"
-%shell% "su -c pm %bloatAction% com.amazon.venezia"
-%shell% "su -c pm %bloatAction% com.amazon.videoads.app"
-%shell% "su -c pm %bloatAction% com.amazon.visualonawv"
-%shell% "su -c pm %bloatAction% com.amazon.vizzini"
-%shell% "su -c pm %bloatAction% com.amazon.wcast.sink"
-%shell% "su -c pm %bloatAction% com.amazon.webview"
-%shell% "su -c pm %bloatAction% com.amazon.whisperlink.core.android"
-%shell% "su -c pm %bloatAction% com.amazon.whisperplay.contracts"
-%shell% "su -c pm %bloatAction% com.amazon.whisperplay.service.install"
-
-%shell% "su -c pm %bloatAction% com.svox.pico"
-%shell% "su -c pm %bloatAction% com.android.captiveportallogin"
-
-:: Home may kill enough by itself (untested)
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.HomeActivity"
-
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.ItemLoadingActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.primefreetrial.PrimeFreeTrialActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.purchase.OffDeviceSubscriptionActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.Channel1DActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.TVActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.SearchMenuActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.MoviesActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.YoursToWatchActivity"
-
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.ReleaseNotesActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ui.purchase.VideoItemPurchaseActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.content.ComradeReceiver"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.demo.DemoPackageAddedReceiver"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.ads.AdRefreshReceiver"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.util.CategorySearchReceiver"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.util.LauncherPreloaderReceiver"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/.parentalcontrols.PCONPermissionsReceiver"
-%shell% "su -c pm %bloatAction% com.amazon.tv.launcher/com.amazon.tv.mediabrowse.service.MediaBrowseServiceImpl"
-
-%shell% "su -c pm %bloatAction% com.amazon.tv.settings/.blackcurtain.BlackCurtainActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.settings/.blackcurtain.AdultContentPrefsActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.settings/.tv.ThingsToTrySettingsActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.settings/.tv.AmazonAccountSettingsActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.settings/.tv.BuellerAccountSettingsActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.settings/.tv.AlexaSettingsActivity"
-%shell% "su -c pm %bloatAction% com.amazon.tv.settings/.auth.BuellerSettingsMAPInformationProvider"
-
-:: Disable Sleep Screen (Hold HOME Button)
-::pm disable com.amazon.tv.settings/.hud.HomeLongPressReceiver
-
-::pm disable com.amazon.tv.settings/.tv.usb.AppScanReceiver
-::pm disable com.amazon.tv.settings.tv.usb.PackageMovedLocation
-
-%shell% "su -c pm %bloatAction% com.amazon.settings.systemupdates/.OTAEventReceiver"
-
-:: Disable Factory Reset Option
-::%shell% "su -c pm %bloatAction% com.amazon.tv.settings/com.amazon.tv.settings.tv.FactoryResetActivity
-
-%sleep% 3
-
-%keyHome%
-%keyArrowDown%
-%sleep% 1
-%keyArrowDown%
-%sleep% 1
-%keyHome%
-%sleep% 1
-%keyArrowDown%
-%sleep% 1
-
-%cleanPackages%
 
 goto menu
 
