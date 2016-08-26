@@ -350,9 +350,9 @@ echo.
 echo.
 echo.
 
-if %fireOsVersion%==5.0.5.1 %msgbox% "This device has version %fireOsVersion% installed.\n\nIt is recommended to disable and remove all Amazon Bloat.\n\n\n*** THIS IS CURRENTLY THE RECOMMENDED VERSION TO USE ***" "FirePwn Loader"
+if %fireOsVersion%==5.0.5 %msgbox% "This device has version %fireOsVersion% installed.\n\nIt is recommended to disable and remove all Amazon Bloat.\n\n\n*** THIS IS CURRENTLY THE RECOMMENDED VERSION TO USE ***" "FirePwn Loader"
 
-::if %fireOsVersion%==5.0.5.1 %msgbox% "This device has version %fireOsVersion% installed.\nThere will probably be mixed results trying to root this version!\n\nIt is recommended updating to version 5.2.1.0 for rooting.\n\n\nAmazon OTA Updates are incremental.\n\nThe available version under SETTINGS - ABOUT should be 5.2.1.0.\n\nIf the available version is 5.2.1.1 or higher, DO NOT UPDATE!" "FirePwn Loader"
+if %fireOsVersion%==5.0.5.1 %msgbox% "This device has version %fireOsVersion% installed.\nThere will probably be mixed results trying to root this version!\n\nIt is recommended updating to version 5.2.1.0 for rooting.\n\n\nAmazon OTA Updates are incremental.\n\nThe available version under SETTINGS - ABOUT should be 5.2.1.0.\n\nIf the available version is 5.2.1.1 or higher, DO NOT UPDATE!" "FirePwn Loader"
 
 if %fireOsVersion%==5.2.1.0 %msgbox% "This device has version %fireOsVersion% installed.\n\nIt is recommended to disable Amazon OTA Updates.\n\n\n* IF THE DEVICE UPDATES, IT MAY NOT BE EXPLOITABLE!\n\n*** YOU HAVE BEEN WARNED ***" "FirePwn Loader"
 
