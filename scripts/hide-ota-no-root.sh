@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-echo "Hiding Amazon Bloat...."
+echo "Hiding Amazon OTA Updates and Update Services...."
 echo ""
 echo ""
 

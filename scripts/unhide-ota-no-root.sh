@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-echo "Unhiding Amazon Bloat...."
+echo "Unhiding Amazon OTA Updates and Update Services...."
 echo ""
 echo ""
 
