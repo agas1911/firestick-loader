@@ -266,6 +266,8 @@ set restoreAmazonFiles=0
 
 set adbServerAction=0
 
+set checkFireOsInfoText=0
+
 set returnTo=menu
 
 
@@ -277,7 +279,9 @@ set returnTo=menu
 
 %_color% 0e
 cls
-echo Getting Device Stats and Loading Main Menu....
+if %checkFireOsInfoText%==0 echo Getting Storage and Memory Info From Device....
+if %checkFireOsInfoText%==1 echo Getting FireOS Version From Device....
+if %checkFireOsInfoText%==1 set checkFireOsInfoText=0
 echo.
 echo.
 echo.
@@ -1020,6 +1024,8 @@ goto menu
 :checkCanRoot
 
 set firstCheck=1
+
+set checkFireOsInfoText=1
 
 ::%pull% %buildDotProp% "%temp%"
 
