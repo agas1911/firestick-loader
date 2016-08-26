@@ -2907,8 +2907,8 @@ goto fixesMenu
 :hideOTA
 
 %push% "%~dp0scripts\hide-ota-no-root.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/hide-ota-no-root.sh"
-%shell% "su -c sh /data/local/tmp/hide-ota-no-root.sh"
+%shell% "chmod 755 /data/local/tmp/hide-ota-no-root.sh"
+%shell% "sh /data/local/tmp/hide-ota-no-root.sh"
 
 goto fixesMenu
 
@@ -2916,8 +2916,8 @@ goto fixesMenu
 :unhideOTA
 
 %push% "%~dp0scripts\unhide-ota-no-root.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/unhide-ota-no-root.sh"
-%shell% "su -c sh /data/local/tmp/unhide-ota-no-root.sh"
+%shell% "chmod 755 /data/local/tmp/unhide-ota-no-root.sh"
+%shell% "sh /data/local/tmp/unhide-ota-no-root.sh"
 
 goto fixesMenu
 
