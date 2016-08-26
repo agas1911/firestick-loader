@@ -323,7 +323,7 @@ echo [Free Memory: %readFreeMemFireStick%KB]   [Free Space (/data/): %readStorag
 echo.
 echo.
 echo.
-%_color% 05
+%_color% 0e
 echo Press Y To Use Full Automatic Mode (also use YD to include downgrade)
 %_color% 0e
 echo.
