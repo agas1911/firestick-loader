@@ -268,6 +268,8 @@ set adbServerAction=0
 
 set checkFireOsInfoText=0
 
+set unhideAllOTA=0
+
 set returnTo=menu
 
 
@@ -740,7 +742,7 @@ echo.
 ::%_color% 0a
 ::echo P) Patch Amazon APKs (also use PR to restore original amazon files)
 %_color% 0a
-echo H) Hide Amazon OTA Updates (*NO ROOT* also use HU to unhide updates again)
+echo H) Hide Amazon OTA Updates (also use HU to unhide or HA or HUA for all)
 echo.
 %_color% 0b
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
@@ -791,6 +793,17 @@ if %fchoice%==L %tap% 20 1030
 if %fchoice%==l %tap% 20 1030
 if %fchoice%==H goto hideOTA
 if %fchoice%==h goto hideOTA
+if %fchoice%==HA set hideAllOTA=1&&goto hideOTA
+if %fchoice%==Ha set hideAllOTA=1&&goto hideOTA
+if %fchoice%==hA set hideAllOTA=1&&goto hideOTA
+if %fchoice%==ha set hideAllOTA=1&&goto hideOTA
+if %fchoice%==HUA set unhideAllOTA=1&&goto unhideOTA
+if %fchoice%==HuA set unhideAllOTA=1&&goto unhideOTA
+if %fchoice%==Hua set unhideAllOTA=1&&goto unhideOTA
+if %fchoice%==hUA set unhideAllOTA=1&&goto unhideOTA
+if %fchoice%==hUa set unhideAllOTA=1&&goto unhideOTA
+if %fchoice%==huA set unhideAllOTA=1&&goto unhideOTA
+if %fchoice%==hua set unhideAllOTA=1&&goto unhideOTA
 if %fchoice%==HU goto unhideOTA
 if %fchoice%==Hu goto unhideOTA
 if %fchoice%==hU goto unhideOTA
@@ -2967,18 +2980,44 @@ goto fixesMenu
 
 :hideOTA
 
+if %hideAllOTA%==1 (
+
+	%push% "%~dp0scripts\debloat\bloat-hide.sh" /data/local/tmp/
+	%shell% "chmod 755 /data/local/tmp/bloat-hide.sh"
+	%shell% "sh /data/local/tmp/bloat-hide.sh"
+	set hideAllOTA=0
+	
+	goto fixesMenu
+
+)
+
 %push% "%~dp0scripts\hide-ota-no-root.sh" /data/local/tmp/
 %shell% "chmod 755 /data/local/tmp/hide-ota-no-root.sh"
 %shell% "sh /data/local/tmp/hide-ota-no-root.sh"
+
+set hideAllOTA=0
 
 goto fixesMenu
 
 
 :unhideOTA
 
+if %unhideAllOTA%==1 (
+
+	%push% "%~dp0scripts\debloat\bloat-unhide.sh" /data/local/tmp/
+	%shell% "chmod 755 /data/local/tmp/bloat-unhide.sh"
+	%shell% "sh /data/local/tmp/bloat-unhide.sh"
+	set unhideAllOTA=0
+	
+	goto fixesMenu
+
+)
+
 %push% "%~dp0scripts\unhide-ota-no-root.sh" /data/local/tmp/
 %shell% "chmod 755 /data/local/tmp/unhide-ota-no-root.sh"
-%shell% "sh /data/local/tmp/unhide-ota-no-root.sh"
+%shell% "sh /data/local/tmp/unhide-ota-no-root.sh
+
+set unhideAllOTA=0
 
 goto fixesMenu
 
