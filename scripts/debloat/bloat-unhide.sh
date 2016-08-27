@@ -101,3 +101,11 @@ pm unhide com.amazon.tv.launcher
 pm unhide com.amazon.tv.settings
 
 
+# FireOS 5.2.1.1
+pm unhide com.amazon.tv.nimh
+pm unhide ivona.tts.oem
+pm unhide com.ivona.orchestrator
+pm unhide com.amazon.device.sale.service
+pm unhide com.amazon.logan
+pm unhide com.amazon.advertisingidsettings
+

@@ -143,6 +143,16 @@ rm -r /system/app/WebCryptoTZService/
 rm -r /system/app/WhiteListedUrlProvider/
 
 
+# FireOS 5.2.1.1
+rm -r /system/priv-app/com.amazon.tv.nimh
+rm -r /system/priv-app/AdvertisingIdSettings
+rm -r /system/priv-app/FireTvSaleService
+rm -r /system/priv-app/IvonaTTS
+rm -r /system/priv-app/IvonaTtsOrchestrator
+rm -r /system/priv-app/Logan
+rm -r /system/priv-app/TvProvider
+
+
 
 # Other System Apps
 
@@ -300,6 +310,15 @@ rm -r /data/data/WhiteListedUrlProvider/
 # From /system/framework/
 rm -r /data/data/android.amazon.perm/
 
+
+# FireOS 5.2.1.1
+rm -r /data/data/com.amazon.tv.nimh
+rm -r /data/data/AdvertisingIdSettings
+rm -r /data/data/FireTvSaleService
+rm -r /data/data/IvonaTTS
+rm -r /data/data/IvonaTtsOrchestrator
+rm -r /data/data/Logan
+rm -r /data/data/TvProvider
 
 
 

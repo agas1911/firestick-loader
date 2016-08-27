@@ -163,3 +163,12 @@ pm enable com.android.managedprovisioning
 pm enable com.amazon.tv.settings/.tv.ThingsToTrySettingsActivity
 
 
+# FireOS 5.2.1.1
+pm enable com.amazon.tv.nimh
+pm enable ivona.tts.oem
+pm enable com.ivona.orchestrator
+pm enable com.amazon.device.sale.service
+pm enable com.amazon.logan
+pm enable com.amazon.advertisingidsettings
+
+

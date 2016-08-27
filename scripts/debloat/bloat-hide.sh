@@ -98,4 +98,13 @@ pm hide com.svox.pico
 pm hide com.android.captiveportallogin
 
 
+# FireOS 5.2.1.1
+pm hide com.amazon.tv.nimh
+pm hide ivona.tts.oem
+pm hide com.ivona.orchestrator
+pm hide com.amazon.device.sale.service
+pm hide com.amazon.logan
+pm hide com.amazon.advertisingidsettings
+
+
 
