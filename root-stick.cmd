@@ -279,9 +279,10 @@ set returnTo=menu
 
 %_color% 0e
 cls
-if %checkFireOsInfoText%==0 echo Getting Storage and Memory Info From Device....
-if %checkFireOsInfoText%==1 echo Getting FireOS Version From Device....
-if %checkFireOsInfoText%==1 set checkFireOsInfoText=0
+::if %checkFireOsInfoText%==0 echo Getting Storage and Memory Info From Device....
+::if %checkFireOsInfoText%==1 echo Getting FireOS Version From Device....
+::if %checkFireOsInfoText%==1 set checkFireOsInfoText=0
+echo Getting Storage and Memory Info From Device....
 echo.
 echo.
 echo.
@@ -328,7 +329,67 @@ for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageSystem.txt"') do set
 
 set dgchoice=m
 
-if %firstCheck%==0 goto checkCanRoot
+:: Check FireOS Version
+
+::if %firstCheck%==0 goto checkCanRoot
+
+set firstCheck=1
+
+set checkFireOsInfoText=1
+
+%_color% 0e
+cls
+echo Getting FireOS Version From Device....
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+%_color% 0b
+echo Visit My GitHub Page To See All of My Other Projects:
+echo.
+::echo https://github.com/esc0rtd3w/firestick-loader/
+echo https://github.com/esc0rtd3w/
+echo.
+echo.
+%_color% 0e
+echo.
+echo.
+
+%shell% "cat /system/build.prop | grep ro.build.version.name>/sdcard/fireos-version.txt"
+
+%pull% /sdcard/fireos-version.txt "%temp%"
+
+for /f "tokens=3 delims= " %%f in ('type "%temp%\fireos-version.txt"') do set fireOsVersion=%%f
+
+if %fireOsVersion%==0.0.0.0 set rootable=0
+if %fireOsVersion%==0.0.0.0 set rootableColor=0c
+if %fireOsVersion%==0.0.0.0 set rootableText=INVALID
+
+if %fireOsVersion%==5.0.0 set rootable=1
+if %fireOsVersion%==5.0.0 set rootableColor=0a
+if %fireOsVersion%==5.0.0 set rootableText=EXPLOITABLE
+
+if %fireOsVersion%==5.0.5 set rootable=1
+if %fireOsVersion%==5.0.5 set rootableColor=0a
+if %fireOsVersion%==5.0.5 set rootableText=EXPLOITABLE
+
+if %fireOsVersion%==5.0.5.1 set rootable=1
+if %fireOsVersion%==5.0.5.1 set rootableColor=0a
+if %fireOsVersion%==5.0.5.1 set rootableText=EXPLOITABLE
+
+if %fireOsVersion%==5.2.1.0 set rootable=1
+if %fireOsVersion%==5.2.1.0 set rootableColor=0a
+if %fireOsVersion%==5.2.1.0 set rootableText=EXPLOITABLE
+
+if %fireOsVersion%==5.2.1.1 set rootable=0
+if %fireOsVersion%==5.2.1.1 set rootableColor=0c
+if %fireOsVersion%==5.2.1.1 set rootableText=NOT EXPLOITABLE
+
+del /f /s /q "%temp%\fireos-version.txt"
 
 %adbKill%
 
