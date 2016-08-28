@@ -18,6 +18,8 @@
 
 ***Known Issues:***
 
+- Currently Does Not Have Rooting Support For FireOS 5.2.1.1.
+
 - If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken.)
 <br/><br/>
 
@@ -208,6 +210,17 @@
 	- /system/framework/android.amazon.perm/
 	
 <br/><br/>	
+
+**Untested Bloat From FireOS 5.2.1.1**
+    - rm -r /system/priv-app/com.amazon.tv.nimh
+    - rm -r /system/priv-app/AdvertisingIdSettings
+    - rm -r /system/priv-app/FireTvSaleService
+    - rm -r /system/priv-app/IvonaTTS
+    - rm -r /system/priv-app/IvonaTtsOrchestrator
+    - rm -r /system/priv-app/Logan
+    - rm -r /system/priv-app/TvProvider
+
+<br/><br/>
 	
 **List of Amazon Bloat Left Alone**
 
