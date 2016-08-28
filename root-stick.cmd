@@ -8,6 +8,15 @@ mode con lines=46
 
 color 0e
 
+set pathScriptsConfig="%~dp0config\scripts"
+
+:: Config Menu UI
+set configMain="%~dp0config\menu.ini"
+set iniRead="%pathScriptsConfig%\ini-read.cmd"
+set iniWrite="%pathScriptsConfig%\ini-write.cmd"
+
+
+
 set runShellNoTerminateAndWait=cmd /k
 set runShellNoTerminate=start cmd /k
 set runShellWaitNoTerminate=start /wait cmd /k
@@ -15,7 +24,7 @@ set runShellTerminateAndWait=cmd /c
 set runShellTerminate=start cmd /c
 set runShellWaitTerminate=start /wait cmd /c
 
-set _color="%cd%\bin\cocolor.exe"
+set _color="%~dp0bin\cocolor.exe"
 
 set extractRAR="%~dp0bin\rar.exe" -y x
 set extractZIP="%~dp0bin\unzip.exe" -o
