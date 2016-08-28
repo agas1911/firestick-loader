@@ -104,6 +104,7 @@
     - Disable Only Menu Option
     - Disable and Safe Remove Menu Option
     - Disable, Safe Remove, and Ad Block Menu Option
+    - Hide, Unhide, HideAll, and UnhideAll Menu Options (Non-Root Users)
 
 - **Clear All Caches** \****ROOT REQUIRED***\*
 
