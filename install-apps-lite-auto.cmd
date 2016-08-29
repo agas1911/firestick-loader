@@ -160,26 +160,26 @@ echo.
 ::%install% "apps\media\amazon-underground.apk"
 
 
-cls
-%_color% 0e
-set appName=Amazon App Store
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\amazon-appstore.apk"
+::cls
+::%_color% 0e
+::set appName=Amazon App Store
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\media\amazon-appstore.apk"
 
 
-cls
-%_color% 0e
-set appName=Amazon Shopping
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\amazon-shopping.apk"
+::cls
+::%_color% 0e
+::set appName=Amazon Shopping
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\media\amazon-shopping.apk"
 
 
 cls
