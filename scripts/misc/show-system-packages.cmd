@@ -88,7 +88,8 @@ set shellSuper=%shell% "su -c
 
 
 
-%shellSuper% pm list package"
+::%shellSuper% pm list package"
+%shell% pm list package"
 
 
 pause

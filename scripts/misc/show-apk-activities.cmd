@@ -88,7 +88,8 @@ set shellSuper=%shell% "su -c
 
 
 
-%shellSuper% dumpsys package"
+::%shellSuper% dumpsys package"
+%shell% dumpsys package"
 
 
 pause
