@@ -365,6 +365,31 @@ echo.
 
 cls
 %_color% 0e
+set appName=Amazon App Store - USA
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: Remove "com.amazon.shoptv.client" *ROOT*
+echo.
+echo Info: Amazon Store and Media Access
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\media\amazon-appstore.apk"
+)
+
+
+cls
+%_color% 0e
 set appName=Amazon Shopping - USA
 set apk=
 echo Install %appName%?
