@@ -194,6 +194,11 @@ set deregisterAmazonAccount=%shell% am start -a com.amazon.tv.oobe/.Deregistrati
 
 :: com.amazon.tv.settings.tv.FactoryResetActivity.factoryReset
 
+set voicePromptOpen=%shell% am start -a com.amazon.intent.action.SEARCH -n com.amazon.vizzini/com.amazon.vizzini.vim.VIMOverlayActivity
+::set voicePromptOpen=%amStart% com.amazon.vizzini/.vim.VIMOverlayActivity
+
+set amazonLauncherHome=%shell% am start -a com.amazon.device.intent.category.LAUNCHER_MENU com.amazon.tv.launcher/.ui.HomeActivity
+
 
 :: Launch Different Apps
 set launchFireStarter=%amStart% de.belu.firestopper/.gui.MainActivity
@@ -278,6 +283,12 @@ set adbServerAction=0
 set checkFireOsInfoText=0
 
 set unhideAllOTA=0
+
+
+:: Busybox Commands
+
+::arp -a -v -i wlan0
+
 
 set returnTo=menu
 
