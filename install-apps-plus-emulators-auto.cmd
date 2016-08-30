@@ -96,6 +96,17 @@ md "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
 
 cls
 %_color% 0e
+set appName=F-Droid
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\stores\fdroid.apk"
+
+
+cls
+%_color% 0e
 set appName=SopCast
 set apk=
 echo.

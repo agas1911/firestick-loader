@@ -213,6 +213,32 @@ echo.
 )
 
 
+
+cls
+%_color% 0e
+set appName=F-Droid App Store
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: 3rd Party App Store Full Remote Support
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\stores\fdroid.apk"
+)
+
+
 cls
 %_color% 0e
 set appName=SopCast
