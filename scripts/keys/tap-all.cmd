@@ -50,9 +50,9 @@ set keyBack=%shell% input keyevent 3
 set keyHome=%shell% input keyevent 4
 
 
-%tap% 100 1100
+::%tap% 100 1100
 
-goto end
+::goto end
 
 
 :loop
