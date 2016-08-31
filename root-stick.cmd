@@ -238,10 +238,6 @@ set firestopperUpdater=%amStart% de.belu.firestopper.tools.FireStarterUpdater
 set test1=%shell% am start -a android.content.ContextWrapper.startService -n com.amazon.tv.launcher.Navigator.gotoMenu
 
 
-:: FireOS 5.2.1.1 Developer Tools Menu
-set devToolsMenu=%amStart% com.amazon.ssm/.ControlPanel
-
-
 set cleanPackages=%shell% "su -c dumpsys package"
 
 
@@ -1212,6 +1208,7 @@ echo.
 %_color% 0e
 
 %amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
+::%amStart% com.firepwn.firestick/.activitys.SliderMainActivity
 
 if %firstTimeRootAttempt%==1 (
 
