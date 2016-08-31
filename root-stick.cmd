@@ -2492,8 +2492,8 @@ goto menu
 :bloatEnable
 
 %push% "%~dp0scripts\debloat\bloat-enable.sh" /data/local/tmp/
-%shell% "chmod 755 /data/local/tmp/bloat-enable.sh"
-%shell% "sh /data/local/tmp/bloat-enable.sh
+%shell% "su -c chmod 755 /data/local/tmp/bloat-enable.sh"
+%shell% "su -c sh /data/local/tmp/bloat-enable.sh
 
 goto menu
 
