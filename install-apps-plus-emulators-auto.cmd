@@ -195,6 +195,17 @@ echo.
 
 cls
 %_color% 0e
+set appName=Amazon Music
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\amazon-music.apk"
+
+
+cls
+%_color% 0e
 set appName=Amazon Video
 set apk=
 echo.

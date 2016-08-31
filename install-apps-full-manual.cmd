@@ -441,6 +441,31 @@ echo.
 
 cls
 %_color% 0e
+set appName=Amazon Music
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: Remove "com.amazon.bueller.music" *ROOT*
+echo.
+echo Info: Amazon Music App
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\media\amazon-music.apk"
+)
+
+
+cls
+%_color% 0e
 set appName=Amazon Video
 set apk=
 echo Install %appName%?
