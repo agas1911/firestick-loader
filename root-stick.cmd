@@ -548,10 +548,8 @@ if %dgchoice%==Ara set doBlockAdsWithMenuOption=1&&goto removeBloat
 if %dgchoice%==aRA set doBlockAdsWithMenuOption=1&&goto removeBloat
 if %dgchoice%==aRa set doBlockAdsWithMenuOption=1&&goto removeBloat
 if %dgchoice%==ArA set doBlockAdsWithMenuOption=1&&goto removeBloat
-::if %dgchoice%==E set bloatAction=enable&&goto bloatEnable
-::if %dgchoice%==e set bloatAction=enable&&goto bloatEnable
-::if %dgchoice%==E goto bloatRemover
-::if %dgchoice%==e goto bloatRemover
+if %dgchoice%==E goto bloatEnable
+if %dgchoice%==e goto bloatEnable
 if %dgchoice%==C goto clearCaches
 if %dgchoice%==c goto clearCaches
 if %dgchoice%==K goto cleanSD
@@ -2487,6 +2485,15 @@ taskkill /f /im tv_x64.exe
 %uninstall% com.teamviewer.quicksupport.market
 
 %adb% reboot
+
+goto menu
+
+
+:bloatEnable
+
+%push% "%~dp0scripts\debloat\bloat-enable.sh" /data/local/tmp/
+%shell% "chmod 755 /data/local/tmp/bloat-enable.sh"
+%shell% "sh /data/local/tmp/bloat-enable.sh
 
 goto menu
 
