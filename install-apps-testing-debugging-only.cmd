@@ -91,7 +91,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\diskusage.apk"
+%install% "apps\testing\diskusage.apk"
 
 
 cls
@@ -102,7 +102,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\titanium-backup.apk"
+%install% "apps\testing\titanium-backup.apk"
 
 
 cls
@@ -113,7 +113,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\system-app-remover.apk"
+%install% "apps\testing\system-app-remover.apk"
 
 
 cls
@@ -124,7 +124,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\show-touches.apk"
+%install% "apps\testing\show-touches.apk"
 
 
 cls
@@ -135,7 +135,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\android-system-info.apk"
+%install% "apps\testing\android-system-info.apk"
 
 
 cls
@@ -146,7 +146,18 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\adbd-insecure.apk"
+%install% "apps\testing\adbd-insecure.apk"
+
+
+cls
+%_color% 0e
+set appName=Droid Examiner
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\testing\droid-examiner.apk"
 
 
 
