@@ -26,7 +26,7 @@
 	
 ***Current Project Testing Status (Using FireOS 5.0.5):***
 
-- No Root Downgrade Option (SEE NOTES!)
+- No Root Downgrade Option (PARTIAL BRICK-PROTECTION / SEE NOTES!)
 
     * This option changes the permissions to 777 on the following directories:
 	     
@@ -34,7 +34,7 @@
 		 * /cache/dalvik-cache
 		 * /cache/recovery
 
-    * Once done, you will be able to unroot and the downgrade option will always work. This ensures partial brick-protection, even as a normal shell user, as long as there is an ADB connection.
+    * Once done, you will be able to unroot and the downgrade option will always work. This ensures partial brick-protection by way of recovery image, even as a normal shell user, as long as there is an ADB connection.
 
     * Also works if device stays rooted.....of course ;)
 
