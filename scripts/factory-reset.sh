@@ -73,7 +73,7 @@ rm -rf /data/app-asec/
 rm -rf /data/app-lib/
 rm -rf /data/app-private/
 rm -f /data/bugreports
-rm -rf /data/dalvik-cache/
+#rm -rf /data/dalvik-cache/
 rm -rf /data/data/
 rm -rf /data/data-lib/
 rm -rf /data/debug_service/
@@ -100,12 +100,22 @@ rm -rf /data/vitals/
 rm -rf /data/webcrypto/
 #rm -rf /data/
 
+# Clean User 0
+rm -f /data/user/0/*.*
+#rm -f /data/system/users/0/*.*
+rm -f /data/system/users/0/accounts.db
+rm -f /data/system/users/0/accounts.db-journal
+rm -f /data/system/users/0/appwidgets.xml
+#rm -f /data/system/users/0/package-restrictions.xml
+
 # Rebuilding empty /data/
 #mkdir /data/
 #mkdir /data/app/
 #mkdir /data/app/mcRegistry
 #mkdir /data/app/mcRegistry/TbStorage
+mkdir /data/app/
 mkdir /data/data/
+mkdir /data/system/
 #mkdir /data/local/
 #mkdir /data/local/tmp/
 
