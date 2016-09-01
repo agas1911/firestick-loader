@@ -902,10 +902,58 @@ if %fchoice%==x goto end
 goto fixesMenu
 
 
+:antiBrick
+
+
+:: Modify Permissions
+
+:: /data/
+%shell% "su -c chmod 777 /data/"
+%shell% "su -c chmod 777 /data/app/"
+%shell% "su -c chmod 777 /data/data/"
+%shell% "su -c chmod 777 /data/local/"
+%shell% "su -c chmod 777 /data/media"
+%shell% "su -c chmod 777 /data/media/0"
+%shell% "su -c chmod 777 /data/misc/wifi"
+%shell% "su -c chmod 777 /data/system/cache/"
+%shell% "su -c chmod 777 /data/system/users/"
+%shell% "su -c chmod 777 /data/system/users/0"
+%shell% "su -c chmod 777 /data/user/"
+%shell% "su -c chmod 777 /data/user/0"
+
+%shell% "su -c chmod -R 777 /data/app/"
+%shell% "su -c chmod -R 777 /data/data/"
+%shell% "su -c chmod -R 777 /data/user/0"
+
+
+
+:: /system/
+
+
+:: /cache/
+:: Try Recursive First
+%shell% "su -c chmod -R 777 /cache/"
+
+:: Safety Net
+%shell% "su -c chmod 777 /cache/"
+%shell% "su -c chmod 777 /cache/dalvik-cache/"
+%shell% "su -c chmod 777 /cache/dalvik-cache/arm/"
+%shell% "su -c chmod 777 /cache/lost+found/"
+%shell% "su -c chmod 777 /cache/recovery/"
+
+goto fixesMenu
+
+
 :cacheFix
 
-%shell% "su -c chmod 777 /cache/"
+:: Try Recursive First
+%shell% "su -c chmod -R 777 /cache/"
+
+:: Safety Net
+%shell% "su -c chmod 777 /cache"
 %shell% "su -c chmod 777 /cache/dalvik-cache"
+%shell% "su -c chmod 777 /cache/dalvik-cache/arm"
+%shell% "su -c chmod 777 /cache/lost+found"
 %shell% "su -c chmod 777 /cache/recovery"
 
 goto fixesMenu
