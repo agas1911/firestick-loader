@@ -909,6 +909,13 @@ goto fixesMenu
 
 :antiBrick
 
+%_color% 0a
+
+cls
+echo Running Anti-Brick Protection Commands....
+echo.
+echo.
+echo.
 
 :: Modify Permissions
 
@@ -946,7 +953,7 @@ goto fixesMenu
 %shell% "su -c chmod 777 /cache/lost+found/"
 %shell% "su -c chmod 777 /cache/recovery/"
 
-goto fixesMenu
+goto menu
 
 
 :cacheFix
