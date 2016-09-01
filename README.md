@@ -26,6 +26,19 @@
 	
 ***Current Project Testing Status:***
 
+- No Root Downgrade Option (SEE NOTES!)
+
+    * This option changes the permissions to 777 on the following directories:
+	     
+		 * /cache/
+		 * /cache/dalvik-cache
+		 * /cache/recovery
+
+    * Once done, you will be able to unroot and the downgrade option will always work, as long as there is an ADB connection.
+
+    * Also works if device stays rooted.....of course ;)
+
+
 - 275MB+ Available Free Memory Running From HOME Screen
 
 - Blue Stock FireTV Stick Boot Animation
