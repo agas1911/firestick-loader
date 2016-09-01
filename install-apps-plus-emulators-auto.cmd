@@ -303,15 +303,27 @@ echo.
 ::echo.
 ::%install% "apps\system\root-explorer.apk"
 
+
+::cls
+::%_color% 0e
+::set appName=Explorer
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\system\explorer.apk"
+
+
 cls
 %_color% 0e
-set appName=Explorer
+set appName=Root Browser
 set apk=
 echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\explorer.apk"
+%install% "apps\system\root-browser.apk"
 
 
 cls

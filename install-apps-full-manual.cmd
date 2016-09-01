@@ -709,6 +709,30 @@ echo.
 
 cls
 %_color% 0e
+set appName=Root Browser
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: File Manager *ROOT PRIVILEDGED*
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\root-browser.apk"
+)
+
+
+cls
+%_color% 0e
 set appName=Teamviewer
 set apk=
 echo Install %appName%?
