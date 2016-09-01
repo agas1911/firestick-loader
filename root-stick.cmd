@@ -504,6 +504,11 @@ echo.
 
 set /p dgchoice=
 
+if %dgchoice%==AB goto antiBrick
+if %dgchoice%==Ab goto antiBrick
+if %dgchoice%==aB goto antiBrick
+if %dgchoice%==ab goto antiBrick
+
 if %dgchoice%==B goto busybox
 if %dgchoice%==b goto busybox
 if %dgchoice%==BA set busyboxScriptInstall=1&&goto busybox
