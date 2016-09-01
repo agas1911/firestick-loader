@@ -93,6 +93,8 @@ set sdcard=sdcard
 ::set sdcard=external_sd
 ::set sdcard=extSdCard
 
+set dgNoRoot=0
+
 set bootAnimationPath=%~dp0custom\bootanimation
 
 set fireOsVersion=0.0.0.0
@@ -522,6 +524,10 @@ if %dgchoice%==iR set rootAfterInstall=1&&goto installRoot
 if %dgchoice%==ir set rootAfterInstall=1&&goto installRoot
 if %dgchoice%==D goto downgrade
 if %dgchoice%==d goto downgrade
+if %dgchoice%==DN set dgNoRoot=1&&goto downgrade
+if %dgchoice%==Dn set dgNoRoot=1&&goto downgrade
+if %dgchoice%==dN set dgNoRoot=1&&goto downgrade
+if %dgchoice%==dn set dgNoRoot=1&&goto downgrade
 if %dgchoice%==R goto root
 if %dgchoice%==r goto root
 if %dgchoice%==R1 goto root1
@@ -1765,9 +1771,19 @@ echo.
 echo.
 %_color% 0e
 
-%shell% "su -c rm -f /cache/*.bin"
-%shell% "su -c rm -f /cache/*.zip"
-%shell% "su -c rm -f /cache/recovery/command"
+if %dgNoRoot%==0 (
+	%shell% "su -c rm -f /cache/*.bin"
+	%shell% "su -c rm -f /cache/*.zip"
+	%shell% "su -c rm -f /cache/recovery/command"
+)
+
+if %dgNoRoot%==1 (
+	%shell% "rm -f /cache/*.bin"
+	%shell% "rm -f /cache/*.zip"
+	%shell% "rm -f /cache/recovery/command"
+)
+
+
 
 ::pause
 
@@ -1813,7 +1829,14 @@ echo.
 echo.
 %_color% 0e
 
-%shell% "su -c mv /%sdcard%/update.bin /cache/"
+
+if %dgNoRoot%==0 (
+	%shell% "su -c mv /%sdcard%/update.bin /cache/"
+)
+
+if %dgNoRoot%==1 (
+	%shell% "mv /%sdcard%/update.bin /cache/"
+)
 
 ::pause
 
@@ -1836,10 +1859,19 @@ echo.
 
 ::%shell% "su -c echo --update_package=/cache/update.bin > /cache/recovery/command"
 
-echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
-%push% "%temp%\tmpShit.txt" /%sdcard%/command
-%shell% "su -c mv /%sdcard%/command /cache/recovery/command"
-%shell% "su -c rm -f /%sdcard%/command"
+if %dgNoRoot%==0 (
+	echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
+	%push% "%temp%\tmpShit.txt" /%sdcard%/command
+	%shell% "su -c mv /%sdcard%/command /cache/recovery/command"
+	%shell% "su -c rm -f /%sdcard%/command"
+)
+
+if %dgNoRoot%==1 (
+	echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
+	%push% "%temp%\tmpShit.txt" /%sdcard%/command
+	%shell% "mv /%sdcard%/command /cache/recovery/command"
+	%shell% "rm -f /%sdcard%/command"
+)
 
 ::pause
 
@@ -1853,6 +1885,11 @@ echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
 ::%shell% echo --update_package=/cache/update.bin > /cache/recovery/command
 
 ::pause
+
+
+:: Set flag back to 0
+set dgNoRoot=0
+
 
 %shell% reboot recovery
 
