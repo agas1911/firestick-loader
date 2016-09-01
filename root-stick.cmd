@@ -1300,6 +1300,13 @@ if %firstTimeRootAttempt%==0 (
 %keyEnter%
 %sleep% 2
 
+%sleep% 5
+
+%keyTab%
+%sleep% 1
+
+%keyEnter%
+%sleep% 1
 
 set firstTimeRootAttempt=0
 
