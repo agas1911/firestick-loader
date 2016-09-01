@@ -260,15 +260,15 @@ echo.
 ::%install% "apps\web\firefox.apk"
 
 
-cls
-%_color% 0e
-set appName=YouTube -No Play Services-
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\youtube.apk"
+::cls
+::%_color% 0e
+::set appName=YouTube -No Play Services-
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\media\youtube.apk"
 
 
 cls
@@ -282,15 +282,15 @@ echo.
 %install% "apps\web\opera.apk"
 
 
-cls
-%_color% 0e
-set appName=Terminal Emulator
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\system\terminal.apk"
+::cls
+::%_color% 0e
+::set appName=Terminal Emulator
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\system\terminal.apk"
 
 
 ::cls

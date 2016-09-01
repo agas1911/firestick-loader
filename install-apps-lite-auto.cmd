@@ -261,15 +261,15 @@ echo.
 ::%install% "apps\web\firefox.apk"
 
 
-cls
-%_color% 0e
-set appName=YouTube -No Play Services-
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\youtube.apk"
+::cls
+::%_color% 0e
+::set appName=YouTube -No Play Services-
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\media\youtube.apk"
 
 
 cls
