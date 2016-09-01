@@ -922,6 +922,7 @@ echo.
 :: /data/
 %shell% "su -c chmod 777 /data/"
 %shell% "su -c chmod 777 /data/app/"
+%shell% "su -c chmod 777 /data/dalvik-cache/"
 %shell% "su -c chmod 777 /data/data/"
 %shell% "su -c chmod 777 /data/local/"
 %shell% "su -c chmod 777 /data/media"
@@ -934,6 +935,7 @@ echo.
 %shell% "su -c chmod 777 /data/user/0"
 
 %shell% "su -c chmod -R 777 /data/app/"
+%shell% "su -c chmod -R 777 /data/dalvik-cache/"
 %shell% "su -c chmod -R 777 /data/data/"
 %shell% "su -c chmod -R 777 /data/user/0"
 
