@@ -1354,6 +1354,10 @@ if %check%==s %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
 if %check%==S goto rootActive
 if %check%==s goto rootActive
 
+if %check%==R %keyHome%
+if %check%==r %keyHome%
+if %check%==R %sleep% 1
+if %check%==r %sleep% 1
 if %check%==R %amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
 if %check%==r %amStart% com.kingroot.kinguser/.activitys.SliderMainActivity
 if %check%==R %sleep% 5
