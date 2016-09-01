@@ -661,6 +661,30 @@ echo.
 
 cls
 %_color% 0e
+set appName=Explorer
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: File Manager *NO ROOT PRIVILEDGE*
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\explorer.apk"
+)
+
+
+cls
+%_color% 0e
 set appName=Root Explorer
 set apk=
 echo Install %appName%?
@@ -671,7 +695,7 @@ echo.
 %_color% 0b
 echo Requirements: NONE
 echo.
-echo Info: File Manager
+echo Info: File Manager *ROOT PRIVILEDGED*
 echo.
 set /p choice=
 if %choice%==1 (
@@ -679,31 +703,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\rootexplorer.apk"
-)
-
-
-cls
-%_color% 0e
-set appName=ADBD Insecure
-set apk=
-echo Install %appName%?
-echo.
-echo 1) Yes   2) No
-echo.
-echo.
-%_color% 0b
-echo Requirements: *ROOT*
-echo.
-echo Info: ADB Daemon Root Shell As Default
-echo.
-set /p choice=
-if %choice%==1 (
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\system\adbd-insecure.apk"
+%install% "apps\system\root-explorer.apk"
 )
 
 

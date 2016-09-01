@@ -294,15 +294,26 @@ echo.
 ::%install% "apps\system\terminal.apk"
 
 
+::cls
+::%_color% 0e
+::set appName=Root Explorer
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\system\root-explorer.apk"
+
+
 cls
 %_color% 0e
-set appName=Root Explorer
+set appName=Explorer
 set apk=
 echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\rootexplorer.apk"
+%install% "apps\system\explorer.apk"
 
 
 cls
@@ -326,19 +337,19 @@ echo.
 %push% "wallpaper" "/%sdcard%/wallpaper"
 
 
-cls
-%_color% 0e
-set appName=Custom Boot Animation
-echo.
-echo.
-echo Installing %appName%...
-echo.
+::cls
+::%_color% 0e
+::set appName=Custom Boot Animation
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
 
-%shell% "rm /data/local/tmp/bootanimation.zip"
-%push% "%~dp0bootanimation\stock-blue\bootanimation.zip" /data/local/tmp/bootanimation.zip
-%push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
-%shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
+::%shell% "rm /data/local/tmp/bootanimation.zip"
+::%push% "%~dp0bootanimation\stock-blue\bootanimation.zip" /data/local/tmp/bootanimation.zip
+::%push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
+::%shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
+::%shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
 
 
 
