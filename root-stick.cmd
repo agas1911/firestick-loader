@@ -475,7 +475,7 @@ echo.
 ::echo Press P to replace kingroot with SuperSU (Not Working Correctly!)
 ::echo.
 %_color% 0e
-echo Press D to downgrade to stock 5.0.5 (restore clean /system/ partition)
+echo Press D to downgrade firmware (also use DN for no root method *see tweaks*)
 echo.
 echo Press B to install busybox (also use BA to use auto scripting method)
 echo.
