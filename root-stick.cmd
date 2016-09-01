@@ -747,7 +747,8 @@ echo.
 echo.
 echo.
 %_color% 0d
-echo 1) Fix Connectivity To Android FireTV Remote App
+echo 1) Patch Downgrade Process For Use Without Root *ROOT REQUIRED*
+::echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
 %_color% 05
 echo 2) Launch Android Event Keymap (Press Keys and Send Text Over ADB)
@@ -805,7 +806,8 @@ echo.
 
 set /p fchoice=
 
-if %fchoice%==1 goto fixRemote
+::if %fchoice%==1 goto fixRemote
+if %fchoice%==1 goto cacheFix
 if %fchoice%==2 goto eventmap
 if %fchoice%==3 goto bootanimRemove
 if %fchoice%==4 goto bootanimReplace
@@ -832,12 +834,14 @@ if %fchoice%==HU goto unhideOTA
 if %fchoice%==Hu goto unhideOTA
 if %fchoice%==hU goto unhideOTA
 if %fchoice%==hu goto unhideOTA
-if %fchoice%==P set restoreAmazonFiles=0&&goto patchAmz
-if %fchoice%==p set restoreAmazonFiles=0&&goto patchAmz
-if %fchoice%==PR set restoreAmazonFiles=1&&goto patchAmz
-if %fchoice%==Pr set restoreAmazonFiles=1&&goto patchAmz
-if %fchoice%==pR set restoreAmazonFiles=1&&goto patchAmz
-if %fchoice%==pr set restoreAmazonFiles=1&&goto patchAmz
+::if %fchoice%==P goto cacheFix
+::if %fchoice%==p goto cacheFix
+::if %fchoice%==P set restoreAmazonFiles=0&&goto patchAmz
+::if %fchoice%==p set restoreAmazonFiles=0&&goto patchAmz
+::if %fchoice%==PR set restoreAmazonFiles=1&&goto patchAmz
+::if %fchoice%==Pr set restoreAmazonFiles=1&&goto patchAmz
+::if %fchoice%==pR set restoreAmazonFiles=1&&goto patchAmz
+::if %fchoice%==pr set restoreAmazonFiles=1&&goto patchAmz
 if %fchoice%==Z goto resetADB
 if %fchoice%==z goto resetADB
 if %fchoice%==ZS set adbServerAction=1&&goto resetADB
@@ -894,6 +898,15 @@ if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
 if %fchoice%==x goto end
+
+goto fixesMenu
+
+
+:cacheFix
+
+%shell% "su -c chmod 777 /cache/"
+%shell% "su -c chmod 777 /cache/dalvik-cache"
+%shell% "su -c chmod 777 /cache/recovery"
 
 goto fixesMenu
 
