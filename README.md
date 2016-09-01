@@ -1,4 +1,5 @@
-#Amazon FireTV Stick Loader
+#FirePwn
+####Amazon FireTV Stick Loader
 
 ###FREE YOUR FIRESTICK!!!
 
@@ -6,7 +7,11 @@
 
 <br/>
 
-####Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
+####Scripting To Root, Unroot, Downgrade, Load Apps and Tons More Options For The Amazon FireStick
+
+<br/>
+
+***\*\*\* IF YOU WANT TO RETAIN ABILITY TO REMOVE AMAZON BLOAT DO NOT UPDATE TO NEWEST 5.2.1.1 FireOS \*\*\****
 
 <br/>
 
@@ -20,7 +25,7 @@
 
 - Currently Does Not Have Rooting Support For FireOS 5.2.1.1.
 
-- If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken.)
+- If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken).
 <br/><br/>
 
 	
