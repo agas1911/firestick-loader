@@ -1727,8 +1727,17 @@ cls
 echo Preparing Downgrade Files....
 echo.
 echo.
-%_color% 0c
-echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+
+if %dgNoRoot%==0 (
+	%_color% 0c
+	echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+)
+
+if %dgNoRoot%==1 (
+	%_color% 0b
+	echo *** USING MODIFIED CACHE "NO-ROOT" METHOD ***
+)
+
 echo.
 echo.
 echo.
@@ -1747,8 +1756,17 @@ cls
 echo Pushing Downgrade files to device....
 echo.
 echo.
-%_color% 0c
-echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+
+if %dgNoRoot%==0 (
+	%_color% 0c
+	echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+)
+
+if %dgNoRoot%==1 (
+	%_color% 0b
+	echo *** USING MODIFIED CACHE "NO-ROOT" METHOD ***
+)
+
 echo.
 echo.
 echo.
@@ -1771,8 +1789,17 @@ cls
 echo Cleaning current local cache....
 echo.
 echo.
-%_color% 0c
-echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+
+if %dgNoRoot%==0 (
+	%_color% 0c
+	echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+)
+
+if %dgNoRoot%==1 (
+	%_color% 0b
+	echo *** USING MODIFIED CACHE "NO-ROOT" METHOD ***
+)
+
 echo.
 echo.
 echo.
@@ -1782,6 +1809,7 @@ echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
 echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
 echo.
 echo.
+
 %_color% 0e
 
 if %dgNoRoot%==0 (
@@ -1804,33 +1832,22 @@ if %dgNoRoot%==1 (
 
 
 :: Copy update.bin to cache
-::cls
-::echo Follow these steps (NO QUOTES):
-::echo.
-::echo.
-::echo *** OPEN A NEW COMMAND WINDOW (Hold Shift+Rt-Click) ***
-::echo.
-::echo.
-::echo 1) Type "adb shell" and press ENTER
-::echo.
-::echo 2) Type "su" and press ENTER (Allow on device)
-::echo.
-::echo 3) Type "mv /sdcard/update.bin /cache/" and press ENTER
-::echo.
-::echo 4) Type "echo --update_package=/cache/update.bin > /cache/recovery/command" and press ENTER
-::echo.
-::echo 5) Type "reboot recovery" at #: prompt and press ENTER
-::echo.
-::echo.
-
-::pause
 
 cls
 echo Moving update.bin into local cache....
 echo.
 echo.
-%_color% 0c
-echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+
+if %dgNoRoot%==0 (
+	%_color% 0c
+	echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+)
+
+if %dgNoRoot%==1 (
+	%_color% 0b
+	echo *** USING MODIFIED CACHE "NO-ROOT" METHOD ***
+)
+
 echo.
 echo.
 echo.
@@ -1857,8 +1874,17 @@ cls
 echo Creating update file to trigger during recovery....
 echo.
 echo.
-%_color% 0c
-echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+
+if %dgNoRoot%==0 (
+	%_color% 0c
+	echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+)
+
+if %dgNoRoot%==1 (
+	%_color% 0b
+	echo *** USING MODIFIED CACHE "NO-ROOT" METHOD ***
+)
+
 echo.
 echo.
 echo.
