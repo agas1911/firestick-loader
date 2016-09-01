@@ -24,7 +24,7 @@
 <br/><br/>
 
 	
-***Current Project Testing Status:***
+***Current Project Testing Status (Using FireOS 5.0.5):***
 
 - No Root Downgrade Option (SEE NOTES!)
 
@@ -34,7 +34,7 @@
 		 * /cache/dalvik-cache
 		 * /cache/recovery
 
-    * Once done, you will be able to unroot and the downgrade option will always work, as long as there is an ADB connection.
+    * Once done, you will be able to unroot and the downgrade option will always work. This ensures partial brick-protection, even as a normal shell user, as long as there is an ADB connection.
 
     * Also works if device stays rooted.....of course ;)
 
