@@ -58,7 +58,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\rootexplorer.apk"
+%install% "apps\system\root-explorer.apk"
 
 
 cls
