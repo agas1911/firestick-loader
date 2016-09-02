@@ -48,9 +48,11 @@ mkdir /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/
 #cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/com.amazon.tv.settings_preferences.xml
 #rm /system/firepwn/data/data/com.amazon.tv.settings/com.amazon.tv.settings_preferences.xml
 cp /data/local/tmp/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/com.amazon.tv.settings_preferences.xml
+chmod 777 /system/firepwn/data/data/com.amazon.tv.settings/com.amazon.tv.settings_preferences.xml
 
 # Preserve KingRoot APK
 cp /data/local/tmp/kingroot.apk /system/firepwn/kingroot.apk
+chmod 777 /system/firepwn/kingroot.apk
 
 # Preserve KingRoot Settings
 #mkdir /system/firepwn/data/data/com.kingroot.kinguser/
@@ -61,12 +63,14 @@ cp /data/local/tmp/kingroot.apk /system/firepwn/kingroot.apk
 mkdir /system/firepwn/data/misc/wifi/
 #cp -Rp /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_supplicant.conf
 cp /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_supplicant.conf
+chmod 777 /system/firepwn/data/misc/wifi/wpa_supplicant.conf
 
 # Preserving Package Restrictions
 mkdir /system/firepwn/data/system/users/0/
 cp /data/system/users/0/package-restrictions.xml /system/firepwn/data/system/users/0/package-restrictions.xml
+chmod 777 /system/firepwn/data/system/users/0/package-restrictions.xml
 
-#read
+read
 
 
 #<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
