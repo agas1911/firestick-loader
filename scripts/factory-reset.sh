@@ -49,9 +49,9 @@ chmod -R 777 /system/firepwn/
 mkdir /system/firepwn/data/data/com.amazon.tv.settings/
 mkdir /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/
 #cp -Rp /data/data/com.amazon.tv.settings/shared_prefs/ /system/firepwn/data/data/com.amazon.tv.settings/
-#cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 #rm /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
-cp /data/local/tmp/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+#cp /data/local/tmp/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 chmod 777 /system/firepwn/data/data/com.amazon.tv.settings/com.amazon.tv.settings_preferences.xml
 
 # Preserve KingRoot APK
@@ -66,13 +66,13 @@ chmod 777 /system/firepwn/kingroot.apk
 # Preserve Wifi Settings
 mkdir /system/firepwn/data/misc/wifi/
 #cp -Rp /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_supplicant.conf
-cp /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_supplicant.conf
-chmod 777 /system/firepwn/data/misc/wifi/wpa_supplicant.conf
+cp -P /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_supplicant.conf
+#chmod 777 /system/firepwn/data/misc/wifi/wpa_supplicant.conf
 
 # Preserving Package Restrictions
 mkdir /system/firepwn/data/system/user/0/
-cp /data/system/user/0/package-restrictions.xml /system/firepwn/data/system/user/0/package-restrictions.xml
-chmod 777 /system/firepwn/data/system/user/0/package-restrictions.xml
+cp -P /data/system/user/0/package-restrictions.xml /system/firepwn/data/system/user/0/package-restrictions.xml
+#chmod 777 /system/firepwn/data/system/user/0/package-restrictions.xml
 
 #read
 
@@ -163,11 +163,11 @@ chown system:system /data/data/com.amazon.tv.settings/shared_prefs
 chmod 777 /data/data/com.amazon.tv.settings/shared_prefs
 
 #cp -Rp /system/firepwn/data/data/com.amazon.tv.settings/ /data/data/com.amazon.tv.settings/
-cp /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+cp -P /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 
-chown system:system /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+#chown system:system /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 #chmod 660 /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
-chmod 777 /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+#chmod 777 /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 
 
 # Restoring KingRoot Settings
@@ -189,10 +189,10 @@ chown wifi:wifi /data/misc/wifi/
 #chmod 771 /data/misc/wifi/
 chmod 777 /data/misc/wifi/
 
-cp /system/firepwn/data/misc/wifi/wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf
-chown wifi:wifi /data/misc/wifi/wpa_supplicant.conf
+cp -P /system/firepwn/data/misc/wifi/wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf
+#chown wifi:wifi /data/misc/wifi/wpa_supplicant.conf
 #chmod 660 /data/misc/wifi/wpa_supplicant.conf
-chmod 777 /data/misc/wifi/wpa_supplicant.conf
+#chmod 777 /data/misc/wifi/wpa_supplicant.conf
 
 
 # Remove System After Restore Data Stuff
