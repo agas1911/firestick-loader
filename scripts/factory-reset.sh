@@ -110,7 +110,7 @@ rm -rf /data/DxDrm/
 rm -rf /data/hwval/
 rm -rf /data/key_provisioning/
 rm -rf /data/mediadrm/
-rm -rf /data/misc/
+#rm -rf /data/misc/
 rm -rf /data/playready/
 rm -rf /data/proffline/
 rm -rf /data/property/
@@ -127,7 +127,8 @@ rm -rf /data/webcrypto/
 #rm -rf /data/
 
 # Clean User 0
-#rm -f /data/user/0/*.*
+rm -rf /data/user/0/*.*
+
 #rm -f /data/system/users/0/*.*
 #rm -f /data/system/users/0/accounts.db
 #rm -f /data/system/users/0/accounts.db-journal
@@ -195,9 +196,45 @@ chmod 777 /data/misc/wifi/wpa_supplicant.conf
 
 
 # Remove System After Restore Data Stuff
-rm -rf /data/system/
-mkdir /data/system/
-chmod 777 /data/system/
+#rm -rf /data/system/
+rm -f /data/system/SYSTEM_LAST_KMSG
+rm -f /data/system/appops.xml
+rm -f /data/system/batterystats.bin
+rm -f /data/system/batterystats.bin_ext
+rm -f /data/system/called_pre_boots.dat
+rm -f /data/system/chronos_db
+rm -rf /data/system/compatibility
+rm -f /data/system/device_policies.xml
+#rm -rf /data/system/dropbox
+rm -f /data/system/entropy.dat
+rm -f /data/system/framework_atlas.config
+rm -rf /data/system/ifw
+rm -rf /data/system/inputmethod
+rm -rf /data/system/install_sessions
+rm -rf /data/system/job
+rm -f /data/system/last-fstrim
+rm -f /data/system/locksettings.db
+rm -f /data/system/locksettings.db-shm
+rm -f /data/system/locksettings.db-wal
+rm -f /data/system/ndebugsocket
+rm -rf /data/system/netstats
+rm -f /data/system/package-usage.list
+rm -f /data/system/packages.list
+rm -f /data/system/packages.xml
+rm -rf /data/system/procstats
+rm -rf /data/system/recent_images
+rm -rf /data/system/recent_tasks
+rm -rf /data/system/seapp_hash
+rm -rf /data/system/shared_prefs
+rm -rf /data/system/sync
+rm -f /data/system/tmp_init.rc
+rm -f /data/system/uiderrors.txt
+rm -rf /data/system/usagestats
+#rm -rf /data/system/users
+
+
+#mkdir /data/system/
+#chmod 777 /data/system/
 
 
 # Restoring Package Restrictions

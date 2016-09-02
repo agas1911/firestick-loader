@@ -928,9 +928,11 @@ echo.
 %shell% "su -c chmod 777 /data/media"
 %shell% "su -c chmod 777 /data/media/0"
 %shell% "su -c chmod 777 /data/misc/wifi"
+%shell% "su -c chmod 777 /data/misc/wifi/*.*"
 %shell% "su -c chmod 777 /data/system/cache/"
 %shell% "su -c chmod 777 /data/system/users/"
 %shell% "su -c chmod 777 /data/system/users/0"
+%shell% "su -c chmod 777 /data/system/users/0/*.*"
 %shell% "su -c chmod 777 /data/user/"
 %shell% "su -c chmod 777 /data/user/0"
 
@@ -942,6 +944,8 @@ echo.
 
 
 :: /system/
+%shell% "su -c chmod 777 /system/bin/"
+%shell% "su -c chmod 777 /system/xbin/"
 
 
 :: /cache/
