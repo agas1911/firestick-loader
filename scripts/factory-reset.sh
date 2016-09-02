@@ -18,13 +18,27 @@ chown 0.0 /system/firepwn/
 chmod 777 /system/firepwn/
 
 mkdir /system/firepwn/data/
+chmod -R 777 /system/firepwn/data/
 mkdir /system/firepwn/data/app/
+chmod -R 777 /system/firepwn/data/app/
 mkdir /system/firepwn/data/data/
+chmod -R 777 /system/firepwn/data/data/
 mkdir /system/firepwn/data/misc/
-#mkdir /system/firepwn/data/misc/wifi/
+chmod -R 777 /system/firepwn/data/misc/
+mkdir /system/firepwn/data/misc/wifi/
+chmod -R 777 /system/firepwn/data/misc/wifi/
+mkdir /system/firepwn/data/system/users/0/
+chmod -R 777 /system/firepwn/data/system/users/0/
 mkdir /system/firepwn/system/
+chmod -R 777 /system/firepwn/system/
 mkdir /system/firepwn/system/app/
+chmod -R 777 /system/firepwn/system/app/
 mkdir /system/firepwn/system/priv-app/
+chmod -R 777 /system/firepwn/system/priv-app/
+
+# Recursive Permissions
+chown -R 0.0 /system/firepwn/
+chmod -R 777 /system/firepwn/
 
 
 # Preserve ADB Settings (XML should be pushed with menu before launching this script)
@@ -47,6 +61,10 @@ cp /data/local/tmp/kingroot.apk /system/firepwn/kingroot.apk
 mkdir /system/firepwn/data/misc/wifi/
 #cp -Rp /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_supplicant.conf
 cp /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_supplicant.conf
+
+# Preserving Package Restrictions
+mkdir /system/firepwn/data/system/users/0/
+cp /data/system/users/0/package-restrictions.xml /system/firepwn/data/system/users/0/package-restrictions.xml
 
 #read
 
@@ -101,11 +119,11 @@ rm -rf /data/webcrypto/
 #rm -rf /data/
 
 # Clean User 0
-rm -f /data/user/0/*.*
+#rm -f /data/user/0/*.*
 #rm -f /data/system/users/0/*.*
-rm -f /data/system/users/0/accounts.db
-rm -f /data/system/users/0/accounts.db-journal
-rm -f /data/system/users/0/appwidgets.xml
+#rm -f /data/system/users/0/accounts.db
+#rm -f /data/system/users/0/accounts.db-journal
+#rm -f /data/system/users/0/appwidgets.xml
 #rm -f /data/system/users/0/package-restrictions.xml
 
 # Rebuilding empty /data/
@@ -120,23 +138,27 @@ mkdir /data/system/
 #mkdir /data/local/tmp/
 
 chown system:system /data/data/
-chmod 771 /data/
+#chmod 771 /data/
+chmod 777 /data/
 
 # Restoring ADB Settings
 mkdir /data/data/com.amazon.tv.settings
 mkdir /data/data/com.amazon.tv.settings/shared_prefs
 
 chown system:system /data/data/com.amazon.tv.settings/
-chmod 751 /data/data/com.amazon.tv.settings/
+#chmod 751 /data/data/com.amazon.tv.settings/
+chmod 777 /data/data/com.amazon.tv.settings/
 
 chown system:system /data/data/com.amazon.tv.settings/shared_prefs
-chmod 771 /data/data/com.amazon.tv.settings/shared_prefs
+#chmod 771 /data/data/com.amazon.tv.settings/shared_prefs
+chmod 777 /data/data/com.amazon.tv.settings/shared_prefs
 
 #cp -Rp /system/firepwn/data/data/com.amazon.tv.settings/ /data/data/com.amazon.tv.settings/
 cp /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 
 chown system:system /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
-chmod 660 /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+#chmod 660 /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+chmod 777 /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 
 
 # Restoring KingRoot Settings
@@ -150,17 +172,26 @@ mkdir /data/misc/
 mkdir /data/misc/wifi/
 
 chown system:misc /data/misc/
-chmod 771 /data/misc/
+#chmod 771 /data/misc/
+chmod 777 /data/misc/
 
 chown wifi:wifi /data/misc/wifi/
 #drwxrwx--t system   misc              1970-01-01 16:00 misc
-chmod 771 /data/misc/wifi/
+#chmod 771 /data/misc/wifi/
+chmod 777 /data/misc/wifi/
 
 cp /system/firepwn/data/misc/wifi/wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf
 chown wifi:wifi /data/misc/wifi/wpa_supplicant.conf
-chmod 660 /data/misc/wifi/wpa_supplicant.conf
+#chmod 660 /data/misc/wifi/wpa_supplicant.conf
+chmod 777 /data/misc/wifi/wpa_supplicant.conf
 
 
+# Restoring Package Restrictions
+mkdir /system/firepwn/data/system/users/0/
+cp /system/firepwn/data/system/users/0/package-restrictions.xml /data/system/users/0/package-restrictions.xml
+chown system:system /data/system/users/0/package-restrictions.xml
+#chmod 660 /data/system/users/0/package-restrictions.xml
+chmod 777 /data/system/users/0/package-restrictions.xml
 
 
 # Clearing Dalvik Cache
@@ -175,7 +206,7 @@ rm -f /cache/*.*
 rm -rf /cache/dalvik-cache
 
 # Reinstall KingRoot APK
-pm install /data/local/tmp/kingroot.apk
+#pm install /data/local/tmp/kingroot.apk
 
 #reboot
 
