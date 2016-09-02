@@ -27,6 +27,10 @@ mkdir /system/firepwn/data/misc/
 chmod -R 777 /system/firepwn/data/misc/
 mkdir /system/firepwn/data/misc/wifi/
 chmod -R 777 /system/firepwn/data/misc/wifi/
+mkdir /system/firepwn/data/system/
+chmod -R 777 /system/firepwn/data/system/
+mkdir /system/firepwn/data/system/users/
+chmod -R 777 /system/firepwn/data/system/users/
 mkdir /system/firepwn/data/system/users/0/
 chmod -R 777 /system/firepwn/data/system/users/0/
 mkdir /system/firepwn/system/
@@ -45,9 +49,9 @@ chmod -R 777 /system/firepwn/
 mkdir /system/firepwn/data/data/com.amazon.tv.settings/
 mkdir /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/
 #cp -Rp /data/data/com.amazon.tv.settings/shared_prefs/ /system/firepwn/data/data/com.amazon.tv.settings/
-#cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/com.amazon.tv.settings_preferences.xml
-#rm /system/firepwn/data/data/com.amazon.tv.settings/com.amazon.tv.settings_preferences.xml
-cp /data/local/tmp/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/com.amazon.tv.settings_preferences.xml
+#cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+#rm /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+cp /data/local/tmp/com.amazon.tv.settings_preferences.xml /system/firepwn/data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 chmod 777 /system/firepwn/data/data/com.amazon.tv.settings/com.amazon.tv.settings_preferences.xml
 
 # Preserve KingRoot APK
@@ -66,11 +70,11 @@ cp /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_suppli
 chmod 777 /system/firepwn/data/misc/wifi/wpa_supplicant.conf
 
 # Preserving Package Restrictions
-mkdir /system/firepwn/data/system/users/0/
-cp /data/system/users/0/package-restrictions.xml /system/firepwn/data/system/users/0/package-restrictions.xml
-chmod 777 /system/firepwn/data/system/users/0/package-restrictions.xml
+mkdir /system/firepwn/data/system/user/0/
+cp /data/system/user/0/package-restrictions.xml /system/firepwn/data/system/user/0/package-restrictions.xml
+chmod 777 /system/firepwn/data/system/user/0/package-restrictions.xml
 
-read
+#read
 
 
 #<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
@@ -88,7 +92,7 @@ read
 #rm -R -- /data/*/
 
 rm -f /data/.layout_version
-rm -rf /data/adb/
+#rm -rf /data/adb/
 rm -rf /data/anr/
 rm -rf /data/app/
 rm -rf /data/app-asec/
@@ -116,7 +120,7 @@ rm -rf /data/securedStorageLocation/
 rm -rf /data/securestop/
 rm -rf /data/security/
 rm -rf /data/sfs/
-rm -rf /data/system/
+#rm -rf /data/system/
 #rm -rf /data/user/
 rm -rf /data/vitals/
 rm -rf /data/webcrypto/
@@ -137,13 +141,13 @@ rm -rf /data/webcrypto/
 #mkdir /data/app/mcRegistry/TbStorage
 mkdir /data/app/
 mkdir /data/data/
-mkdir /data/system/
+#mkdir /data/system/
 #mkdir /data/local/
 #mkdir /data/local/tmp/
 
 chown system:system /data/data/
-#chmod 771 /data/
-chmod 777 /data/
+#chmod 771 /data/data/
+chmod 777 /data/data/
 
 # Restoring ADB Settings
 mkdir /data/data/com.amazon.tv.settings
@@ -190,12 +194,24 @@ chown wifi:wifi /data/misc/wifi/wpa_supplicant.conf
 chmod 777 /data/misc/wifi/wpa_supplicant.conf
 
 
+# Remove System After Restore Data Stuff
+rm -rf /data/system/
+mkdir /data/system/
+chmod 777 /data/system/
+
+
 # Restoring Package Restrictions
-mkdir /system/firepwn/data/system/users/0/
-cp /system/firepwn/data/system/users/0/package-restrictions.xml /data/system/users/0/package-restrictions.xml
-chown system:system /data/system/users/0/package-restrictions.xml
-#chmod 660 /data/system/users/0/package-restrictions.xml
-chmod 777 /data/system/users/0/package-restrictions.xml
+mkdir /system/firepwn/data/system/user/
+mkdir /system/firepwn/data/system/user/0/
+chmod 777 /system/firepwn/data/system/user/
+chmod 777 /system/firepwn/data/system/user/0/
+cp /system/firepwn/data/system/user/0/package-restrictions.xml /data/system/user/0/package-restrictions.xml
+chown system:system /data/system/user/0/package-restrictions.xml
+#chmod 660 /data/system/user/0/package-restrictions.xml
+chmod 777 /data/system/user/0/package-restrictions.xml
+
+
+
 
 
 # Clearing Dalvik Cache
