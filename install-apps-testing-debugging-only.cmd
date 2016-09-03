@@ -160,6 +160,17 @@ echo.
 %install% "apps\testing\droid-examiner.apk"
 
 
+cls
+%_color% 0e
+set appName=Link2SD
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\testing\link2sd.apk"
+
+
 
 goto end
 
