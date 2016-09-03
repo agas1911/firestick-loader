@@ -1358,6 +1358,11 @@ if %firstTimeRootAttempt%==0 (
 )
 
 :root2
+%swipeUp%
+%swipeUp%
+%swipeUp%
+%swipeUp%
+
 :: Tab over to button
 %keyTab%
 %sleep% 2
@@ -1472,6 +1477,8 @@ taskkill /f /im winencrypt.exe
 if %fullAutoMode%==1 goto doSU
 if %fullAutoModeDG%==1 goto doSU
 if %fullAutoModeDG%==2 goto doSU
+
+%adb% reboot
 
 goto menu
 
@@ -1824,7 +1831,19 @@ echo.
 
 :: Extract update.bin RAR files
 md "%temp%\firestick-loader\downgrade\stick"
-%extractRAR% "%~dp0downgrade\stick\firestick-downgrade-505.split" "%temp%\firestick-loader\downgrade\stick"
+::%extractRAR% "%~dp0downgrade\stick\firestick-downgrade-505.split" "%temp%\firestick-loader\downgrade\stick"
+
+:: 5.0.5
+%extractRAR% "%~dp0downgrade\stick\5.0.5\firmware-505.split" "%temp%\firestick-loader\downgrade\stick"
+
+:: 5.0.5.1
+::%extractRAR% "%~dp0downgrade\stick\5.0.5.1\firmware-5051.split" "%temp%\firestick-loader\downgrade\stick"
+
+:: 5.2.1.0
+::%extractRAR% "%~dp0downgrade\stick\5.2.1.0\firmware-5210.split" "%temp%\firestick-loader\downgrade\stick"
+
+:: 5.2.1.1 (UNROOTABLE AS OF 20160903)
+::%extractRAR% "%~dp0downgrade\stick\5.2.1.1\firmware-5211.split" "%temp%\firestick-loader\downgrade\stick"
 
 
 
@@ -1855,7 +1874,17 @@ echo.
 echo.
 %_color% 0e
 
+:: 5.0.5
 %push% "%temp%\firestick-loader\downgrade\stick\update-kindle-montoya-54.5.3.7_user_537174420.bin" /%sdcard%/update.bin
+
+:: 5.0.5.1
+::%push% "%temp%\firestick-loader\downgrade\stick\update-kindle-montoya-54.5.3.7_user_537175520.bin" /%sdcard%/update.bin
+
+:: 5.2.1.0
+::%push% "%temp%\firestick-loader\downgrade\stick\update-kindle-montoya-54.5.3.7_user_550145120.bin" /%sdcard%/update.bin
+
+:: 5.2.1.1 (UNROOTABLE AS OF 20160903)
+::%push% "%temp%\firestick-loader\downgrade\stick\update-kindle-montoya-54.5.3.7_user_551203220.bin" /%sdcard%/update.bin
 
 %sleep% 10
 
@@ -2314,7 +2343,7 @@ if %busyboxScriptInstall%==1 (
 	%_color% 0b
 	echo *** THIS OPTION IS UNDER TESTING STILL AND MAY NOT WORK PROPERLY ***
 	echo.
-	echo *** IF THIS OPTION DOES NOT WORK FOR YOU, USE THE NORMAL GUI AUTO OPTION ***
+	echo *** IF THIS OPTION DOES NOT WORK FOR YOU, USE THE GUI AUTO OPTION ***
 	echo.
 	%_color% 0e
 	echo.
