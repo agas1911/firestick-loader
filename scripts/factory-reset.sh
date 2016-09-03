@@ -68,9 +68,11 @@ cp /data/local/tmp/kingroot.apk /system/firepwn/kingroot.apk
 chmod 777 /system/firepwn/kingroot.apk
 
 # Preserve KingRoot Settings
-#mkdir /system/firepwn/data/data/com.kingroot.kinguser/
-#mkdir /system/firepwn/data/data/com.kingroot.kinguser/shared_prefs/
-#cp -Rp /data/data/com.kingroot.kinguser/shared_prefs/ /system/firepwn/data/data/com.kingroot.kinguser/
+mkdir /system/firepwn/data/data/com.kingroot.kinguser/
+mkdir /system/firepwn/data/data/com.kingroot.kinguser/shared_prefs/
+chmod 777 /system/firepwn/data/data/com.kingroot.kinguser/
+chmod 777 /system/firepwn/data/data/com.kingroot.kinguser/shared_prefs/
+cp -RP /data/data/com.kingroot.kinguser/shared_prefs/ /system/firepwn/data/data/com.kingroot.kinguser/
 
 # Preserve Wifi Settings
 mkdir /system/firepwn/data/misc/wifi/
@@ -79,9 +81,9 @@ cp -P /data/misc/wifi/wpa_supplicant.conf /system/firepwn/data/misc/wifi/wpa_sup
 #chmod 777 /system/firepwn/data/misc/wifi/wpa_supplicant.conf
 
 # Preserving Package Restrictions
-mkdir /system/firepwn/data/system/user/0/
-cp -P /data/system/user/0/package-restrictions.xml /system/firepwn/data/system/user/0/package-restrictions.xml
-#chmod 777 /system/firepwn/data/system/user/0/package-restrictions.xml
+mkdir /system/firepwn/data/system/users/0/
+cp -P /data/system/users/0/package-restrictions.xml /system/firepwn/data/system/users/0/package-restrictions.xml
+#chmod 777 /system/firepwn/data/system/users/0/package-restrictions.xml
 
 #read
 
@@ -135,8 +137,24 @@ rm -rf /data/vitals/
 rm -rf /data/webcrypto/
 #rm -rf /data/
 
+# Clean /data/data/
 
-rm -rf /data/data/*.*
+#removeList=ls /data/data/ | grep -v "com.kingroot.kinguser"
+
+#rm -rf /data/data/*.*
+
+#while read line;do
+
+	#item=$(echo "$line")
+	#rm -rf /data/data/*.*
+
+#done < $removeList
+
+
+# Restore Kingroot Settings and Request SU again and remount RW
+cp -RP /system/firepwn/data/data/com.kingroot.kinguser/ /data/data/com.kingroot.kinguser/
+su -c mount -o rw,remount /system
+
 
 # Clean User 0
 rm -rf /data/user/0/*.*
@@ -195,7 +213,7 @@ cp -P /system/firepwn/data/user/0/com.amazon.tv.settings/shared_prefs/com.amazon
 # Restoring KingRoot Settings
 #mkdir /data/data/com.kingroot.kinguser/
 #mkdir /data/data/com.kingroot.kinguser/shared_prefs/
-#cp -Rp /system/firepwn/data/data/com.kingroot.kinguser/ /data/data/com.kingroot.kinguser/
+cp -RP /system/firepwn/data/data/com.kingroot.kinguser/ /data/data/com.kingroot.kinguser/
 
 
 # Restoring WiFi Settings
@@ -260,14 +278,14 @@ rm -rf /data/system/usagestats
 
 
 # Restoring Package Restrictions
-mkdir /system/firepwn/data/system/user/
-mkdir /system/firepwn/data/system/user/0/
-chmod 777 /system/firepwn/data/system/user/
-chmod 777 /system/firepwn/data/system/user/0/
-cp /system/firepwn/data/system/user/0/package-restrictions.xml /data/system/user/0/package-restrictions.xml
-chown system:system /data/system/user/0/package-restrictions.xml
-#chmod 660 /data/system/user/0/package-restrictions.xml
-chmod 777 /data/system/user/0/package-restrictions.xml
+mkdir /system/firepwn/data/system/users/
+mkdir /system/firepwn/data/system/users/0/
+chmod 777 /system/firepwn/data/system/users/
+chmod 777 /system/firepwn/data/system/users/0/
+cp /system/firepwn/data/system/users/0/package-restrictions.xml /data/system/users/0/package-restrictions.xml
+chown system:system /data/system/users/0/package-restrictions.xml
+#chmod 660 /data/system/users/0/package-restrictions.xml
+chmod 777 /data/system/users/0/package-restrictions.xml
 
 
 
@@ -288,4 +306,7 @@ rm -rf /cache/dalvik-cache
 #pm install /data/local/tmp/kingroot.apk
 
 #reboot
+
+echo "done!"
+read
 
