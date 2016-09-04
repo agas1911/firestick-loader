@@ -339,6 +339,17 @@ echo.
 
 cls
 %_color% 0e
+set appName=Diode (Reddit Viewer)
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\web\diode.apk"
+
+
+cls
+%_color% 0e
 set appName=Wallpaper
 echo.
 echo.

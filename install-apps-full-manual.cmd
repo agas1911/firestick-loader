@@ -757,6 +757,30 @@ echo.
 
 cls
 %_color% 0e
+set appName=Diode
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Reddit Viewing Client
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\web\diode.apk"
+)
+
+
+cls
+%_color% 0e
 set appName=ADB Insecure
 set apk=
 echo Install %appName%?
