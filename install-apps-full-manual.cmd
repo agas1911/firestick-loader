@@ -743,7 +743,7 @@ echo.
 %_color% 0b
 echo Requirements: NONE
 echo.
-echo Info: File Manager (Simple UI)
+echo Info: File Manager *Simple UI*
 echo.
 set /p choice=
 if %choice%==1 (
