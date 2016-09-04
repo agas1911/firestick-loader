@@ -193,6 +193,17 @@ echo.
 %install% "apps\testing\ghost-log.apk"
 
 
+cls
+%_color% 0e
+set appName=Network Log
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\testing\network-log.apk"
+
+
 
 goto end
 
