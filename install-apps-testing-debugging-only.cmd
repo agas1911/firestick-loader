@@ -171,6 +171,28 @@ echo.
 %install% "apps\testing\link2sd.apk"
 
 
+cls
+%_color% 0e
+set appName=Ghost Commander
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\testing\ghost-commander.apk"
+
+
+cls
+%_color% 0e
+set appName=Ghost Log
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\testing\ghost-log.apk"
+
+
 
 goto end
 
