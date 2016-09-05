@@ -565,7 +565,7 @@ echo.
 
 cls
 %_color% 0e
-set appName=YouTube -No Play Services-
+set appName=NewPipe Youtube Client
 set apk=
 echo Install %appName%?
 echo.
@@ -575,7 +575,7 @@ echo.
 %_color% 0b
 echo Requirements: NONE
 echo.
-echo Info: Modified YouTube Player
+echo Info: YouTube Player
 echo.
 set /p choice=
 if %choice%==1 (
@@ -583,7 +583,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\media\youtube.apk"
+%install% "apps\media\newpipe.apk"
 )
 
 
@@ -849,6 +849,11 @@ echo Installing %appName%...
 echo.
 %push% "wallpaper" "/%sdcard%/wallpaper"
 )
+
+
+
+goto end
+
 
 
 :bootAni

@@ -260,6 +260,17 @@ echo.
 ::%install% "apps\web\firefox.apk"
 
 
+cls
+%_color% 0e
+set appName=Opera Mini
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\web\opera.apk"
+
+
 ::cls
 ::%_color% 0e
 ::set appName=YouTube -No Play Services-
@@ -273,13 +284,13 @@ echo.
 
 cls
 %_color% 0e
-set appName=Opera Mini
+set appName=NewPipe Youtube Client
 set apk=
 echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\web\opera.apk"
+%install% "apps\media\newpipe.apk"
 
 
 ::cls
