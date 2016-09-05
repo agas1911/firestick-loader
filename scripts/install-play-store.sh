@@ -116,3 +116,7 @@ chmod 0644 /system/priv-app/Phonesky/Phonesky.apk
 #pm install /data/local/tmp/Phonesky.apk
 
 
+
+pm grant com.google.android.gms android.permission.INTERACT_ACROSS_USERS
+
+
