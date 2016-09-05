@@ -1417,6 +1417,9 @@ echo.
 %_color% 0b
 echo *** TO RE-LAUNCH KINGROOT AND CLICK BUTTON, TYPE "R" AND PRESS ENTER ***
 echo.
+%_color% 0b
+echo *** TO CLEAR CACHE, TYPE "C" AND PRESS ENTER ***
+echo.
 echo.
 echo.
 %_color% 0e
@@ -1431,6 +1434,11 @@ if %check%==S %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
 if %check%==s %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
 if %check%==S goto rootActive
 if %check%==s goto rootActive
+
+if %check%==C %runShellTerminate% ""%~dp0bin\adb.exe" shell "su rm -f /cache/*.*""
+if %check%==c %runShellTerminate% ""%~dp0bin\adb.exe" shell "su rm -f /cache/*.*""
+if %check%==C goto rootActive
+if %check%==c goto rootActive
 
 if %check%==R %keyHome%
 if %check%==r %keyHome%
@@ -1463,6 +1471,8 @@ if %check%==pc goto rootActive
 %uninstall% com.kingstudio.purify
 
 %sleep% 3
+
+"%~dp0bin\adb.exe" shell "su rm -f /cache/*.*"
 
 %keyHome%
 
