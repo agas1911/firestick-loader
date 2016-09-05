@@ -2018,6 +2018,7 @@ if %dgNoRoot%==1 (
 	%shell% "rm -f /%sdcard%/command"
 )
 
+::echo %dgNoRoot%
 ::pause
 
 ::%shell% mv /sdcard/update.bin /cache/
@@ -2226,8 +2227,14 @@ if %fullAutoMode%==1 echo.
 ::if %fullAutoModeDG%==1 echo.
 echo.
 echo.
+echo.
+echo.
 %_color% 0b
-if %fullAutoMode%==0 echo *** YOU CAN ALSO PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
+if %fullAutoMode%==0 echo *** YOU CAN PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
+if %fullAutoMode%==0 echo.
+if %fullAutoMode%==0 echo.
+echo.
+if %fullAutoMode%==0 echo *** YOU CAN PRESS "F" AND ENTER TO FACTORY RESET ***
 ::if %fullAutoModeDG%==0 echo *** YOU CAN ALSO PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
 if %fullAutoMode%==1 echo *** CONTINUING AUTOMATICALLY IN 90 SECONDS ***
 ::if %fullAutoModeDG%==1 echo *** CONTINUING AUTOMATICALLY IN 90 SECONDS ***
@@ -2257,6 +2264,9 @@ if %fullAutoMode%==1 goto root
 
 if %rootFromDG%==S goto menu
 if %rootFromDG%==s goto menu
+
+if %rootFromDG%==F set factoryReset=1&&goto fReset
+if %rootFromDG%==f set factoryReset=1&&goto fReset
 
 :: Going to last part of KingRoot since the swiping shouldn't be needed again
 :: 20160821 Swipe Needed Sometimes!
@@ -2981,6 +2991,7 @@ if %factoryReset%==1 (
 	echo.
 	echo.
 	echo.
+	%_color% 0e
 	%sleep% 10
 
 	%amStart% com.amazon.tv.settings/.tv.FactoryResetActivity
