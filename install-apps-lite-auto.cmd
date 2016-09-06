@@ -303,6 +303,17 @@ echo.
 %install% "apps\media\newpipe.apk"
 
 
+cls
+%_color% 0e
+set appName=uSound Ares
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\usound.apk"
+
+
 ::cls
 ::%_color% 0e
 ::set appName=Terminal Emulator
