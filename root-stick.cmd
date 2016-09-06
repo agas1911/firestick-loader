@@ -188,6 +188,15 @@ set showDeviceNotifications=%amStart% com.amazon.bueller.notification/com.amazon
 set deregisterAmazonAccount=%shell% am start -a com.amazon.tv.oobe/.DeregistrationActivity -n com.amazon.tv.oobe/.DeregistrationActivity
 
 
+:: Misc Activities Found
+
+set clearUserAppData=%amStart% com.amazon.tv.settings/.tv.BuellerClearUserApplicationDataActivity
+set showAppFilter=%amStart% com.amazon.tv.settings/.tv.ApplicationsFilterActivity
+set scanForWPS=%amStart% com.amazon.tv.settings/.wifi.BuellerWifiWpsSettingsActivity
+
+
+
+
 :: android.content.ContextWrapper.startService
 
 :: com.amazon.tv.settings.tv.accounts.AccountHelpers.startOOBEDeregistrationForFactoryReset
