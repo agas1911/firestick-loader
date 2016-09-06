@@ -314,15 +314,15 @@ echo.
 ::%install% "apps\system\terminal.apk"
 
 
-::cls
-::%_color% 0e
-::set appName=Root Explorer
-::set apk=
-::echo.
-::echo.
-::echo Installing %appName%...
-::echo.
-::%install% "apps\system\root-explorer.apk"
+cls
+%_color% 0e
+set appName=Root Explorer
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\root-explorer.apk"
 
 
 ::cls
@@ -347,15 +347,15 @@ echo.
 ::%install% "apps\system\root-browser.apk"
 
 
-cls
-%_color% 0e
-set appName=File Explorer
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\system\file-explorer.apk"
+::cls
+::%_color% 0e
+::set appName=File Explorer
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\system\file-explorer.apk"
 
 
 cls
