@@ -55,6 +55,33 @@ set fsContinue=0
 
 cls
 %_color% 0e
+set appName=FirePwn Home
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Home Replacement App
+echo.
+set /p choice=
+
+
+if %choice%==1 (
+		echo.
+		echo.
+		echo Installing %appName%...
+		echo.
+
+		%install% "apps\home\FirePwnHome.apk"
+		%push% "apps\home\sdcard\FirePwnHomeBackup.zip" /sdcard/
+)
+
+cls
+%_color% 0e
 set appName=FireStarter
 set apk=
 echo Install %appName%?
@@ -76,8 +103,8 @@ if %choice%==1 (
 		echo Installing %appName%...
 		echo.
 
-		%install% "apps\system\firestopper.apk"
-		%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+		%install% "apps\home\firestopper.apk"
+		%push% "apps\home\sdcard\FireStarterBackup.zip" /sdcard/
 )
 
 

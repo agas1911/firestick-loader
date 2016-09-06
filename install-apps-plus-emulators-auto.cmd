@@ -49,15 +49,24 @@ set baddieFlagActive=0
 
 set buildDotProp=/system/build.prop
 
+::cls
+::%_color% 0e
+::set appName=FireStarter
+::set apk=
+::echo Installing %appName%...
+::echo.
+::%install% "apps\home\firestopper.apk"
+::%install% "apps\home\firestarter.apk"
+::%push% "apps\home\sdcard\FireStarterBackup.zip" /sdcard/
+
 cls
 %_color% 0e
-set appName=FireStarter
+set appName=FirePwn Home
 set apk=
 echo Installing %appName%...
 echo.
-%install% "apps\system\firestopper.apk"
-::%install% "apps\system\firestarter.apk"
-%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+%install% "apps\home\FirePwnHome.apk"
+%push% "apps\home\sdcard\FirePwnHomeBackup.zip" /sdcard/
 
 
 cls
