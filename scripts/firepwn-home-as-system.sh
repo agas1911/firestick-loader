@@ -1,7 +1,10 @@
 #!/system/bin/sh
 
 mount -o rw,remount /system
+
+# Remove Old FireStopper From System If Exists
 rm -rf /system/app/FireStopper/
+
 mkdir /system/app/FirePwnHome/
 chmod 0755 /system/app/FirePwnHome/
 
