@@ -1046,11 +1046,11 @@ goto fixesMenu
 
 if %installFireStopperSetting%==1 (
 
-	%uninstall% de.belu.firestopper
+	%uninstall% com.firepwn.home.montoya
 	
-	%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+	%push% "apps\system\sdcard\FirePwnHomeBackup.zip" /sdcard/
 	
-	%install% "%~dp0apps\system\firestopper.apk"
+	%install% "%~dp0apps\home\FirePwnHome.apk"
 	
 	set installFireStopperSetting=0
 
@@ -1058,15 +1058,15 @@ if %installFireStopperSetting%==1 (
 
 if %installFireStopperSetting%==2 (
 
-	%uninstall% de.belu.firestopper
-	
-	%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+	%uninstall% com.firepwn.home.montoya
 
-	%push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
+	%push% "apps\system\sdcard\FirePwnHomeBackup.zip" /sdcard/
 
-	%push% "%~dp0scripts\firestopper-as-system.sh" /data/local/tmp/
-	%shell% "su -c chmod 755 /data/local/tmp/firestopper-as-system.sh"
-	%shell% "su -c sh /data/local/tmp/firestopper-as-system.sh"
+	%push% "%~dp0apps\home\FirePwnHome.apk" /data/local/tmp/
+
+	%push% "%~dp0scripts\firepwn-home-as-system.sh" /data/local/tmp/
+	%shell% "su -c chmod 755 /data/local/tmp/firepwn-home-as-system.sh"
+	%shell% "su -c sh /data/local/tmp/firepwn-home-as-system.sh"
 	
 	set installFireStopperSetting=0
 
@@ -2725,20 +2725,24 @@ echo.
 
 ::%install% "%~dp0apps\system\firestopper.apk"
 
-%uninstall% de.belu.firestopper
+::%uninstall% de.belu.firestopper
+%uninstall% com.firepwn.home.montoya
 
 :: FireStopper Config
-%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+::%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+%push% "apps\system\sdcard\FirePwnHomeBackup.zip" /sdcard/
 
-%push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
+%push% "%~dp0apps\home\FirePwnHome.apk" /data/local/tmp/
+
+::%push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
 ::%shell% "su -c mkdir /system/app/FireStopper/"
 ::%shell% "su -c chmod 0755 /system/app/FireStopper/"
 ::%shell% "su -c cp /data/local/tmp/firestopper.apk" /system/app/FireStopper/FireStopper.apk"
 ::%shell% "su -c chmoc 0644 /system/app/FireStopper/FireStopper.apk"
 
-%push% "%~dp0scripts\firestopper-as-system.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/firestopper-as-system.sh"
-%shell% "su -c sh /data/local/tmp/firestopper-as-system.sh"
+%push% "%~dp0scripts\firepwn-home-as-system.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/firepwn-home-as-system.sh"
+%shell% "su -c sh /data/local/tmp/firepwn-home-as-system.sh"
 
 
 %shell% "su -c rm /data/local/tmp/bloat-disable.sh"
@@ -2823,20 +2827,24 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
 echo.
 echo.
 
-%uninstall% de.belu.firestopper
+::%uninstall% de.belu.firestopper
+%uninstall% com.firepwn.home.montoya
 
 :: FireStopper Config
-%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+::%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
+%push% "apps\system\sdcard\FirePwnHomeBackup.zip" /sdcard/
 
-%push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
+%push% "%~dp0apps\home\FirePwnHome.apk" /data/local/tmp/
+
+::%push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
 ::%shell% "su -c mkdir /system/app/FireStopper/"
 ::%shell% "su -c chmod 0755 /system/app/FireStopper/"
 ::%shell% "su -c cp /data/local/tmp/firestopper.apk" /system/app/FireStopper/FireStopper.apk"
 ::%shell% "su -c chmoc 0644 /system/app/FireStopper/FireStopper.apk"
 
-%push% "%~dp0scripts\firestopper-as-system.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/firestopper-as-system.sh"
-%shell% "su -c sh /data/local/tmp/firestopper-as-system.sh"
+%push% "%~dp0scripts\firepwn-home-as-system.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/firepwn-home-as-system.sh"
+%shell% "su -c sh /data/local/tmp/firepwn-home-as-system.sh"
 
 
 

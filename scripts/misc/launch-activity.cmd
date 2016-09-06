@@ -15,7 +15,7 @@ cls
 echo Enter Activity and Press Enter:
 echo.
 echo.
-echo Example: de.belu.firestopper/.gui.MainActivity
+echo Example: com.firepwn.home.montoya/.gui.MainActivity
 echo.
 echo.
 echo.
