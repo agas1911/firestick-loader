@@ -1,0 +1,114 @@
+@echo off
+
+:reset
+
+title Update Protection Loop Script [Try Preventing FireOS 5.2.1.1+ Update]  [esc0rtd3w]
+
+::mode con lines=37
+
+color 0e
+
+set runShellNoTerminateAndWait=cmd /k
+set runShellNoTerminate=start cmd /k
+set runShellWaitNoTerminate=start /wait cmd /k
+set runShellTerminateAndWait=cmd /c
+set runShellTerminate=start cmd /c
+set runShellWaitTerminate=start /wait cmd /c
+
+set _color="..\..\bin\cocolor.exe"
+set sleep="..\..\bin\wait.exe"
+set rm=rmdir /s /q
+
+set adb="..\..\bin\adb.exe"
+set adbKill="%adb% kill-server
+set adbStart="%adb% start-server
+set adbWait=%adb% wait-for-device
+
+set appName=0
+set choice=2
+
+set install=%adb% install
+set uninstall=%adb% uninstall
+set push=%adb% push
+set pull=%adb% pull
+set shell=%adb% shell
+
+set tap=%adb% shell input tap
+set swipe=%shell% input swipe
+set key=%shell% input keyevent
+
+set swipeUp=%shell% input swipe 200 900 200 300
+set keyEnter=%shell% input keyevent 66
+set keyOk=%shell% input keyevent 23
+set keyTab=%shell% input keyevent 61
+set keyArrowUp=%shell% input keyevent 19
+set keyArrowDown=%shell% input keyevent 20
+set keyArrowLeft=%shell% input keyevent 21
+set keyArrowRight=%shell% input keyevent 22
+
+set keyBack=%shell% input keyevent 3
+set keyHome=%shell% input keyevent 4
+
+set amStart=%shell% am start -a android.intent.action.MAIN -n
+
+
+
+
+
+:loop
+
+:: Request SU Permission
+%shell% "su"
+%shell% "su"
+
+
+:: Try ROOT Commands
+%_color% 0b
+echo.
+echo.
+echo.
+echo Trying ROOT Commands....
+echo.
+echo.
+%shell% "su -c rm -f /cache/*.bin"
+%shell% "su -c rm -f /cache/*.bin"
+%shell% "su -c rm -f /cache/*.*"
+::%shell% "su -c rm -f /cache/recovery/*.*"
+::%shell% "su -c rm -f /cache/dalvik-cache/*.*"
+
+%shell% "su -c chmod 777 /cache/"
+%shell% "su -c chmod 777 /cache/recovery/"
+
+%sleep% 1
+
+
+:: Try USER Commands
+%_color% 0e
+echo.
+echo.
+echo.
+echo Trying USER Commands....
+echo.
+echo.
+%shell% "rm -f /cache/*.bin"
+%shell% "rm -f /cache/*.bin"
+%shell% "rm -f /cache/*.*"
+::%shell% "rm -f /cache/recovery/*.*"
+::%shell% "rm -f /cache/dalvik-cache/*.*"
+
+%shell% "chmod 777 /cache/"
+%shell% "chmod 777 /cache/recovery/"
+
+
+:: Request SU Permission
+%shell% "su"
+%shell% "su"
+
+%sleep% 1
+
+
+goto loop
+
+
+:end
+
