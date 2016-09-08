@@ -22,7 +22,7 @@ echo.
 %adb% shell ime enable uk.co.shenye.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME
 %adb% shell ime enable com.hexad.bluezime/.BluezIME
 %adb% shell ime enable com.mercury.inputmethod.wpad/.WiiControllerIME
-
+%adb% shell ime enable com.wondershare.mobilego.connector/com.wondershare.mobilego.ime.MirrorGoKeyboard
 echo.
 echo.
 echo.
