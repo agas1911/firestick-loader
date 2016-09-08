@@ -57,10 +57,6 @@ set amStart=%shell% am start -a android.intent.action.MAIN -n
 
 :loop
 
-:: Request SU Permission
-%shell% "su"
-%shell% "su"
-
 
 :: Try ROOT Commands
 %_color% 0b
@@ -70,11 +66,30 @@ echo.
 echo Trying ROOT Commands....
 echo.
 echo.
-%shell% "su -c rm -f /cache/*.bin"
+
+:: Request SU Permission
+%shell% "su"
+%shell% "su"
+%shell% "su"
+%shell% "su"
+
+:: Clear Cache and Update BIN Files
 %shell% "su -c rm -f /cache/*.bin"
 %shell% "su -c rm -f /cache/*.*"
 ::%shell% "su -c rm -f /cache/recovery/*.*"
 ::%shell% "su -c rm -f /cache/dalvik-cache/*.*"
+
+%shell% "su -c busybox rm -f /cache/*.bin"
+%shell% "su -c busybox rm -f /cache/*.*"
+
+%shell% "su -c /system/bin/busybox rm -f /cache/*.bin"
+%shell% "su -c /system/bin/busybox rm -f /cache/*.*"
+
+%shell% "su -c /system/xbin/busybox rm -f /cache/*.bin"
+%shell% "su -c /system/xbin/busybox rm -f /cache/*.*"
+
+%shell% "su -c /data/local/busybox rm -f /cache/*.bin"
+%shell% "su -c /data/local/busybox rm -f /cache/*.*"
 
 %shell% "su -c chmod 777 /cache/"
 %shell% "su -c chmod 777 /cache/recovery/"
@@ -91,18 +106,24 @@ echo Trying USER Commands....
 echo.
 echo.
 %shell% "rm -f /cache/*.bin"
-%shell% "rm -f /cache/*.bin"
 %shell% "rm -f /cache/*.*"
 ::%shell% "rm -f /cache/recovery/*.*"
 ::%shell% "rm -f /cache/dalvik-cache/*.*"
 
+%shell% "busybox rm -f /cache/*.bin"
+%shell% "busybox rm -f /cache/*.*"
+
+%shell% "/system/bin/busybox rm -f /cache/*.bin"
+%shell% "/system/bin/busybox rm -f /cache/*.*"
+
+%shell% "/system/xbin/busybox rm -f /cache/*.bin"
+%shell% "/system/xbin/busybox rm -f /cache/*.*"
+
+%shell% "/data/local/busybox rm -f /cache/*.bin"
+%shell% "/data/local/busybox rm -f /cache/*.*"
+
 %shell% "chmod 777 /cache/"
 %shell% "chmod 777 /cache/recovery/"
-
-
-:: Request SU Permission
-%shell% "su"
-%shell% "su"
 
 %sleep% 1
 
