@@ -195,7 +195,7 @@ set showAppFilter=%amStart% com.amazon.tv.settings/.tv.ApplicationsFilterActivit
 set scanForWPS=%amStart% com.amazon.tv.settings/.wifi.BuellerWifiWpsSettingsActivity
 
 
-
+set showHomeLongPressHUD=%amStart% com.amazon.tv.settings/.hud.HudActivity
 
 :: android.content.ContextWrapper.startService
 
@@ -1478,6 +1478,9 @@ if %check%==pc goto rootActive
 
 :: Removing Purify
 %uninstall% com.kingstudio.purify
+
+:: Removing Tencent Video Crap
+%uninstall% com.tencent.qqlive
 
 %sleep% 3
 
