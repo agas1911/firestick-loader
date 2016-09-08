@@ -105,6 +105,7 @@ pm hide com.ivona.orchestrator
 pm hide com.amazon.device.sale.service
 pm hide com.amazon.logan
 pm hide com.amazon.advertisingidsettings
+pm hide com.amazon.tz.webcryptotzservice
 
 
 

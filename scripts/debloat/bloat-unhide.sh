@@ -108,4 +108,5 @@ pm unhide com.ivona.orchestrator
 pm unhide com.amazon.device.sale.service
 pm unhide com.amazon.logan
 pm unhide com.amazon.advertisingidsettings
+pm unhide com.amazon.tz.webcryptotzservice
 

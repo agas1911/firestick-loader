@@ -170,5 +170,6 @@ pm enable com.ivona.orchestrator
 pm enable com.amazon.device.sale.service
 pm enable com.amazon.logan
 pm enable com.amazon.advertisingidsettings
+pm enable com.amazon.tz.webcryptotzservice
 
 
