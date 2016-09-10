@@ -8,4 +8,5 @@ echo ""
 pm hide com.amazon.dcp
 pm hide com.amazon.device.software.ota
 pm hide com.amazon.device.software.ota.override
+pm hide com.amazon.settings.systemupdates/.OTAEventReceiver
 
