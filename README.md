@@ -18,8 +18,10 @@
 - ***pm hide com.amazon.settings.systemupdates/.OTAEventReceiver***
 
 ![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/settings-5-system-update-error.jpg)
-<br/>
+<br/><br/>
 
+
+***Auto Scripting Menus***
 ![Menu Preview 1](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/options-main.png)
 <br/><br/>
 ![Menu Preview 2](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/options-tweaks.png)
