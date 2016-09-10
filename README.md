@@ -236,13 +236,13 @@
 <br/><br/>	
 
 **Untested Bloat From FireOS 5.2.1.1**
-	- /system/priv-app/com.amazon.tv.nimh
-	- /system/priv-app/AdvertisingIdSettings
-	- /system/priv-app/FireTvSaleService
-	- /system/priv-app/IvonaTTS
-	- /system/priv-app/IvonaTtsOrchestrator
-	- /system/priv-app/Logan
-	- /system/priv-app/TvProvider
+    - /system/priv-app/com.amazon.tv.nimh
+    - /system/priv-app/AdvertisingIdSettings
+    - /system/priv-app/FireTvSaleService
+    - /system/priv-app/IvonaTTS
+    - /system/priv-app/IvonaTtsOrchestrator
+    - /system/priv-app/Logan
+    - /system/priv-app/TvProvider
 
 <br/><br/>
 	
