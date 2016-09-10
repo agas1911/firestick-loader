@@ -21,8 +21,8 @@
 <br/><br/>
 
 
-***Auto Scripting Menus***
-<br/>
+***Auto Scripting Menus (Windows)***
+<br/><br/>
 ![Menu Preview 1](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/options-main.png)
 <br/><br/>
 ![Menu Preview 2](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/options-tweaks.png)
