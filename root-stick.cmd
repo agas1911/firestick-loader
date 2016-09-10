@@ -771,19 +771,20 @@ echo.
 echo 2) Launch Android Event Keymap (Press Keys and Send Text Over ADB)
 echo.
 %_color% 09
-echo 3) Remove Boot Animation (Leaves Stock FIRE Text)
-echo 4) Replace Boot Animation (Replaces Stock Boot Animation)
-echo 5) Restore Boot Animation (Restores Stock Boot Animation)
+::echo 3) Remove Boot Animation (Leaves Stock FIRE Text)
+echo 3) Replace Boot Animation (Replaces Stock Boot Animation)
+echo 4) Restore Boot Animation (Restores Stock Boot Animation)
 echo.
-echo 6) Replace Boot Fallback Images (Replaces Stock FIRE Text)
-echo 7) Restore Boot Fallback Images (Restores framework-res.apk)
+::echo 6) Replace Boot Fallback Images (Replaces Stock FIRE Text)
+::echo 7) Restore Boot Fallback Images (Restores framework-res.apk)
 echo.
-echo 8) Launch Boot Animation Factory
+echo 5) Launch Boot Animation Factory
 echo.
 echo.
-::%_color% 0a
-::echo P) Patch Amazon APKs (also use PR to restore original amazon files)
 %_color% 0a
+echo P) Patch Amazon APKs (also use PR to restore original amazon files)
+echo.
+%_color% 0d
 echo H) Hide Amazon OTA Updates (also use HU to unhide or HA or HUA for all)
 echo.
 %_color% 0b
@@ -826,12 +827,12 @@ set /p fchoice=
 ::if %fchoice%==1 goto fixRemote
 if %fchoice%==1 goto cacheFix
 if %fchoice%==2 goto eventmap
-if %fchoice%==3 goto bootanimRemove
-if %fchoice%==4 goto bootanimReplace
-if %fchoice%==5 goto bootanimRestore
-if %fchoice%==6 goto bootanimReplaceFBI
-if %fchoice%==7 goto bootanimRestoreFBI
-if %fchoice%==8 "%~dp0bin\boot-animation-factory.exe"
+::if %fchoice%==3 goto bootanimRemove
+if %fchoice%==3 goto bootanimReplace
+if %fchoice%==4 goto bootanimRestore
+::if %fchoice%==6 goto bootanimReplaceFBI
+::if %fchoice%==7 goto bootanimRestoreFBI
+if %fchoice%==5 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==L %tap% 20 1030
 if %fchoice%==l %tap% 20 1030
 if %fchoice%==H goto hideOTA
@@ -853,12 +854,12 @@ if %fchoice%==hU goto unhideOTA
 if %fchoice%==hu goto unhideOTA
 ::if %fchoice%==P goto cacheFix
 ::if %fchoice%==p goto cacheFix
-::if %fchoice%==P set restoreAmazonFiles=0&&goto patchAmz
-::if %fchoice%==p set restoreAmazonFiles=0&&goto patchAmz
-::if %fchoice%==PR set restoreAmazonFiles=1&&goto patchAmz
-::if %fchoice%==Pr set restoreAmazonFiles=1&&goto patchAmz
-::if %fchoice%==pR set restoreAmazonFiles=1&&goto patchAmz
-::if %fchoice%==pr set restoreAmazonFiles=1&&goto patchAmz
+if %fchoice%==P set restoreAmazonFiles=0&&goto patchAmz
+if %fchoice%==p set restoreAmazonFiles=0&&goto patchAmz
+if %fchoice%==PR set restoreAmazonFiles=1&&goto patchAmz
+if %fchoice%==Pr set restoreAmazonFiles=1&&goto patchAmz
+if %fchoice%==pR set restoreAmazonFiles=1&&goto patchAmz
+if %fchoice%==pr set restoreAmazonFiles=1&&goto patchAmz
 if %fchoice%==Z goto resetADB
 if %fchoice%==z goto resetADB
 if %fchoice%==ZS set adbServerAction=1&&goto resetADB
@@ -994,15 +995,18 @@ goto fixesMenu
 
 :patchAmz
 
+:: %push% "%~dp0config\system\priv-app\com.amazon.tv.settings\com.amazon.tv.settings.apk" /data/local/tmp/
+:: %push% "%~dp0config\system\priv-app\com.amazon.tv.settings\orig\com.amazon.tv.settings.apk" /data/local/tmp/
+
 if %restoreAmazonFiles%==0 (
 
-	%push% "%~dp0config\system\priv-app\com.amazon.tv.settings\com.amazon.tv.settings.apk" /data/local/tmp/
+	%push% "%~dp0config\system\priv-app\com.amazon.bueller.photos\orig\com.amazon.bueller.photos__5.2.1.1.apk" /data/local/tmp/com.amazon.bueller.photos.apk
 
 )
 
 if %restoreAmazonFiles%==1 (
 
-	%push% "%~dp0config\system\priv-app\com.amazon.tv.settings\orig\com.amazon.tv.settings.apk" /data/local/tmp/
+	%push% "%~dp0config\system\priv-app\com.amazon.bueller.photos\orig\com.amazon.bueller.photos__5.0.5.apk" /data/local/tmp/com.amazon.bueller.photos.apk
 
 )
 
