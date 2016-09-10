@@ -14,8 +14,8 @@
 ##\*\*\* IF YOU WANT TO RETAIN ABILITY TO REMOVE AMAZON BLOAT DO NOT UPDATE TO NEWEST 5.2.1.1 FireOS \*\*\*
 
 
-### To Block The FireOS 5.2.1.1 Update, While Still On 5.2.1.0, Run The "/scripts/block-updates-5.2.1.0.sh" or hifr below activity  \*NON-ROOT\*
-- pm hide com.amazon.settings.systemupdates/.OTAEventReceiver
+### To Block The FireOS 5.2.1.1 Update, While Still On 5.2.1.0, Run The "/scripts/block-updates-5.2.1.0.sh" or hide below activity  \*NON-ROOT\*
+- ***pm hide com.amazon.settings.systemupdates/.OTAEventReceiver***
 
 <br/>
 
