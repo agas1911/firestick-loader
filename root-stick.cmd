@@ -1011,9 +1011,13 @@ if %restoreAmazonFiles%==1 (
 
 )
 
-%push% "%~dp0scripts\patch-amazon-settings-apk.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/patch-amazon-settings-apk.sh"
-%shell% "su -c sh /data/local/tmp/patch-amazon-settings-apk.sh"
+::%push% "%~dp0scripts\patch-amazon-settings-apk.sh" /data/local/tmp/
+::%shell% "su -c chmod 755 /data/local/tmp/patch-amazon-settings-apk.sh"
+::%shell% "su -c sh /data/local/tmp/patch-amazon-settings-apk.sh"
+
+%push% "%~dp0scripts\patch-amazon-photos-apk.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/patch-amazon-photos-apk.sh"
+%shell% "su -c sh /data/local/tmp/patch-amazon-photos-apk.sh"
 
 set restoreAmazonFiles=0
 
