@@ -763,14 +763,14 @@ echo Fixes, Tweaks, and Misc Menu [FireTV Stick]
 echo.
 echo.
 echo.
-%_color% 0d
+%_color% 0b
 echo 1) Patch Downgrade Process For Use Without Root *ROOT REQUIRED*
 ::echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
-%_color% 05
+::%_color% 05
 echo 2) Launch Android Event Keymap (Press Keys and Send Text Over ADB)
 echo.
-%_color% 09
+::%_color% 09
 ::echo 3) Remove Boot Animation (Leaves Stock FIRE Text)
 echo 3) Replace Boot Animation (Replaces Stock Boot Animation)
 echo 4) Restore Boot Animation (Restores Stock Boot Animation)
@@ -787,7 +787,7 @@ echo.
 %_color% 0d
 echo H) Hide Amazon OTA Updates (also use HU to unhide or HA or HUA for all)
 echo.
-%_color% 0b
+%_color% 09
 echo S) Take Screenshot (also use SV to use rapid viewer mode)
 echo.
 %_color% 01
@@ -804,6 +804,7 @@ echo F) FireStopper Launch (also use FI to install or FIS to install as /system/
 echo.
 %_color% 02
 echo T) Terminal Launch (also use TI to install or TIS to install as /system/)
+echo.
 echo.
 %_color% 07
 echo Z) Reset ADB Server (also use ZS to start or ZK to kill server)
