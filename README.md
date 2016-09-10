@@ -248,7 +248,7 @@
 	
 **List of Amazon Bloat Left Alone**
 
-- Screensaver Config
+- Screensaver Config (Replace With 5.2.1.0 or 5.2.1.1 APK To Fix Black Screen)
     - /system/priv-app/com.amazon.bueller.photos/
 
 - Amazon Remote Android App
