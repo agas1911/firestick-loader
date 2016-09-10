@@ -39,7 +39,9 @@
 	
 ***Current Project Testing Status (Using FireOS 5.0.5):***
 
-- No Root Downgrade Option (PARTIAL BRICK-PROTECTION / SEE NOTES!)
+- If 5.2.1.0 Is Detected At Launch, The Update Protection Script Will Automatically Run
+
+- No Root Downgrade Option (PARTIAL BRICK-PROTECTION / IN TESTING / SEE NOTES!)
 
     * This option changes the permissions to 777 on the following directories:
 	     
