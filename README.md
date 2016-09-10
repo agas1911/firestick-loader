@@ -17,6 +17,7 @@
 ### To Block The FireOS 5.2.1.1 Update, While Still On 5.2.1.0, Run The "/scripts/block-updates-5.2.1.0.sh" or hide below activity  \*NON-ROOT\*
 - ***pm hide com.amazon.settings.systemupdates/.OTAEventReceiver***
 
+![Menu Preview 1](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/settings-5-system-update-error.png)
 <br/>
 
 ![Menu Preview 1](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/options-main.png)
@@ -74,6 +75,10 @@
 <br/><br/>
 
 
+***Preview Custom FireStarter Build***
+######\*\* Based off original FireStopper Port (https://github.com/jkchr1s/FireStarter) \*\*
+######\*\* Which Is Based off original FireStarter \[Now AppStarter\] (https://github.com/sphinx02/AppStarter) \*\*
+
 ***Preview Finished Setup Using "root-stick.cmd" Automatic Option***
 ######\*\* Can also manually use Install, Root, Downgrade (if higher than 5.0.5), Busybox, and Debloat/Remove/Adblock Options \*\*
 
@@ -86,16 +91,6 @@
 ![Finished Preview Loaded](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/home-loaded-standard.jpg)
 <br/><br/>
 
-
-***Preview Custom FireStarter Build***
-######\*\* Based off original FireStopper Port (https://github.com/jkchr1s/FireStarter) \*\*
-######\*\* Which Is Based off original FireStarter \[Now AppStarter\] (https://github.com/sphinx02/AppStarter) \*\*
-
-![Finished Preview Loaded](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/home-firestarter-mod-system.jpg)
-<br/><br/>
-
-![Finished Preview Loaded](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/home-firestarter-mod-settings.jpg)
-<br/><br/><br/>
 
 
 ***Menu Options:***
