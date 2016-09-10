@@ -805,7 +805,7 @@ echo.
 echo Z) Reset ADB Server (also use ZS to start or ZK to kill server)
 echo.
 %_color% 08
-echo R) Reboot Device (also use RR to reboot to recovery)
+echo R) Reboot Device (also use RR for recovery or RB for bootloader modes)
 echo.
 echo.
 echo.
@@ -869,12 +869,14 @@ if %fchoice%==zk set adbServerAction=2&&goto resetADB
 if %fchoice%==R %adb% reboot
 if %fchoice%==r %adb% reboot
 ::if %fchoice%==11 %adb% shell setprop sys.powerctl reboot
-if %fchoice%==R %adb% reboot recovery
 if %fchoice%==Rr %adb% reboot recovery
 if %fchoice%==RR %adb% reboot recovery
 if %fchoice%==rR %adb% reboot recovery
-if %fchoice%==r %adb% reboot recovery
 if %fchoice%==rr %adb% reboot recovery
+if %fchoice%==Rb %adb% reboot bootloader
+if %fchoice%==RB %adb% reboot bootloader
+if %fchoice%==rB %adb% reboot bootloader
+if %fchoice%==rb %adb% reboot bootloader
 ::if %fchoice%==12 %adb% shell setprop sys.powerctl reboot,recovery
 if %fchoice%==S goto takeSS
 if %fchoice%==s goto takeSS
