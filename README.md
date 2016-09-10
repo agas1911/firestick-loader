@@ -39,7 +39,7 @@
 	
 ***Current Project Testing Status (Using FireOS 5.0.5):***
 
-- If 5.2.1.0 Is Detected At Launch, The Update Protection Script Will Automatically Run
+- If FireOS 5.2.1.0 Is Detected At Launch, The Update Protection Script Will Automatically Run
 
 - No Root Downgrade Option (PARTIAL BRICK-PROTECTION / IN TESTING / SEE NOTES!)
 
