@@ -77,6 +77,8 @@
 - Amazon Voice Remote Still Supported
 
 - Hold HOME Button Function To Sleep Available
+
+- Amazon Default Screensaver Still Available
 <br/><br/>
 
 
