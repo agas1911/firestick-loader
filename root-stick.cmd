@@ -302,6 +302,12 @@ set unhideAllOTA=0
 ::arp -a -v -i wlan0
 
 
+:: Amazon APK Patching Flags
+set patchAllSystemAPKs=0
+set patchPhotosAPK=0
+set patchSettingsAPK=0
+
+
 set returnTo=menu
 
 
@@ -782,7 +788,7 @@ echo 5) Launch Boot Animation Factory
 echo.
 echo.
 %_color% 0a
-echo P) Patch Amazon APKs (also use PR to restore original amazon files)
+echo P) Patch Amazon APKs (also use P1 for photos, P2 for settings, P*R to restore)
 echo.
 %_color% 0d
 echo H) Hide Amazon OTA Updates (also use HU to unhide or HA or HUA for all)
@@ -855,12 +861,26 @@ if %fchoice%==hU goto unhideOTA
 if %fchoice%==hu goto unhideOTA
 ::if %fchoice%==P goto cacheFix
 ::if %fchoice%==p goto cacheFix
-if %fchoice%==P set restoreAmazonFiles=0&&goto patchAmz
-if %fchoice%==p set restoreAmazonFiles=0&&goto patchAmz
-if %fchoice%==PR set restoreAmazonFiles=1&&goto patchAmz
-if %fchoice%==Pr set restoreAmazonFiles=1&&goto patchAmz
-if %fchoice%==pR set restoreAmazonFiles=1&&goto patchAmz
-if %fchoice%==pr set restoreAmazonFiles=1&&goto patchAmz
+
+if %fchoice%==P set restoreAmazonFiles=0&&set patchPhotosAPK=1&&set patchSettingsAPK=1&&goto patchAmz
+if %fchoice%==p set restoreAmazonFiles=0&&set patchPhotosAPK=1&&set patchSettingsAPK=1&&goto patchAmz
+
+if %fchoice%==P1 set restoreAmazonFiles=0&&set patchPhotosAPK=1&&goto patchAmz
+if %fchoice%==p1 set restoreAmazonFiles=0&&set patchPhotosAPK=1&&goto patchAmz
+
+if %fchoice%==P1R set restoreAmazonFiles=1&&set patchPhotosAPK=1&&goto patchAmz
+if %fchoice%==P1r set restoreAmazonFiles=1&&set patchPhotosAPK=1&&goto patchAmz
+if %fchoice%==p1R set restoreAmazonFiles=1&&set patchPhotosAPK=1&&goto patchAmz
+if %fchoice%==p1r set restoreAmazonFiles=1&&set patchPhotosAPK=1&&goto patchAmz
+
+if %fchoice%==P2 set restoreAmazonFiles=0&&set patchSettingsAPK=1&&goto patchAmz
+if %fchoice%==p2 set restoreAmazonFiles=0&&set patchSettingsAPK=1&&goto patchAmz
+
+if %fchoice%==P2R set restoreAmazonFiles=1&&set patchSettingsAPK=1&&goto patchAmz
+if %fchoice%==P2r set restoreAmazonFiles=1&&set patchSettingsAPK=1&&goto patchAmz
+if %fchoice%==p2R set restoreAmazonFiles=1&&set patchSettingsAPK=1&&goto patchAmz
+if %fchoice%==p2r set restoreAmazonFiles=1&&set patchSettingsAPK=1&&goto patchAmz
+
 if %fchoice%==Z goto resetADB
 if %fchoice%==z goto resetADB
 if %fchoice%==ZS set adbServerAction=1&&goto resetADB
@@ -996,8 +1016,36 @@ goto fixesMenu
 
 :patchAmz
 
-:: %push% "%~dp0config\system\priv-app\com.amazon.tv.settings\com.amazon.tv.settings.apk" /data/local/tmp/
-:: %push% "%~dp0config\system\priv-app\com.amazon.tv.settings\orig\com.amazon.tv.settings.apk" /data/local/tmp/
+::cls
+::echo patchPhotosAPK: %patchPhotosAPK%
+::echo patchSettingsAPK: %patchSettingsAPK%
+::echo.
+::echo restoreAmazonFiles: %restoreAmazonFiles%
+::echo.
+::echo.
+::pause
+
+if %patchPhotosAPK%==1 (
+
+	goto patchPhotos
+
+)
+
+if %patchSettingsAPK%==1 (
+
+	goto patchSettings
+
+)
+
+:: Reset Patch Flags
+set patchPhotosAPK=0
+set patchSettingsAPK=0
+
+goto fixesMenu
+
+
+
+:patchPhotos
 
 if %restoreAmazonFiles%==0 (
 
@@ -1011,17 +1059,43 @@ if %restoreAmazonFiles%==1 (
 
 )
 
-::%push% "%~dp0scripts\patch-amazon-settings-apk.sh" /data/local/tmp/
-::%shell% "su -c chmod 755 /data/local/tmp/patch-amazon-settings-apk.sh"
-::%shell% "su -c sh /data/local/tmp/patch-amazon-settings-apk.sh"
-
 %push% "%~dp0scripts\patch-amazon-photos-apk.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/patch-amazon-photos-apk.sh"
 %shell% "su -c sh /data/local/tmp/patch-amazon-photos-apk.sh"
 
 set restoreAmazonFiles=0
 
-goto fixesMenu
+:: Reset Patch Flags
+set patchPhotosAPK=0
+
+goto patchAmz
+
+
+
+:patchSettings
+
+if %restoreAmazonFiles%==0 (
+
+	%push% "%~dp0config\system\priv-app\com.amazon.tv.settings\com.amazon.tv.settings__5.0.5.apk" /data/local/tmp/com.amazon.tv.settings.apk
+
+)
+
+if %restoreAmazonFiles%==1 (
+
+	%push% "%~dp0config\system\priv-app\com.amazon.tv.settings\orig\com.amazon.tv.settings__5.0.5.apk" /data/local/tmp/com.amazon.tv.settings.apk
+
+)
+
+%push% "%~dp0scripts\patch-amazon-settings-apk.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/patch-amazon-settings-apk.sh"
+%shell% "su -c sh /data/local/tmp/patch-amazon-settings-apk.sh"
+
+set restoreAmazonFiles=0
+
+:: Reset Patch Flags
+set patchSettingsAPK=0
+
+goto patchAmz
 
 
 
