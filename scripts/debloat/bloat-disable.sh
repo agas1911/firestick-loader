@@ -118,16 +118,17 @@ pm disable com.svox.pico
 pm disable com.amazon.tv.launcher/.ui.HomeActivity
 
 pm disable com.amazon.tv.launcher/.ui.ItemLoadingActivity
-pm disable com.amazon.tv.launcher/.primefreetrial.PrimeFreeTrialActivity
 pm disable com.amazon.tv.launcher/.ui.purchase.OffDeviceSubscriptionActivity
 pm disable com.amazon.tv.launcher/.ui.Channel1DActivity
 pm disable com.amazon.tv.launcher/.ui.TVActivity
 pm disable com.amazon.tv.launcher/.ui.SearchMenuActivity
 pm disable com.amazon.tv.launcher/.ui.MoviesActivity
 pm disable com.amazon.tv.launcher/.ui.YoursToWatchActivity
-
 pm disable com.amazon.tv.launcher/.ui.ReleaseNotesActivity
 pm disable com.amazon.tv.launcher/.ui.purchase.VideoItemPurchaseActivity
+pm disable com.amazon.tv.launcher/.ui.service.LeftNavOverlayService
+
+pm disable com.amazon.tv.launcher/.primefreetrial.PrimeFreeTrialActivity
 pm disable com.amazon.tv.launcher/.content.ComradeReceiver
 pm disable com.amazon.tv.launcher/.demo.DemoPackageAddedReceiver
 pm disable com.amazon.tv.launcher/.ads.AdRefreshReceiver

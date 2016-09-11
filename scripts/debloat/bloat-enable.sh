@@ -112,16 +112,17 @@ pm enable com.android.captiveportallogin
 pm enable com.amazon.tv.launcher/.ui.HomeActivity
 
 pm enable com.amazon.tv.launcher/.ui.ItemLoadingActivity
-pm enable com.amazon.tv.launcher/.primefreetrial.PrimeFreeTrialActivity
 pm enable com.amazon.tv.launcher/.ui.purchase.OffDeviceSubscriptionActivity
 pm enable com.amazon.tv.launcher/.ui.Channel1DActivity
 pm enable com.amazon.tv.launcher/.ui.TVActivity
 pm enable com.amazon.tv.launcher/.ui.SearchMenuActivity
 pm enable com.amazon.tv.launcher/.ui.MoviesActivity
 pm enable com.amazon.tv.launcher/.ui.YoursToWatchActivity
-
 pm enable com.amazon.tv.launcher/.ui.ReleaseNotesActivity
 pm enable com.amazon.tv.launcher/.ui.purchase.VideoItemPurchaseActivity
+pm enable com.amazon.tv.launcher/.ui.service.LeftNavOverlayService
+
+pm enable com.amazon.tv.launcher/.primefreetrial.PrimeFreeTrialActivity
 pm enable com.amazon.tv.launcher/.content.ComradeReceiver
 pm enable com.amazon.tv.launcher/.demo.DemoPackageAddedReceiver
 pm enable com.amazon.tv.launcher/.ads.AdRefreshReceiver
