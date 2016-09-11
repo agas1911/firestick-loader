@@ -126,7 +126,7 @@ pm disable com.amazon.tv.launcher/.ui.MoviesActivity
 pm disable com.amazon.tv.launcher/.ui.YoursToWatchActivity
 pm disable com.amazon.tv.launcher/.ui.ReleaseNotesActivity
 pm disable com.amazon.tv.launcher/.ui.purchase.VideoItemPurchaseActivity
-pm disable com.amazon.tv.launcher/.ui.service.LeftNavOverlayService
+#pm disable com.amazon.tv.launcher/.ui.service.LeftNavOverlayService
 
 pm disable com.amazon.tv.launcher/.primefreetrial.PrimeFreeTrialActivity
 pm disable com.amazon.tv.launcher/.content.ComradeReceiver
