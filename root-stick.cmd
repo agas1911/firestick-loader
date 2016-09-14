@@ -2854,6 +2854,7 @@ taskkill /f /im tv_w32.exe
 taskkill /f /im tv_x64.exe
 
 %uninstall% com.teamviewer.quicksupport.market
+%uninstall% com.kingroot.kinguser
 
 %adb% reboot
 
