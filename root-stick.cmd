@@ -1250,7 +1250,8 @@ goto fixesMenu
 
 cls
 %shell% "rm /data/local/tmp/hosts"
-%push% "%~dp0misc\hosts.adfree" /data/local/tmp/hosts
+::%push% "%~dp0misc\hosts.adfree" /data/local/tmp/hosts
+%push% "%~dp0misc\hosts.adfree.ota.disabled" /data/local/tmp/hosts
 %push% "%~dp0scripts\disable-ads.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/disable-ads.sh"
 %shell% "su -c sh /data/local/tmp/disable-ads.sh"
@@ -1945,10 +1946,10 @@ echo.
 
 :: Firestick
 md "%temp%\firestick-loader\downgrade\stick"
-%extractRAR% "%~dp0downgrade\stick\firestick-downgrade-505.split" "%temp%\firestick-loader\downgrade\stick"
+::%extractRAR% "%~dp0downgrade\stick\firestick-downgrade-505.split" "%temp%\firestick-loader\downgrade\stick"
 
 :: 5.0.5
-::%extractRAR% "%~dp0downgrade\stick\5.0.5\firmware-505.split" "%temp%\firestick-loader\downgrade\stick"
+%extractRAR% "%~dp0downgrade\stick\5.0.5\firmware-505.split" "%temp%\firestick-loader\downgrade\stick"
 
 :: 5.0.5.1
 ::%extractRAR% "%~dp0downgrade\stick\5.0.5.1\firmware-5051.split" "%temp%\firestick-loader\downgrade\stick"
@@ -3031,10 +3032,12 @@ if %fullAutoModeDG%==1 (
 	%shell% "su -c sh /data/local/tmp/bloat-disable.sh"
 )
 
+:: Old Adblock Name
+:: hosts.adfree
 if %doBlockAdsWithMenuOption%==1 (
 
 	%shell% "rm /data/local/tmp/hosts"
-	%push% "%~dp0misc\hosts.adfree" /data/local/tmp/hosts
+	%push% "%~dp0misc\hosts.adfree.ota.disabled" /data/local/tmp/hosts
 	%push% "%~dp0scripts\disable-ads.sh" /data/local/tmp/
 	%shell% "su -c chmod 755 /data/local/tmp/disable-ads.sh"
 	%shell% "su -c sh /data/local/tmp/disable-ads.sh"
