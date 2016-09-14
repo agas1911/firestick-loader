@@ -1945,10 +1945,10 @@ echo.
 
 :: Firestick
 md "%temp%\firestick-loader\downgrade\stick"
-::%extractRAR% "%~dp0downgrade\stick\firestick-downgrade-505.split" "%temp%\firestick-loader\downgrade\stick"
+%extractRAR% "%~dp0downgrade\stick\firestick-downgrade-505.split" "%temp%\firestick-loader\downgrade\stick"
 
 :: 5.0.5
-%extractRAR% "%~dp0downgrade\stick\5.0.5\firmware-505.split" "%temp%\firestick-loader\downgrade\stick"
+::%extractRAR% "%~dp0downgrade\stick\5.0.5\firmware-505.split" "%temp%\firestick-loader\downgrade\stick"
 
 :: 5.0.5.1
 ::%extractRAR% "%~dp0downgrade\stick\5.0.5.1\firmware-5051.split" "%temp%\firestick-loader\downgrade\stick"
@@ -1961,7 +1961,7 @@ md "%temp%\firestick-loader\downgrade\stick"
 
 
 :: Fire TV (Bueller)
-::md "%temp%\firetv-loader\downgrade\tv"
+md "%temp%\firetv-loader\downgrade\tv"
 
 :: 5.0.5
 ::%extractRAR% "%~dp0downgrade\tv\5.0.5\firmware-505.split" "%temp%\firestick-loader\downgrade\tv"
@@ -1977,7 +1977,7 @@ md "%temp%\firestick-loader\downgrade\stick"
 
 
 :: Fire tv2 2 (Sloane)
-::md "%temp%\firetv2-loader\downgrade\tv2"
+md "%temp%\firetv2-loader\downgrade\tv2"
 
 :: 5.0.5
 ::%extractRAR% "%~dp0downgrade\tv2\5.0.5\firmware-505.split" "%temp%\firestick-loader\downgrade\tv2"
@@ -2065,6 +2065,8 @@ echo.
 %sleep% 10
 
 %rm% "%temp%\firestick-loader\downgrade\stick"
+%rm% "%temp%\firestick-loader\downgrade\tv"
+%rm% "%temp%\firestick-loader\downgrade\tv2"
 
 :: Clear cache
 cls
