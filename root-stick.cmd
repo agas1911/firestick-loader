@@ -2651,7 +2651,7 @@ echo.
 echo.
 echo.
 %_color% 0b
-echo *** BUSYBOX IS INSTALLED TO THE /system/ DIRECTORY, THE APK IS NO LONGER NEEDED ***
+echo *** BUSYBOX INSTALLED TO THE /system/xbin, THE APK IS NO LONGER NEEDED ***
 %_color% 0e
 echo.
 echo.
