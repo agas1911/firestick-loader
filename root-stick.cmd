@@ -237,6 +237,7 @@ set launchTerminal=%amStart% jackpal.androidterm/.Term
 set launchScreenSaver=%amStart% com.amazon.bueller.photos/com.amazon.bueller.photos.daydream.ScreenSaverService
 
 
+set appLauncher=%amStart% com.amazon.venezia/.grid.AppsGridLauncherActivity
 
 set removeSuperSU=%uninstall% eu.chainfire.supersu
 
@@ -248,6 +249,7 @@ set firestopperUpdater=%amStart% de.belu.firestopper.tools.FireStarterUpdater
 :: com.opera.mini.android/.Browser
 
 set test1=%shell% am start -a android.content.ContextWrapper.startService -n com.amazon.tv.launcher.Navigator.gotoMenu
+
 
 
 set cleanPackages=%shell% "su -c dumpsys package"
@@ -1940,6 +1942,8 @@ echo.
 %sleep% 2
 
 :: Extract update.bin RAR files
+
+:: Firestick
 md "%temp%\firestick-loader\downgrade\stick"
 ::%extractRAR% "%~dp0downgrade\stick\firestick-downgrade-505.split" "%temp%\firestick-loader\downgrade\stick"
 
@@ -1954,6 +1958,38 @@ md "%temp%\firestick-loader\downgrade\stick"
 
 :: 5.2.1.1 (UNROOTABLE AS OF 20160903)
 ::%extractRAR% "%~dp0downgrade\stick\5.2.1.1\firmware-5211.split" "%temp%\firestick-loader\downgrade\stick"
+
+
+:: Fire TV (Bueller)
+::md "%temp%\firetv-loader\downgrade\tv"
+
+:: 5.0.5
+::%extractRAR% "%~dp0downgrade\tv\5.0.5\firmware-505.split" "%temp%\firestick-loader\downgrade\tv"
+
+:: 5.0.5.1
+::%extractRAR% "%~dp0downgrade\tv\5.0.5.1\firmware-5051.split" "%temp%\firestick-loader\downgrade\tv"
+
+:: 5.2.1.0
+::%extractRAR% "%~dp0downgrade\tv\5.2.1.0\firmware-5210.split" "%temp%\firestick-loader\downgrade\tv"
+
+:: 5.2.1.1 (UNROOTABLE AS OF 20160903)
+::%extractRAR% "%~dp0downgrade\tv\5.2.1.1\firmware-5211.split" "%temp%\firestick-loader\downgrade\tv"
+
+
+:: Fire tv2 2 (Sloane)
+::md "%temp%\firetv2-loader\downgrade\tv2"
+
+:: 5.0.5
+::%extractRAR% "%~dp0downgrade\tv2\5.0.5\firmware-505.split" "%temp%\firestick-loader\downgrade\tv2"
+
+:: 5.0.5.1
+::%extractRAR% "%~dp0downgrade\tv2\5.0.5.1\firmware-5051.split" "%temp%\firestick-loader\downgrade\tv2"
+
+:: 5.2.1.0
+::%extractRAR% "%~dp0downgrade\tv2\5.2.1.0\firmware-5210.split" "%temp%\firestick-loader\downgrade\tv2"
+
+:: 5.2.1.1 (UNROOTABLE AS OF 20160903)
+::%extractRAR% "%~dp0downgrade\tv2\5.2.1.1\firmware-5211.split" "%temp%\firestick-loader\downgrade\tv2"
 
 
 
@@ -1984,6 +2020,8 @@ echo.
 echo.
 %_color% 0e
 
+
+:: Firestick
 :: 5.0.5
 %push% "%temp%\firestick-loader\downgrade\stick\update-kindle-montoya-54.5.3.7_user_537174420.bin" /%sdcard%/update.bin
 
@@ -1995,6 +2033,34 @@ echo.
 
 :: 5.2.1.1 (UNROOTABLE AS OF 20160903)
 ::%push% "%temp%\firestick-loader\downgrade\stick\update-kindle-montoya-54.5.3.7_user_551203220.bin" /%sdcard%/update.bin
+
+
+:: Fire TV (Bueller)
+:: 5.0.5
+::%push% "%temp%\firestick-loader\downgrade\tv\update-kindle-bueller-51.5.3.7_user_537174420.bin" /%sdcard%/update.bin
+
+:: 5.0.5.1
+::%push% "%temp%\firestick-loader\downgrade\tv\update-kindle-montoya-54.5.3.7_user_537175520.bin" /%sdcard%/update.bin
+
+:: 5.2.1.0
+::%push% "%temp%\firestick-loader\downgrade\tv\update-kindle-montoya-54.5.3.7_user_550145120.bin" /%sdcard%/update.bin
+
+:: 5.2.1.1 (UNROOTABLE AS OF 20160903)
+::%push% "%temp%\firestick-loader\downgrade\tv\update-kindle-montoya-54.5.3.7_user_551203220.bin" /%sdcard%/update.bin
+
+
+:: Fire tv2 2 (Sloane)
+:: 5.0.5
+::%push% "%temp%\firestick-loader\downgrade\tv2\update-kindle-full_sloane-36.5.3.7_user_537174420.bin" /%sdcard%/update.bin
+
+:: 5.0.5.1
+::%push% "%temp%\firestick-loader\downgrade\tv2\update-kindle-montoya-54.5.3.7_user_537175520.bin" /%sdcard%/update.bin
+
+:: 5.2.1.0
+::%push% "%temp%\firestick-loader\downgrade\tv2\update-kindle-montoya-54.5.3.7_user_550145120.bin" /%sdcard%/update.bin
+
+:: 5.2.1.1 (UNROOTABLE AS OF 20160903)
+::%push% "%temp%\firestick-loader\downgrade\tv2\update-kindle-montoya-54.5.3.7_user_551203220.bin" /%sdcard%/update.bin
 
 %sleep% 10
 
