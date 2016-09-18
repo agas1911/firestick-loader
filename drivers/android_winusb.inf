@@ -46,6 +46,21 @@ HKR,,Icon,,-1
 %CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0020&REV_0100
 
 
+;Amazon Fire Stick UNKNOWN
+%CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0022&REV_0231
+
+%SingleBootLoaderInterface% = USB_Install, USB\VID_1949&PID_0241&MI_00
+%SingleBootLoaderInterface% = USB_Install, USB\VID_1949&PID_0241&MI_01
+
+%SingleBootLoaderInterface% = USB_Install, USB\VID_1949&PID_0800&MI_00
+%SingleBootLoaderInterface% = USB_Install, USB\VID_1949&PID_0800&MI_01
+
+%SingleBootLoaderInterface% = USB_Install, USB\VID_1949&PID_0241&REV_0232
+
+%SingleBootLoaderInterface% = USB_Install, USB\VID_1949&PID_0022&MI_01
+%SingleBootLoaderInterface% = USB_Install, USB\VID_1949&PID_0022&REV_0231&MI_01
+
+
 [USB_Install]
 Include = winusb.inf
 Needs   = WINUSB.NT
