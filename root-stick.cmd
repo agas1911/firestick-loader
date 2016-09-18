@@ -8,6 +8,7 @@ mode con lines=46
 
 color 0e
 
+set pathBin="%~dp0bin"
 set pathScripts="%~dp0scripts"
 set pathScriptsConfig="%~dp0config\scripts"
 
@@ -461,9 +462,10 @@ if %fireOsVersion%==5.0.5 %msgbox% "This device has version %fireOsVersion% inst
 
 if %fireOsVersion%==5.0.5.1 %msgbox% "This device has version %fireOsVersion% installed.\nThere will probably be mixed results trying to root this version!\n\nIt is recommended updating to version 5.2.1.0 for rooting.\n\n\nAmazon OTA Updates are incremental.\n\nThe available version under SETTINGS - ABOUT should be 5.2.1.0.\n\n\n*** DO NOT UPDATE IF AVAILABLE VERSION IS 5.2.1.1 OR HIGHER ***" "FirePwn Loader"
 
-if %fireOsVersion%==5.2.1.0 %msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to:\n\n- Disable Amazon OTA Updates\n- Root Device\n- Downgrade To Version 5.0.5.\n\n\nThe Update Loop Protection Script Will Run After This Dialog Is Closed!\n\n\n* IF THE DEVICE UPDATES, IT MAY NOT BE EXPLOITABLE!\n\n*** YOU HAVE BEEN WARNED ***" "FirePwn Loader"
+if %fireOsVersion%==5.2.1.0 %msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to:\n\n- Disable Amazon OTA Updates\n- Root Device\n- Downgrade To Version 5.0.5.\n\n\nThe Update Loop Protection Script and Block OTA Virtual WiFi Hotspot Will Run After This Dialog Is Closed!\n\n\n* IF THE DEVICE UPDATES, IT MAY NOT BE EXPLOITABLE!\n\n*** YOU HAVE BEEN WARNED ***" "FirePwn Loader"
 
 if %fireOsVersion%==5.2.1.0 %runShellNoTerminate% "%pathScripts%\misc\update-protection-loop.cmd"
+if %fireOsVersion%==5.2.1.0 "%~dp0bin\virtualrouter.exe"
 
 if %fireOsVersion%==5.2.1.1 %msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
 
