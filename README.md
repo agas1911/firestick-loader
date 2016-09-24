@@ -18,7 +18,7 @@
 
 - Run The "/scripts/block-updates-5.2.1.0.sh" script
 - Hide With ADB Using ***pm hide com.amazon.settings.systemupdates/.OTAEventReceiver***
-- Use The Virtual Router Hotspot (See below example)
+- Use The Virtual Router Hotspot (Included using "root-stick" script, see below example)
 
 ***Virtual Wifi Hotspot To Block Amazon OTA Updates:***
 ![Virtual Router Block Amazon OTA](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-gui.png)
