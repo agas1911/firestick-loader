@@ -21,7 +21,7 @@
 - Use The Virtual Router Hotspot (See below example)
 
 ***Virtual Wifi Hotspot To Block Amazon OTA Updates:***
-![Virtual Router Block Amazon OTA](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-gui.jpg)
+![Virtual Router Block Amazon OTA](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-gui.png)
 <br/><br/>
 ***Update Error Screen Example:***
 ![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/settings-5-system-update-error.jpg)
