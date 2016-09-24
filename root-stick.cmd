@@ -33,6 +33,9 @@ set extractZIP="%~dp0bin\unzip.exe" -o
 
 set teamviewer="%~dp0bin\teamviewer.exe"
 
+set virtualRouterCMD="%~dp0bin\virtualrouter.exe"
+set virtualRouterGUI="%~dp0bin\virtualrouter-gui.exe"
+
 
 set kingrootPC="%~dp0rooting\kingroot-pc.exe"
 
@@ -465,8 +468,8 @@ if %fireOsVersion%==5.0.5.1 %msgbox% "This device has version %fireOsVersion% in
 if %fireOsVersion%==5.2.1.0 %msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to:\n\n- Disable Amazon OTA Updates\n- Root Device\n- Downgrade To Version 5.0.5.\n\n\nThe Update Loop Protection Script and Block OTA Virtual WiFi Hotspot Will Run After This Dialog Is Closed!\n\n\n* IF THE DEVICE UPDATES, IT MAY NOT BE EXPLOITABLE!\n\n*** YOU HAVE BEEN WARNED ***" "FirePwn Loader"
 
 if %fireOsVersion%==5.2.1.0 %runShellNoTerminate% "%pathScripts%\misc\update-protection-loop.cmd"
-::if %fireOsVersion%==5.2.1.0 "%~dp0bin\virtualrouter.exe"
-if %fireOsVersion%==5.2.1.0 "%~dp0bin\virtualrouter-gui.exe"
+::if %fireOsVersion%==5.2.1.0 %runShellTerminate% %virtualRouterCMD%
+if %fireOsVersion%==5.2.1.0 %runShellTerminate% %virtualRouterGUI%
 
 if %fireOsVersion%==5.2.1.1 %msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
 
@@ -813,8 +816,10 @@ echo.
 %_color% 03
 echo F) FireStopper Launch (also use FI to install or FIS to install as /system/)
 echo.
+echo.
 %_color% 02
-echo T) Terminal Launch (also use TI to install or TIS to install as /system/)
+::echo T) Terminal Launch (also use TI to install or TIS to install as /system/)
+echo V) Launch Virtual WiFi Hotspot (Blocks Amazon OTA Updates)
 echo.
 echo.
 %_color% 07
@@ -928,22 +933,34 @@ if %fchoice%==Fis set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==fIs set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==fiS set installFireStopperSetting=2&&goto fsInstall
 if %fchoice%==fis set installFireStopperSetting=2&&goto fsInstall
-if %fchoice%==T goto termInstall
-if %fchoice%==t goto termInstall
-if %fchoice%==TI set installTerminalSetting=1&&goto termInstall
-if %fchoice%==Ti set installTerminalSetting=1&&goto termInstall
-if %fchoice%==tI set installTerminalSetting=1&&goto termInstall
-if %fchoice%==ti set installTerminalSetting=1&&goto termInstall
-if %fchoice%==TIS set installTerminalSetting=2&&goto termInstall
-if %fchoice%==TIs set installTerminalSetting=2&&goto termInstall
-if %fchoice%==Tis set installTerminalSetting=2&&goto termInstall
-if %fchoice%==tIs set installTerminalSetting=2&&goto termInstall
-if %fchoice%==tiS set installTerminalSetting=2&&goto termInstall
-if %fchoice%==tis set installTerminalSetting=2&&goto termInstall
+::if %fchoice%==T goto termInstall
+::if %fchoice%==t goto termInstall
+::if %fchoice%==TI set installTerminalSetting=1&&goto termInstall
+::if %fchoice%==Ti set installTerminalSetting=1&&goto termInstall
+::if %fchoice%==tI set installTerminalSetting=1&&goto termInstall
+::if %fchoice%==ti set installTerminalSetting=1&&goto termInstall
+::if %fchoice%==TIS set installTerminalSetting=2&&goto termInstall
+::if %fchoice%==TIs set installTerminalSetting=2&&goto termInstall
+::if %fchoice%==Tis set installTerminalSetting=2&&goto termInstall
+::if %fchoice%==tIs set installTerminalSetting=2&&goto termInstall
+::if %fchoice%==tiS set installTerminalSetting=2&&goto termInstall
+::if %fchoice%==tis set installTerminalSetting=2&&goto termInstall
+if %fchoice%==V goto hotspot
+if %fchoice%==v goto hotspot
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
 if %fchoice%==x goto end
+
+goto fixesMenu
+
+
+:hotspot
+
+taskkill /f /im VirtualRouter.exe
+
+::%runShellTerminate% %virtualRouterCMD%
+%runShellTerminate% %virtualRouterGUI%
 
 goto fixesMenu
 
