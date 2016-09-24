@@ -14,9 +14,16 @@
 ##\*\*\* IF YOU WANT TO RETAIN ABILITY TO REMOVE AMAZON BLOAT DO NOT UPDATE TO NEWEST 5.2.1.1 FireOS \*\*\*
 
 
-### To Block The FireOS 5.2.1.1 Update, While Still On 5.2.1.0, Run The "/scripts/block-updates-5.2.1.0.sh" or hide below activity  \*NON-ROOT\*
-- ***pm hide com.amazon.settings.systemupdates/.OTAEventReceiver***
+### To Block The FireOS 5.2.1.1 Update, While Still On 5.2.1.0, Take One or More of The Following Actions:
 
+- Run The "/scripts/block-updates-5.2.1.0.sh" script
+- Hide With ADB Using ***pm hide com.amazon.settings.systemupdates/.OTAEventReceiver***
+- Use The Virtual Router Hotspot (See below example)
+
+***Virtual Wifi Hotspot To Block Amazon OTA Updates:***
+![Virtual Router Block Amazon OTA](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-gui.jpg)
+<br/><br/>
+***Update Error Screen Example:***
 ![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/settings-5-system-update-error.jpg)
 <br/><br/>
 
