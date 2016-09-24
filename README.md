@@ -23,6 +23,9 @@
 ***Virtual Wifi Hotspot To Block Amazon OTA Updates:***
 ![Virtual Router Block Amazon OTA](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-gui.png)
 <br/><br/>
+***Connect To Virtual Hotspot Screen Example:***
+![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/network-block-amazon-ota-ssid.jpg)
+<br/><br/>
 ***Update Error Screen Example:***
 ![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/settings-5-system-update-error.jpg)
 <br/><br/>
