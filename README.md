@@ -26,6 +26,12 @@
 ***Connect To Virtual Hotspot Screen Example:***
 ![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/network-block-amazon-ota-ssid.jpg)
 <br/><br/>
+***HOSTS File Modification Required Example (Will PASS Update Check):***
+![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/hosts-ad-block-ota-pass-update-check-screen.png)
+<br/><br/>
+***HOSTS File Modification Required Example (Will FAIL Update Check):***
+![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/hosts-ad-block-ota-fail-update-check-screen.png)
+<br/><br/>
 ***Update Error Screen Example:***
 ![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/home/settings-5-system-update-error.jpg)
 <br/><br/>
