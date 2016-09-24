@@ -20,7 +20,7 @@
 - Hide With ADB Using ***pm hide com.amazon.settings.systemupdates/.OTAEventReceiver***
 - Use The Virtual Router Hotspot (Included using "root-stick" script, see below example)
 
-***Virtual Wifi Hotspot To Block Amazon OTA Updates:***
+***Virtual Wifi Hotspot To Block Amazon OTA Updates Example:***
 ![Virtual Router Block Amazon OTA](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-gui.png)
 <br/><br/>
 ***Connect To Virtual Hotspot Screen Example:***
