@@ -21,13 +21,19 @@
 - Use The Virtual Router Hotspot (Included using "root-stick" script, see below example)
 
 ***Virtual Wifi Hotspot To Block Amazon OTA Updates Example:***
-![Virtual Router Block Amazon OTA](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-gui.png)
+![Virtual Router Block Amazon OTA GUI](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-gui.png)
+<br/><br/>
+***Virtual Wifi Hotspot To Block Amazon OTA Updates Example(CLI Version, modifies HOSTS file and launches Hotspot -IN TESTING-):***
+![Virtual Router Block Amazon OTA CLI](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-cli.png)
 <br/><br/>
 ***HOSTS File Modification Required Example (Will PASS Update Check):***
-![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/hosts-ad-block-ota-pass-update-check-screen.png)
+![HOSTS Modification PASS](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/hosts-ad-block-ota-pass-update-check-screen.png)
 <br/><br/>
 ***HOSTS File Modification Required Example (Will FAIL Update Check):***
-![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/hosts-ad-block-ota-fail-update-check-screen.png)
+![HOSTS Modification FAIL](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/hosts-ad-block-ota-fail-update-check-screen.png)
+<br/><br/>
+***HOSTS File Modification AGGRESSIVE Example (Will FAIL Update Check):***
+![HOSTS Modification Aggressive](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/hosts-ad-block-ota-aggressive.png)
 <br/><br/>
 ***Connect To Virtual Hotspot Screen Example:***
 ![OTA Update Error](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/network-block-amazon-ota-ssid.jpg)
