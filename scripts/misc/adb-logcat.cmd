@@ -9,5 +9,5 @@ set adb="..\..\bin\adb.exe"
 
 %adb% logcat v
 
-::goto loop
+goto loop
 
