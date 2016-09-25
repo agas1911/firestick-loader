@@ -23,7 +23,7 @@
 ***Virtual Wifi Hotspot To Block Amazon OTA Updates Example:***
 ![Virtual Router Block Amazon OTA GUI](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-gui.png)
 <br/><br/>
-***Virtual Wifi Hotspot To Block Amazon OTA Updates Example(CLI Version + modifies HOSTS file -IN TESTING-):***
+***Virtual Wifi Hotspot To Block Amazon OTA Updates Example (CLI Version + modifies HOSTS file -IN TESTING-):***
 ![Virtual Router Block Amazon OTA CLI](https://github.com/esc0rtd3w/firestick-loader/blob/master/misc/preview/virtual-router-block-amazon-ota-cli.png)
 <br/><br/>
 ***HOSTS File Modification Required Example (Will PASS Update Check):***
