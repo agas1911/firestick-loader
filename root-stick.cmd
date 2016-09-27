@@ -218,6 +218,7 @@ set amazonLauncherHome=%shell% am start -a com.amazon.device.intent.category.LAU
 
 :: Launch Different Apps
 set launchFireStarter=%amStart% de.belu.firestopper/.gui.MainActivity
+set launchFirePwnHome=%amStart% com.firepwn.home.montoya/.gui.MainActivity
 set launchSuperSU=%amStart% com.koushikdutta.superuser/.MainActivity
 set launchAceStream=%amStart% org.acestream/.player.gui.MainActivity
 set launchSopCast=%amStart% org.sopcast.android/.SopCast
@@ -1182,7 +1183,8 @@ if %installFireStopperSetting%==2 (
 
 )
 
-%launchFireStarter%
+::%launchFireStarter%
+%launchFirePwnHome%
 
 goto fixesMenu
 
