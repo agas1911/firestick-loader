@@ -171,7 +171,8 @@ set showControllersAmazonRemote=%shell% "su -c am start -a android.intent.action
 set showControllersFindGamepad=%shell% "su -c am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.devices.BuellerGamepadDiscoveryActivity"
 
 :: Find Bluetooth Device
-set showControllersFindBluetooth=%shell% "su -c am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.devices.BuellerInputDeviceDiscoveryActivity"
+::set showControllersFindBluetooth=%shell% "su -c am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.devices.BuellerInputDeviceDiscoveryActivity"
+set showControllersFindBluetooth=%shell% com.amazon.tv.settings/.tv.devices.BuellerInputDeviceDiscoveryActivity
 
 :: Settings -> Applications
 set showSettingsApplications=%amStart% com.amazon.tv.settings/.tv.BuellerApplicationsSettingsActivity
@@ -2313,6 +2314,8 @@ echo.
 %sleep% 40
 
 ::%adbWait%
+
+:: Add Version Check Here 20161015
 
 cls
 %_color% 0a
