@@ -11,7 +11,7 @@
 
 <br/>
 
-##\*\*\* IF YOU WANT TO RETAIN ABILITY TO REMOVE AMAZON BLOAT DO NOT UPDATE TO NEWEST 5.2.1.1 FireOS \*\*\*
+##\*\*\* IF YOU WANT TO RETAIN ABILITY TO REMOVE AMAZON BLOAT DO NOT UPDATE TO NEWEST 5.2.1.1 (or 5.2.2.0 when available) FireOS \*\*\*
 
 
 ### To Block The FireOS 5.2.1.1 Update, While Still On 5.2.1.0, Take One or More of The Following Actions:
