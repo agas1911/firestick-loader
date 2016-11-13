@@ -235,17 +235,17 @@ echo.
 ::%install% "apps\media\movian.apk"
 
 
-cls
-%_color% 0e
-set appName=Popcorn Time
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%extractRAR% "%~dp0apps\media\popcorntime.apk.split" "%temp%\firestick-loader\apps\media"
-%sleep% 3
-%install% "%temp%\firestick-loader\apps\media\popcorntime.apk"
+::cls
+::%_color% 0e
+::set appName=Popcorn Time
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%extractRAR% "%~dp0apps\media\popcorntime.apk.split" "%temp%\firestick-loader\apps\media"
+::%sleep% 3
+::%install% "%temp%\firestick-loader\apps\media\popcorntime.apk"
 
 
 cls
