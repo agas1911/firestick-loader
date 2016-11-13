@@ -250,6 +250,17 @@ echo.
 
 cls
 %_color% 0e
+set appName=Popcorn Time Community Edition
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\popcorntimece.apk"
+
+
+cls
+%_color% 0e
 set appName=VLC TV
 set apk=
 echo.

@@ -552,7 +552,7 @@ echo.
 %_color% 0b
 echo Requirements: MOUSE/KEYBOARD
 echo.
-echo Info: NONE
+echo Info: Movies and TV Shows Streaming App
 echo.
 set /p choice=
 if %choice%==1 (
@@ -563,6 +563,30 @@ echo.
 %extractRAR% "%~dp0apps\media\popcorntime.apk.split" "%temp%\firestick-loader\apps\media"
 %sleep% 3
 %install% "%temp%\firestick-loader\apps\media\popcorntime.apk"
+)
+
+
+cls
+%_color% 0e
+set appName=Popcorn Time Community Edition
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Movies and TV Shows Streaming App
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\popcorntimece.apk"
 )
 
 
