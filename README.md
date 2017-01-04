@@ -11,7 +11,7 @@
 
 <br/>
 
-##\*\*\* IF YOU WANT TO RETAIN ABILITY TO REMOVE AMAZON BLOAT DO NOT UPDATE TO NEWEST 5.2.1.1 (or 5.2.2.0 when available) FireOS \*\*\*
+##\*\*\* IF YOU WANT TO RETAIN ABILITY TO REMOVE AMAZON BLOAT DO NOT UPDATE TO NEWEST 5.2.4.0 FireOS \*\*\*
 
 
 ### To Block The FireOS 5.2.1.1 Update, While Still On 5.2.1.0, Take One or More of The Following Actions:
@@ -53,7 +53,7 @@
 
 ***Known Issues:***
 
-- Currently Does Not Have Rooting Support For FireOS 5.2.1.1.
+- Currently Does Not Have Rooting Support For FireOS 5.2.4.0.
 
 - If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken).
 <br/><br/>
