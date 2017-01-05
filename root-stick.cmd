@@ -497,7 +497,8 @@ echo Press I to install kingroot (also use IR to install and root)
 echo.
 echo Press R to root (also use R1 to Skip Wait or R2 to Skip Wait/Swipe)
 echo.
-echo Press S to issue an "su" request (also use SA to auto accept request)
+echo Press T to install TWRP custom recovery and pre-rooted rom (thanks to rbox)
+::echo Press S to issue an "su" request (also use SA to auto accept request)
 echo.
 echo.
 ::echo Press P to replace kingroot with SuperSU (Not Working Correctly!)
@@ -569,6 +570,8 @@ if %dgchoice%==R2 goto root2
 if %dgchoice%==r2 goto root2
 if %dgchoice%==S goto doSU
 if %dgchoice%==s goto doSU
+if %dgchoice%==T goto doTWRP
+if %dgchoice%==t goto doTWRP
 if %dgchoice%==SA set doAcceptSuAfterRequest=1&&goto doSU
 if %dgchoice%==Sa set doAcceptSuAfterRequest=1&&goto doSU
 if %dgchoice%==sa set doAcceptSuAfterRequest=1&&goto doSU
@@ -1018,6 +1021,91 @@ echo.
 %shell% "su -c chmod 777 /cache/dalvik-cache/arm/"
 %shell% "su -c chmod 777 /cache/lost+found/"
 %shell% "su -c chmod 777 /cache/recovery/"
+
+goto menu
+
+
+:doTWRP
+
+%_color% 0b
+
+cls
+echo Copying TWRP Custom Recovery To Device....
+echo.
+echo.
+echo Thanks to rbox!
+echo forum.xda-developers.com
+echo /fire-tv/development/firetv-stick-montoya-twrp-recovery-t3521805
+echo.
+echo.
+
+%push% "%~dp0recovery\stick\montoya_recovery_v1.zip" /%sdcard%/
+::%push% "%~dp0recovery\stick\montoya_recovery_v1.zip" /data/local/tmp/
+
+cls
+echo Copying Pre-Rooted 5.0.5 Rom To Device....
+echo.
+echo.
+echo Thanks to rbox!
+echo forum.xda-developers.com
+echo /fire-tv/development/firetv-stick-montoya-twrp-recovery-t3521805
+echo.
+echo.
+
+%extractRAR% "%~dp0roms\stick\5.0.5\5.0.5-stock-rooted.split" "%temp%\firestick-loader\roms\stick"
+%push% "%temp%\firestick-loader\roms\stick\montoya-5.0.5-rooted_r1.zip" /%sdcard%/
+
+::cls
+echo Copying Pre-Rooted 5.2.1.1 Rom To Device....
+echo.
+echo.
+echo Thanks to rbox!
+echo forum.xda-developers.com
+echo /fire-tv/development/firetv-stick-montoya-twrp-recovery-t3521805
+echo.
+echo.
+
+%extractRAR% "%~dp0roms\stick\5.2.1.1\5.2.1.1-stock-rooted.split" "%temp%\firestick-loader\roms\stick"
+%push% "%temp%\firestick-loader\roms\stick\montoya-5.2.1.1-rooted_r1.zip" /%sdcard%/
+
+cls
+echo Launching TWRP Custom Recovery....
+echo.
+echo.
+echo Thanks to rbox!
+echo forum.xda-developers.com
+echo /fire-tv/development/firetv-stick-montoya-twrp-recovery-t3521805
+echo.
+echo.
+%shell% "su -c sh /data/media/0/montoya_recovery_v1.zip"
+
+%wait% 10
+
+%_color% 0b
+
+cls
+echo Once in TWRP Recovery Take The Following Actions:
+echo.
+echo.
+echo - Make A Backup of Current System
+echo.
+echo - Wipe system, data, and cache Partitions
+echo.
+echo - Install "montoya-5.0.5-rooted_r1.zip"
+echo.
+echo - Reboot
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Press a key once the Firestick has rebooted.... 
+echo.
+echo.
+
+pause>nul
+
+%adbWait%
 
 goto menu
 
