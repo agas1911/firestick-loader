@@ -306,6 +306,8 @@ set checkFireOsInfoText=0
 
 set unhideAllOTA=0
 
+set forceRecoveryBoot=%shell% "su -c echo 0>/cache/bootmenu_recovery"
+
 
 :: Busybox Commands
 
