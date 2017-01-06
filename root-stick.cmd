@@ -576,6 +576,10 @@ if %dgchoice%==S goto doSU
 if %dgchoice%==s goto doSU
 if %dgchoice%==T goto doTWRP
 if %dgchoice%==t goto doTWRP
+if %dgchoice%==TM goto adbMouse
+if %dgchoice%==Tm goto adbMouse
+if %dgchoice%==TM goto adbMouse
+if %dgchoice%==tM goto adbMouse
 if %dgchoice%==SA set doAcceptSuAfterRequest=1&&goto doSU
 if %dgchoice%==Sa set doAcceptSuAfterRequest=1&&goto doSU
 if %dgchoice%==sa set doAcceptSuAfterRequest=1&&goto doSU
