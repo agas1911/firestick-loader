@@ -17,7 +17,9 @@ set configMain="%~dp0config\menu.ini"
 set iniRead="%pathScriptsConfig%\ini-read.cmd"
 set iniWrite="%pathScriptsConfig%\ini-write.cmd"
 
+set twrpActive=0
 
+set doNothing=0
 
 set runShellNoTerminateAndWait=cmd /k
 set runShellNoTerminate=start cmd /k
@@ -43,8 +45,8 @@ set sleep="%~dp0bin\wait.exe"
 set rm=rmdir /s /q
 
 set adb="%~dp0bin\adb.exe"
-set adbKill="%~dp0bin\adb.exe" kill-server
-set adbStart="%~dp0bin\adb.exe" start-server
+set adbKill=%adb% kill-server
+set adbStart="%adb% start-server
 set adbWait=%adb% wait-for-device
 
 set msgbox="%~dp0bin\msgbox.exe"
@@ -1068,6 +1070,8 @@ echo.
 %extractRAR% "%~dp0roms\stick\5.2.1.1\5.2.1.1-stock-rooted.split" "%temp%\firestick-loader\roms\stick"
 %push% "%temp%\firestick-loader\roms\stick\montoya-5.2.1.1-rooted_r1.zip" /%sdcard%/
 
+%sleep% 10
+
 cls
 echo Launching TWRP Custom Recovery....
 echo.
@@ -1079,7 +1083,11 @@ echo.
 echo.
 %shell% "su -c sh /data/media/0/montoya_recovery_v1.zip"
 
-%wait% 10
+%sleep% 5
+
+:adbMouse
+:: Trying to issue ADB Mouse command
+%shell% mouse
 
 %_color% 0b
 
@@ -1087,23 +1095,41 @@ cls
 echo Once in TWRP Recovery Take The Following Actions:
 echo.
 echo.
+echo ** Get MOUSE Control Over ADB Connection **
+echo.
+echo.
+echo.
+echo.
+%_color% 0e
 echo - Make A Backup of Current System
 echo.
 echo - Wipe system, data, and cache Partitions
 echo.
-echo - Install "montoya-5.0.5-rooted_r1.zip"
+echo - Install One of These Roms or a Custom One
+echo  
+echo     - "montoya-5.0.5-rooted_r1.zip"
+echo     - "montoya-5.2.1.1-rooted_r1.zip"
 echo.
 echo - Reboot
 echo.
 echo.
 echo.
 echo.
+%_color% 0d
+echo Press "M" to get mouse control if it fails
 echo.
-echo Press a key once the Firestick has rebooted.... 
+%_color% 0a
+echo Press "D" and ENTER Once All Steps Are Completed
 echo.
 echo.
 
-pause>nul
+set /p twrpActive=
+
+if %twrpActive%==M goto adbMouse
+if %twrpActive%==m goto adbMouse
+
+if %twrpActive%==D set doNothing=1
+if %twrpActive%==d set doNothing=1
 
 %adbWait%
 
