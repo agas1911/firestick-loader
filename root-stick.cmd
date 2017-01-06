@@ -1037,6 +1037,9 @@ goto menu
 
 %_color% 0b
 
+md  "%temp%\firestick-loader\roms"
+md  "%temp%\firestick-loader\roms\stick"
+
 cls
 echo Copying TWRP Custom Recovery To Device....
 echo.
@@ -1062,7 +1065,7 @@ echo.
 
 %extractRAR% "%~dp0roms\stick\5.0.5\5.0.5-stock-rooted.split" "%temp%\firestick-loader\roms\stick"
 %push% "%temp%\firestick-loader\roms\stick\montoya-5.0.5-rooted_r1.zip" /%sdcard%/
-
+::pause
 ::cls
 echo Copying Pre-Rooted 5.2.1.1 Rom To Device....
 echo.
@@ -1072,7 +1075,7 @@ echo forum.xda-developers.com
 echo /fire-tv/development/firetv-stick-montoya-twrp-recovery-t3521805
 echo.
 echo.
-
+::pause
 %extractRAR% "%~dp0roms\stick\5.2.1.1\5.2.1.1-stock-rooted.split" "%temp%\firestick-loader\roms\stick"
 %push% "%temp%\firestick-loader\roms\stick\montoya-5.2.1.1-rooted_r1.zip" /%sdcard%/
 
@@ -1088,7 +1091,7 @@ echo /fire-tv/development/firetv-stick-montoya-twrp-recovery-t3521805
 echo.
 echo.
 %shell% "su -c sh /data/media/0/montoya_recovery_v1.zip"
-
+::pause
 %sleep% 5
 
 :adbMouse
