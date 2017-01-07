@@ -441,6 +441,10 @@ if %fireOsVersion%==5.2.1.1 set rootable=0
 if %fireOsVersion%==5.2.1.1 set rootableColor=0c
 if %fireOsVersion%==5.2.1.1 set rootableText=NOT EXPLOITABLE
 
+if %fireOsVersion%==5.2.4.0 set rootable=0
+if %fireOsVersion%==5.2.4.0 set rootableColor=0c
+if %fireOsVersion%==5.2.4.0 set rootableText=NOT EXPLOITABLE
+
 del /f /s /q "%temp%\fireos-version.txt"
 
 %adbKill%
@@ -478,6 +482,8 @@ if %fireOsVersion%==5.2.1.0 %runShellNoTerminate% "%pathScripts%\misc\update-pro
 if %fireOsVersion%==5.2.1.0 %runShellTerminate% %virtualRouterGUI%
 
 if %fireOsVersion%==5.2.1.1 %msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
+
+if %fireOsVersion%==5.2.4.0 %msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
 
 cls
 %_color% 0e
