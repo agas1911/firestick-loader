@@ -309,6 +309,16 @@ set unhideAllOTA=0
 set forceRecoveryBoot=%shell% "su -c echo 0>/cache/bootmenu_recovery"
 
 
+:: Setting Default Available Boot Animation Colors
+set bootAnimationBlue="%~dp0bootanimation\stock-blue\bootanimation.zip"
+set bootAnimationGreen="%~dp0bootanimation\stock-green\bootanimation.zip"
+set bootAnimationOriginal="%~dp0bootanimation\stock-original\bootanimation.zip"
+set bootAnimationPink="%~dp0bootanimation\stock-pink\bootanimation.zip"
+set bootAnimationPurple="%~dp0bootanimation\stock-purple\bootanimation.zip"
+set bootAnimationRed="%~dp0bootanimation\stock-red\bootanimation.zip"
+set bootAnimationYellow="%~dp0bootanimation\stock-yellow\bootanimation.zip"
+
+
 :: Busybox Commands
 
 ::arp -a -v -i wlan0
@@ -3474,22 +3484,35 @@ goto testBootAnim
 
 :bootanimReplace
 
-set newBootAnimation="%~dp0bootanimation\stock-blue\bootanimation.zip"
-
 cls
 echo Enter Path To New Boot Animation (bootanimation.zip):
 echo.
 echo.
 echo.
-%_color% 0b
-echo *** JUST PRESS ENTER TO USE DEFAULT BLUE VERSION ***
-%_color% 0e
+echo 1) Blue
+echo.
+echo 2) Green
+echo.
+echo 3) Pink
+echo.
+echo 4) Purple
+echo.
+echo 5) Red
+echo.
+echo 6) Yellow
 echo.
 echo.
 
-set /p newBootAnimation=
+set /p newBootAnimationChoice=
 
-if %newBootAnimation%==none goto bootanimReplace
+if %newBootAnimationChoice%==none goto bootanimReplace
+
+if %newBootAnimationChoice%==1 set newBootAnimation=%bootAnimationBlue%
+if %newBootAnimationChoice%==2 set newBootAnimation=%bootAnimationGreen%
+if %newBootAnimationChoice%==3 set newBootAnimation=%bootAnimationPink%
+if %newBootAnimationChoice%==4 set newBootAnimation=%bootAnimationPurple%
+if %newBootAnimationChoice%==5 set newBootAnimation=%bootAnimationRed%
+if %newBootAnimationChoice%==6 set newBootAnimation=%bootAnimationYellow%
 
 %shell% "rm /data/local/tmp/bootanimation.zip"
 %push% "%newBootAnimation%" /data/local/tmp/
