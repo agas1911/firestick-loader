@@ -3482,10 +3482,36 @@ cls
 goto testBootAnim
 
 
-:bootanimReplace
+:bootanimCustom
+
+set newBootCustomChoice=none
 
 cls
-echo Enter Path To New Boot Animation (bootanimation.zip):
+echo Enter or Drag File/Path To New Boot Animation (bootanimation.zip):
+echo.
+echo.
+
+set /p newBootCustomChoice=
+
+if %newBootCustomChoice%==none goto bootanimCustom
+
+set newBootAnimation==%newBootCustomChoice%
+
+%shell% "rm /data/local/tmp/bootanimation.zip"
+%push% "%newBootAnimation%" /data/local/tmp/
+%push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
+%shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
+
+goto testBootAnim
+
+
+:bootanimReplace
+
+set newBootAnimationChoice=none
+
+cls
+echo Choose A Stock Boot Animation Color and Press ENTER:
 echo.
 echo.
 echo.
@@ -3502,6 +3528,9 @@ echo.
 echo 6) Yellow
 echo.
 echo.
+echo C) Custom Boot Animation
+echo.
+echo.
 
 set /p newBootAnimationChoice=
 
@@ -3513,6 +3542,8 @@ if %newBootAnimationChoice%==3 set newBootAnimation=%bootAnimationPink%
 if %newBootAnimationChoice%==4 set newBootAnimation=%bootAnimationPurple%
 if %newBootAnimationChoice%==5 set newBootAnimation=%bootAnimationRed%
 if %newBootAnimationChoice%==6 set newBootAnimation=%bootAnimationYellow%
+if %newBootAnimationChoice%==C goto bootanimCustom
+if %newBootAnimationChoice%==c goto bootanimCustom
 
 %shell% "rm /data/local/tmp/bootanimation.zip"
 %push% "%newBootAnimation%" /data/local/tmp/
