@@ -3490,10 +3490,21 @@ cls
 echo Enter or Drag File/Path To New Boot Animation (bootanimation.zip):
 echo.
 echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo B) Go Back To Previous Menu
+echo.
+echo.
 
 set /p newBootCustomChoice=
 
 if %newBootCustomChoice%==none goto bootanimCustom
+if %newBootCustomChoice%==B goto bootanimReplace
+if %newBootCustomChoice%==b goto bootanimReplace
 
 set newBootAnimation==%newBootCustomChoice%
 
@@ -3531,6 +3542,9 @@ echo.
 echo C) Custom Boot Animation
 echo.
 echo.
+echo B) Go Back To Previous Menu
+echo.
+echo.
 
 set /p newBootAnimationChoice=
 
@@ -3544,6 +3558,8 @@ if %newBootAnimationChoice%==5 set newBootAnimation=%bootAnimationRed%
 if %newBootAnimationChoice%==6 set newBootAnimation=%bootAnimationYellow%
 if %newBootAnimationChoice%==C goto bootanimCustom
 if %newBootAnimationChoice%==c goto bootanimCustom
+if %newBootAnimationChoice%==B goto fixesMenu
+if %newBootAnimationChoice%==b goto fixesMenu
 
 %shell% "rm /data/local/tmp/bootanimation.zip"
 %push% "%newBootAnimation%" /data/local/tmp/
