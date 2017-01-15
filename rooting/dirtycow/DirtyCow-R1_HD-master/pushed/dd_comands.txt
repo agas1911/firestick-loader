@@ -1,4 +1,0 @@
-echo #dd if=/data/local/test/frp of=/dev/block/mmcblk0p17
-dd if=/data/local/test/frp of=/dev/block/mmcblk0p17
-echo #exit
-exit

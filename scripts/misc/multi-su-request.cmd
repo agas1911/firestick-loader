@@ -25,7 +25,7 @@ set teamviewer="%~dp0bin\teamviewer.exe"
 
 set kingrootPC="%~dp0rooting\kingroot-pc.exe"
 
-set sleep="%~dp0bin\wait.exe"
+set sleep="..\..\bin\wait.exe"
 set rm=rmdir /s /q
 
 set adb="..\..\bin\adb.exe"
@@ -63,12 +63,21 @@ set amStart=%shell% am start -a android.intent.action.MAIN -n
 
 
 
+set waitTime=0
+
+cls
+echo Enter Wait Time In Seconds and Press ENTER:
+echo.
+echo.
+
+set /p waitTime=
+
 
 :loop
 
 %shell% "su"
 
-::%sleep% 2
+%sleep% %waitTime%
 
 goto loop
 
