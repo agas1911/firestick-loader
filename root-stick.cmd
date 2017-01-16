@@ -105,6 +105,7 @@ set dgNoRoot=0
 set bootAnimationPath=%~dp0custom\bootanimation
 
 set fireOsVersion=0.0.0.0
+set checkKitKat=0
 
 set buildDotProp=/system/build.prop
 
@@ -424,39 +425,78 @@ echo.
 echo.
 echo.
 
+
+:: Get Android OS Info
 %shell% "cat /system/build.prop | grep ro.build.version.name>/sdcard/fireos-version.txt"
 
 %pull% /sdcard/fireos-version.txt "%temp%"
 
 for /f "tokens=3 delims= " %%f in ('type "%temp%\fireos-version.txt"') do set fireOsVersion=%%f
 
-if %fireOsVersion%==0.0.0.0 set rootable=0
-if %fireOsVersion%==0.0.0.0 set rootableColor=0c
-if %fireOsVersion%==0.0.0.0 set rootableText=INVALID
+if %fireOsVersion%==0.0.0.0 (
+set rootable=0
+set rootableColor=0c
+set rootableText=INVALID
+)
 
-if %fireOsVersion%==5.0.0 set rootable=1
-if %fireOsVersion%==5.0.0 set rootableColor=0a
-if %fireOsVersion%==5.0.0 set rootableText=EXPLOITABLE
+if %fireOsVersion%==5.0.0 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
 
-if %fireOsVersion%==5.0.5 set rootable=1
-if %fireOsVersion%==5.0.5 set rootableColor=0a
-if %fireOsVersion%==5.0.5 set rootableText=EXPLOITABLE
+if %fireOsVersion%==5.0.5 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
 
-if %fireOsVersion%==5.0.5.1 set rootable=1
-if %fireOsVersion%==5.0.5.1 set rootableColor=0a
-if %fireOsVersion%==5.0.5.1 set rootableText=EXPLOITABLE
+if %fireOsVersion%==5.0.5.1 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
 
-if %fireOsVersion%==5.2.1.0 set rootable=1
-if %fireOsVersion%==5.2.1.0 set rootableColor=0a
-if %fireOsVersion%==5.2.1.0 set rootableText=EXPLOITABLE
+if %fireOsVersion%==5.2.1.0 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
 
-if %fireOsVersion%==5.2.1.1 set rootable=0
-if %fireOsVersion%==5.2.1.1 set rootableColor=0c
-if %fireOsVersion%==5.2.1.1 set rootableText=NOT EXPLOITABLE
+if %fireOsVersion%==5.2.1.1 (
+set rootable=0
+set rootableColor=0c
+set rootableText=NOT EXPLOITABLE
+)
 
-if %fireOsVersion%==5.2.4.0 set rootable=0
-if %fireOsVersion%==5.2.4.0 set rootableColor=0c
-if %fireOsVersion%==5.2.4.0 set rootableText=NOT EXPLOITABLE
+if %fireOsVersion%==5.2.2.0 (
+set rootable=0
+set rootableColor=0c
+set rootableText=NOT EXPLOITABLE
+)
+
+if %fireOsVersion%==5.2.4.0 (
+set rootable=0
+set rootableColor=0c
+set rootableText=NOT EXPLOITABLE
+)
+
+:: Check For Pre-FireOS Builds (4.2.2 KitKat)
+if %fireOsVersion%==0.0.0.0 (
+%shell% "cat /system/build.prop | grep JDQ39 | grep ro.build.id>/sdcard/fireos-version.txt"
+%pull% /sdcard/fireos-version.txt "%temp%"
+)
+
+:: If KitKat 4.4.2 Build The Next Line Will Trigger
+if %fireOsVersion%==0.0.0.0 for /f "tokens=2 delims=^=" %%f in ('type "%temp%\fireos-version.txt"') do set checkKitKat=%%f
+
+:: Set Proper Text ONLY If Pre-FireOS Build
+if %checkKitKat%==JDQ39 (
+set fireOsVersion=4.2.2
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
 
 del /f /s /q "%temp%\fireos-version.txt"
 
@@ -484,19 +524,37 @@ echo.
 echo.
 echo.
 
-if %fireOsVersion%==5.0.5 %msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to:\n\n- Root Device\n- Install Busybox\n- Disable and Remove All Amazon Bloat\n- Block Ads Using Modified HOSTS File\n- Replace or Modify Boot Animation *OPTIONAL*\n- Remove Root Access *OPTIONAL*\n\n\n*** THIS IS CURRENTLY THE RECOMMENDED VERSION TO USE ***" "FirePwn Loader"
+if %fireOsVersion%==4.2.2 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nThis is a KitKat Build and Precedes FireOS.\n\nThis Build May Be Rootable and Is Still In Testing." "FirePwn Loader"
+)
 
-if %fireOsVersion%==5.0.5.1 %msgbox% "This device has version %fireOsVersion% installed.\nThere will probably be mixed results trying to root this version!\n\nIt is recommended updating to version 5.2.1.0 for rooting.\n\n\nAmazon OTA Updates are incremental.\n\nThe available version under SETTINGS - ABOUT should be 5.2.1.0.\n\n\n*** DO NOT UPDATE IF AVAILABLE VERSION IS 5.2.1.1 OR HIGHER ***" "FirePwn Loader"
+if %fireOsVersion%==5.0.5 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to:\n\n- Root Device\n- Install Busybox\n- Disable and Remove All Amazon Bloat\n- Block Ads Using Modified HOSTS File\n- Replace or Modify Boot Animation *OPTIONAL*\n- Remove Root Access *OPTIONAL*\n\n\n*** THIS IS CURRENTLY THE RECOMMENDED VERSION TO USE ***" "FirePwn Loader"
+)
 
-if %fireOsVersion%==5.2.1.0 %msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to:\n\n- Disable Amazon OTA Updates\n- Root Device\n- Downgrade To Version 5.0.5.\n\n\nThe Update Loop Protection Script and Block OTA Virtual WiFi Hotspot Will Run After This Dialog Is Closed!\n\n\n* IF THE DEVICE UPDATES, IT MAY NOT BE EXPLOITABLE!\n\n*** YOU HAVE BEEN WARNED ***" "FirePwn Loader"
+if %fireOsVersion%==5.0.5.1 (
+%msgbox% "This device has version %fireOsVersion% installed.\nThere will probably be mixed results trying to root this version!\n\nIt is recommended updating to version 5.2.1.0 for rooting.\n\n\nAmazon OTA Updates are incremental.\n\nThe available version under SETTINGS - ABOUT should be 5.2.1.0.\n\n\n*** DO NOT UPDATE IF AVAILABLE VERSION IS 5.2.1.1 OR HIGHER ***" "FirePwn Loader"
+)
 
-if %fireOsVersion%==5.2.1.0 %runShellNoTerminate% "%pathScripts%\misc\update-protection-loop.cmd"
-::if %fireOsVersion%==5.2.1.0 %runShellTerminate% %virtualRouterCMD%
-if %fireOsVersion%==5.2.1.0 %runShellTerminate% %virtualRouterGUI%
+if %fireOsVersion%==5.2.1.0 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to:\n\n- Disable Amazon OTA Updates\n- Root Device\n- Downgrade To Version 5.0.5.\n\n\nThe Update Loop Protection Script and Block OTA Virtual WiFi Hotspot Will Run After This Dialog Is Closed!\n\n\n* IF THE DEVICE UPDATES, IT MAY NOT BE EXPLOITABLE!\n\n*** YOU HAVE BEEN WARNED ***" "FirePwn Loader"
 
-if %fireOsVersion%==5.2.1.1 %msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
+%runShellNoTerminate% "%pathScripts%\misc\update-protection-loop.cmd"
+%runShellTerminate% %virtualRouterCMD%
+)
 
-if %fireOsVersion%==5.2.4.0 %msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
+if %fireOsVersion%==5.2.1.1 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.2.2.0 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.2.4.0 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
+)
+
 
 cls
 %_color% 0e
