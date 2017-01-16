@@ -33,6 +33,9 @@ set disconnect=%adb% disconnect
 
 set ip=0.0.0.0
 
+set virtualRouterCMD="..\..\..\bin\virtualrouter.exe"
+set virtualRouterGUI="..\..\..\bin\virtualrouter-gui.exe"
+
 set amStart=%shell% am start -a android.intent.action.MAIN -n
 
 set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetworkSettingsActivity
@@ -64,6 +67,11 @@ cls
 %adbKill%
 cls
 %disconnect%
+
+taskkill /f /im VirtualRouter.exe
+taskkill /f /im VirtualRouterHostConsole.exe
+::%virtualRouterCMD%
+%virtualRouterGUI%
 
 %showSettingsSystemNetwork%
 
@@ -168,10 +176,16 @@ echo.
 echo Type in "su" without quotes and Press ENTER to test exploit result
 echo.
 echo.
+echo Type "exit" without quotes to leave shell
+echo.
 echo.
 
 
 %shell%
+
+
+taskkill /f /im VirtualRouter.exe
+taskkill /f /im VirtualRouterHostConsole.exe
 
 
 :end

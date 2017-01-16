@@ -994,6 +994,7 @@ goto fixesMenu
 :hotspot
 
 taskkill /f /im VirtualRouter.exe
+taskkill /f /im VirtualRouterHostConsole.exe
 
 ::%runShellTerminate% %virtualRouterCMD%
 %runShellTerminate% %virtualRouterGUI%
