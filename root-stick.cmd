@@ -540,7 +540,7 @@ if %fireOsVersion%==5.2.1.0 (
 %msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to:\n\n- Disable Amazon OTA Updates\n- Root Device\n- Downgrade To Version 5.0.5.\n\n\nThe Update Loop Protection Script and Block OTA Virtual WiFi Hotspot Will Run After This Dialog Is Closed!\n\n\n* IF THE DEVICE UPDATES, IT MAY NOT BE EXPLOITABLE!\n\n*** YOU HAVE BEEN WARNED ***" "FirePwn Loader"
 
 %runShellNoTerminate% "%pathScripts%\misc\update-protection-loop.cmd"
-%runShellTerminate% %virtualRouterCMD%
+%runShellTerminate% %virtualRouterGUI%
 )
 
 if %fireOsVersion%==5.2.1.1 (
