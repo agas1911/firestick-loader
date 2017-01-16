@@ -760,7 +760,7 @@ echo Press D to Show Settings -- System -- Developer Options Window
 echo.
 echo Press F to Show Settings -- System -- Factory Reset Window
 echo.
-echo Press Z to Show Settings -- System -- Network
+echo Press Y to Show Settings -- System -- Network
 echo.
 echo Press N to Show Device Notifications
 echo.
@@ -781,8 +781,8 @@ if %achoice%==D %showSettingsSystemDeveloper%
 if %achoice%==d %showSettingsSystemDeveloper%
 if %achoice%==F %showSettingsSystemFactoryReset%
 if %achoice%==f %showSettingsSystemFactoryReset%
-if %achoice%==Z %showSettingsSystemNetwork%
-if %achoice%==z %showSettingsSystemNetwork%
+if %achoice%==Y %showSettingsSystemNetwork%
+if %achoice%==y %showSettingsSystemNetwork%
 if %achoice%==R %showControllersAmazonRemote%
 if %achoice%==r %showControllersAmazonRemote%
 if %achoice%==G %showControllersFindGamepad%
