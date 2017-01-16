@@ -33,6 +33,10 @@ set disconnect=%adb% disconnect
 
 set ip=0.0.0.0
 
+set amStart=%shell% am start -a android.intent.action.MAIN -n
+
+set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetworkSettingsActivity
+
 
 %push% "push\app_process32" /data/local/tmp/
 %push% "push\busybox" /data/local/tmp/
@@ -60,6 +64,8 @@ cls
 %adbKill%
 cls
 %disconnect%
+
+%showSettingsSystemNetwork%
 
 
 cls
@@ -137,6 +143,8 @@ echo.
 echo.
 
 %disconnect%
+
+%showSettingsSystemNetwork%
 
 echo.
 echo.
