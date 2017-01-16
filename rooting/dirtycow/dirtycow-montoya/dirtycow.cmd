@@ -63,6 +63,14 @@ cls
 
 
 cls
+echo Connect your device to the access point using DHCP
+echo.
+echo.
+echo.
+echo When finished press ENTER to continue....
+echo.
+echo.
+pause>nul
 
 %shell% "ip address | grep wlan0 | grep inet"
 
@@ -145,6 +153,11 @@ pause>nul
 
 
 echo.
+echo.
+echo.
+echo.
+echo.
+echo Type in "su" without quotes and Press ENTER to test exploit result
 echo.
 echo.
 echo.
