@@ -60,13 +60,14 @@ set keyHome=%shell% input keyevent 4
 
 set amStart=%shell% am start -a android.intent.action.MAIN -n
 
-
-
-
 set waitTime=0
+
+
 
 cls
 echo Enter Wait Time In Seconds and Press ENTER:
+echo.
+echo Default Time Is %waitTime%
 echo.
 echo.
 
