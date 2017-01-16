@@ -73,6 +73,13 @@ taskkill /f /im VirtualRouterHostConsole.exe
 ::%virtualRouterCMD%
 %virtualRouterGUI%
 
+:: Wait for Virtual Router To Start
+cls
+echo Waiting for Virtual Router To Initialize....
+echo.
+echo.
+%sleep% 8
+
 %showSettingsSystemNetwork%
 
 
@@ -107,25 +114,26 @@ set /p ip=
 
 %connect% %ip%
 
-%sleep% 3
+::echo.
+::echo.
+::echo.
+::echo.
+::echo Find your Device ID below and copy it
+::echo.
+::echo.
+::%adb% devices
 
-echo.
-echo.
-echo.
-echo.
-echo Find your Device ID below and copy it
-echo.
-echo.
-%adb% devices
+::echo.
+::echo.
+::echo.
+::echo Paste the Device ID here and press a key when done....
+::echo.
+::echo.
 
-echo.
-echo.
-echo.
-echo Paste the Device ID here and press a key when done....
-echo.
-echo.
+::set /p device=
 
-set /p device=
+:: New Method Using Typed IP and Port 5555 as Defaults
+set device=%ip%:5555
 
 echo.
 echo.
@@ -135,15 +143,26 @@ echo Exploiting....
 echo.
 echo.
 
+%sleep% 5
+
 %adb% -s %device% shell "sh /data/local/tmp/getdirty.sh"
 
+::echo.
+::echo.
+::echo Press a key once exploit is finished....
+::echo.
+::echo.
+
+::pause>nul
+
 echo.
 echo.
-echo Press a key once exploit is finished....
+echo.
+echo Waiting For Exploit To Finish....
 echo.
 echo.
 
-pause>nul
+%sleep% 5
 
 echo.
 echo.
@@ -152,13 +171,44 @@ echo.
 
 %disconnect%
 
+taskkill /f /im VirtualRouter.exe
+taskkill /f /im VirtualRouterHostConsole.exe
+
+:: Wait for Virtual Router To Start
+cls
+echo Waiting for Virtual Router To Relaunch....
+echo.
+echo.
+%sleep% 8
+
+::%virtualRouterCMD%
+%virtualRouterGUI%
+
 %showSettingsSystemNetwork%
 
 echo.
 echo.
 echo.
 echo.
-echo Set your IP address to static on the firestick using the same IP address
+echo.
+echo.
+echo.
+echo Click MENU Button and Press ENTER On Device To FORGET NETWORK!
+echo.
+echo Set your IP address to static on the firestick using the following settings:
+echo.
+echo.
+echo IP Address: %ip%
+echo.
+echo Gateway: Use %ip% but change last digits to 255
+echo.
+echo Network Prefix Length: 24
+echo.
+echo DNS Primary: 8.8.8.8
+echo.
+echo DNS Secondary: 8.8.4.4
+echo.
+echo.
 echo.
 echo.
 echo.
