@@ -187,6 +187,9 @@ set showSettingsSystemFactoryReset=%amStart% com.amazon.tv.settings/.tv.FactoryR
 set showSettingsSystemFactoryReset=%amStart% com.amazon.tv.settings.tv.FactoryResetService.masterClear
 ::set showSettingsSystemFactoryResetNow=%amStart% com.amazon.tv.settings/.tv.FactoryResetActivity
 
+:: Settings -> System -> Network
+set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetworkSettingsActivity
+
 :: Settings -> My Account
 set showSettingsMyAccount=%amStart% com.amazon.tv.settings/.tv.BuellerAccountSettingsActivity
 
@@ -757,6 +760,8 @@ echo Press D to Show Settings -- System -- Developer Options Window
 echo.
 echo Press F to Show Settings -- System -- Factory Reset Window
 echo.
+echo Press Z to Show Settings -- System -- Network
+echo.
 echo Press N to Show Device Notifications
 echo.
 echo.
@@ -776,6 +781,8 @@ if %achoice%==D %showSettingsSystemDeveloper%
 if %achoice%==d %showSettingsSystemDeveloper%
 if %achoice%==F %showSettingsSystemFactoryReset%
 if %achoice%==f %showSettingsSystemFactoryReset%
+if %achoice%==Z %showSettingsSystemNetwork%
+if %achoice%==z %showSettingsSystemNetwork%
 if %achoice%==R %showControllersAmazonRemote%
 if %achoice%==r %showControllersAmazonRemote%
 if %achoice%==G %showControllersFindGamepad%
