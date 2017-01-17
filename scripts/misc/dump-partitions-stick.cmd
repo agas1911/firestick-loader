@@ -32,10 +32,6 @@ set sdcard=sdcard
 ::set sdcard=external_sd
 ::set sdcard=extSdCard
 
-set fireOsVersion==5.2.1.0
-
-set buildDotProp=/system/build.prop
-
 
 
 cls
@@ -116,6 +112,7 @@ echo.
 %shell% rm %sdcard%/vc-firmware.img
 
 
+color 0a
 
 
 start "" explorer "%temp%\firestick-loader\partitions-dump"
