@@ -174,16 +174,13 @@ pm disable com.android.managedprovisioning
 
 
 # FireOS 5.2.1.1
-#pm disable com.amazon.tv.nimh
-#pm disable ivona.tts.oem
-#pm disable com.ivona.orchestrator
-#pm disable com.amazon.device.sale.service
-#pm disable com.amazon.logan
-#pm disable com.amazon.advertisingidsettings
+pm disable com.amazon.tv.nimh
+pm disable com.ivona.tts.oem
+pm disable com.ivona.orchestrator
+pm disable com.amazon.device.sale.service
+pm disable com.amazon.logan
+pm disable com.amazon.advertisingidsettings
 #pm disable com.amazon.tz.webcryptotzservice
-
-
-
 
 
 echo "Deleting Amazon Bloat...."
@@ -329,13 +326,13 @@ rm -r /system/app/WhiteListedUrlProvider/
 
 
 # FireOS 5.2.1.1
-#rm -r /system/priv-app/AdvertisingIdSettings
-#rm -r /system/priv-app/com.amazon.tv.nimh
-#rm -r /system/priv-app/FireTvSaleService
-#rm -r /system/priv-app/IvonaTTS
-#rm -r /system/priv-app/IvonaTtsOrchestrator
-#rm -r /system/priv-app/Logan
-#rm -r /system/priv-app/TvProvider
+rm -r /system/priv-app/AdvertisingIdSettings
+rm -r /system/priv-app/com.amazon.tv.nimh
+rm -r /system/priv-app/FireTvSaleService
+rm -r /system/priv-app/IvonaTTS
+rm -r /system/priv-app/IvonaTtsOrchestrator
+rm -r /system/priv-app/Logan
+rm -r /system/priv-app/TvProvider
 
 
 
@@ -497,13 +494,13 @@ rm -r /data/data/android.amazon.perm/
 
 
 # FireOS 5.2.1.1
-#rm -r /data/data/com.amazon.tv.nimh
-#rm -r /data/data/AdvertisingIdSettings
-#rm -r /data/data/FireTvSaleService
-#rm -r /data/data/IvonaTTS
-#rm -r /data/data/IvonaTtsOrchestrator
-#rm -r /data/data/Logan
-#rm -r /data/data/TvProvider
+rm -r /data/data/com.amazon.tv.nimh
+rm -r /data/data/AdvertisingIdSettings
+rm -r /data/data/FireTvSaleService
+rm -r /data/data/IvonaTTS
+rm -r /data/data/IvonaTtsOrchestrator
+rm -r /data/data/Logan
+rm -r /data/data/TvProvider
 
 
 
