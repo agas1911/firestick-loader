@@ -39,7 +39,9 @@ set virtualRouterCMD="%~dp0bin\virtualrouter.exe"
 set virtualRouterGUI="%~dp0bin\virtualrouter-gui.exe"
 
 
-set kingrootPC="%~dp0rooting\kingroot-pc.exe"
+set kingrootPC="%~dp0rooting\kingroot\kingroot-pc.exe"
+set kingrootAlt1="%~dp0rooting\kingroot\kingroot-alt1.exe"
+set kingrootAlt2="%~dp0rooting\kingroot\kingroot-alt2.exe"
 
 set sleep="%~dp0bin\wait.exe"
 set rm=rmdir /s /q
