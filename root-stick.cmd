@@ -1199,7 +1199,7 @@ echo.
 echo - Wipe system, data, and cache Partitions
 echo.
 echo - Install One of These Roms or a Custom One
-echo  
+echo.
 echo     - "montoya-5.0.5-rooted_r1.zip"
 echo     - "montoya-5.2.1.1-rooted_r1.zip"
 echo.
