@@ -33,6 +33,7 @@ set sdcard=sdcard
 ::set sdcard=extSdCard
 
 
+if exist "%temp%\firestick-loader\partitions-dump" rd /q /s "%temp%\firestick-loader\partitions-dump"
 mkdir "%temp%\firestick-loader\partitions-dump"
 
 cls
