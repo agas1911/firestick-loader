@@ -1367,7 +1367,7 @@ if %installFireStopperSetting%==1 (
 
 	%uninstall% com.firepwn.home.montoya
 	
-	%push% "apps\system\sdcard\FirePwnHomeBackup.zip" /sdcard/
+	%push% "apps\home\sdcard\FirePwnHomeBackup.zip" /sdcard/
 	
 	%install% "%~dp0apps\home\FirePwnHome.apk"
 	
@@ -1379,7 +1379,7 @@ if %installFireStopperSetting%==2 (
 
 	%uninstall% com.firepwn.home.montoya
 
-	%push% "apps\system\sdcard\FirePwnHomeBackup.zip" /sdcard/
+	%push% "apps\home\sdcard\FirePwnHomeBackup.zip" /sdcard/
 
 	%push% "%~dp0apps\home\FirePwnHome.apk" /data/local/tmp/
 
@@ -3127,7 +3127,7 @@ echo.
 
 :: FireStopper Config
 ::%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
-%push% "apps\system\sdcard\FirePwnHomeBackup.zip" /sdcard/
+%push% "apps\home\sdcard\FirePwnHomeBackup.zip" /sdcard/
 
 %push% "%~dp0apps\home\FirePwnHome.apk" /data/local/tmp/
 
@@ -3229,7 +3229,7 @@ echo.
 
 :: FireStopper Config
 ::%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
-%push% "apps\system\sdcard\FirePwnHomeBackup.zip" /sdcard/
+%push% "apps\home\sdcard\FirePwnHomeBackup.zip" /sdcard/
 
 %push% "%~dp0apps\home\FirePwnHome.apk" /data/local/tmp/
 
