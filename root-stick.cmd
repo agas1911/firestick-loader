@@ -1178,9 +1178,13 @@ echo.
 ::pause
 %sleep% 5
 
+:: Boot Into TWRP Recovery
+%adb% reboot
+
 :adbMouse
 :: Trying to issue ADB Mouse command
-%shell% mouse
+::%shell% mouse
+%runShellNoTerminateAndWait% %shell%
 
 %_color% 0b
 
@@ -1190,7 +1194,7 @@ echo.
 echo.
 echo ** Get MOUSE Control Over ADB Connection **
 echo.
-echo.
+echo.** Type "mouse" Without Quotes Into Spawned Shell Window
 echo.
 echo.
 %_color% 0e
