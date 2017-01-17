@@ -33,6 +33,7 @@ set sdcard=sdcard
 ::set sdcard=extSdCard
 
 
+mkdir "%temp%\firestick-loader\partitions-dump"
 
 cls
 echo Dumping Partitions....
