@@ -31,7 +31,9 @@ set runShellWaitTerminate=start /wait cmd /c
 set _color="%~dp0bin\cocolor.exe"
 
 set extractRAR="%~dp0bin\rar.exe" -y x
-set extractZIP="%~dp0bin\unzip.exe" -o
+set extractRAR="%~dp0bin\rar.exe" -y x
+
+set checkRoot=call "%~dp0scripts\misc\check-root.cmd"
 
 set teamviewer="%~dp0bin\teamviewer.exe"
 
@@ -39,9 +41,12 @@ set virtualRouterCMD="%~dp0bin\virtualrouter.exe"
 set virtualRouterGUI="%~dp0bin\virtualrouter-gui.exe"
 
 
-set kingrootPC="%~dp0rooting\kingroot\kingroot-pc.exe"
-set kingrootAlt1="%~dp0rooting\kingroot\kingroot-alt1.exe"
-set kingrootAlt2="%~dp0rooting\kingroot\kingroot-alt2.exe"
+set kingrootAPK="%~dp0rooting\king\kingroot.apk"
+set kingrootAPKAlt1="%~dp0rooting\king\kingroot-alt1.apk"
+set kingrootAPKAlt2="%~dp0rooting\king\kingroot-alt2.apk"
+set kingrootPC="%~dp0rooting\king\kingroot-pc.exe"
+set kingrootPCAlt1="%~dp0rooting\king\kingroot-alt1.exe"
+set kingrootPCAlt2="%~dp0rooting\king\kingroot-alt2.exe"
 
 set sleep="%~dp0bin\wait.exe"
 set rm=rmdir /s /q
@@ -115,6 +120,7 @@ set rootable=0
 set rootableText=NOT EXPLOITABLE
 set firstCheck=0
 set firstTimeRootAttempt=1
+set rooted=0
 
 set rootFromDG=1
 
@@ -558,12 +564,30 @@ if %fireOsVersion%==5.2.4.0 (
 )
 
 
+:: Check Root Status On Device
+%checkRoot%
+
+set /p rooted=<"%temp%\rootAccess.txt"
+
+:: Remove Temp File
+del /f /q "%temp%\rootAccess.txt"
+
+
+
+:: Begin Main Menu
 cls
+
+:: Change Colors To Match Exploitable Status
 %_color% 0e
 if %rootable%==0 %_color% %rootableColor%
 if %rootable%==1 %_color% %rootableColor%
+
+:: If Rooted Set New Text
+if %rooted%==1 (
+set rootableText=ROOTED
+)
+
 echo *** Device is currently on version %fireOsVersion% and is %rootableText% ***
-::echo FireTV Stick Multi Menu (Rooting, Downgrade, Bloat Remove, and More)
 echo.
 echo.
 %_color% 0b
@@ -1599,14 +1623,12 @@ echo.
 %_color% 0e
 
 :: Install KingoRoot
-set apk="rooting\kingroot.apk"
-set app=KingRoot
 cls
-echo Installing %app%....
+echo Installing KingRoot....
 echo.
 echo.
 
-%install% %apk%
+%install% %kingrootAPK%
 
 %sleep% 8
 
@@ -2760,7 +2782,7 @@ goto menu
 
 :busybox
 :: Install Busybox
-set apk="rooting\busybox.apk"
+set apk="apps\system\busybox.apk"
 set app=Busybox
 
 if %busyboxScriptInstall%==1 (
@@ -3358,7 +3380,7 @@ if %factoryReset%==2 (
 	%shell% "rm /data/local/tmp/com.amazon.tv.settings_preferences.xml"
 	%shell% "rm /data/local/tmp/kingroot.apk"
 	%shell% "rm /data/local/tmp/factory-reset.sh"
-	%push% "%~dp0rooting\kingroot.apk" /data/local/tmp/
+	%push% %kingrootAPK% /data/local/tmp/
 	%push% "%~dp0config\data\com.amazon.tv.settings\shared_prefs\com.amazon.tv.settings_preferences.xml" /data/local/tmp/
 	%push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
 	%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
@@ -3468,7 +3490,7 @@ if %factoryReset%==2 (
 	%shell% "rm /data/local/tmp/com.amazon.tv.settings_preferences.xml"
 	%shell% "rm /data/local/tmp/kingroot.apk"
 	%shell% "rm /data/local/tmp/factory-reset.sh"
-	%push% "%~dp0rooting\kingroot.apk" /data/local/tmp/
+	%push% %kingrootAPK% /data/local/tmp/
 	%push% "%~dp0config\data\com.amazon.tv.settings\shared_prefs\com.amazon.tv.settings_preferences.xml" /data/local/tmp/
 	%push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
 	%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
