@@ -40,27 +40,37 @@ set amStart=%shell% am start -a android.intent.action.MAIN -n
 
 set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetworkSettingsActivity
 
-
-%push% "push\app_process32" /data/local/tmp/
-%push% "push\busybox" /data/local/tmp/
+:: DirtyCow Exploit Files
+%push% "push\cowscript" /data/local/tmp/
 %push% "push\dirtycow" /data/local/tmp/
 %push% "push\getdirty.sh" /data/local/tmp/
-%push% "push\ip" /data/local/tmp/
-%push% "push\ip_script" /data/local/tmp/
-%push% "push\ping" /data/local/tmp/
-%push% "push\run-as" /data/local/tmp/
+
+:: Fixes and Other Misc Exploit Related
+%push% "push\persistant-shell.sh" /data/local/tmp/
+%push% "push\turn-off-periodic-writeback.sh" /data/local/tmp/
+
+:: Superuser Files
 %push% "push\su" /data/local/tmp/
 
-%shell% chmod 755 /data/local/tmp/app_process32
-%shell% chmod 755 /data/local/tmp/ip
-%shell% chmod 755 /data/local/tmp/ip_script
-%shell% chmod 755 /data/local/tmp/ping
-%shell% chmod 755 /data/local/tmp/run-as
+:: Busybox
+%push% "push\busybox" /data/local/tmp/
 
+:: Potential Victim Processes
+%push% "push\app_process32" /data/local/tmp/
+%push% "push\ip" /data/local/tmp/
+%push% "push\ping" /data/local/tmp/
+%push% "push\run-as" /data/local/tmp/
+
+:: Set Exploit Files Permissions On Device
+%shell% chmod 755 /data/local/tmp/cowscript
 %shell% chmod 755 /data/local/tmp/dirtycow
 %shell% chmod 755 /data/local/tmp/getdirty.sh
 
-
+:: Set Processes Permissions On Device
+%shell% chmod 755 /data/local/tmp/app_process32
+%shell% chmod 755 /data/local/tmp/ip
+%shell% chmod 755 /data/local/tmp/ping
+%shell% chmod 755 /data/local/tmp/run-as
 
 
 cls
