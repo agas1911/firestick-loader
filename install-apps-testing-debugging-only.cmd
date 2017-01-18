@@ -204,6 +204,17 @@ echo.
 %install% "apps\testing\network-log.apk"
 
 
+cls
+%_color% 0e
+set appName=ZIP Signer
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\utilities\zipsigner.apk"
+
+
 
 goto end
 

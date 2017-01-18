@@ -902,6 +902,30 @@ echo.
 )
 
 
+cls
+%_color% 0e
+set appName=ZIP Signer
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Allows Signing of ZIP and APK Files
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\utilities\zipsigner.apk"
+)
+
+
 :instWP
 cls
 %_color% 0e
