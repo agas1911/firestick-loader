@@ -212,7 +212,7 @@ echo.
 echo.
 echo IP Address: %ip%
 echo.
-echo Gateway: Use %ip% but change last digits to 255
+echo Gateway: Use %ip% but change last digits to 1 (192.168.*.1)
 echo.
 echo Network Prefix Length: 24
 echo.
