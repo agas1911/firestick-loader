@@ -99,6 +99,8 @@ cls
 echo Connect your device to the access point using DHCP
 echo.
 echo.
+echo ** WAIT FOR THE CONNECTED STATUS ON DEVICE BEFORE CONTINUING! **
+echo.
 echo.
 echo When finished press ENTER to continue....
 echo.
