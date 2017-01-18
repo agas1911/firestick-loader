@@ -66,6 +66,8 @@ set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetw
 %shell% chmod 755 /data/local/tmp/cowscript
 %shell% chmod 755 /data/local/tmp/dirtycow
 %shell% chmod 755 /data/local/tmp/getdirty.sh
+%shell% chmod 755 /data/local/tmp/persistant-shell.sh
+%shell% chmod 755 /data/local/tmp/turn-off-periodic-writeback.sh
 
 :: Set Processes Permissions On Device
 %shell% chmod 755 /data/local/tmp/app_process32
