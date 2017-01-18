@@ -10,7 +10,7 @@ cls
 echo Set GREP Text (if any) and Press ENTER:
 echo.
 echo.
-echo ** Separate Multiple Entries With A Pipe ^| Character **
+echo ** For Multiple Entries Use "text1 | grep text2" Format (NO QUOTES) **
 echo.
 echo.
 
