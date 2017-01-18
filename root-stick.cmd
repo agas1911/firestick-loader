@@ -403,6 +403,56 @@ for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageSystem.txt"') do set
 
 set dgchoice=m
 
+
+
+cls
+%_color% 0e
+echo Checking Root Status On Device....
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+%_color% 0b
+echo Visit My GitHub Page To See All of My Other Projects:
+echo.
+::echo https://github.com/esc0rtd3w/firestick-loader/
+echo https://github.com/esc0rtd3w/
+echo.
+echo.
+%_color% 0e
+echo.
+echo.
+
+:: Check Root Status On Device
+::%checkRoot%
+
+:: Clean Before Checking
+if exist "%temp%\rootAccess.txt" del /f /q "%temp%\rootAccess.txt"
+
+%push% "%pathScripts%\check-root.sh" /data/local/tmp/
+%shell% "chmod 777 /data/local/tmp/check-root.sh"
+%shell% "sh /data/local/tmp/check-root.sh"
+
+%pull% /%sdcard%/rootAccess.txt "%temp%"
+
+for /f "tokens=* delims=*" %%r in ('type "%temp%\rootAccess.txt"') do set rootStatus=%%r
+
+%sleep% 2
+
+:: Remove Temp File On SD Card
+%shell% "rm /%sdcard%/rootAccess.txt"
+
+set /p rooted=<"%temp%\rootAccess.txt"
+
+:: Remove Temp File
+if exist "%temp%\rootAccess.txt" del /f /q "%temp%\rootAccess.txt"
+
+
+
 :: Check FireOS Version
 
 ::if %firstCheck%==0 goto checkCanRoot
@@ -445,12 +495,6 @@ if %fireOsVersion%==0.0.0.0 (
 set rootable=0
 set rootableColor=0c
 set rootableText=INVALID
-)
-
-if %fireOsVersion%==5.0.0 (
-set rootable=1
-set rootableColor=0a
-set rootableText=EXPLOITABLE
 )
 
 if %fireOsVersion%==5.0.0 (
@@ -564,6 +608,7 @@ del /f /s /q "%temp%\fireos-version.txt"
 
 %adbKill%
 
+
 cls
 %_color% 0e
 echo Checking OTA Recommendations For Version %fireOsVersion%....
@@ -654,16 +699,6 @@ if %fireOsVersion%==5.2.2.0 (
 if %fireOsVersion%==5.2.4.0 (
 %msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
 )
-
-
-:: Check Root Status On Device
-%checkRoot%
-
-set /p rooted=<"%temp%\rootAccess.txt"
-
-:: Remove Temp File
-del /f /q "%temp%\rootAccess.txt"
-
 
 
 :: Begin Main Menu
