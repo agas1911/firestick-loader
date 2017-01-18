@@ -4,7 +4,6 @@
 
 title Check For Root Script  [esc0rtd3w]
 
-
 color 0e
 
 set sleep="%~dp0bin\wait.exe"
@@ -17,7 +16,7 @@ set shell=%adb% shell
 
 
 :: Clean Before Checking
-del /f /q "%temp%\rootAccess.txt"
+if exist "%temp%\rootAccess.txt" del /f /q "%temp%\rootAccess.txt"
 
 
 %push% "..\check-root.sh" /data/local/tmp/
@@ -36,10 +35,16 @@ for /f "tokens=* delims=*" %%r in ('type "%temp%\rootAccess.txt"') do set rootSt
 :: Remove Temp File On SD Card
 %shell% "rm /sdcard/rootAccess.txt"
 
+cls
+echo Root Status: %rootStatus%
+echo.
+echo.
+
+pause
+
 
 :: Remove Temp File After Main Menu Checks Root Status
-::del /f /q "%temp%\rootAccess.txt"
-
+if exist "%temp%\rootAccess.txt" del /f /q "%temp%\rootAccess.txt"
 
 
 :end
