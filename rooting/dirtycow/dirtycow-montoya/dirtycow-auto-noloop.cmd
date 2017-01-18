@@ -79,11 +79,7 @@ cls
 %adbKill%
 
 
-:loop
-
 %adb% shell "sh /data/local/tmp/getdirty.sh"
-
-goto loop
 
 
 echo.
