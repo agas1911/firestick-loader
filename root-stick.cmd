@@ -434,7 +434,7 @@ echo.
 echo.
 
 
-:: Get Android OS Info
+:: Get FireOS Info
 %shell% "cat /system/build.prop | grep ro.build.version.name>/sdcard/fireos-version.txt"
 
 %pull% /sdcard/fireos-version.txt "%temp%"
@@ -448,6 +448,54 @@ set rootableText=INVALID
 )
 
 if %fireOsVersion%==5.0.0 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
+
+if %fireOsVersion%==5.0.0 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
+
+if %fireOsVersion%==5.0.2.1 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
+
+if %fireOsVersion%==5.0.2.2 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
+
+if %fireOsVersion%==5.0.3 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
+
+if %fireOsVersion%==5.0.3.1 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
+
+if %fireOsVersion%==5.0.3.2 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
+
+if %fireOsVersion%==5.0.3.3 (
+set rootable=1
+set rootableColor=0a
+set rootableText=EXPLOITABLE
+)
+
+if %fireOsVersion%==5.0.4 (
 set rootable=1
 set rootableColor=0a
 set rootableText=EXPLOITABLE
@@ -472,6 +520,12 @@ set rootableText=EXPLOITABLE
 )
 
 if %fireOsVersion%==5.2.1.1 (
+set rootable=0
+set rootableColor=0c
+set rootableText=NOT EXPLOITABLE
+)
+
+if %fireOsVersion%==5.2.1.2 (
 set rootable=0
 set rootableColor=0c
 set rootableText=NOT EXPLOITABLE
@@ -532,8 +586,42 @@ echo.
 echo.
 echo.
 
+
+:: Set MessageBox Text To Display
 if %fireOsVersion%==4.2.2 (
 %msgbox% "This device has version %fireOsVersion% installed.\n\n\nThis is a KitKat Build and Precedes FireOS.\n\nThis Build May Be Rootable and Is Still In Testing." "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.0.0 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to ROOT and then update to version 5.0.5" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.0.2.1 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to ROOT and then update to version 5.0.5" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.0.2.2 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to ROOT and then update to version 5.0.5" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.0.3 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to ROOT and then update to version 5.0.5" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.0.3.1 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to ROOT and then update to version 5.0.5" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.0.3.2 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to ROOT and then update to version 5.0.5" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.0.3.3 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to ROOT and then update to version 5.0.5" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.0.4 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\nIt is recommended to ROOT and then update to version 5.0.5" "FirePwn Loader"
 )
 
 if %fireOsVersion%==5.0.5 (
@@ -552,6 +640,10 @@ if %fireOsVersion%==5.2.1.0 (
 )
 
 if %fireOsVersion%==5.2.1.1 (
+%msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
+)
+
+if %fireOsVersion%==5.2.1.2 (
 %msgbox% "This device has version %fireOsVersion% installed.\n\n\n*** THIS VERSION IS CURRENTLY NOT EXPLOITABLE ***" "FirePwn Loader"
 )
 
