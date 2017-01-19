@@ -1332,6 +1332,8 @@ echo.
 :: Boot Into TWRP Recovery
 %adb% reboot
 
+%sleep% 6
+
 :adbMouse
 :: Trying to issue ADB Mouse command
 ::%shell% mouse
