@@ -40,7 +40,6 @@ set amStart=%shell% am start -a android.intent.action.MAIN -n
 
 set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetworkSettingsActivity
 
-
 :: DirtyCow Exploit Files
 %push% "push\cowscript" /data/local/tmp/
 %push% "push\dirtycow" /data/local/tmp/
@@ -75,11 +74,162 @@ set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetw
 %shell% chmod 755 /data/local/tmp/ping
 %shell% chmod 755 /data/local/tmp/run-as
 
+
 cls
 %adbKill%
+cls
+%disconnect%
+
+taskkill /f /im VirtualRouter.exe
+taskkill /f /im VirtualRouterHostConsole.exe
+::%virtualRouterCMD%
+%virtualRouterGUI%
+
+:: Wait for Virtual Router To Start
+cls
+echo Waiting for Virtual Router To Initialize....
+echo.
+echo.
+%sleep% 8
+
+%showSettingsSystemNetwork%
 
 
-%adb% shell "sh /data/local/tmp/getdirty.sh"
+cls
+echo Connect your device to the access point using DHCP
+echo.
+echo.
+echo ** WAIT FOR THE CONNECTED STATUS ON DEVICE BEFORE CONTINUING! **
+echo.
+echo.
+echo When finished press ENTER to continue....
+echo.
+echo.
+pause>nul
+
+%shell% "ip address | grep wlan0 | grep inet"
+
+echo.
+echo.
+
+echo Find Device IP Address From Above
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Enter IP Address of Device and Press ENTER:
+echo.
+echo.
+
+set /p ip=
+
+%connect% %ip%
+
+::echo.
+::echo.
+::echo.
+::echo.
+::echo Find your Device ID below and copy it
+::echo.
+::echo.
+::%adb% devices
+
+::echo.
+::echo.
+::echo.
+::echo Paste the Device ID here and press a key when done....
+::echo.
+::echo.
+
+::set /p device=
+
+:: New Method Using Typed IP and Port 5555 as Defaults
+set device=%ip%:5555
+
+echo.
+echo.
+echo.
+echo.
+echo Exploiting....
+echo.
+echo.
+
+%sleep% 5
+
+%adb% -s %device% shell "sh /data/local/tmp/getdirty.sh"
+
+::echo.
+::echo.
+::echo Press a key once exploit is finished....
+::echo.
+::echo.
+
+::pause>nul
+
+echo.
+echo.
+echo.
+echo Waiting For Exploit To Finish....
+echo.
+echo.
+
+%sleep% 5
+
+echo.
+echo.
+echo.
+echo.
+
+%disconnect%
+
+taskkill /f /im VirtualRouter.exe
+taskkill /f /im VirtualRouterHostConsole.exe
+
+:: Wait for Virtual Router To Start
+cls
+echo Waiting for Virtual Router To Relaunch....
+echo.
+echo.
+%sleep% 8
+
+::%virtualRouterCMD%
+%virtualRouterGUI%
+
+%showSettingsSystemNetwork%
+
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Click MENU Button and Press ENTER On Device To FORGET NETWORK!
+echo.
+echo Set your IP address to static on the firestick using the following settings:
+echo.
+echo.
+echo IP Address: %ip%
+echo.
+echo Gateway: Use %ip% but change last digits to 1 (192.168.*.1)
+echo.
+echo Network Prefix Length: 24
+echo.
+echo DNS Primary: 8.8.8.8
+echo.
+echo DNS Secondary: 8.8.4.4
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Press a key when finished....
+echo.
+echo.
+pause>nul
 
 
 echo.

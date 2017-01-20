@@ -86,25 +86,6 @@ cls
 goto loop
 
 
-echo.
-echo.
-echo.
-echo.
-echo.
-echo Type in "su" without quotes and Press ENTER to test exploit result
-echo.
-echo.
-echo Type "exit" without quotes to leave shell
-echo.
-echo.
-
-
-%shell%
-
-
-taskkill /f /im VirtualRouter.exe
-taskkill /f /im VirtualRouterHostConsole.exe
-
 
 :end
 
