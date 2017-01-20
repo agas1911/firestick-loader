@@ -5,9 +5,11 @@
 
 ####firepwn.com
 
-####Debloated, Removed OTA, Rooted 5.0.5 System TWRP Backup File: https://mega.nz/#!mJ5WzY4J!7iCB3QcxJbGOVOdIfRzb2g4-alg4eriJxKyYrhEer5Y
+####Debloated, Removed OTA, Rooted 5.0.5 System TWRP Backup File:
+https://mega.nz/#!mJ5WzY4J!7iCB3QcxJbGOVOdIfRzb2g4-alg4eriJxKyYrhEer5Y
 
-####Debloated, Removed OTA, Rooted 5.2.1.1 System TWRP Backup File: https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
+####Debloated, Removed OTA, Rooted 5.2.1.1 System TWRP Backup File:
+https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
 
 <br/>
 
@@ -67,9 +69,11 @@
 
 - Menu Has TWRP Installation Support (thanks to rbox)
 
-    * Debloated, Removed OTA, Rooted 5.0.5 System TWRP Backup File: https://mega.nz/#!mJ5WzY4J!7iCB3QcxJbGOVOdIfRzb2g4-alg4eriJxKyYrhEer5Y
+    * Debloated, Removed OTA, Rooted 5.0.5 System TWRP Backup File:
+	  https://mega.nz/#!mJ5WzY4J!7iCB3QcxJbGOVOdIfRzb2g4-alg4eriJxKyYrhEer5Y
 
-    * Debloated, Removed OTA, Rooted 5.2.1.1 System TWRP Backup File: https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
+    * Debloated, Removed OTA, Rooted 5.2.1.1 System TWRP Backup File:
+	  https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
 
 
 - If FireOS 5.2.1.0 Is Detected At Launch, The Update Protection Script Will Automatically Run
@@ -133,6 +137,12 @@
     - Install KingRoot
 	- Root Device (Automatically Does All The Steps To Get Full Root)
 	- Issue "su" Request To Device (Useful for triggering Deny/Allow prompt)
+
+- **Install TWRP** \****ROOT REQUIRED***\*
+
+    - Install TWRP Works For Versions 5.0.5 - 5.2.1.0
+	- Copies Files To Device and Triggers TWRP Installation
+	- Automatically Copies Both 5.0.5 and 5.2.1.1 Pre-Rooted Roms To Device During Installation
 
 - **Downgrade Firmware** \****ROOT REQUIRED***\*
 
