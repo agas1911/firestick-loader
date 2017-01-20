@@ -84,13 +84,15 @@ cls
 ::%shell% "sh /data/local/tmp/getdirty.sh"
 %shell% /data/local/tmp/dirtycow /data/local/tmp/sh /system/bin/sh
 
-echo.
-echo.
-echo Press a key once exploit has finished....
-echo.
-echo.
-pause>nul
+::echo.
+::echo.
+::echo Press a key once exploit has finished....
+::echo.
+::echo.
+::pause>nul
 
+:: Try launching TWRP Installer
+::%shell% "sh /sdcard/montoya_recovery_v1.zip"
 
 echo.
 echo.
@@ -103,6 +105,7 @@ echo.
 echo Type "exit" without quotes to leave shell
 echo.
 echo.
+
 
 
 %shell%
