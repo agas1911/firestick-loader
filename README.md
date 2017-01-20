@@ -67,6 +67,8 @@ https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
 	
 ***Current Project Testing Status (Using FireOS 5.0.5 or Pre-Rooted 5.2.1.1):***
 
+- Bloat Removal Scripts Updated and Tested Working On 5.2.1.1
+
 - Menu Has TWRP Installation Support (thanks to rbox)
 
     * Debloated, Removed OTA, Rooted 5.0.5 System TWRP Backup File:
@@ -267,7 +269,7 @@ https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
 	
 <br/><br/>	
 
-- **Untested Bloat From FireOS 5.2.1.1**
+- **Bloat From FireOS 5.2.1.1 (TESTED WORKING WITH REMOVAL)**
     - /system/priv-app/com.amazon.tv.nimh
     - /system/priv-app/AdvertisingIdSettings
     - /system/priv-app/FireTvSaleService
