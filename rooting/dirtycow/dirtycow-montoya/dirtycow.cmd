@@ -41,6 +41,10 @@ set amStart=%shell% am start -a android.intent.action.MAIN -n
 set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetworkSettingsActivity
 
 
+:: Wait for device
+%adbWait% 
+
+
 :: DirtyCow Exploit Files
 %push% "push" /data/local/tmp/
 
@@ -52,7 +56,7 @@ cls
 
 
 ::%shell% "sh /data/local/tmp/getdirty.sh"
-%shell% /data/local/tmp/dirtycow /system/bin/dnsmasq /data/local/tmp/sh
+%shell% /data/local/tmp/dirtycow /system/bin/wpa_cli /data/local/tmp/cowscript
 
 ::echo.
 ::echo.
