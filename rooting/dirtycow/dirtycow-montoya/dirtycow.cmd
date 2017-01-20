@@ -56,7 +56,7 @@ cls
 
 
 ::%shell% "sh /data/local/tmp/getdirty.sh"
-%shell% /data/local/tmp/dirtycow /system/bin/run-as /data/local/tmp/cowscript
+%shell% /data/local/tmp/dirtycow /system/bin/run-as /data/local/tmp/run-as
 
 ::echo.
 ::echo.
@@ -69,10 +69,14 @@ cls
 
 %sleep% 5
 
-%shell% "/system/bin/run-as 0"
+%shell% "run-as -exec id"
+
+%sleep% 5
+
+%shell% "run-as -exec sh"
 
 :: Try launching TWRP Installer
-::%shell% "/system/bin/sh /sdcard/montoya_recovery_v1.zip"
+%shell% "/system/bin/sh /sdcard/montoya_recovery_v1.zip"
 
 
 ::%shell% "cat /system/xbin/montoya_diag.sh"
