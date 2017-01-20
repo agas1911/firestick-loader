@@ -175,12 +175,12 @@ pm disable com.android.managedprovisioning
 
 
 # FireOS 5.2.1.1
-#pm disable com.amazon.tv.nimh
-#pm disable com.ivona.tts.oem
-#pm disable com.ivona.orchestrator
-#pm disable com.amazon.device.sale.service
-#pm disable com.amazon.logan
-#pm disable com.amazon.advertisingidsettings
+pm disable com.amazon.tv.nimh
+pm disable com.ivona.tts.oem
+pm disable com.ivona.orchestrator
+pm disable com.amazon.device.sale.service
+pm disable com.amazon.logan
+pm disable com.amazon.advertisingidsettings
 #pm disable com.amazon.tz.webcryptotzservice
 
 
