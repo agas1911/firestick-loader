@@ -142,7 +142,7 @@ https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
 	- Root Device (Automatically Does All The Steps To Get Full Root)
 	- Issue "su" Request To Device (Useful for triggering Deny/Allow prompt)
 
-- **Install TWRP** \****ROOT REQUIRED***\*
+- **Install TWRP Custom Recovery** \****ROOT REQUIRED***\*
 
     - Install TWRP Works For Versions 5.0.5 - 5.2.1.0
 	- Copies Files To Device and Triggers TWRP Installation
@@ -150,7 +150,7 @@ https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
 
 - **Downgrade Firmware** \****ROOT REQUIRED***\*
 
-    - Currently 5.0.5 Is The Only Downgrade Version Available
+    - Currently 5.0.5 and 5.0.5.1 Are The Only Downgrade Versions Available
 	- Automatically Extracts, Pushes, Moves, Creates Recovery Config File and Reboots To Install
 
 - **Install Busybox** \****ROOT REQUIRED***\*
