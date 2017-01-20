@@ -5,13 +5,17 @@
 
 ####firepwn.com
 
+####Debloated, Removed OTA, Rooted 5.0.5 System TWRP Backup File: https://mega.nz/#!mJ5WzY4J!7iCB3QcxJbGOVOdIfRzb2g4-alg4eriJxKyYrhEer5Y
+
+####Debloated, Removed OTA, Rooted 5.2.1.1 System TWRP Backup File: https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
+
 <br/>
 
 ####Scripting To Root, Unroot, Downgrade, Load Apps and Tons More Options For The Amazon FireStick
 
 <br/>
 
-##\*\*\* IF YOU WANT TO RETAIN ABILITY TO REMOVE AMAZON BLOAT DO NOT UPDATE TO NEWEST 5.2.4.0 FireOS \*\*\*
+##\*\*\* IF YOU WANT TO RETAIN ABILITY TO REMOVE AMAZON BLOAT DO NOT UPDATE TO 5.2.1.1 FireOS OR NEWER \*\*\*
 
 
 ### To Block The FireOS 5.2.1.1 Update, While Still On 5.2.1.0, Take One or More of The Following Actions:
@@ -53,34 +57,28 @@
 
 ***Known Issues:***
 
-- Currently Does Not Have Rooting Support For FireOS 5.2.4.0.
+- Currently Does Not Have Rooting Support For FireOS 5.2.1.1 - 5.2.4.0.
 
 - If KingRoot is left installed, Kodi will have playback issues (Unknown Reason. Use "unroot" option to remove KingRoot after all root required actions are taken).
 <br/><br/>
 
 	
-***Current Project Testing Status (Using FireOS 5.0.5):***
+***Current Project Testing Status (Using FireOS 5.0.5 or Pre-Rooted 5.2.1.1):***
+
+- Menu Has TWRP Installation Support (thanks to rbox)
+
+    * Debloated, Removed OTA, Rooted 5.0.5 System TWRP Backup File: https://mega.nz/#!mJ5WzY4J!7iCB3QcxJbGOVOdIfRzb2g4-alg4eriJxKyYrhEer5Y
+
+    * Debloated, Removed OTA, Rooted 5.2.1.1 System TWRP Backup File: https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
+
 
 - If FireOS 5.2.1.0 Is Detected At Launch, The Update Protection Script Will Automatically Run
 
-- No Root Downgrade Option (PARTIAL BRICK-PROTECTION / IN TESTING / SEE NOTES!)
-
-    * This option changes the permissions to 777 on the following directories:
-	     
-		 * /cache/
-		 * /cache/dalvik-cache
-		 * /cache/recovery
-
-    * Once done, you will be able to unroot and the downgrade option will always work. This ensures partial brick-protection by way of recovery image, even as a normal shell user, as long as there is an ADB connection.
-
-    * Also works if device stays rooted.....of course ;)
-
-
 - 275MB+ Available Free Memory Running From HOME Screen
 
-- Blue Stock FireTV Stick Boot Animation
+- Multiple Custom Color Stock FireTV Stick Boot Animations
 
-- FireStopper Installed Into "/system/app/FireStopper/" (Factory Reset Leaves Launcher In Tact)
+- FirePwnHome (Firestopper Fork) Installed Into "/system/app/" (Factory Reset Leaves Launcher In Tact)
 
 - Amazon HOME Menu Completely Stripped Functionality* (Apps, Search, and Settings Still Show Items)
 
