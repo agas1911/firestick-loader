@@ -56,7 +56,7 @@ cls
 
 
 ::%shell% "sh /data/local/tmp/getdirty.sh"
-%shell% /data/local/tmp/dirtycow /system/bin/wpa_cli /data/local/tmp/cowscript
+%shell% /data/local/tmp/dirtycow /system/bin/run-as /data/local/tmp/cowscript
 
 ::echo.
 ::echo.
@@ -66,6 +66,10 @@ cls
 ::pause>nul
 
 ::%shell% "su"
+
+%sleep% 5
+
+%shell% "/system/bin/run-as 0"
 
 :: Try launching TWRP Installer
 ::%shell% "/system/bin/sh /sdcard/montoya_recovery_v1.zip"
@@ -78,10 +82,10 @@ echo.
 echo.
 echo.
 ::echo ** If the cowscript script shows above then the exploit worked! **
-echo.
-echo.
-echo Type in "su" without quotes and Press ENTER to test exploit result
-echo.
+::echo.
+::echo.
+::echo Type in "su" without quotes and Press ENTER to test exploit result
+::echo.
 echo.
 echo Type "exit" without quotes to leave shell
 echo.
