@@ -45,6 +45,7 @@ set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetw
 %push% "push\cowscript" /data/local/tmp/
 %push% "push\dirtycow" /data/local/tmp/
 %push% "push\getdirty.sh" /data/local/tmp/
+%push% "push\sh" /data/local/tmp/
 
 :: Fixes and Other Misc Exploit Related
 %push% "push\persistant-shell.sh" /data/local/tmp/
@@ -74,12 +75,21 @@ set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetw
 ::%shell% chmod 755 /data/local/tmp/ip
 ::%shell% chmod 755 /data/local/tmp/ping
 %shell% chmod 755 /data/local/tmp/run-as
+%shell% chmod 755 /data/local/tmp/sh
 
 cls
 %adbKill%
 
 
-%adb% shell "sh /data/local/tmp/getdirty.sh"
+::%shell% "sh /data/local/tmp/getdirty.sh"
+%shell% /data/local/tmp/dirtycow /data/local/tmp/sh /system/bin/sh
+
+echo.
+echo.
+echo Press a key once exploit has finished....
+echo.
+echo.
+pause>nul
 
 
 echo.
