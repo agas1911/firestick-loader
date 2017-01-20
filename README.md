@@ -146,7 +146,7 @@ https://mega.nz/#!bEpTmJyA!Ilsk4cBQ7aUZW4q2eLPfFLEsy5HRjWU89k6YXN7pd1E
 
     - Install TWRP Works For Versions 5.0.5 - 5.2.1.0
 	- Copies Files To Device and Triggers TWRP Installation
-	- Automatically Copies Both 5.0.5 and 5.2.1.1 Pre-Rooted Roms To Device During Installation
+	- Automatically Copies Both 5.0.5 and 5.2.1.1 Pre-Rooted Rom ZIPS To Device For Installation
 
 - **Downgrade Firmware** \****ROOT REQUIRED***\*
 
