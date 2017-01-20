@@ -42,47 +42,17 @@ set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetw
 
 
 :: DirtyCow Exploit Files
-%push% "push\cowscript" /data/local/tmp/
-%push% "push\dirtycow" /data/local/tmp/
-%push% "push\getdirty.sh" /data/local/tmp/
-%push% "push\sh" /data/local/tmp/
-
-:: Fixes and Other Misc Exploit Related
-%push% "push\persistant-shell.sh" /data/local/tmp/
-%push% "push\turn-off-periodic-writeback.sh" /data/local/tmp/
-
-:: Superuser Files
-%push% "push\su" /data/local/tmp/
-
-:: Busybox
-::%push% "push\busybox" /data/local/tmp/
-
-:: Potential Victim Processes
-::%push% "push\app_process32" /data/local/tmp/
-::%push% "push\ip" /data/local/tmp/
-::%push% "push\ping" /data/local/tmp/
-%push% "push\run-as" /data/local/tmp/
+%push% "push" /data/local/tmp/
 
 :: Set Exploit Files Permissions On Device
-%shell% chmod 755 /data/local/tmp/cowscript
-%shell% chmod 755 /data/local/tmp/dirtycow
-%shell% chmod 755 /data/local/tmp/getdirty.sh
-%shell% chmod 755 /data/local/tmp/persistant-shell.sh
-%shell% chmod 755 /data/local/tmp/turn-off-periodic-writeback.sh
-
-:: Set Processes Permissions On Device
-::%shell% chmod 755 /data/local/tmp/app_process32
-::%shell% chmod 755 /data/local/tmp/ip
-::%shell% chmod 755 /data/local/tmp/ping
-%shell% chmod 755 /data/local/tmp/run-as
-%shell% chmod 755 /data/local/tmp/sh
+%shell% chmod 755 /data/local/tmp/*
 
 cls
 %adbKill%
 
 
 ::%shell% "sh /data/local/tmp/getdirty.sh"
-%shell% /data/local/tmp/dirtycow /data/local/tmp/sh /system/bin/sh
+%shell% /data/local/tmp/dirtycow /system/bin/dnsmasq /data/local/tmp/sh
 
 ::echo.
 ::echo.
@@ -91,12 +61,19 @@ cls
 ::echo.
 ::pause>nul
 
+::%shell% "su"
+
 :: Try launching TWRP Installer
-::%shell% "sh /sdcard/montoya_recovery_v1.zip"
+::%shell% "/system/bin/sh /sdcard/montoya_recovery_v1.zip"
+
+
+::%shell% "cat /system/xbin/montoya_diag.sh"
+::%shell% "sh /system/xbin/montoya_diag.sh"
 
 echo.
 echo.
 echo.
+::echo ** If the cowscript script shows above then the exploit worked! **
 echo.
 echo.
 echo Type in "su" without quotes and Press ENTER to test exploit result
