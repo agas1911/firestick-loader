@@ -7,6 +7,7 @@ color 0e
 set wait="%~dp0bin\wait.exe"
 
 set adb="..\..\bin\adb.exe"
+set shell=%adb% shell
 
 set sdcard=sdcard
 ::set sdcard=external_sd
@@ -19,7 +20,7 @@ echo.
 echo.
 
 
-%adb% shell "ps | grep amazon"
+%shell% "ps | grep amazon"
 
 echo.
 echo.
