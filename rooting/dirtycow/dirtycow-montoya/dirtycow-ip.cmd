@@ -40,39 +40,15 @@ set amStart=%shell% am start -a android.intent.action.MAIN -n
 
 set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetworkSettingsActivity
 
+
+:: Wait for device
+%adbWait% 
+
 :: DirtyCow Exploit Files
-%push% "push\cowscript" /data/local/tmp/
-%push% "push\dirtycow" /data/local/tmp/
-%push% "push\getdirty.sh" /data/local/tmp/
-
-:: Fixes and Other Misc Exploit Related
-%push% "push\persistant-shell.sh" /data/local/tmp/
-%push% "push\turn-off-periodic-writeback.sh" /data/local/tmp/
-
-:: Superuser Files
-%push% "push\su" /data/local/tmp/
-
-:: Busybox
-%push% "push\busybox" /data/local/tmp/
-
-:: Potential Victim Processes
-%push% "push\app_process32" /data/local/tmp/
-%push% "push\ip" /data/local/tmp/
-%push% "push\ping" /data/local/tmp/
-%push% "push\run-as" /data/local/tmp/
+%push% "push" /data/local/tmp/
 
 :: Set Exploit Files Permissions On Device
-%shell% chmod 755 /data/local/tmp/cowscript
-%shell% chmod 755 /data/local/tmp/dirtycow
-%shell% chmod 755 /data/local/tmp/getdirty.sh
-%shell% chmod 755 /data/local/tmp/persistant-shell.sh
-%shell% chmod 755 /data/local/tmp/turn-off-periodic-writeback.sh
-
-:: Set Processes Permissions On Device
-%shell% chmod 755 /data/local/tmp/app_process32
-%shell% chmod 755 /data/local/tmp/ip
-%shell% chmod 755 /data/local/tmp/ping
-%shell% chmod 755 /data/local/tmp/run-as
+%shell% chmod 755 /data/local/tmp/*
 
 
 cls
@@ -159,7 +135,9 @@ echo.
 
 %sleep% 5
 
-%adb% -s %device% shell "sh /data/local/tmp/getdirty.sh"
+::%shell% "sh /data/local/tmp/getdirty.sh"
+%adb% -s %device% shell /data/local/tmp/dirtycow /system/bin/ip /data/local/tmp/cowscript
+::%adb% -s %device% shell "sh /data/local/tmp/getdirty.sh"
 
 ::echo.
 ::echo.

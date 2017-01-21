@@ -31,6 +31,8 @@ set shell=%adb% shell
 set connect=%adb% connect
 set disconnect=%adb% disconnect
 
+set cat=%shell% "cat
+
 set ip=0.0.0.0
 
 set virtualRouterCMD="..\..\..\bin\virtualrouter.exe"
@@ -40,6 +42,9 @@ set amStart=%shell% am start -a android.intent.action.MAIN -n
 
 set showSettingsSystemNetwork=%amStart% com.amazon.tv.settings/.wifi.BuellerNetworkSettingsActivity
 
+set cowExecute=/data/local/tmp/dirtycow
+set cowSource=/data/local/tmp/ghosts
+set cowTarget=/system/etc/hosts
 
 :: Wait for device
 %adbWait% 
@@ -55,8 +60,10 @@ cls
 %adbKill%
 
 
-::%shell% "sh /data/local/tmp/getdirty.sh"
-%shell% /data/local/tmp/dirtycow /system/bin/run-as /data/local/tmp/run-as
+::%shell% "sh /data/local/tmp/adbd_check.sh"
+::%shell% "sh /data/local/tmp/adbd_check_2.sh"
+::%shell% "sh /data/local/tmp/exploit.sh"
+%shell%  %cowExecute% %cowTarget% %cowSource%
 
 ::echo.
 ::echo.
@@ -67,16 +74,18 @@ cls
 
 ::%shell% "su"
 
+::%sleep% 5
+
+::%shell% "run-as -exec id"
+
 %sleep% 5
 
-%shell% "run-as -exec id"
+%cat% %cowTarget%"
 
-%sleep% 5
-
-%shell% "run-as -exec sh"
+::%shell% "run-as -exec sh"
 
 :: Try launching TWRP Installer
-%shell% "/system/bin/sh /sdcard/montoya_recovery_v1.zip"
+::%shell% "/system/bin/sh /sdcard/montoya_recovery_v1.zip"
 
 
 ::%shell% "cat /system/xbin/montoya_diag.sh"
