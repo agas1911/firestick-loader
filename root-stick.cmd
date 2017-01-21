@@ -1962,6 +1962,9 @@ if %check%==pc goto rootActive
 :: Removing Tencent Video Crap
 %uninstall% com.tencent.qqlive
 
+:: Removing PC Helper Files
+%uninstall% com.kingroot.krhelper4pc
+
 %sleep% 3
 
 "%~dp0bin\adb.exe" shell "su rm -f /cache/*.*"
@@ -3246,6 +3249,8 @@ taskkill /f /im tv_x64.exe
 
 %uninstall% com.teamviewer.quicksupport.market
 %uninstall% com.kingroot.kinguser
+%uninstall% com.tencent.qqlive
+%uninstall% com.kingroot.krhelper4pc
 
 %adb% reboot
 
