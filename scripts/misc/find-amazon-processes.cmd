@@ -19,7 +19,7 @@ echo.
 echo.
 
 
-%adb% shell ps -A ^| grep amazon
+%adb% shell "ps | grep amazon"
 
 echo.
 echo.
