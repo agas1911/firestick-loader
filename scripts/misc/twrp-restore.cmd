@@ -12,6 +12,7 @@ set push=%adb% push
 set shell=%adb% shell
 set devices=%adb% devices
 
+set twrpMainDir=/sdcard/TWRP
 set twrpBackupDir=/sdcard/TWRP/BACKUPS
 set twrpDirNewFolderName=
 
@@ -79,6 +80,7 @@ echo.
 echo.
 echo.
 
+%shell% "mkdir %twrpMainDir%"
 %shell% "mkdir %twrpBackupDir%"
 %shell% "mkdir %twrpBackupDir%/%serialNumber%"
 %shell% "mkdir %twrpBackupDir%/%serialNumber%/%twrpDirNewFolderName%"
