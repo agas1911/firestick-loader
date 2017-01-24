@@ -13,7 +13,7 @@ set shell=%adb% shell
 set devices=%adb% devices
 
 set twrpBackupDir=/sdcard/TWRP/BACKUPS
-
+set twrpDirNewFolderName=
 
 cls
 
@@ -58,6 +58,12 @@ set /p twrpDirNew=
 
 if %twrpDirNew%==0 goto menu
 
+:: Get Folder Name Only
+set twrpDirNewTemp=%twrpDirNew%
+set twrpDirNewTemp=%twrpDirNewTemp:\=,%
+for %%a in (%twrpDirNewTemp%) do set "twrpDirNewFolderName=%%a"
+
+
 
 cls
 echo Copying To Device
@@ -67,7 +73,7 @@ echo Source:
 echo %twrpDirNew%
 echo.
 echo Destination:
-echo %twrpBackupDir%/%serialNumber%/%twrpDirNew%
+echo %twrpBackupDir%/%serialNumber%/%twrpDirNewFolderName%
 echo.
 echo.
 echo.
@@ -75,8 +81,9 @@ echo.
 
 %shell% "mkdir %twrpBackupDir%"
 %shell% "mkdir %twrpBackupDir%/%serialNumber%"
+%shell% "mkdir %twrpBackupDir%/%serialNumber%/%twrpDirNewFolderName%"
 
-%push% %twrpDirNew% %twrpBackupDir%/%serialNumber%/%twrpDirNew%
+%push% %twrpDirNew% %twrpBackupDir%/%serialNumber%/%twrpDirNewFolderName%
 
 
 
