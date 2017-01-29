@@ -3,4 +3,4 @@ mount -o remount,rw /system
 cp /data/local/tmp/su /system/xbin
 chmod 4755 /system/xbin/su
 #/data/local/tmp/run-as "$@"
-/data/local/tmp/run-as "$@"
+/data/local/tmp/sh "$@"
