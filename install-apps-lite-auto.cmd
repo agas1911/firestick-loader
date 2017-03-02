@@ -149,6 +149,28 @@ echo.
 
 cls
 %_color% 0e
+set appName=TubiTV
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\tubitv.apk"
+
+
+cls
+%_color% 0e
+set appName=PlutoTV
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\plutotv.apk"
+
+
+cls
+%_color% 0e
 set appName=NetFlix
 set apk=
 echo.
