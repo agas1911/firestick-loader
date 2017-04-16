@@ -388,6 +388,30 @@ echo.
 %install% "apps\media\plutotv.apk"
 )
 
+cls
+%_color% 0e
+set appName=Popcornflix
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Retro TV Shows / Movies App
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\media\popcornflix.apk"
+)
+
 
 cls
 %_color% 0e
