@@ -243,6 +243,32 @@ echo.
 
 cls
 %_color% 0e
+set appName=Aptoid TV App Store
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: 3rd Party App Store
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\stores\aptoid-tv.apk"
+)
+
+
+
+cls
+%_color% 0e
 set appName=F-Droid App Store
 set apk=
 echo Install %appName%?
@@ -253,7 +279,7 @@ echo.
 %_color% 0b
 echo Requirements: NONE
 echo.
-echo Info: 3rd Party App Store Full Remote Support
+echo Info: 3rd Party App Store
 echo.
 set /p choice=
 if %choice%==1 (
@@ -412,6 +438,30 @@ echo.
 %install% "apps\media\popcornflix.apk"
 )
 
+cls
+%_color% 0e
+set appName=VidMate HD
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Retro TV Shows / Movies App
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\media\vidmate.apk"
+)
+
 
 cls
 %_color% 0e
@@ -484,7 +534,7 @@ echo.
 echo Installing %appName%...
 echo.
 
-%install% "apps\media\amazon-underground.apk"
+%install% "apps\amazon\amazon-underground.apk"
 )
 
 
@@ -509,7 +559,7 @@ echo.
 echo Installing %appName%...
 echo.
 
-%install% "apps\media\amazon-appstore.apk"
+%install% "apps\amazon\amazon-appstore.apk"
 )
 
 
@@ -534,7 +584,132 @@ echo.
 echo Installing %appName%...
 echo.
 
-%install% "apps\media\amazon-shopping.apk"
+%install% "apps\amazon\amazon-shopping.apk"
+)
+
+
+cls
+%_color% 0e
+set appName=Amazon Alexa
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: ???
+echo.
+echo Info: ???
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\amazon\amazon-alexa.apk"
+)
+
+
+cls
+%_color% 0e
+set appName=Amazon Drive
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: ???
+echo.
+echo Info: Remote Storage
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\amazon\amazon-drive.apk"
+)
+
+
+cls
+%_color% 0e
+set appName=Microsoft One Drive
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: ???
+echo.
+echo Info: Remote Storage
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\storage\one-drive.apk"
+)
+
+
+cls
+%_color% 0e
+set appName=Google Drive
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: ???
+echo.
+echo Info: Remote Storage
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\storage\google-drive.apk"
+)
+
+
+cls
+%_color% 0e
+set appName=Amazon Prime Now
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: ???
+echo.
+echo Info: ???
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\amazon\amazon-prime-now.apk"
 )
 
 
@@ -559,7 +734,7 @@ echo.
 echo Installing %appName%...
 echo.
 
-%install% "apps\media\amazon-music.apk"
+%install% "apps\amazon\amazon-music.apk"
 )
 
 
@@ -584,7 +759,7 @@ echo.
 echo Installing %appName%...
 echo.
 
-%install% "apps\media\amazon-video.apk"
+%install% "apps\amazon\amazon-video.apk"
 )
 
 
@@ -614,7 +789,7 @@ echo.
 
 cls
 %_color% 0e
-set appName=Popcorn Time
+set appName=Popcorn Time (Original)
 set apk=
 echo Install %appName%?
 echo.
@@ -635,6 +810,30 @@ echo.
 %extractRAR% "%~dp0apps\media\popcorntime.apk.split" "%temp%\firestick-loader\apps\media"
 %sleep% 3
 %install% "%temp%\firestick-loader\apps\media\popcorntime.apk"
+)
+
+
+cls
+%_color% 0e
+set appName=Popcorn Time io Edition
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Movies and TV Shows Streaming App
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\popcorntimeio.apk"
 )
 
 

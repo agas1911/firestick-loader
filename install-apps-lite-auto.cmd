@@ -105,6 +105,17 @@ md "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
 
 cls
 %_color% 0e
+set appName=Aptoid TV
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\stores\aptoid-tv.apk"
+
+
+cls
+%_color% 0e
 set appName=F-Droid
 set apk=
 echo.
@@ -182,6 +193,17 @@ echo.
 
 cls
 %_color% 0e
+set appName=VidMate HD
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\vidmate.apk"
+
+
+cls
+%_color% 0e
 set appName=NetFlix
 set apk=
 echo.
@@ -210,7 +232,7 @@ echo.
 ::echo.
 ::echo Installing %appName%...
 ::echo.
-::%install% "apps\media\amazon-underground.apk"
+::%install% "apps\amazon\amazon-underground.apk"
 
 
 ::cls
@@ -221,7 +243,7 @@ echo.
 ::echo.
 ::echo Installing %appName%...
 ::echo.
-::%install% "apps\media\amazon-appstore.apk"
+::%install% "apps\amazon\amazon-appstore.apk"
 
 
 ::cls
@@ -232,7 +254,62 @@ echo.
 ::echo.
 ::echo Installing %appName%...
 ::echo.
-::%install% "apps\media\amazon-shopping.apk"
+::%install% "apps\amazon\amazon-shopping.apk"
+
+
+::cls
+::%_color% 0e
+::set appName=Amazon Alexa
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\amazon\amazon-alexa.apk"
+
+
+::cls
+::%_color% 0e
+::set appName=Amazon Drive
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\amazon\amazon-drive.apk"
+
+
+::cls
+::%_color% 0e
+::set appName=Microsoft One Drive
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\storage\one-drive.apk"
+
+
+::cls
+::%_color% 0e
+::set appName=Google Drive
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\storage\google-drive.apk"
+
+
+::cls
+::%_color% 0e
+::set appName=Amazon Prime Now
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\amazon\amazon-prime-now.apk"
 
 
 cls
@@ -243,7 +320,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\media\amazon-music.apk"
+%install% "apps\amazon\amazon-music.apk"
 
 
 cls
@@ -254,7 +331,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\media\amazon-video.apk"
+%install% "apps\amazon\amazon-video.apk"
 
 
 ::cls
@@ -279,6 +356,17 @@ echo.
 ::%extractRAR% "%~dp0apps\media\popcorntime.apk.split" "%temp%\firestick-loader\apps\media"
 ::%sleep% 3
 ::%install% "%temp%\firestick-loader\apps\media\popcorntime.apk"
+
+
+cls
+%_color% 0e
+set appName=Popcorn Time io Edition
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\popcorntimeio.apk"
 
 
 cls
