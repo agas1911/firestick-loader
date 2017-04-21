@@ -180,26 +180,26 @@ echo.
 %install% "apps\media\plutotv.apk"
 
 
-cls
-%_color% 0e
-set appName=Popcornflix
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\popcornflix.apk"
+::cls
+::%_color% 0e
+::set appName=Popcornflix
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\media\popcornflix.apk"
 
 
-cls
-%_color% 0e
-set appName=VidMate HD
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\vidmate.apk"
+::cls
+::%_color% 0e
+::set appName=VidMate HD
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\media\vidmate.apk"
 
 
 cls
@@ -358,15 +358,15 @@ echo.
 ::%install% "%temp%\firestick-loader\apps\media\popcorntime.apk"
 
 
-cls
-%_color% 0e
-set appName=Popcorn Time io Edition
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\popcorntimeio.apk"
+::cls
+::%_color% 0e
+::set appName=Popcorn Time io Edition
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\media\popcorntimeio.apk"
 
 
 cls
