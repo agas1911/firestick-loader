@@ -789,7 +789,7 @@ echo.
 
 cls
 %_color% 0e
-set appName=Popcorn Time (Original)
+set appName=Popcorn Time Original
 set apk=
 echo Install %appName%?
 echo.
