@@ -29,6 +29,8 @@ title Kodi Adult Profile and Addon Remover for Android                          
 
 :: Remove Addon Directories
 %shell% "rm -r %kodiPath%/addons/repository.xxxadultxbmc"
+%shell% "rm -r %kodiPath%/addons/repository.xbmcadult"
+
 %shell% "rm -r %kodiPath%/addons/plugin.video.empflix"
 %shell% "rm -r %kodiPath%/addons/plugin.video.fantasticc"
 %shell% "rm -r %kodiPath%/addons/plugin.video.hotgoo"
@@ -37,7 +39,6 @@ title Kodi Adult Profile and Addon Remover for Android                          
 %shell% "rm -r %kodiPath%/addons/plugin.video.tube8"
 %shell% "rm -r %kodiPath%/addons/plugin.video.uwc"
 %shell% "rm -r %kodiPath%/addons/plugin.video.videodevil"
-%shell% "rm -r %kodiPath%/addons/plugin.video.white.devil"
 %shell% "rm -r %kodiPath%/addons/plugin.video.wildfire"
 %shell% "rm -r %kodiPath%/addons/plugin.video.woodrocket"
 %shell% "rm -r %kodiPath%/addons/plugin.video.you.jizz"
