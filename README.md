@@ -1,4 +1,12 @@
 #FirePwn
+
+This repo will soon be superseded by the lightweight FirePWN Repo here: https://github.com/esc0rtd3w/firepwn
+##
+
+
+
+
+
 ####Amazon FireTV Stick Loader
 
 ###FREE YOUR FIRESTICK!!!
