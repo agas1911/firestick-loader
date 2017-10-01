@@ -51,6 +51,16 @@ HKR,,Icon,,-1
 %SingleAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0022
 %CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0022&MI_01
 
+;FireTV Stick 2nd gen
+%SingleAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0022
+%CompositeAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0022&REV_????&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0022&MI_01
+
+;FireTV Stick 2nd gen
+%SingleAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0222
+%CompositeAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0222&REV_????&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0222&MI_01
+
 
 [Google.NTamd64]
 
@@ -80,6 +90,16 @@ HKR,,Icon,,-1
 ;FireTV Stick 1st gen
 %SingleAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0022
 %CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0022&MI_01
+
+;FireTV Stick 2nd gen
+%SingleAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0022
+%CompositeAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0022&REV_????&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0022&MI_01
+
+;FireTV Stick 2nd gen
+%SingleAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0222
+%CompositeAdbInterface% 	    = USB_Install, USB\VID_1949&PID_0222&REV_????&MI_01
+%CompositeAdbInterface%     = USB_Install, USB\VID_1949&PID_0222&MI_01
 
 
 ;Amazon Fire Stick UNKNOWN
